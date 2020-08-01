@@ -34,18 +34,25 @@ public class DialogueChoices : MonoBehaviour
         }
     }
 
-    public void AddButton(Choice choice)
+    public Button AddButton(Choice choice)
     {
         Button newChoice = Instantiate(buttonPrefab, dialogueBox).GetComponent<Button>();
         Text dialogueText = newChoice.GetComponentInChildren<Text>();
         dialogueText.text = choice.text;
-        newChoice.onClick.AddListener(delegate { OnClickChoiceButton(choice); });
+        return newChoice;
     }
 
-    private void OnClickChoiceButton (Choice choice)
+    //restart story
+    public void RestartButton(string restart)
     {
-        ink_manager.story.ChooseChoiceIndex(choice.index);
+        Button newChoice = Instantiate(buttonPrefab, dialogueBox).GetComponent<Button>();
+        Text dialogueText = newChoice.GetComponentInChildren<Text>();
+        dialogueText.text = restart;
+        newChoice.onClick.AddListener(delegate {
+            ink_manager.StartStory();
+        });
     }
+
 
 
     // Update is called once per frame
