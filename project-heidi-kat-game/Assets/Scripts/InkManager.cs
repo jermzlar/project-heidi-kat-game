@@ -31,6 +31,9 @@ public class InkManager : MonoBehaviour
 	[SerializeField]
 	private MainMenu mainMenu = null;
 
+	[SerializeField]
+	private string logOfDialogue = null;
+
 	public bool stopClick = false;
 
 	[SerializeField]
@@ -80,7 +83,7 @@ public class InkManager : MonoBehaviour
 		// Read all the content until we can't continue any more
 		if (story.canContinue) {
 			// Continue gets the next line of the story
-			string text = story.Continue ();
+			string text = story.Continue();
 			globalVariables.refreshAll();
 			//string name = globalVariables.getWhosTalking();
 			//characterManager.DisplayName(name);
@@ -88,9 +91,15 @@ public class InkManager : MonoBehaviour
 			text = text.Trim();
 			// Display the text on screen!
 			if (conversation.text == "")
+			{ 
 				dialogueText = text;
+				logOfDialogue = text;
+			}
 			else
+			{
 				dialogueText = text;
+				logOfDialogue = logOfDialogue + "\n" + text;
+			}
 				//dialogueText = dialogueText + "\n" + text;
 
 
