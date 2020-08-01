@@ -33,8 +33,8 @@ VAR logical_creative = 50
 VAR optimist_pessimist = 50
 
 VAR whos_talking = "nobody"
-VAR character_a = "sunday"
-VAR character_b = "lin"
+VAR character_a = "none"
+VAR character_b = "none"
 VAR background = "background"
 
 ~background = "space station"
@@ -134,19 +134,19 @@ A diaglog flashes on the screen of your PDD.
 
 NAME DESIGNATION?
 
-*[Maral]
++[Maral]
 ~player_name = "Maral"
-*[Jupiter]
++[Jupiter]
 ~player_name = "Jupiter"
-*[Aran] 
++[Aran] 
 ~player_name = "Aran" 
-*[Sophin]
++[Sophin]
 ~player_name = "Sophin"
-*[Cressida]
++[Cressida]
 ~player_name = "Cressida"
-*[Thenry]
++[Thenry]
 ~player_name = "Thenry"
-*[Dane] 
++[Dane] 
 ~player_name = "Dane" 
 
 ...
@@ -155,19 +155,19 @@ NAME DESIGNATION?
 
 -GENDER DESIGNATION?
 
-*(female) [Female]
++(female) [Female]
 ~pronoun_she = "she"
 ~pronoun_hers = "hers"
 ~pronoun_her = "her"
 ~gender_person = "woman"
 ~gender_females = "female"
-*(male) [Male]
++(male) [Male]
 ~pronoun_she = "he"
 ~pronoun_hers = "his"
 ~pronoun_her = "him"
 ~gender_person = "man"
 ~gender_females = "male"
-*(nonbinary) [Non-binary]
++(nonbinary) [Non-binary]
 ~pronoun_she = "they"
 ~pronoun_hers = "theirs"
 ~pronoun_her = "them"

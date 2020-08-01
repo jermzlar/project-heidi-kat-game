@@ -49,8 +49,8 @@ You open the door and have a few moments to take stock of the situation. There i
 ~character_a = "Sunday"
 The woman stops abruptly and turns to look up at you, freezing. She appears to be waiting to see how you'll react.
 
-
-*"I don't think you're supposed to be doing that[."]," you say blithely.
+~whos_talking = "mc"
+* "I don't think you're supposed to be doing that[."]," you say blithely.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "Well, I don't think you're supposed to be back here either, sweetheart, so let's just promise not to tell on one another and call it even, okay?" the woman replies coolly.
@@ -62,18 +62,22 @@ The woman stops abruptly and turns to look up at you, freezing. She appears to b
 ~whos_talking = "nobody"
 -She returns her attention to the desk, pulling out one of the drawers and dumping its contents on the floor. She knocks on the bottom of the drawer rapidly, and you are about to address her again until she lets out a triumphant, "Aha!" She appears to remove a false bottom, reaching underneath and pulling out a small device.
 
+~whos_talking = "mc"
 *"Find what you were looking for?" [] you ask.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "I did, not that I think you're terribly invested in what I'm doing here," the woman responds.
+~whos_talking = "mc"
 "And what are you doing here?"
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "That's classified information," she replies.
+~whos_talking = "mc"
 *"I'm pretty sure that's classified information[."]," you remark to her.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "It is, not that I think you're terribly invested in what's going on here," the woman responds.
+~whos_talking = "mc"
 "And what is going on here?"
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
@@ -87,13 +91,13 @@ The woman stops abruptly and turns to look up at you, freezing. She appears to b
 "What's you name, sweetheart?" she asks.
 
 *"{player_name}."
-*(sour) "Definitely not sweetheart[."]," you say sourly. "Call me {player_name} or nothing at all."
+*(sour) "Definitely not sweetheart.["] Call me {player_name} or nothing at all."
 ~rel_sunday -=5
 
 -{sour:
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
-"Whatever, {player_name}. You can call me Sunday. I don't know what your plan is exactly, but I don't suppose you'd want to join forces?"
+"Feeling disagreeable, are we? You can call me Sunday. I don't know what your plan is exactly, but I don't suppose you'd want to join forces?"
 }
 -{not sour:
 ~whos_talking = "sunday"
@@ -111,6 +115,7 @@ The woman stops abruptly and turns to look up at you, freezing. She appears to b
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 -"Splendid. Glad to have you on board," Sunday replies, and you can't tell if she's being sincere or not. You have a feeling that will be happening often with her.
+~whos_talking = "mc"
 "Listen, if you coming along means--" you start, but she interrupts you.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
