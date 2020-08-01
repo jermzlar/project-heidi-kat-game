@@ -32,7 +32,7 @@ VAR communal_independent = 50
 VAR logical_creative = 50
 VAR optimist_pessimist = 50
 
-VAR whos_talking = "a butt"
+VAR whos_talking = "nobody"
 VAR character_a = "sunday"
 VAR character_b = "lin"
 VAR background = "background"
@@ -45,6 +45,7 @@ A space station in a distant galaxy.
 	
 == intro ==
 ~background = "bedroom"
+~whos_talking = "nobody"
 You don't remember how it happened, nor do you know what caused it. All you know is that there was an explosion of great force, and now you are here, laying on the floor of your bedroom in your uniform with what feels like blood seeping out of your head.
 You try to think back to the last thing you can remember...
 Three months ago you were hired by Elysium, the system-wide corporation responsible for manufacturing everything from the coffee maker in your bedroom to the bio-weapons used in the Jenusian-Terran war of '83.
@@ -95,6 +96,7 @@ It occurs to you as you sit up and open your eyes that forbidden games on your P
 ~compassion_selfserve +=10
 
 = roommate
+~whos_talking = "nobody"
 You pull yourself to your feet and a wave of dizziness rushes over you. That head injury will probably need some attention at some point, but your first priority is checking on those around you, starting with your roommate.
 Quarters are small on the space station by necessity, and so it takes nothing more than a cursory glance around to locate your roommate. They're on the ground, not moving, with a sizeable piece of plasteel piping going through their mid-section.
 + [See if there's anything I can do to help.]
@@ -111,6 +113,7 @@ TODO: add him/her/them switching for roommate
 
 
 = check_injuries
+~whos_talking = "nobody"
 Fortunately, the mirror in the bathroom seems to have survived the explosion mostly intact except for three sharp cracks running through it diagonally.
 Surveying your reflection, you note your complexion is slightly ill, and the wound in your head {doctor: looks like a severe gash. You'll need to tend to this fairly soon or else you might lose consciousness.} {not doctor: is bleeding significantly, as head wounds usually do, so it's hard to tell if it's serious or not.}
 Before you do anything else, you should probably check your PDD.
@@ -180,12 +183,14 @@ GENDER DESIGNATION: {gender_person} ({pronoun_she}/{pronoun_her}/{pronoun_hers})
 
 Is this correct?
 
-*[Yes.] ->priorities_and_skills
-*[No, I need to change something.] -> enter_pdd_info
++[Yes.] ->priorities_and_skills
++[No, I need to change something.] -> enter_pdd_info
 
 ->priorities_and_skills
 
 = priorities_and_skills
+
+~whos_talking = "nobody"
 
 With that settled you tuck your PDD away and consider your next move.
 

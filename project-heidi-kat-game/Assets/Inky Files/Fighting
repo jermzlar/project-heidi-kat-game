@@ -4,10 +4,12 @@
 
 ~background = "tunnels"
 
+~whos_talking = "nobody"
 The three of you decide to take the maintenance tunnels once more in heading for the shuttle bay being as they are the quickest way about the station--regardless of the apparent habitation of vaguely human, body-snatching shadow monsters.
 
 As you enter a tunnel and consider the likelihood that you'll run into them again, a thought occurs to you.
 
+~whos_talking = "mc"
 "Sunday, are the body snatchers related to the disappearances of employees? I mean it makes sense, right? Have they been here the whole time? Are the shipping manifests--?"
 
 ~whos_talking = "sunday"
@@ -24,6 +26,7 @@ As you enter a tunnel and consider the likelihood that you'll run into them agai
 ~character_a = "Sunday"
 -"Most people don't even know they exist," Sunday replies. "The why and where and how of them is a mystery even to those who do know they exist."
 
+~whos_talking = "nobody"
 The three of you are silent for a while as you make your way through the tunnels.
 
 -> snatch_fight
@@ -31,61 +34,68 @@ The three of you are silent for a while as you make your way through the tunnels
 =two_fight_begin
 
 ~background = "tunnels"
-
+~whos_talking = "nobody"
 You decide to take the maintenance tunnels once more in heading for the shuttle bay being as they are the quicket way about the station--regardless of the apparent habitation of vaguely human, body-snatching shadow monsters.
 
 As you enter a tunnel with Lin and consider the likelihood that you'll run into them again, a thought occurs to you.
 
-~whos_talking = "lin"
-~character_b = "lin"
+~whos_talking = "mc"
 "Lin, do you know about the body snatchers?" you ask.
 
+~whos_talking = "nobody"
 They do not reply right away, taking a minute to think, which in their mind must mean hundreds of thousands of calculations are being performed.
 
 ~whos_talking = "lin"
 ~character_b = "lin"
 "Body snatchers. Yes, it took me a moment to discern what you were referring to. I presume you mean the creatures who have recently taken up residence amongst the very tunnels we traverse?"
 
+~whos_talking = "nobody"
 You nod.
 
 ~whos_talking = "lin"
 ~character_b = "lin"
 "They are commonly referred to as bogeymen or ghouls among those who make their lives at the edges of the system, though the name they call themselves is unknown," Lin explains. "They are a species alien to you and, in fact, the system at large. Their primary motivation appears to be the collection of human and Jenusian bodies left behind on derelict ships and stations; however, upon seeing a live target they have been known to become extremely violent."
 
+~whos_talking = "mc"
 "Huh. So do they have anything to do with the disappearance of Elysium employees?"
 
 ~whos_talking = "lin"
 ~character_b = "lin"
 "Unfortunately, no. It is just our luck that they happen to be here," Lin says evenly.
 
+~whos_talking = "nobody"
 The two of you are silent for a while as you make your way through the tunnels.
 
 -> snatch_fight
 
 = snatch_fight 
 
+~whos_talking = "nobody"
 <> It's because {three_fight_begin: everyone is|both of you are} silent that after a while you are able to pick up on the faint sound ahead of you of something being dragged along the floor, and the unearthly sighs accompanying it.
 
 {three_fight_begin:
-
+~whos_talking = "nobody"
 You exchange a worried glance with Sunday.
 
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "We can hope they don't see us," she offers up.
 
+~whos_talking = "mc"
 "What about your cloak thing?" you ask.
 
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "I can barely get it to extend over you, I can't fit all three of us in the field."
 
+~whos_talking = "nobody"
 You look to Lin desperately.
 
 ~whos_talking = "lin"
 ~character_b = "lin"
 "I possess no such technology," they say unhelpfully.
 
+~whos_talking = "mc"
 "Well, shit," you say, at a loss as the dragging noises grow louder.
 
 ~whos_talking = "sunday"
@@ -96,6 +106,7 @@ You look to Lin desperately.
 ~character_b = "lin"
 "The odds of success are roughly one hundred thousand--" Lin begins.
 
+~whos_talking = "nobody"
 You shoot them an admonitory look.
 
 ~whos_talking = "lin"
@@ -104,20 +115,24 @@ You shoot them an admonitory look.
 }
 
 {two_fight_begin:
+~whos_talking = "nobody"
 You exchange a glance with Lin.
 
+~whos_talking = "mc"
 "That sounds like trouble," you say. "We hid from them last time. Sunday had a sort of invisible cloak thing. I don't suppose you've got something similar?"
 
 ~whos_talking = "lin"
 ~character_b = "lin"
 "I possess no such technology," Lin says unhelpfully.
 
+~whos_talking = "mc"
 "I guess we could get out of the way and hope they don't see us," you say, though you don't sound entirely convinced.
 
 ~whos_talking = "lin"
 ~character_b = "lin"
 "The odds of that are roughly one hundred thousand--" Lin begins.
 
+~whos_talking = "nobody"
 You shoot them an admonitory look.
 
 ~whos_talking = "lin"
@@ -125,6 +140,7 @@ You shoot them an admonitory look.
 "--that is to say, they are very, very small; nonetheless, the possibility still exists," they finish sheepishly.
 }
 
+~whos_talking = "nobody"
 You look to the darkness of the tunnels ahead grimly, where you can just begin to make out the odd shapes of the body snatchers amongst the inky black. 
 
 They'll be here any minute.
