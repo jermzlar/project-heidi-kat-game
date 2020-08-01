@@ -5,14 +5,6 @@ using UnityEngine;
 
 public class GlobalVariables : MonoBehaviour
 {
-
-	private string player_name = "Butts";
-	private string pronoun_she = "she";
-	private string pronoun_hers = "hers";
-	private string pronoun_her = "her";
-	private string gender_person = "woman";
-	private string gender_females = "female";
-
 	private int combat_skill = 50;
 	private int medicine_skill = 50;
 	private int technology_skill = 50;
@@ -45,66 +37,6 @@ public class GlobalVariables : MonoBehaviour
     public string getPlayerName()
     {
     	return (string)im.story.variablesState["player_name"];
-    }
-
-    public void setPronounShe(string value)
-    {
-    	if(value != null)
-    	{
-    		im.story.variablesState["pronoun_she"] = value;
-    	}
-    }
-    public string getPronounShe()
-    {
-    	return (string)im.story.variablesState["pronoun_she"];
-    }
-
-    public void setPronounHers(string value)
-    {
-    	if(value != null)
-    	{
-    		im.story.variablesState["pronoun_hers"] = value;
-    	}
-    }
-    public string getPronounHers()
-    {
-    	return (string)im.story.variablesState["pronoun_hers"];
-    }
-
-    public void setPronounHer(string value)
-    {
-    	if(value != null)
-    	{
-    		im.story.variablesState["pronoun_her"] = value;
-    	}
-    }
-    public string getPronounHer()
-    {
-    	return (string)im.story.variablesState["pronoun_her"];
-    }
-
-    public void setGenderPerson(string value)
-    {
-    	if(value != null)
-    	{
-    		im.story.variablesState["gender_person"] = value;
-    	}
-    }
-    public string getGenderPerson()
-    {
-    	return (string)im.story.variablesState["gender_person"];
-    }
-
-    public void setGenderFemales(string value)
-    {
-    	if(value != null)
-    	{
-    		im.story.variablesState["gender_females"] = value;
-    	}
-    }
-    public string getGenderFemales()
-    {
-    	return (string)im.story.variablesState["gender_females"];
     }
 
 	public void setCombatSkill(int value)
@@ -242,11 +174,6 @@ public class GlobalVariables : MonoBehaviour
     public void refreshAll()
     {
     	getPlayerName();
-		getPronounShe();
-		getPronounHers();
-		getPronounHer();
-		getGenderPerson();
-		getGenderFemales();
 		getCombatSkill();
 		getMedicineSkill();
 		getTechnologySkill();
@@ -259,26 +186,6 @@ public class GlobalVariables : MonoBehaviour
 		getLogicalCreative();
 		getOptimistPessimist();
     }
-
-
-
-
-/*
-    public int convertToInt(string value)
-    {
-    	int result = 0;
-    	try
-	       {
-	           result = int.Parse(value);
-	       }
-	       catch (Exception e)
-	       {
-	           Debug.LogException(e, this);
-	       }
-	    return result;
-    }*/
-	
-
 
 	    void Update()
 	    {
