@@ -33,176 +33,161 @@ public class GlobalVariables : MonoBehaviour
     {
     	if(value != null)
     	{
-    		im.story.variablesState["player_name"] = value;
+    		player_name = value;
     	}
     }
     public string getPlayerName()
     {
-    	return (string)im.story.variablesState["player_name"];
+    	return player_name;
     }
 
 	public void setCombatSkill(int value)
     {
     	if(value != null)
     	{
-    		im.story.variablesState["combat_skill"] = value;
+    		combat_skill = value;
     	}
     }
     public int getCombatSkill()
     {
-    	return (int)im.story.variablesState["combat_skill"];
+    	return combat_skill;
     }
 
     public void setMedicineSkill(int value)
     {
     	if(value != null)
     	{
-    		im.story.variablesState["medicine_skill"] = value;
+    		medicine_skill = value;
     	}
     }
     public int getMedicineSkill()
     {
-    	return (int)im.story.variablesState["medicine_skill"];
+    	return medicine_skill;
     }
 
     public void setTechnologySkill(int value)
     {
     	if(value != null)
     	{
-    		im.story.variablesState["technology_skill"] = value;
+    		technology_skill = value;
     	}
     }
     public int getTechnologySkill()
     {
-    	return (int)im.story.variablesState["technology_skill"];
+    	return technology_skill;
     }
 
     public void setIngenuitySkill(int value)
     {
     	if(value != null)
     	{
-    		im.story.variablesState["ingenuity_skill"] = value;
+    		ingenuity_skill = value;
     	}
     }
     public int getIngenuitySkill()
     {
-    	return (int)im.story.variablesState["ingenuity_skill"];
+    	return ingenuity_skill;
     }
 
     public void setCharmSkill(int value)
     {
     	if(value != null)
     	{
-    		im.story.variablesState["charm_skill"] = value;
+    		charm_skill = value;
     	}
     }
     public int getCharmSkill()
     {
-    	return (int)im.story.variablesState["charm_skill"];
+    	return charm_skill;
     }
 
 	public void setRelSunday(int value)
     {
     	if(value != null)
     	{
-    		im.story.variablesState["rel_sunday"] = value;
+    		rel_sunday = value;
     	}
     }
     public int getRelSunday()
     {
-    	return (int)im.story.variablesState["rel_sunday"];
+    	return rel_sunday;
     }
 
     public void setRelLin(int value)
     {
     	if(value != null)
     	{
-    		im.story.variablesState["rel_lin"] = value;
+    		rel_lin = value;
     	}
     }
     public int getRelLin()
     {
-    	return (int)im.story.variablesState["rel_lin"];
+    	return rel_lin;
     }
 
     public void setCompassionSelfserve(int value)
     {
     	if(value != null)
     	{
-    		im.story.variablesState["compassion_selfserve"] = value;
+    		compassion_selfserve = value;
     	}
     }
     public int getCompassionSelfserve()
     {
-    	return (int)im.story.variablesState["compassion_selfserve"];
+    	return compassion_selfserve;
     }
 
     public void setCommunalIndependent(int value)
     {
     	if(value != null)
     	{
-    		im.story.variablesState["communal_independent"] = value;
+    		communal_independent = value;
     	}
     }
     public int getCommunalIndependent()
     {
-    	return (int)im.story.variablesState["communal_independent"];
+    	return communal_independent;
     }
 
     public void setLogicalCreative(int value)
     {
     	if(value != null)
     	{
-    		im.story.variablesState["logical_creative"] = value;
+    		logical_creative = value;
        	}
     }
     public int getLogicalCreative()
     {
-    	return (int)im.story.variablesState["logical_creative"];
+    	return logical_creative;
     }
 
     public void setOptimistPessimist(int value)
     {
     	if(value != null)
     	{
-    		im.story.variablesState["optimist_pessimist"] = value;
+    		optimist_pessimist = value;
     	}
     }
     public int getOptimistPessimist()
     {
-    	return (int)im.story.variablesState["optimist_pessimist"];
+    	return optimist_pessimist;
     }
 
-    public void setAll()
+    public void refreshAll()
     {
-        setPlayerName(player_name);
-        setCombatSkill(combat_skill);
-        setMedicineSkill(medicine_skill);
-        setTechnologySkill(technology_skill);
-        setIngenuitySkill(ingenuity_skill);
-        setCharmSkill(charm_skill);
-        setRelSunday(rel_sunday);
-        setRelLin(rel_lin);
-        setCompassionSelfserve(compassion_selfserve);
-        setCommunalIndependent(communal_independent);
-        setLogicalCreative(logical_creative);
-        setOptimistPessimist(optimist_pessimist);
+        setPlayerName((string)im.story.variablesState["player_name"]);
+        setCombatSkill((int)im.story.variablesState["combat_skill"]);
+        setMedicineSkill((int)im.story.variablesState["medicine_skill"]);
+        setTechnologySkill((int)im.story.variablesState["technology_skill"]);
+        setIngenuitySkill((int)im.story.variablesState["ingenuity_skill"]);
+        setCharmSkill((int)im.story.variablesState["charm_skill"]);
+        setRelSunday((int)im.story.variablesState["rel_sunday"]);
+        setRelLin((int)im.story.variablesState["rel_lin"]);
+        setCompassionSelfserve((int)im.story.variablesState["compassion_selfserve"]);
+        setCommunalIndependent((int)im.story.variablesState["communal_independent"]);
+        setLogicalCreative((int)im.story.variablesState["logical_creative"]);
+        setOptimistPessimist((int)im.story.variablesState["optimist_pessimist"]);
 
-    }
-    public void getAll()
-    {
-    	player_name = getPlayerName();
-		combat_skill = getCombatSkill();
-		medicine_skill = getMedicineSkill();
-		technology_skill = getTechnologySkill();
-		ingenuity_skill = getIngenuitySkill();
-		charm_skill = getCharmSkill();
-		rel_sunday = getRelSunday();
-		rel_lin = getRelLin();
-		compassion_selfserve = getCompassionSelfserve();
-		communal_independent = getCommunalIndependent();
-		logical_creative = getLogicalCreative();
-		optimist_pessimist = getOptimistPessimist();
     }
 
 	    void Update()
