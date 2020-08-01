@@ -13,6 +13,8 @@ public class DialogueChoices : MonoBehaviour
     private Transform dialogueBox = null;
     [SerializeField]
     InkManager ink_manager = null;
+    [SerializeField]
+    private int boxSize = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +24,11 @@ public class DialogueChoices : MonoBehaviour
 
     public void Resize()
     {
-
+        int childCount = ink_manager.story.currentChoices.Count;
+        Debug.Log("number of children " + childCount);
+        boxSize = (childCount * 50) + 20;
+        RectTransform rt = dialogueBox.GetComponent<RectTransform>();
+        rt.sizeDelta = new Vector2(620, boxSize);
     }
 
     public void RemoveAllButtons()

@@ -15,12 +15,6 @@ public class InkManager : MonoBehaviour
 	[SerializeField]
 	private Canvas canvas = null;
 
-	// UI Prefabs
-	[SerializeField]
-	private Text textPrefab = null;
-	[SerializeField]
-	private Button buttonPrefab = null;
-
 	[SerializeField]
 	private DialogueChoices dialogueChoices = null;
 
@@ -29,7 +23,6 @@ public class InkManager : MonoBehaviour
 
 	public static event Action<Story> OnCreateStory;
     void Start () {
-    	//RemoveChildren();
 		StartStory();
 	}
 
@@ -54,7 +47,6 @@ public class InkManager : MonoBehaviour
 	// Continues over all the lines of text, then displays all the choices. If there are no choices, the story is finished!
 	void RefreshView () {
 		// Remove all the UI on screen
-		//RemoveChildren ();
 		dialogueChoices.RemoveAllButtons();
 
 
@@ -77,24 +69,15 @@ public class InkManager : MonoBehaviour
 				newButton.onClick.AddListener(delegate {
 					OnClickChoiceButton(choice);
 				});
-				/*Button button = CreateChoiceView (choice.text.Trim ());
-				 Tell the button what to do when we press it
-				button.onClick.AddListener (delegate {
-					OnClickChoiceButton (choice);
-				});
-				*/
+				
 			}
+			dialogueChoices.Resize();
 		}
 		// If we've read all the content and there's no choices, the story is finished!
 		else {
 
 			dialogueChoices.RestartButton("End of story.\nRestart?");
-			/*
-			Button choice = CreateChoiceView("End of story.\nRestart?");
-			choice.onClick.AddListener(delegate{
-				StartStory();
-			});
-			*/
+			dialogueChoices.Resize();
 
 		}
 	}
@@ -107,36 +90,8 @@ public class InkManager : MonoBehaviour
 
 	// Creates a textbox showing the the line of text
 	void CreateContentView (string text) {
-		/*Text storyText = Instantiate (textPrefab) as Text;
-		storyText.text = text;
-		storyText.transform.SetParent (canvas.transform, false);
-		*/
 		conversation.text = text;
 	}
-
-	// Creates a button showing the choice text
-	Button CreateChoiceView (string text) {
-		// Creates the button from a prefab
-		Button choice = Instantiate (buttonPrefab) as Button;
-		choice.transform.SetParent (canvas.transform, false);
-		
-		// Gets the text from the button prefab
-		Text choiceText = choice.GetComponentInChildren<Text> ();
-		choiceText.text = text;
-
-		// Make the button expand to fit the text
-		HorizontalLayoutGroup layoutGroup = choice.GetComponent <HorizontalLayoutGroup> ();
-		layoutGroup.childForceExpandHeight = false;
-
-		return choice;
-	}
-
-	// Destroys all the children of this gameobject (all the UI)
-	void RemoveChildren () {
-		int childCount = canvas.transform.childCount;
-		for (int i = childCount - 1; i >= 0; --i) {
-			GameObject.Destroy (canvas.transform.GetChild (i).gameObject);
-		}
-	}
+	
 
 }
