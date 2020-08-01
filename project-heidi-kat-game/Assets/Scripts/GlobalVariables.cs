@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class GlobalVariables : MonoBehaviour
 {
+    [SerializeField]
 	private int combat_skill = 50;
+
 	private int medicine_skill = 50;
 	private int technology_skill = 50;
 	private int ingenuity_skill = 50;

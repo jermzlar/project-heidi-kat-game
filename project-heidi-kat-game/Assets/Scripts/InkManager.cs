@@ -20,6 +20,9 @@ public class InkManager : MonoBehaviour
 	private DialogueChoices dialogueChoices = null;
 
 	[SerializeField]
+	private GlobalVariables globalVariables = null;
+
+	[SerializeField]
 	private Text conversation = null;
 
 	private bool clickToContinue = false;
@@ -53,6 +56,7 @@ public class InkManager : MonoBehaviour
 
 		// Remove all the UI on screen
 		dialogueChoices.RemoveAllButtons();
+		globalVariables.refreshAll();
 
 		string dialogueText = conversation.text;
 		// Read all the content until we can't continue any more
@@ -94,15 +98,20 @@ public class InkManager : MonoBehaviour
 		else
 		{
 			if (!story.canContinue)
-			{ 
-			dialogueChoices.RestartButton("End of story.\nRestart?");
-			dialogueChoices.Resize();
+			{
+				dialogueChoices.RestartButton("End of story.\nRestart?");
+				dialogueChoices.Resize();
 			}
 			else
-            {
-				clickToContinue = true;
+			{
+				if (dialogueText == "")
+					RefreshView();
+				else
+				{ 
+					clickToContinue = true;
 				if (dialogueChoices.panelAlpha)
 					dialogueChoices.ToggleDialogueChoice();
+				}
             }
 		}
 	}
