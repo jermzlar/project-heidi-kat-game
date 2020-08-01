@@ -6,8 +6,11 @@ using UnityEngine;
 public class GlobalVariables : MonoBehaviour
 {
     private string player_name = "Butts";
+    [SerializeField]
     private string whos_talking = "player";
-	private int combat_skill = 50;
+	
+    [SerializeField]
+    private int combat_skill = 50;
 
 	private int medicine_skill = 50;
 	private int technology_skill = 50;

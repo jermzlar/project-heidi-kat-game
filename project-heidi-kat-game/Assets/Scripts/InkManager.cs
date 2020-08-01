@@ -28,6 +28,8 @@ public class InkManager : MonoBehaviour
 	[SerializeField]
 	private MainMenu mainMenu = null;
 
+	public bool stopClick = false;
+
 	private bool clickToContinue = false;
 	private bool clearText = false;
 	public static event Action<Story> OnCreateStory;
@@ -59,13 +61,14 @@ public class InkManager : MonoBehaviour
 
 		// Remove all the UI on screen
 		dialogueChoices.RemoveAllButtons();
-		globalVariables.refreshAll();
+		
 
 		string dialogueText = conversation.text;
 		// Read all the content until we can't continue any more
 		if (story.canContinue) {
 			// Continue gets the next line of the story
 			string text = story.Continue ();
+			globalVariables.refreshAll();
 			// This removes any white space from the text.
 			text = text.Trim();
 			// Display the text on screen!
@@ -138,7 +141,7 @@ public class InkManager : MonoBehaviour
 
     private void Update()
     {
-        if (clickToContinue && !mainMenu.isMenuOpen)
+        if (clickToContinue && !mainMenu.isMenuOpen && !stopClick)
 			if(Input.GetMouseButtonDown(0))
             {
 				clickToContinue = false;
