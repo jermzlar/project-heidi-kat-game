@@ -23,6 +23,9 @@ public class InkManager : MonoBehaviour
 	private GlobalVariables globalVariables = null;
 
 	[SerializeField]
+	private CharacterManager characterManager = null;
+
+	[SerializeField]
 	private Text conversation = null;
 
 	[SerializeField]
@@ -35,7 +38,14 @@ public class InkManager : MonoBehaviour
 	public static event Action<Story> OnCreateStory;
     void Start () {
 		StartStory();
+		story.ObserveVariable("whos_talking", (string varName, object newValue) =>
+		{ SetDisplayName((string)newValue); });
 	}
+
+	private void SetDisplayName(string name)
+    {
+		characterManager.DisplayName(name);
+    }
 
 	// Creates a new Story object with the compiled story which we can then play!
 	public void StartStory () {
@@ -69,6 +79,8 @@ public class InkManager : MonoBehaviour
 			// Continue gets the next line of the story
 			string text = story.Continue ();
 			globalVariables.refreshAll();
+			//string name = globalVariables.getWhosTalking();
+			//characterManager.DisplayName(name);
 			// This removes any white space from the text.
 			text = text.Trim();
 			// Display the text on screen!

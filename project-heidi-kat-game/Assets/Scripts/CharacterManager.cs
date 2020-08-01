@@ -16,7 +16,11 @@ public class CharacterManager : MonoBehaviour
     private List<Sprite> sprites = null;
 
     [SerializeField]
+    private GlobalVariables globalVariables = null;
+
+    [SerializeField]
     private Transform nameBox = null;
+    [SerializeField]
     private CanvasGroup nameBoxCanvasGroup = null;
     private Text nameText = null;
 
@@ -31,9 +35,30 @@ public class CharacterManager : MonoBehaviour
         if (toggle)
         {
             nameBoxCanvasGroup.alpha = 1;
+            
         }
         else
             nameBoxCanvasGroup.alpha = 0;
+    }
+
+    public void DisplayName(string name)
+    {
+        if (string.Equals(name,"nobody"))
+        {
+            ToggleNamePlate(false);
+        }
+        else if (string.Equals(name,"mc"))
+        {
+            ToggleNamePlate(true);
+            nameText.text = globalVariables.getPlayerName();
+
+        }
+        else
+        {
+            ToggleNamePlate(true);
+            nameText.text = name;
+        }
+
     }
 
     public void Resize(float size)
