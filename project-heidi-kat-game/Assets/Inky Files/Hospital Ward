@@ -4,14 +4,18 @@
 
 == enter_hospital_wsunday ==
 ~background = "generic_station"
+~whos_talking = "nobody"
 It's some time before you're back in the dim red emergency lighting of the station, having exited the tunnel and come out to the station nearest the medical and science wings.
 
+~whos_talking = "nobody"
 You haven't seen any more of the creatures you came across inside the tunnels which you are quite thankful for, considering the way they made you feel.
 
+~whos_talking = "nobody"
 The two of you climb onto the platform and take the right exit from the station towards the medical wing.
 
 ~background = "hospital"
 
+~whos_talking = "nobody"
 The entry doors to the hospital are automatic and should be closed, and yet they are wide open. One of them appears to be stuck as it attempts to slide back and forth over the track.
 
 ~whos_talking = "sunday"
@@ -19,26 +23,40 @@ The entry doors to the hospital are automatic and should be closed, and yet they
 "Don't think there's anyone here," Sunday remarks as you pass through into the lobby.
 
 {intro.doctor or intro.combat_medic or intro.unconventional_medic or intro.medicine:
+~whos_talking = "mc"
 "It's fine, I'll be able to clean and bandage my head myself," you say.
 
 -else:
+~whos_talking = "mc"
 "It's fine, we'll figure something out," you say.
 }
 
+~whos_talking = "nobody"
 You continue past the lobby into the emergency room, where you set about finding some spare cloth to wash the blood off. You do this at one of the sinks, and Sunday posts up on one of the emergency room beds as she waits.
 Once you've cleaned yourself off you look in the mirror to inspect the wound.
--> doctor_patchup
+{intro.doctor:
+->doctor_patchup
+}
+{intro.combat_medic or intro.unconventional_medic or intro.medicine:
+-> medicine_patchup
+}
+{not intro.doctor or intro.combat_medic or intro.unconventional_medic or intro.medicine:
+-> nondoctor_patchup
+}
 
-= doctor_patchup
+= medicine_patchup
+~whos_talking = "nobody"
 <> It'll need a few stitches, but it's not as bad as it appears.
 
-Having worked here for the last three months, it takes no time at all for you to locate the necessary supplies, which you set up on a tray near the mirror before getting to work.
+~whos_talking = "nobody"
+It doesn't take you very long to locate the necessary supplies, which you set up on a tray near the mirror before getting to work.
 
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
-"I guess this is where you worked?" Sunday asks after a while.
+"I guess you've done this before?" Sunday asks after a while.
 
-"It is," you say through clenched teeth as you pull the needle through your skin.
+~whos_talking = "mc"
+"Yes," you say through clenched teeth as you pull the needle through your skin.
 
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
@@ -46,6 +64,7 @@ Having worked here for the last three months, it takes no time at all for you to
 
 {intro.combat_medic:
 
+~whos_talking = "mc"
 "I was a combat medic," you reply. 
 
 ~whos_talking = "sunday"
@@ -58,6 +77,8 @@ Having worked here for the last three months, it takes no time at all for you to
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "Wow. Peregrine huh? You must have some interesting stories, then," Sunday says.
+
+~whos_talking = "nobody"
 You nod. -> history_doctor
 *(jenusian_terran) "Yes, I served under Commander Haelen Sturn[."] in the Systems Coalition from '83 to '87," you explain as you finish the last stitch on your head and knot it off.
 ~logical_creative -= 10
@@ -65,6 +86,7 @@ You nod. -> history_doctor
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "Wow. Sturn, huh? He was a tactical genius," Sunday says.-> history_doctor
+~whos_talking = "nobody"
 You nod.
 
 -else:
@@ -78,8 +100,37 @@ You nod.
 ~logical_creative -= 10
 ~technology_skill += 5
 "It was safe and it paid well."
--> history_doctor
+->history_doctor
 }
+
+= doctor_patchup
+~whos_talking = "nobody"
+<> It'll need a few stitches, but it's not as bad as it appears.
+
+Having worked here for the last three months, it takes no time at all for you to locate the necessary supplies, which you set up on a tray near the mirror before getting to work.
+
+~whos_talking = "sunday"
+~character_a = "Sunday"
+"I guess this is where you worked?" Sunday asks after a while.
+
+~whos_talking = "mc"
+"It is," you say through clenched teeth as you pull the needle through your skin.
+
+~whos_talking = "sunday"
+~character_a = "Sunday"
+"What did you do before coming here?"
+
+* (charity_doctor) "I worked with Physician's Accord to help provide medical care access to outposts on third-worlds[."]," you explain as you finish the last stitch on your head and knot it off. <>
+~logical_creative += 10
+~ingenuity_skill += 5
+"You have to get pretty creative when you're in some backwater frontier town with a quarter of the supplies available to Coreworld doctors and twice the patients."
+-> history_doctor
+*(homeworld_doctor) "I worked as one of the top surgeons of the Coreworld[."]," you explain as you finish the last stitch on your head and knot it off. <>
+~logical_creative -= 10
+~technology_skill += 5
+"It was safe and it paid well."
+-> history_doctor
+
 
 = history_doctor
 ~whos_talking = "sunday"
@@ -111,6 +162,7 @@ You nod.
 = wrapup
 
 {intro.doctor or intro.combat_medic or intro.unconventional_medic or intro.medicine:
+~whos_talking = "nobody"
 You finish up and turn away from the mirror, holding your arms out wide to Sunday.
 
 -else:
@@ -121,6 +173,7 @@ You finish up and turn away from the mirror, holding your arms out wide to Sunda
 Sunday finishes up and sets the gauze down, surveying her work.
 }
 
+~whos_talking = "mc"
 "Better?" you ask.
 
 ~whos_talking = "sunday"
@@ -133,14 +186,17 @@ Sunday finishes up and sets the gauze down, surveying her work.
 ~rel_sunday += 5
 She rolls her eyes and laughs.
 *"Pot calling the kettle black[."], don't you think?" you quip.
+~whos_talking = "nobody"
 She gives a look of mock-offense.
 
+~whos_talking = "nobody"
 -Sunday jumps up from the hospital bed and dusts herself off.
 
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "Off to the lab, then?" she says.
 
+~whos_talking = "nobody"
 You nod and follow her out.
 
 -> MNC_lin
@@ -152,22 +208,27 @@ You nod and follow her out.
 ~character_a = "Sunday"
 "Do you even know what you're doing?" Sunday asks as she watches you from the bed.
 
+~whos_talking = "mc"
 "Not really," you admit, setting the supplies on a tray near the sink.
 
+~whos_talking = "nobody"
 You thread the needle and lift it up to your forehead, hovering there for a moment. 
 
+~whos_talking = "mc"
 "It's just like sewing, right? Except it's skin, not fabric," you say outloud, more to yourself than to present company.
 
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "You're hopeless. Come here," Sunday says, ushering you over to the bed until you take a seat there.
 
+~whos_talking = "nobody"
 She plucks the needle from you hands and surveys your wound carefully.
 
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "This isn't going to feel great," she warns you.
 
+~whos_talking = "nobody"
 You wince as she sticks you with the needle and begins stitching the gash closed.
 
 ~whos_talking = "sunday"
@@ -175,6 +236,7 @@ You wince as she sticks you with the needle and begins stitching the gash closed
 "What did you do here? I mean, before all this," Sunday asks after a moment, probably trying to distract you.
 
 {intro.xenolinguist:
+~whos_talking = "mc"
 "I was a translator at the docks," you respond through gritted teeth.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
@@ -182,6 +244,7 @@ You wince as she sticks you with the needle and begins stitching the gash closed
 }
 
 {intro.scientist:
+~whos_talking = "mc"
 "I was a scientist in the laboratory," you respond through gritted teeth.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
@@ -190,6 +253,7 @@ You glare slightly, though you know she probably isn't serious.
 }
 
 {intro.security:
+~whos_talking = "mc"
 "I was a security officer on the station," you respond through gritted teeth.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
@@ -197,6 +261,7 @@ You glare slightly, though you know she probably isn't serious.
 }
 
 {intro.technician:
+~whos_talking = "mc"
 "I was a technician in operations," you respond through gritted teeth.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
@@ -204,6 +269,7 @@ You glare slightly, though you know she probably isn't serious.
 You glare slightly, though you know she probably isn't serious.
 }
 
+~whos_talking = "nobody"
 Sunday closes off and knots the final stitch, then reaches for the gauze.
 
 ~whos_talking = "sunday"

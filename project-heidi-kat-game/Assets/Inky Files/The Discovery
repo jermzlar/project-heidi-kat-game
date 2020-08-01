@@ -1,7 +1,9 @@
 == the_discovery ==
 ~background = "laboratory_zoomin"
+~whos_talking = "nobody"
 You and Sunday enter the room adjacent to the laboratory. The lights here, like everywhere else on the station, are the dim green emergency lights that flicker periodically. There are about five computers still working here, each looking very similarly perched on top of identical desks. Of the other three inoperable computers, one has a cracked screen, one has collided with the floor, and one appears to be smoking faintly. {intro.scientist: You are slightly pained at the sight of the data room, having been previously regaled by fellow scientists about how many years it took each of them to convince Elysium to grant funding for various equipment replacements and upgrades.}
 
+~whos_talking = "mc"
 "What did Lin mean when they said we'd both find what we're looking for in here?" you ask Sunday.
 
 ~whos_talking = "sunday"
@@ -17,18 +19,22 @@ You and Sunday enter the room adjacent to the laboratory. The lights here, like 
 ~character_a = "Sunday"
 "Not if I can help it," she replies{rel_sunday >65:, then adds, "I'm looking out for you, you know."|.}
 
+~whos_talking = "nobody"
 -The two of you fall silent as Sunday sets about searching the room. She, for her part, seems to know exactly where she's going as she heads towards a desk at the far corner with a computer. She sits and almost immediately begins typing and clicking furiously.
 
 You likewise seat yourself at one of the desks and begin to enter your station log-in information. <>
 
-{intro.security or intro.technician or intro.scientist: With your credentials, you should have no trouble authorizing shuttle departure from here.}
+{intro.security or intro.technician or intro.scientist:
+~whos_talking = "nobody"
+With your credentials, you should have no trouble authorizing shuttle departure from here.
+}
 {intro.doctor or intro.xenolinguist:
+~whos_talking = "nobody"
 With your credentials, you're not entirely sure you'll be able to authorize shuttle departure from here.
 As though she read your mind, Sunday calls for your attention and tells you hers, adding, <>
-~whos_talking = "sunday"
-~character_a = "Sunday"
 "You'll need that to authorize departure."
 } <>
+~whos_talking = "nobody"
 Upon signing on to the station hub, it takes you a moment to find the command controls you're looking for. 
 
 TODO: add different formatting via CSS for computer text
@@ -40,15 +46,19 @@ TODO: add different formatting via CSS for computer text
 *[Select global authorization controls for short-range shuttle bay.] -> departure_authorization
 
 = departure_authorization
+~whos_talking = "nobody"
 You are required to enter {intro.doctor or intro.xenolinguist: Sunday's|your} crendetials several more times as you navigate authorizing departures, but the relatively straightfoward process is finished in a few minutes.
 
+~whos_talking = "mc"
 "Okay, I think we're good to go," you say triumphantly to Sunday.
 
+~whos_talking = "nobody"
 You glance back at the screen, and something catches your eye.
 
 *There's a folder named "Jenusian Export Logs" here... -> export_logs
 
 = export_logs
+~whos_talking = "nobody"
 which is strange, considering the Jenusians have refused the majority of exports from Elysium since the war in '83. What could the company possibly be trading to them?
 
 You open the folder and a long list of files appears, each with a syntax that includes what appears to be a person's name in addition to a recent date. Some of these names look familiar.
@@ -70,6 +80,7 @@ It's a moment before you realize she has come up behind you as you hear her murm
 *[Confront Sunday peacefully.] -> peaceful_confront
 
 = physical_confront
+~whos_talking = "nobody"
 You only have a few moments to react. In one swift move you jump to your feet and turn to face Sunday, holding your fists up in preparation for a fight. Sunday draws her weapon and immediately trains it on you, something you hadn't really considered. It appears you've brought your fists to a light-gun fight.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
@@ -84,11 +95,13 @@ You only have a few moments to react. In one swift move you jump to your feet an
 ~character_a = "Sunday"
 "I did," Sunday replies solemnly.
 
+~whos_talking = "nobody"
 She drops her pistol to her side. You maintain the pretense of a fighting stance for a moment longer, but it becomes apparent that she has no intention of doing you any harm--at least for the moment.
 --> confront_wrapup
 
 = peaceful_confront
 
+~whos_talking = "nobody"
 You stand from the desk and turn to face Sunday. You motion to the computer, where you still have the shipping manifests pulled up.
 
 *"I know what Elysium is doing[."]," you say, trying to hold the accusation from seeping into your voice.
@@ -104,20 +117,24 @@ You stand from the desk and turn to face Sunday. You motion to the computer, whe
 
 = confront_wrapup
 
+~whos_talking = "mc"
 "How could you let this happen?"
 
+~whos_talking = "nobody"
 The slightest hint of regret crosses her face.
 
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "I wasn't entirely honest with you when I told you I work for Elysium," she explains.
 
+~whos_talking = "mc"
 "What do you mean? You don't work for them?" you ask.
 
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "No, I do technically work for them, but..."
 
+~whos_talking = "nobody"
 Sunday seems to hesitate.
 
 *[Try to convince her she can trust you.] -> convince_sunday
@@ -128,15 +145,19 @@ Sunday seems to hesitate.
 
 = convince_sunday
 {rel_sunday >= 80 or charm_skill >= 65 and rel_sunday >= 65:
+~whos_talking = "mc"
 "Sunday, come on, you can trust me," you say. "We've been through enough together, haven't we?"
+~whos_talking = "nobody"
 She bites her lip, still uncertain, but she finally nods.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "I was just trying to keep you out of trouble, but it looks like you've got yourself into it anyway," Sunday sighs. "All right, very well, {player_name}. I suppose I can tell you. My position at Elysium is undercover, you see. In reality I work for an organization known as the Moth Syndicate."
+~whos_talking = "mc"
 "Never heard of them," you say, not quite convinced.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "Well you wouldn't have, {intro.female: smart aleck}{intro.male or intro.nonbinary: wise ass}," Sunday says, a bit short with you. "We're a shadow organization operating on the edges of society. We don't exactly advertise our existence."
+~whos_talking = "mc"
 "And that's... somehow better than working for a shady corporation that disappears its employees?" you ask.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
@@ -158,7 +179,9 @@ She bites her lip, still uncertain, but she finally nods.
 }
 
 {charm_skill >= 65 or rel_sunday >= 65:
+~whos_talking = "mc"
 "Sunday, come on, you can trust me," you say. "We've been through enough together, haven't we?"
+~whos_talking = "nobody"
 She bites her lip, still uncertain, but she finally nods slightly.
 {rel_sunday >=65:
 ~whos_talking = "sunday"
@@ -168,6 +191,7 @@ She bites her lip, still uncertain, but she finally nods slightly.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "Very well, {player_name}. I suppose I can tell you a little bit about what's going on. My position at Elysium is undercover, you see. Truthfully I work for a... secret organization, let's call them."
+~whos_talking = "mc"
 "Who?" you prompt.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
@@ -188,7 +212,9 @@ She bites her lip, still uncertain, but she finally nods slightly.
 
 }
 {charm_skill < 65 and rel_sunday < 65:
+~whos_talking = "mc"
 "Sunday, come on, you can trust me," you say, but it's clear you don't really mean it. 
+~whos_talking = "nobody"
 Sunday shakes her head and sighs.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
@@ -215,15 +241,19 @@ You open your mouth to protest, but she holds up a hand to silence you.
 = logic_sunday
 
 {rel_sunday >= 80 or logical_creative <= 35 and rel_sunday >= 65:
+~whos_talking = "mc"
 "Sunday, I already know more than I should. You can tell me," you say.
+~whos_talking = "nobody"
 She bites her lip, still uncertain, but she finally nods.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "I was just trying to keep you out of trouble, but it looks like you've got yourself into it anyway," Sunday sighs. "All right, very well, {player_name}. I suppose I can tell you. My position at Elysium is undercover, you see. In reality I work for an organization known as the Moth Syndicate."
+~whos_talking = "mc"
 "Never heard of them," you say, not quite convinced.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "Well you wouldn't have, {intro.female: smart aleck}{intro.male or intro.nonbinary: wise ass}," Sunday says, a bit short with you. "We're a shadow organization operating on the edges of society. We don't exactly advertise our existence."
+~whos_talking = "mc"
 "And that's... somehow better than working for a shady corporation that disappears its employees?" you ask
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
@@ -245,7 +275,9 @@ She bites her lip, still uncertain, but she finally nods.
 }
 
 {logical_creative <= 35 or rel_sunday >= 65:
+~whos_talking = "mc"
 "Sunday, I already know more than I should. You can tell me," you say.
+~whos_talking = "nobody"
 She bites her lip, still uncertain, but she finally nods slightly.
 {rel_sunday >=65:
 ~whos_talking = "sunday"
@@ -255,6 +287,7 @@ She bites her lip, still uncertain, but she finally nods slightly.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "Very well, {player_name}. I suppose I can tell you a little bit about what's going on. My position at Elysium is undercover, you see. Truthfully I work for a... secret organization, let's call them."
+~whos_talking = "mc"
 "Who?" you prompt.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
@@ -275,7 +308,9 @@ She bites her lip, still uncertain, but she finally nods slightly.
 
 }
 {logical_creative > 35 and rel_sunday < 65:
+~whos_talking = "mc"
 "Sunday, I already know more than I should. You can tell me," you say.
+~whos_talking = "nobody"
 Sunday shakes her head and sighs.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
@@ -303,15 +338,19 @@ You open your mouth to protest, but she holds up a hand to silence you.
 = help_sunday
 
 {rel_sunday >= 80 and not intro.get_phat_loots or compassion_selfserve <= 35 and rel_sunday >= 65 and not intro.get_phat_loots:
+~whos_talking = "mc"
 "Sunday, I want to help. If you tell me everything, I'll be better equipped to do that," you say.
+~whos_talking = "nobody"
 She bites her lip, still uncertain, but she finally nods.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "I was just trying to keep you out of trouble, but it looks like you've got yourself into it anyway," Sunday sighs. "All right, very well, {player_name}. I suppose I can tell you. My position at Elysium is undercover, you see. In reality I work for an organization known as the Moth Syndicate."
+~whos_talking = "mc"
 "Never heard of them," you say, not quite convinced.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "Well you wouldn't have, {intro.female: smart aleck}{intro.male or intro.nonbinary: wise ass}," Sunday says, a bit short with you. "We're a shadow organization operating on the edges of society. We don't exactly advertise our existence."
+~whos_talking = "mc"
 "And that's... somehow better than working for a shady corporation that disappears its employees?" you ask.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
@@ -333,7 +372,9 @@ She bites her lip, still uncertain, but she finally nods.
 }
 
 {compassion_selfserve <= 35 and rel_sunday < 80 and not intro.get_phat_loots or rel_sunday >= 65 and rel_sunday < 80 and not intro.get_phat_loots:
+~whos_talking = "mc"
 "Sunday, I want to help. If you tell me everything, I'll be better equipped to do that," you say.
+~whos_talking = "nobody"
 She bites her lip, still uncertain, but she finally nods slightly.
 {rel_sunday >=65:
 ~whos_talking = "sunday"
@@ -343,6 +384,7 @@ She bites her lip, still uncertain, but she finally nods slightly.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "Very well, {player_name}. I suppose I can tell you a little bit about what's going on. My position at Elysium is undercover, you see. Truthfully I work for a... secret organization, let's call them."
+~whos_talking = "mc"
 "Who?" you prompt.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
@@ -363,7 +405,9 @@ She bites her lip, still uncertain, but she finally nods slightly.
 
 }
 {compassion_selfserve > 35 and rel_sunday < 65 or intro.get_phat_loots:
+~whos_talking = "mc"
 "Sunday, I want to help. If you tell me everything, I'll be better equipped to do that," you say, but it's clear you don't really mean it.
+~whos_talking = "nobody"
 Sunday shakes her head and sighs.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
@@ -387,54 +431,70 @@ You open your mouth to protest, but she holds up a hand to silence you.
 
 
 = dont_believe
+~whos_talking = "nobody"
 You meet her eyes for a moment, then look away with a shake of your head.
 
+~whos_talking = "mc"
 "I'm sorry, Sunday, but I can't accept that. You're lying."
 
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "That's it, then?" she says. "I guess we go our separate ways now."
 
+~whos_talking = "mc"
 "I guess so," you reply.
 
 ~background = "laboratory"
-
+~whos_talking = "nobody"
 The two of you exit the data room back into the laboratory. Sunday doesn't seem interested in sticking around; she exits almost immediately and without a goodbye to you or the android.
 
 -> talking_to_lin
 
 = believe
+~whos_talking = "nobody"
 You meet her eyes for a moment, then nod.
 
+~whos_talking = "mc"
 "All right, Sunday, I believe you."
 
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "That's it, then?" she says. "I guess we should get out of here."
 
+~whos_talking = "mc"
 "I guess so," you reply.
 
 ~background = "laboratory"
 
+~whos_talking = "nobody"
 The two of you exit the data room back into the laboratory. Though Sunday carries herself with her usual composure, you can tell she is relieved.
 
 -> talking_to_lin
 
 = talking_to_lin
 
+~whos_talking = "nobody"
 Lin walks up beside you.
 
+~whos_talking = "lin"
 "I see you both found what you were looking for," they say.
 
 {intro.get_phat_loots and came_from (->dont_believe):
+~whos_talking = "mc"
 "Actually, about that..." you say, glancing over at them. "I've authorized departures for short-range shuttles, but I'm still keen on starting my new life ahead of the game once I get out of here, if you know what I mean."
+~whos_talking = "lin"
+~character_b = "lin"
 "Yes, I can intuit that you are still interested in material gain," Lin says. "Rest assured that I possess many multitudes of delicate data and information that I am sure we could find a suitably generous buyer for--once we are out of here?"
  }
  {not intro.get_phat_loots and came_from (->dont_believe):
+ ~whos_talking = "mc"
  "Not sure she did," you reply. "It might be a problem after I get off Cassio."
  
+ ~whos_talking = "nobody"
  Lin considers this.
  
+ ~whos_talking = "lin"
+~character_b = "lin"
  "Perhaps I could be of assistance--once we are out of here?"
 }
 
@@ -443,15 +503,21 @@ Lin walks up beside you.
 ~character_a = "Sunday"
 "We did. Thank you for your assistance," Sunday says kindly.
 
+~whos_talking = "nobody"
 Lin considers this.
 
+~whos_talking = "lin"
+~character_b = "lin"
 "Perhaps I could be of more assistance--once we are out of here?"
 }
 
+~whos_talking = "nobody"
 -The uptick in the android's voice at the end indicates the question they are asking--whether they would be joining {came_from (->believe): the two of} you or not.
 
+ ~whos_talking = "mc"
 "I don't see why not," you say.
 
+~whos_talking = "nobody"
 Lin nods.
 
 After a moment you note that you are likely running out of time before the station's inevitable demise, and so {came_from (->believe): the three of you|the two of you} exit the laboratory without further discussion.
