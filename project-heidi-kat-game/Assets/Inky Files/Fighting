@@ -2,6 +2,8 @@
 
 = three_fight_begin
 
+~background = "tunnels"
+
 The three of you decide to take the maintenance tunnels once more in heading for the shuttle bay being as they are the quickest way about the station--regardless of the apparent habitation of vaguely human, body-snatching shadow monsters.
 
 As you enter a tunnel and consider the likelihood that you'll run into them again, a thought occurs to you.
@@ -9,6 +11,7 @@ As you enter a tunnel and consider the likelihood that you'll run into them agai
 "Sunday, are the body snatchers related to the disappearances of employees? I mean it makes sense, right? Have they been here the whole time? Are the shipping manifests--?"
 
 ~whos_talking = "sunday"
+~character_a = "Sunday"
 "I know you think you're on to something, but you're not," Sunday interrupts you. "The body snatchers are just a spot of bad luck on our part. They're scavenger aliens who prey on derelict stations and damaged ships. Most people in the system don't know about them because by the time they show up everyone's usually dead, and if you're not dead you almost certainly will be if it sees you."
 
 *"Does anyone know what they do with the bodies[?"] they collect?" you ask.
@@ -18,6 +21,7 @@ As you enter a tunnel and consider the likelihood that you'll run into them agai
 *"Why do they make me feel sick[?"], like I want to throw up in my head?" you ask, recalling the sensation of being near one.
 
 ~whos_talking = "sunday"
+~character_a = "Sunday"
 -"Most people don't even know they exist," Sunday replies. "The why and where and how of them is a mystery even to those who do know they exist."
 
 The three of you are silent for a while as you make your way through the tunnels.
@@ -26,26 +30,32 @@ The three of you are silent for a while as you make your way through the tunnels
 
 =two_fight_begin
 
+~background = "tunnels"
+
 You decide to take the maintenance tunnels once more in heading for the shuttle bay being as they are the quicket way about the station--regardless of the apparent habitation of vaguely human, body-snatching shadow monsters.
 
 As you enter a tunnel with Lin and consider the likelihood that you'll run into them again, a thought occurs to you.
 
 ~whos_talking = "lin"
+~character_b = "lin"
 "Lin, do you know about the body snatchers?" you ask.
 
 They do not reply right away, taking a minute to think, which in their mind must mean hundreds of thousands of calculations are being performed.
 
 ~whos_talking = "lin"
+~character_b = "lin"
 "Body snatchers. Yes, it took me a moment to discern what you were referring to. I presume you mean the creatures who have recently taken up residence amongst the very tunnels we traverse?"
 
 You nod.
 
 ~whos_talking = "lin"
+~character_b = "lin"
 "They are commonly referred to as bogeymen or ghouls among those who make their lives at the edges of the system, though the name they call themselves is unknown," Lin explains. "They are a species alien to you and, in fact, the system at large. Their primary motivation appears to be the collection of human and Jenusian bodies left behind on derelict ships and stations; however, upon seeing a live target they have been known to become extremely violent."
 
 "Huh. So do they have anything to do with the disappearance of Elysium employees?"
 
 ~whos_talking = "lin"
+~character_b = "lin"
 "Unfortunately, no. It is just our luck that they happen to be here," Lin says evenly.
 
 The two of you are silent for a while as you make your way through the tunnels.
@@ -61,29 +71,35 @@ The two of you are silent for a while as you make your way through the tunnels.
 You exchange a worried glance with Sunday.
 
 ~whos_talking = "sunday"
+~character_a = "Sunday"
 "We can hope they don't see us," she offers up.
 
 "What about your cloak thing?" you ask.
 
 ~whos_talking = "sunday"
+~character_a = "Sunday"
 "I can barely get it to extend over you, I can't fit all three of us in the field."
 
 You look to Lin desperately.
 
 ~whos_talking = "lin"
+~character_b = "lin"
 "I possess no such technology," they say unhelpfully.
 
 "Well, shit," you say, at a loss as the dragging noises grow louder.
 
 ~whos_talking = "sunday"
+~character_a = "Sunday"
 "Maybe the three of us will be able to take them on," Sunday says, though she doesn't sound entirely convinced.
 
 ~whos_talking = "lin"
+~character_b = "lin"
 "The odds of success are roughly one hundred thousand--" Lin begins.
 
 You shoot them an admonitory look.
 
 ~whos_talking = "lin"
+~character_b = "lin"
 "--that is to say, they are very, very small; nonetheless, the possibility still exists," they finish sheepishly.
 }
 
@@ -93,16 +109,19 @@ You exchange a glance with Lin.
 "That sounds like trouble," you say. "We hid from them last time. Sunday had a sort of invisible cloak thing. I don't suppose you've got something similar?"
 
 ~whos_talking = "lin"
+~character_b = "lin"
 "I possess no such technology," Lin says unhelpfully.
 
 "I guess we could get out of the way and hope they don't see us," you say, though you don't sound entirely convinced.
 
 ~whos_talking = "lin"
+~character_b = "lin"
 "The odds of that are roughly one hundred thousand--" Lin begins.
 
 You shoot them an admonitory look.
 
 ~whos_talking = "lin"
+~character_b = "lin"
 "--that is to say, they are very, very small; nonetheless, the possibility still exists," they finish sheepishly.
 }
 

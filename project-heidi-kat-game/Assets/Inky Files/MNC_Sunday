@@ -1,4 +1,5 @@
 == MNC_sunday ==
+~background = "security_station"
 You head in {not intro.security: what you believe to be} the direction of the security station. <>
 
 {not intro.security:
@@ -35,34 +36,42 @@ You crack the door open just a touch, looking through the tiny opening to take s
 {came_from (->enter_immediately):
 You open the door and have a few moments to take stock of the situation. There is a young woman standing in the far corner, apparently rifling through a security officer's desk.
 }
+~character_a = "Sunday"
 The woman stops abruptly and turns to look up at you, freezing. She appears to be waiting to see how you'll react.
 
 
 *"I don't think you're supposed to be doing that[."]," you say blithely.
 ~whos_talking = "sunday"
+~character_a = "Sunday"
 "Well, I don't think you're supposed to be back here either, sweetheart, so let's just promise not to tell on one another and call it even, okay?" the woman replies coolly.
 *"Are you allowed to be in here?"
 ~whos_talking = "sunday"
+~character_a = "Sunday"
 "I think the rules concerning who is allowed where went out the window with the initial explosion, don't you?" the woman replies coolly.
 
 -She returns her attention to the desk, pulling out one of the drawers and dumping its contents on the floor. She knocks on the bottom of the drawer rapidly, and you are about to address her again until she lets out a triumphant, "Aha!" She appears to remove a false bottom, reaching underneath and pulling out a small device.
 
 *"Find what you were looking for?" [] you ask.
 ~whos_talking = "sunday"
+~character_a = "Sunday"
 "I did, not that I think you're terribly invested in what I'm doing here," the woman responds.
 "And what are you doing here?"
 ~whos_talking = "sunday"
+~character_a = "Sunday"
 "That's classified information," she replies.
 *"I'm pretty sure that's classified information[."]," you remark to her.
 ~whos_talking = "sunday"
+~character_a = "Sunday"
 "It is, not that I think you're terribly invested in what's going on here," the woman responds.
 "And what is going on here?"
 ~whos_talking = "sunday"
+~character_a = "Sunday"
 "Now that's classified information," she replies.
 
 -The womans slips the small device she's recovered into one of the pockets on her jumpsuit, and then she surveys you seriously.
 
 ~whos_talking = "sunday"
+~character_a = "Sunday"
 "What's you name, sweetheart?" she asks.
 
 *"{player_name}."
@@ -71,10 +80,12 @@ The woman stops abruptly and turns to look up at you, freezing. She appears to b
 
 -{sour:
 ~whos_talking = "sunday"
+~character_a = "Sunday"
 "Whatever, {player_name}. You can call me Sunday. I don't know what your plan is exactly, but I don't suppose you'd want to join forces?"
 }
 -{not sour:
 ~whos_talking = "sunday"
+~character_a = "Sunday"
 "Very well, {player_name}. My name is Sunday. Sunday Lien. I'm not sure what your plan is exactly, but would you be interested in joining forces?"
 }
 
@@ -86,9 +97,11 @@ The woman stops abruptly and turns to look up at you, freezing. She appears to b
 ~communal_independent -= 10
 
 ~whos_talking = "sunday"
+~character_a = "Sunday"
 -"Splendid. Glad to have you on board," Sunday replies, and you can't tell if she's being sincere or not. You have a feeling that will be happening often with her.
 "Listen, if you coming along means--" you start, but she interrupts you.
 ~whos_talking = "sunday"
+~character_a = "Sunday"
 "Nevermind that, {sour: darling|sweetheart}. There is one more thing you should know. We have a fairly limited amount of time before the damage to Cassio compounds and causes what will be a decidedly volatile reaction," she says, crossing the room to you and coming to a halt at your side. "So, I suggest we get moving."
 
 {intro.help_scared_injured:
@@ -114,22 +127,26 @@ Sunday nods.
 
 {hospital_ward:
 ~whos_talking = "sunday"
+~character_a = "Sunday"
 "Well, first things first, if you want to <>
 {intro.get_tf_outta_here:
 get off this space junk, we'll need to hit the laboratory. That's the only place that still has working computers with station-wide access, and we'll need that access to authorize departure for the short-range shuttles."
 "Wait, why do we need to authorize departure for shuttles? The station is in a state of emergency, their departure should be top priority," you say suspiciously.
 Sunday fixes you with a pitying look.
 ~whos_talking = "sunday"
+~character_a = "Sunday"
 "The fewer questions you ask about that, the better," is all she says in response.
 }
 {intro.technician and intro.get_tf_outta_here:
 "Even so, what about Operations? I have authorized access," you say, indicating the small stitched label that reads "OPERATIONS" on your uniform.
 ~whos_talking = "sunday"
+~character_a = "Sunday"
 "Operations is toast, {sour: darling|sweetheart}. It's not much more than a scorched hole in the wall."
 "If you say so. <>
 }
 {intro.get_phat_loots:
 ~whos_talking = "sunday"
+~character_a = "Sunday"
 figure out where the expensive stuff is, we should hit the laboratory. It's one of the few places here still relatively intact, and I can guarantee there's a wealth of research there that certain people I'm acquainted with would pay not insignificant sums of credits to obtain."
 "<>
 }
@@ -139,19 +156,23 @@ figure out where the expensive stuff is, we should hit the laboratory. It's one 
 
 {intro.help_scared_injured:
 ~whos_talking = "sunday"
+~character_a = "Sunday"
 help whoever's left, we need to swing by the laboratory. That's the only place that still has working computers with station-wide access, and we'll need that access to authorize departure for the short-range shuttles."
 "Wait, why do we need to authorize departure for shuttles? The station is in a state of emergency, their departure should be top priority," you say suspiciously.
 Sunday fixes you with a pitying look.
 ~whos_talking = "sunday"
+~character_a = "Sunday"
 "The fewer questions you ask about that, the better," is all she says in response.
 "If you say so. <>
 }
 {intro.find_out_wha_happe:
 ~whos_talking = "sunday"
+~character_a = "Sunday"
 figure out what happened, we need to hit the laboratory. That's the only place that still has working computers with station-wide access, and we'll need that access to gather any pertinent information. We'll also need it to authorize departure for the short-range shuttles."
 "Wait, why do we need to authorize departure for shuttles? The station is in a state of emergency, their departure should be top priority," you say suspiciously.
 Sunday fixes you with a pitying look.
 ~whos_talking = "sunday"
+~character_a = "Sunday"
 "The fewer questions you ask about that, the better," is all she says in response.
 "If you say so. <>
 }
@@ -159,6 +180,7 @@ Sunday fixes you with a pitying look.
 
 We'll make for the lab, then, and on the way there you can tell me all about who you are, why you're here, and why it is I found you rifling through a security officer's desk," you respond.
 ~whos_talking = "sunday"
+~character_a = "Sunday"
 "Unlikely," Sunday quips as the two of you exit the offices.
 -> transitions.security_to_lab_or_hosp
 }
@@ -166,9 +188,11 @@ We'll make for the lab, then, and on the way there you can tell me all about who
 {not hospital_ward:
 Your vision blurs for a moment and you feel yourself almost stumble forward as Sunday catches you by the arm.
 ~whos_talking = "sunday"
+~character_a = "Sunday"
 "First things first, though, I think we need to get you to the hospital ward and have your head looked at," she says.
 "You're probably right. We'll head for the ward. {intro.doctor or intro.combat_medic or intro.unconventional_medic or intro.medicine: I'll be able to use the supplies there to patch myself up|Hopefully there will be someone there who can help}."
 ~whos_talking = "sunday"
+~character_a = "Sunday"
 "Let's hope so, because my skillset leans more towards the opposite of medicine and healing," Sunday quips as the two of you exit the offices.
 -> transitions.security_to_lab_or_hosp
 }
