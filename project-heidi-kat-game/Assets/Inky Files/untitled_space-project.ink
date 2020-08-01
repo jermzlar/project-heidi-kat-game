@@ -35,13 +35,16 @@ VAR optimist_pessimist = 50
 VAR whos_talking = "a butt"
 VAR character_a = "sunday"
 VAR character_b = "lin"
+VAR background = "background"
 
+~background = "space station"
 A space station in a distant galaxy.
 -> intro
 === function came_from(-> x) 
 	~ return TURNS_SINCE(x) == 0
 	
 == intro ==
+~background = "bedroom"
 You don't remember how it happened, nor do you know what caused it. All you know is that there was an explosion of great force, and now you are here, laying on the floor of your bedroom in your uniform with what feels like blood seeping out of your head.
 You try to think back to the last thing you can remember...
 Three months ago you were hired by Elysium, the system-wide corporation responsible for manufacturing everything from the coffee maker in your bedroom to the bio-weapons used in the Jenusian-Terran war of '83.
@@ -210,18 +213,18 @@ This is a golden opportunity that you don't want to miss. You won't be taking ad
 * (tech) [I have a knack for technology.]
 ~technology_skill += 15
 You're good with tech. You'll make this station talk and tell you {help_scared_injured: how you can help best}{get_tf_outta_here: the best way to get out of this mess}{find_out_wha_happe: exactly what happened}{get_phat_loots: where you can find the most valuable loot}.
-* (combat) [I'm extremely strong and have plenty of combat experience.] //++combat
-You're good in a fight. You'll take advantage of that so you can {help_scared_injured: protect people and get them to safety} {get_tf_outta_here: stop anyone who gets in the way of you leaving}{find_out_wha_happe: figure out what caused this and stop it from getting worse}{get_phat_loots: introduce anyone who gets in the way of my plan to my two fists}.
+* (combat) [I'm extremely strong and have plenty of combat experience.]
 ~combat_skill += 15
-* (medicine) [I'm very skilled in medicine.] //++medicine
-You've been formally trained in medicine, and you'll be able to {help_scared_injured: tend to those who have been injured at ground zero}{get_tf_outta_here: heal anyone you come across before you get out of here, and maybe they can offer help}{find_out_wha_happe: determine the cause of the explosion by examining the injuries of those at ground zero}{get_phat_loots: heal myself so I'll be better able to grab the expensive stuff and get out of here}.
+You're good in a fight. You'll take advantage of that so you can {help_scared_injured: protect people and get them to safety} {get_tf_outta_here: stop anyone who gets in the way of you leaving}{find_out_wha_happe: figure out what caused this and stop it from getting worse}{get_phat_loots: introduce anyone who gets in the way of my plan to my two fists}.
+* (medicine) [I'm very skilled in medicine.]
 ~medicine_skill += 15
-* (charm) [I've been known to be quite a charming person.] //++charm
-With your social aptitude you can {help_scared_injured: calm anyone who's experiencing emotional distress}{get_tf_outta_here: probably weasel your way onto a departing shuttle, if there are any left}{find_out_wha_happe or get_phat_loots: talk to the survivors and find out if anyone {find_out_wha_happe: knows anything about what happened}{get_phat_loots: has any valuable personal belongings I can convince them to part with}}.
+You've been formally trained in medicine, and you'll be able to {help_scared_injured: tend to those who have been injured at ground zero}{get_tf_outta_here: heal anyone you come across before you get out of here, and maybe they can offer help}{find_out_wha_happe: determine the cause of the explosion by examining the injuries of those at ground zero}{get_phat_loots: heal myself so I'll be better able to grab the expensive stuff and get out of here}.
+* (charm) [I've been known to be quite a charming person.]
 ~charm_skill += 15
-* (ingenuity) [I've been frequently described as a genius.] //++ingenuity
-Your intelligence will lead you to {help_scared_injured: solve any logistical issues with tending to those affected}{get_tf_outta_here: find the best way off of this station}{find_out_wha_happe: figure out what went wrong here, and maybe even how it can be prevented in the future}{get_phat_loots: profits beyond your wildest dreams, if you play your cards right.}
+With your social aptitude you can {help_scared_injured: calm anyone who's experiencing emotional distress}{get_tf_outta_here: probably weasel your way onto a departing shuttle, if there are any left}{find_out_wha_happe or get_phat_loots: talk to the survivors and find out if anyone {find_out_wha_happe: knows anything about what happened}{get_phat_loots: has any valuable personal belongings I can convince them to part with}}.
+* (ingenuity) [I've been frequently described as a genius.]
 ~ingenuity_skill +=15
+Your intelligence will lead you to {help_scared_injured: solve any logistical issues with tending to those affected}{get_tf_outta_here: find the best way off of this station}{find_out_wha_happe: figure out what went wrong here, and maybe even how it can be prevented in the future}{get_phat_loots: profits beyond your wildest dreams, if you play your cards right.}
 
 -Is there something else you're pretty good at?
 
