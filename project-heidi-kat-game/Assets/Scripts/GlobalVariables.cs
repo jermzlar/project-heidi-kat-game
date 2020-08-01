@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GlobalVariables : MonoBehaviour
 {
+    private string player_name = "Butts";
 	private int combat_skill = 50;
 	private int medicine_skill = 50;
 	private int technology_skill = 50;
@@ -171,20 +172,36 @@ public class GlobalVariables : MonoBehaviour
     	return (int)im.story.variablesState["optimist_pessimist"];
     }
 
-    public void refreshAll()
+    public void setAll()
     {
-    	getPlayerName();
-		getCombatSkill();
-		getMedicineSkill();
-		getTechnologySkill();
-		getIngenuitySkill();
-		getCharmSkill();
-		getRelSunday();
-		getRelLin();
-		getCompassionSelfserve();
-		getCommunalIndependent();
-		getLogicalCreative();
-		getOptimistPessimist();
+        setPlayerName(player_name);
+        setCombatSkill(combat_skill);
+        setMedicineSkill(medicine_skill);
+        setTechnologySkill(technology_skill);
+        setIngenuitySkill(ingenuity_skill);
+        setCharmSkill(charm_skill);
+        setRelSunday(rel_sunday);
+        setRelLin(rel_lin);
+        setCompassionSelfserve(compassion_selfserve);
+        setCommunalIndependent(communal_independent);
+        setLogicalCreative(logical_creative);
+        setOptimistPessimist(optimist_pessimist);
+
+    }
+    public void getAll()
+    {
+    	player_name = getPlayerName();
+		combat_skill = getCombatSkill();
+		medicine_skill = getMedicineSkill();
+		technology_skill = getTechnologySkill();
+		ingenuity_skill = getIngenuitySkill();
+		charm_skill = getCharmSkill();
+		rel_sunday = getRelSunday();
+		rel_lin = getRelLin();
+		compassion_selfserve = getCompassionSelfserve();
+		communal_independent = getCommunalIndependent();
+		logical_creative = getLogicalCreative();
+		optimist_pessimist = getOptimistPessimist();
     }
 
 	    void Update()
