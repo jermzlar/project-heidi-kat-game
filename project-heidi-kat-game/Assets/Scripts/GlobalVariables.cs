@@ -6,6 +6,7 @@ using UnityEngine;
 public class GlobalVariables : MonoBehaviour
 {
     private string player_name = "Butts";
+    private string whos_talking = "player";
 	private int combat_skill = 50;
 
 	private int medicine_skill = 50;
@@ -39,6 +40,18 @@ public class GlobalVariables : MonoBehaviour
     public string getPlayerName()
     {
     	return player_name;
+    }
+
+    public void setWhosTalking(string value)
+    {
+        if(value != null)
+        {
+            whos_talking = value;
+        }
+    }
+    public string getWhosTalking()
+    {
+        return whos_talking;
     }
 
 	public void setCombatSkill(int value)
@@ -176,6 +189,7 @@ public class GlobalVariables : MonoBehaviour
     public void refreshAll()
     {
         setPlayerName((string)im.story.variablesState["player_name"]);
+        setWhosTalking((string)im.story.variablesState["whos_talking"]);
         setCombatSkill((int)im.story.variablesState["combat_skill"]);
         setMedicineSkill((int)im.story.variablesState["medicine_skill"]);
         setTechnologySkill((int)im.story.variablesState["technology_skill"]);
