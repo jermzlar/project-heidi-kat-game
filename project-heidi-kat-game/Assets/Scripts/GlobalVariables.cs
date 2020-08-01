@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,7 +14,7 @@ public class GlobalVariables : MonoBehaviour
 	private string gender_females = "female";
 
 	private int combat_skill = 50;
-	private nt medicine_skill = 50;
+	private int medicine_skill = 50;
 	private int technology_skill = 50;
 	private int ingenuity_skill = 50;
 	private int charm_skill = 50;
@@ -26,6 +27,9 @@ public class GlobalVariables : MonoBehaviour
 	private int logical_creative = 50;
 	private int optimist_pessimist = 50;
 
+	[SerializeField]
+	private InkManager im = null;
+
     void Start()
     {
         
@@ -35,211 +39,249 @@ public class GlobalVariables : MonoBehaviour
     {
     	if(value != null)
     	{
-    		player_name = value;
+    		im.story.variablesState["player_name"] = value;
     	}
     }
     public string getPlayerName()
     {
-    	return player_name;
+    	return (string)im.story.variablesState["player_name"];
     }
 
     public void setPronounShe(string value)
     {
     	if(value != null)
     	{
-    		pronoun_she = value;
+    		im.story.variablesState["pronoun_she"] = value;
     	}
     }
     public string getPronounShe()
     {
-    	return pronoun_she;
+    	return (string)im.story.variablesState["pronoun_she"];
     }
 
     public void setPronounHers(string value)
     {
     	if(value != null)
     	{
-    		pronoun_hers = value;
+    		im.story.variablesState["pronoun_hers"] = value;
     	}
     }
     public string getPronounHers()
     {
-    	return pronoun_hers;
+    	return (string)im.story.variablesState["pronoun_hers"];
     }
 
     public void setPronounHer(string value)
     {
     	if(value != null)
     	{
-    		pronoun_her = value;
+    		im.story.variablesState["pronoun_her"] = value;
     	}
     }
     public string getPronounHer()
     {
-    	return pronoun_her;
+    	return (string)im.story.variablesState["pronoun_her"];
     }
 
     public void setGenderPerson(string value)
     {
     	if(value != null)
     	{
-    		gender_person = value;
+    		im.story.variablesState["gender_person"] = value;
     	}
     }
     public string getGenderPerson()
     {
-    	return gender_person;
+    	return (string)im.story.variablesState["gender_person"];
     }
 
     public void setGenderFemales(string value)
     {
     	if(value != null)
     	{
-    		gender_females = value;
+    		im.story.variablesState["gender_females"] = value;
     	}
     }
     public string getGenderFemales()
     {
-    	return gender_females;
+    	return (string)im.story.variablesState["gender_females"];
     }
 
-	public void setCombatSkill(string value)
+	public void setCombatSkill(int value)
     {
     	if(value != null)
     	{
-    		combat_skill = value;
+    		im.story.variablesState["combat_skill"] = value;
     	}
     }
     public int getCombatSkill()
     {
-    	return combat_skill;
+    	return (int)im.story.variablesState["combat_skill"];
     }
 
-    public void setMedicineSkill(string value)
+    public void setMedicineSkill(int value)
     {
     	if(value != null)
     	{
-    		medicine_skill = value;
+    		im.story.variablesState["medicine_skill"] = value;
     	}
     }
     public int getMedicineSkill()
     {
-    	return medicine_skill;
+    	return (int)im.story.variablesState["medicine_skill"];
     }
 
-    public void setTechnologySkill(string value)
+    public void setTechnologySkill(int value)
     {
     	if(value != null)
     	{
-    		technology_skill = value;
+    		im.story.variablesState["technology_skill"] = value;
     	}
     }
     public int getTechnologySkill()
     {
-    	return technology_skill;
+    	return (int)im.story.variablesState["technology_skill"];
     }
 
-    public void setIngenuitySkill(string value)
+    public void setIngenuitySkill(int value)
     {
     	if(value != null)
     	{
-    		ingenuity_skill = value;
+    		im.story.variablesState["ingenuity_skill"] = value;
     	}
     }
     public int getIngenuitySkill()
     {
-    	return ingenuity_skill;
+    	return (int)im.story.variablesState["ingenuity_skill"];
     }
 
-    public void setCharmSkill(string value)
+    public void setCharmSkill(int value)
     {
     	if(value != null)
     	{
-    		charm_skill = value;
+    		im.story.variablesState["charm_skill"] = value;
     	}
     }
     public int getCharmSkill()
     {
-    	return charm_skill;
+    	return (int)im.story.variablesState["charm_skill"];
     }
 
-	public void setRelSunday(string value)
+	public void setRelSunday(int value)
     {
     	if(value != null)
     	{
-    		rel_sunday = value;
+    		im.story.variablesState["rel_sunday"] = value;
     	}
     }
     public int getRelSunday()
     {
-    	return rel_sunday;
+    	return (int)im.story.variablesState["rel_sunday"];
     }
 
-    public void setRelLin(string value)
+    public void setRelLin(int value)
     {
     	if(value != null)
     	{
-    		rel_lin = value;
+    		im.story.variablesState["rel_lin"] = value;
     	}
     }
     public int getRelLin()
     {
-    	return rel_lin;
+    	return (int)im.story.variablesState["rel_lin"];
     }
 
-    public void setCompassionSelfserve(string value)
+    public void setCompassionSelfserve(int value)
     {
     	if(value != null)
     	{
-    		compassion_selfserve = value;
+    		im.story.variablesState["compassion_selfserve"] = value;
     	}
     }
     public int getCompassionSelfserve()
     {
-    	return compassion_selfserve;
+    	return (int)im.story.variablesState["compassion_selfserve"];
     }
 
-    public void setCommunalIndependent(string value)
+    public void setCommunalIndependent(int value)
     {
     	if(value != null)
     	{
-    		communal_independent = value;
+    		im.story.variablesState["communal_independent"] = value;
     	}
     }
     public int getCommunalIndependent()
     {
-    	return communal_independent;
+    	return (int)im.story.variablesState["communal_independent"];
     }
 
-    public void setLogicalCreative(string value)
+    public void setLogicalCreative(int value)
     {
     	if(value != null)
     	{
-    		logical_creative = value;
-    	}
+    		im.story.variablesState["logical_creative"] = value;
+       	}
     }
     public int getLogicalCreative()
     {
-    	return logical_creative;
+    	return (int)im.story.variablesState["logical_creative"];
     }
 
-    public void setOptimistPessimist(string value)
+    public void setOptimistPessimist(int value)
     {
     	if(value != null)
     	{
-    		optimist_pessimist = value;
+    		im.story.variablesState["optimist_pessimist"] = value;
     	}
     }
     public int getOptimistPessimist()
     {
-    	return optimist_pessimist;
+    	return (int)im.story.variablesState["optimist_pessimist"];
     }
 
-
-
-
-    void Update()
+    public void refreshAll()
     {
-        
+    	getPlayerName();
+		getPronounShe();
+		getPronounHers();
+		getPronounHer();
+		getGenderPerson();
+		getGenderFemales();
+		getCombatSkill();
+		getMedicineSkill();
+		getTechnologySkill();
+		getIngenuitySkill();
+		getCharmSkill();
+		getRelSunday();
+		getRelLin();
+		getCompassionSelfserve();
+		getCommunalIndependent();
+		getLogicalCreative();
+		getOptimistPessimist();
     }
+
+
+
+
+/*
+    public int convertToInt(string value)
+    {
+    	int result = 0;
+    	try
+	       {
+	           result = int.Parse(value);
+	       }
+	       catch (Exception e)
+	       {
+	           Debug.LogException(e, this);
+	       }
+	    return result;
+    }*/
+	
+
+
+	    void Update()
+	    {
+	        
+	    }
 }
