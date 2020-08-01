@@ -6,21 +6,28 @@ You hope, but you also know that on the best of days the Chute isn't exactly top
 
 When you arrive at the nearest station, the state of it answers any questions you might have had as to whether it was a viable travel option, which is to say that is isn't.
 
+~whos_talking = "sunday"
 "I guess we're walking," Sunday says.
 
 "Or," you say suddenly, an idea sparking in your head, "Or... we could walk through the Chute tunnels."
 
+~whos_talking = "sunday"
 "That head wound must be worse than I thought; are you insane?" Sunday asks seriously.
 
     *"What? It's perfectly fine[."]," you say innocently. "Relatively safe."
+    ~whos_talking = "sunday"
     "Oh yes, relatively safe, except for the live track that snakes its way through the entire course that could electrocute us with 300,000 volts should we touch it," Sunday replies, her tone much peppier than it should be for a sentence that grim.
     *"Look, the trains obviously aren't using them[."]," you point out, motioning to the two passenger carts which have crashed, sandwiching a third.
+    ~whos_talking = "sunday"
     "The trains aren't, but... it's not..." she trails off vaguely.
     "What?"
+    ~whos_talking = "sunday"
     "Nothing," Sunday says, though you are unconvinced.
     *"Do you have any better ideas?"
+    ~whos_talking = "sunday"
     "I do have one," Sunday says.
     "Yeah?" you say when she isn't forthcoming.
+    ~whos_talking = "sunday"
     "How about we don't go through the dark, creepy, wrecked-by-disaster tunnels with a live track that can electrocute us with 300,000 volts of electricity should we touch it?"
     
 -You sigh and walk over to the left tunnel, stopping just before you squeeze in between the wall and the crashed passenger cart.
@@ -31,9 +38,11 @@ She crosses her arms obstinately.
 
     *"I could really use your help[."]; I don't know what I'm going to run into," you say.
     ~ rel_sunday += 10
+    ~whos_talking = "sunday"
     "Oh, alright," Sunday sighs as she marches over.
     *"Honestly, I don't care if you come or if you stay here to die[."]," you say. "No skin off my nose."
     ~ rel_sunday -= 15
+    ~whos_talking = "sunday"
     "Oh, well, in that case I'll be coming purely out of spite," Sunday remarks as she marches over.
     
 -The two of you slip into the dark space of the tunnel, shimmying and squeezing your way past the crashed passenger cart until you're free from its constriction. Beyond that it is quite dark, as the usual lights have gone out and it doesn't appear anyone had the forethought to put emergency lights inside the tunnels.
@@ -42,6 +51,7 @@ Sunday pulls out something that looks similar to a PDD, taps it a few times, and
 
 Ahead you can just make out a series of large, scorched holes in the sides of the tunnel, intermitently spaced out and continuing past the light.
 
+~whos_talking = "sunday"
 "If I recall correctly, they store the power generators for the Chute behind those walls. It looks like they've been damaged in the explosion. We probably don't want to be here when the next one goes," Sunday says.
 
 You nod, and the two of you begin to make your way through the tunnel as quickly and as carefully as possible.
@@ -52,32 +62,40 @@ You nod, and the two of you begin to make your way through the tunnel as quickly
 
 = sundays_response
 {intro.get_phat_loots:
+~whos_talking = "sunday"
 "Why do you care? You made it clear you're only concerned with material gain in this situation," Sunday says coolly.
 
 *"That's not entirely true[."]," you say, mock-hurt. "I also care about escaping this tin can with said material gain."
 ~rel_sunday -= 5
+~whos_talking = "sunday"
 "Well in that case, the less you know about what's going on, the more likely you are to get out of this with the majority of your limbs and as many stolen valuables as your remaining ones can carry," Sunday says pointedly.
 "That sure sounds like you've got something to hide."
 -> suddenly_body_snatchers
 *"Fair enough[."]," you say. "I was just curious is all."
-"Look," she says, stopping for a moment. "The less you know about what's going on, the more likely you are to get out of this place intact and with as much stolen wealth as your greasy little heart desires."
+~whos_talking = "sunday"
+"Look," she says, stopping for a moment. <>
 -> suddenly_body_snatchers
 *"Are you hiding something?"[] you ask suspiciously.
+~whos_talking = "sunday"
 "Look," she says, stopping for a moment.<>
 ->suddenly_body_snatchers
 -else:
+~whos_talking = "sunday"
 "{player_name}, I will be quite honest with you. I'm certain you have a great deal of questions, and I know you want to help, but the less you know about what's going on the better off you'll be," Sunday replies matter-of-factly. "If you want to be alive at the end of this, that is."
 
 *"Fine, I'll shut up[."]," you grumble.
+~whos_talking = "sunday"
 "Look," she says, stopping for a moment.<>
 -> suddenly_body_snatchers
 *"I don't care, if I can help I want to help[."]," you insist.
 ~rel_sunday +=5
+~whos_talking = "sunday"
 "Look," she says, stopping for a moment.<>
 -> suddenly_body_snatchers
 }
 
 = suddenly_body_snatchers
+~whos_talking = "sunday"
 "Everyone has something to hide. I'm just more up front about it. And this isn't just about me, this is the big leagues. I'm talking about knowing things that will affect the whole system. You really think you're ready for that?"
 Before you can answer, there comes a rattling sound from down the tunnel somewhere past the light. And then comes a loud hissing, a susurrous of several creatures breathing heavily at once. Finally, their voices travel down the tunnel as they speak in an alien language{intro.xenolinguist: that you don't recognize at all}. They sound like they're getting closer.
 
@@ -104,6 +122,7 @@ Before you can answer, there comes a rattling sound from down the tunnel somewhe
 ~rel_sunday +=5
 *"What are you doing??"[] you ask wildly.
 
+~whos_talking = "sunday"
 -"Shh!" she hushes you, putting a hand over your mouth.
 
 The unearthly noises of the creatures approaching you only grows. In the darkness it's impossible to make out more than their silhouettes. Sunday's reaction to them has you hoping they won't be able to see you.
@@ -116,16 +135,19 @@ It's a solid eight minutes before the noise of them finally fades into nothing, 
 ~rel_sunday += 5
 *"Why didn't they see us?"
 
+~whos_talking = "sunday"
 -"I'm fine, thanks for asking," she says{u_ok:.| icily.} "We don't technically know what they're called, but we've termed them 'body snatchers' for now. They couldn't see us because we were cloaked. Rest assured, their eyesight in the dark is incredibly good."
 
 *"Who's 'we?'"
 Sunday pushes forward without an answer, not waiting up for you.
 "Hey, I asked you a question," you say, jogging to catch up to her.
 *"Why do you call them 'body snatchers?'"
+~whos_talking = "sunday"
 "I'll give you one good guess," Sunday replies.
 "Okay, and why do you know about them, exactly?"
 *"I didn't even know technology like that existed[."]; what are you, some kind of secret agent?"
 
+~whos_talking = "sunday"
 -"I'm an operative for a special interests corporation, all right? Elysium, the one that owns this station," Sunday explains. "Now will you stop worrying about it and pay attention to where you're walking?"
 No sooner do the words leave her lips than you find your toe catching on a piece of debris. You stumble forward and nearly land on a metal beam resting on top of the live track, but Sunday catches your arm just in time.
 She gives you a meaningful look before the two of you continue on.

@@ -7,6 +7,7 @@ public class GlobalVariables : MonoBehaviour
 {
     private string player_name = "Butts";
 	private int combat_skill = 50;
+
 	private int medicine_skill = 50;
 	private int technology_skill = 50;
 	private int ingenuity_skill = 50;

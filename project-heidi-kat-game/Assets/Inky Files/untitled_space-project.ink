@@ -4,7 +4,6 @@ INCLUDE MNC_lin
 INCLUDE MNC_Sunday
 INCLUDE The Discovery
 INCLUDE Fighting
-INCLUDE css.style
 
 
 
@@ -33,6 +32,10 @@ VAR communal_independent = 50
 VAR logical_creative = 50
 VAR optimist_pessimist = 50
 
+VAR whos_talking = "a butt"
+VAR character_a = "sunday"
+VAR character_b = "lin"
+
 A space station in a distant galaxy.
 -> intro
 === function came_from(-> x) 
@@ -43,7 +46,7 @@ You don't remember how it happened, nor do you know what caused it. All you know
 You try to think back to the last thing you can remember...
 Three months ago you were hired by Elysium, the system-wide corporation responsible for manufacturing everything from the coffee maker in your bedroom to the bio-weapons used in the Jenusian-Terran war of '83.
 Upon your hiring you were assigned to one of the company's own space stations: 9068 Cassiopeiae II, or Cassio as it was more often referred to. Elysium owns and operates the station, or at least they do in theory. So far, from what you have seen, their oversight leaves much to be desired.
-What is it you do here?
+What is it you do here? 
 
 * (scientist) [I'm a scientist.]
 
