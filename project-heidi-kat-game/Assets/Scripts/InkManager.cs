@@ -25,6 +25,9 @@ public class InkManager : MonoBehaviour
 	[SerializeField]
 	private Text conversation = null;
 
+	[SerializeField]
+	private MainMenu mainMenu = null;
+
 	private bool clickToContinue = false;
 	private bool clearText = false;
 	public static event Action<Story> OnCreateStory;
@@ -135,7 +138,7 @@ public class InkManager : MonoBehaviour
 
     private void Update()
     {
-        if (clickToContinue)
+        if (clickToContinue && !mainMenu.isMenuOpen)
 			if(Input.GetMouseButtonDown(0))
             {
 				clickToContinue = false;
