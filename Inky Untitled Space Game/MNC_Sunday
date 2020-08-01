@@ -1,0 +1,155 @@
+== MNC_sunday ==
+You head in {not intro.security: what you believe to be} the direction of the security station. <>
+
+{not intro.security:
+You aren't entirely sure, as you've had little cause to visit it over the last three months of being stationed here. Periodically you check the station schematics in your PDD to be sure you're still on the right path.
+}
+The halls of Cassio are dimly lit by dim red emergency lighting. Scorch marks line some of the walls, and in places there are pieces of plasteel wall and ceiling sections precariously hanging. As you walk, you note that you see very few people. There is a body or two here and there, but not nearly as many as you would expect from a disaster like this. Did most people already get off the station? you wonder to yourself. How long was I out?
+You take a set of stairs down in almost total darkness, and at the bottom you come to the lobby of the security station. The lights here are flickering and the front desks are on their sides, their contents unceremoniously spilled out onto the floor.
+Beyond the desks lies the door to the offices. It's closed.
+There doesn't appear to be anyone here.
+* [Just wait. Someone will be here any minute.] -> wait
+* [Enter the office.] -> enter_office
+
+= wait
+You stand by the door to the offices, waiting patiently for {intro.security: fellow |}officers to appear.
+{intro.security:
+You glance at the overturned desk beside you. This was Lulah's desk. You wonder briefly if she is okay until your eyes fall on her lifeless body in the corner, covered in blood and missing part of her leg. Guess not.
+-else:
+You glance at the overturned desk beside you, and your eyes travel to the lifeless body in the corner beside it. A woman, covered in blood, missing part of her leg.
+}
+{not hospital_ward:
+A wave of dizziness rushes over you, and you place a hand on the adjacent wall to steady yourself. This head wound of yours likely needs some attention soon. You'd better be careful.
+}
+A sudden noise from behind the door drags your attention to the offices beyond. It sounds like someone is in there.
+* [Investigate.]
+You open the door and have a few moments to take stock of the situation. There is a young woman standing in the far corner, apparently rifling through a security officer's desk.
+-> enter_office
+* [Try to take a peak through a crack in the door.] -> peakin
+
+= peakin
+You crack the door open just a touch, looking through the tiny opening to take stock of the situation. There is a young woman standing in the far corner. She appears to be rifling through a security officer's desk. 
+-> enter_office
+
+= enter_office
+The woman stops abruptly and turns to look up at you, freezing. She appears to be waiting to see how you'll react.
+
+
+*"I don't think you're supposed to be doing that[."]," you say blithely.
+"Well, I don't think you're supposed to be back here either, sweetheart, so let's just promise not to tell on one another and call it even, okay?" the woman replies coolly.
+*"Are you allowed to be in here?"
+"I think the rules concerning who is allowed where went out the window with the initial explosion, don't you?" the woman replies coolly.
+
+-She returns her attention to the desk, pulling out one of the drawers and dumping its contents on the floor. She knocks on the bottom of the drawer rapidly, and you are about to address her again until she lets out a triumphant, "Aha!" She appears to remove a false bottom, reaching underneath and pulling out a small device.
+
+*"Find what you were looking for?" [] you ask.
+"I did, not that I think you're terribly invested in what I'm doing here," the woman responds.
+"And what are you doing here?"
+"That's classified information," she replies.
+*"I'm pretty sure that's classified information[."]," you remark to her.
+"It is, not that I think you're terribly invested in what's going on here," the woman responds.
+"And what is going on here?"
+"Now that's classified information," she replies.
+
+-The womans slips the small device she's recovered into one of the pockets on her jumpsuit, and then she surveys you seriously.
+
+"What's you name, sweetheart?" she asks.
+
+*"{player_name}."
+*(sour) "Definitely not sweetheart," you say sourly. "Call me {player_name} or nothing at all."
+~rel_sunday -=5
+
+-{sour:
+"Whatever, {player_name}. You can call me Sunday. I don't know what your plan is exactly, but I don't suppose you'd want to join forces?"
+}
+-{not sour:
+"Very well, {player_name}. My name is Sunday. Sunday Lien. I'm not sure what your plan is exactly, but would you be interested in joining forces?"
+}
+
+*"Fine, but I don't trust you[."]," you say suspiciously.
+~rel_sunday -= 10
+~communal_independent += 10
+*"That sounds like a good idea[."]," you say. "Maybe together we can {intro.help_scared_injured: help out those who need it}{intro.get_tf_outta_here: find a safe way off this mess}{intro.find_out_wha_happe: figure out who's responsible for this}{intro.get_phat_loots: take a bigger haul}."
+~rel_sunday += 10
+~communal_independent -= 10
+
+-"Splendid. Glad to have you on board," Sunday replies, and you can't tell if she's being sincere or not. You have a feeling that will be happening often with her.
+"Listen, if you coming along means--" you start, but she interrupts you.
+"Nevermind that, {sour: darling|sweetheart}. There is one more thing you should know. We have a fairly limited amount of time before the damage to Cassio compounds and causes what will be a decidedly volatile reaction," she says, crossing the room to you and coming to a halt at your side. "So, I suggest we get moving."
+
+{intro.help_scared_injured:
+"That means it's doubly important that we get as many people off this station with us as possible," you say emphatically.
+}
+{intro.get_tf_outta_here:
+"Our plan is still to get out of here; the only thing that changes is we're going to have to do it quickly. Or die," you say matter-of-factly.
+}
+{intro.find_out_wha_happe:
+"Which means we've only got a short time to gather evidence and figure out who did this," you say grimly.
+}
+{intro.get_phat_loots:
+"I guess that means we'll have to be quick about finding the valuables, then," you say spiritedly.
+}
+
+{intro.get_phat_loots:
+"So glad you have your priorities set right," Sunday mutters.
+You shrug.
+-else:
+Sunday nods.
+}
+
+{hospital_ward:
+"Well, first things first, if you want to <>
+{intro.get_tf_outta_here:
+get off this space junk, we'll need to hit the laboratory. That's the only place that still has working computers with station-wide access, and we'll need that access to authorize departure for the short-range shuttles."
+"Wait, why do we need to authorize departure for shuttles? The station is in a state of emergency, their departure should be top priority," you say suspiciously.
+Sunday fixes you with a pitying look.
+"The fewer questions you ask about that, the better," is all she says in response.
+}
+{intro.technician and intro.get_tf_outta_here:
+"Even so, what about Operations? I have authorized access," you say, indicating the small stitched label that reads "OPERATIONS" on your uniform.
+"Operations is toast, {sour: darling|sweetheart}. It's not much more than a scorched hole in the wall."
+"If you say so. <>
+}
+{intro.get_phat_loots:
+figure out where the expensive stuff is, we should hit the laboratory. It's one of the few places here still relatively intact, and I can guarantee there's a wealth of research there that certain people I'm acquainted with would pay not insignificant sums of credits to obtain."
+"<>
+}
+{intro.get_phat_loots and intro.scientist:
+"That I already know," you reply, indicating the small stitched label that reads "SCIENCE" on your uniform. "<>
+}
+
+{intro.help_scared_injured:
+help whoever's left, we need to swing by the laboratory. That's the only place that still has working computers with station-wide access, and we'll need that access to authorize departure for the short-range shuttles."
+"Wait, why do we need to authorize departure for shuttles? The station is in a state of emergency, their departure should be top priority," you say suspiciously.
+Sunday fixes you with a pitying look.
+"The fewer questions you ask about that, the better," is all she says in response.
+"If you say so. <>
+}
+{intro.find_out_wha_happe:
+figure out what happened, we need to hit the laboratory. That's the only place that still has working computers with station-wide access, and we'll need that access to gather any pertinent information. We'll also need it to authorize departure for the short-range shuttles."
+"Wait, why do we need to authorize departure for shuttles? The station is in a state of emergency, their departure should be top priority," you say suspiciously.
+Sunday fixes you with a pitying look.
+"The fewer questions you ask about that, the better," is all she says in response.
+"If you say so. <>
+}
+
+
+We'll make for the lab, then, and on the way there you can tell me all about who you are, why you're here, and why it is I found you rifling through a security officer's desk," you respond.
+"Unlikely," Sunday quips as the two of you exit the offices.
+-> transitions.security_to_lab_or_hosp
+}
+
+{not hospital_ward:
+Your vision blurs for a moment and you feel yourself almost stumble forward as Sunday catches you by the arm.
+"First things first, though, I think we need to get you to the hospital ward and have your head looked at," she says.
+"You're probably right. We'll head for the ward. {intro.doctor or intro.combat_medic or intro.unconventional_medic or intro.medicine: I'll be able to use the supplies there to patch myself up|Hopefully there will be someone there who can help}."
+"Let's hope so, because my skillset leans more towards the opposite of medicine and healing," Sunday quips as the two of you exit the offices.
+-> transitions.security_to_lab_or_hosp
+}
+
+
+
+
+
+
+-> END

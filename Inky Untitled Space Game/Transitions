@@ -1,0 +1,184 @@
+== transitions == 
+=security_to_lab_or_hosp
+You make your way to what's commonly referred to as the Chute: the shoddy, claustrophobic electric train transportation that is most often used by the maintenance workers on this space station. You hope it's still working, otherwise it will be a long walk to the hospital ward, and you don't know how much longer you can keep going.
+
+You hope, but you also know that on the best of days the Chute isn't exactly top of the line technology. It is commonly colloquially referred to as the "Shite."
+
+When you arrive at the nearest station, the state of it answers any questions you might have had as to whether it was a viable travel option, which is to say that is isn't.
+
+"I guess we're walking," Sunday says.
+
+"Or," you say suddenly, an idea sparking in your head, "Or... we could walk through the Chute tunnels."
+
+"That head wound must be worse than I thought; are you insane?" Sunday asks seriously.
+
+    *"What? It's perfectly fine[."]," you say innocently. "Relatively safe."
+    "Oh yes, relatively safe, except for the live track that snakes its way through the entire course that could electrocute us with 300,000 volts should we touch it," Sunday replies, her tone much peppier than it should be for a sentence that grim.
+    *"Look, the trains obviously aren't using them[."]," you point out, motioning to the two passenger carts which have crashed, sandwiching a third.
+    "The trains aren't, but... it's not..." she trails off vaguely.
+    "What?"
+    "Nothing," Sunday says, though you are unconvinced.
+    *"Do you have any better ideas?"
+    "I do have one," Sunday says.
+    "Yeah?" you say when she isn't forthcoming.
+    "How about we don't go through the dark, creepy, wrecked-by-disaster tunnels with a live track that can electrocute us with 300,000 volts of electricity should we touch it?"
+    
+-You sigh and walk over to the left tunnel, stopping just before you squeeze in between the wall and the crashed passenger cart.
+
+"Are you coming, Sunday?" you ask.
+
+She crosses her arms obstinately.
+
+    *"I could really use your help[."]; I don't know what I'm going to run into," you say.
+    ~ rel_sunday += 10
+    "Oh, alright," Sunday sighs as she marches over.
+    *"Honestly, I don't care if you come or if you stay here to die[."]," you say. "No skin off my nose."
+    ~ rel_sunday -= 15
+    "Oh, well, in that case I'll be coming purely out of spite," Sunday remarks as she marches over.
+    
+-The two of you slip into the dark space of the tunnel, shimmying and squeezing your way past the crashed passenger cart until you're free from its constriction. Beyond that it is quite dark, as the usual lights have gone out and it doesn't appear anyone had the forethought to put emergency lights inside the tunnels.
+
+Sunday pulls out something that looks similar to a PDD, taps it a few times, and bring up a flashlight of sorts on it. As the area around you lights up, you notice a lot of debris on the floor, and note you'll have to be especially careful about not coming into contact with any metal debris that is touching the live track.
+
+Ahead you can just make out a series of large, scorched holes in the sides of the tunnel, intermitently spaced out and continuing past the light.
+
+"If I recall correctly, they store the power generators for the Chute behind those walls. It looks like they've been damaged in the explosion. We probably don't want to be here when the next one goes," Sunday says.
+
+You nod, and the two of you begin to make your way through the tunnel as quickly and as carefully as possible.
+
+    *"So, what do you know about what happened?"[] you ask Sunday after a few minutes of silence. -> sundays_response
+    *"What is it you do, exactly, Sunday?"[] you ask after a few minutes of silence. ->sundays_response
+    *"Tell me why you were rifling around in a security officer's desk[."]," you say to Sunday after a few minutes of silence. ->sundays_response
+
+= sundays_response
+{intro.get_phat_loots:
+"Why do you care? You made it clear you're only concerned with material gain in this situation," Sunday says coolly.
+
+*"That's not entirely true[."]," you say, mock-hurt. "I also care about escaping this tin can with said material gain."
+~rel_sunday -= 5
+"Well in that case, the less you know about what's going on, the more likely you are to get out of this with the majority of your limbs and as many stolen valuables as your remaining ones can carry," Sunday says pointedly.
+"That sure sounds like you've got something to hide."
+-> suddenly_body_snatchers
+*"Fair enough[."]," you say. "I was just curious is all."
+"Look," she says, stopping for a moment. "The less you know about what's going on, the more likely you are to get out of this place intact and with as much stolen wealth as your greasy little heart desires."
+-> suddenly_body_snatchers
+*"Are you hiding something?"[] you ask suspiciously.
+"Look," she says, stopping for a moment.<>
+->suddenly_body_snatchers
+-else:
+"{player_name}, I will be quite honest with you. I'm certain you have a great deal of questions, and I know you want to help, but the less you know about what's going on the better off you'll be," Sunday replies matter-of-factly. "If you want to be alive at the end of this, that is."
+
+*"Fine, I'll shut up[."]," you grumble.
+"Look," she says, stopping for a moment.<>
+-> suddenly_body_snatchers
+*"I don't care, if I can help I want to help[."]," you insist.
+~rel_sunday +=5
+"Look," she says, stopping for a moment.<>
+-> suddenly_body_snatchers
+}
+
+= suddenly_body_snatchers
+"Everyone has something to hide. I'm just more up front about it. And this isn't just about me, this is the big leagues. I'm talking about knowing things that will affect the whole system. You really think you're ready for that?"
+Before you can answer, there comes a rattling sound from down the tunnel somewhere past the light. And then comes a loud hissing, a susurrous of several creatures breathing heavily at once. Finally, their voices travel down the tunnel as they speak in an alien language{intro.xenolinguist: that you don't recognize at all}. They sound like they're getting closer.
+
+    *(fight) {combat_skill > 65} [Step into a fighting stance; whatever's coming probably isn't friendly, but I'm ready to fight if I need to.]
+    ~combat_skill += 5
+    *(creative) [Find something around here I can defend myself with.]
+    ~logical_creative += 10
+    *(logical) [Whatever they are, they don't sound friendly. My best bet is to hide and figure out what I'm up against first.]
+    ~logical_creative -= 10
+    
+    {fight:
+    As you widen your stance and raise your fists,
+    }
+    {creative:
+    You scan the ground for something like a weapon and see a long, slightly bent piece of metal pipe, but before you can pick it up
+    }
+    {logical:
+    You scan the area for a good hiding place, but before you can locate one 
+    }
+
+-Sunday shuts the light off of her device quickly. She then grabs hold of you with surprising strength and pulls you close, hugging the wall. You notice a faint shimmer in the air around you, just barely visible in the darkness.
+
+*"If you wanted to be closer to me, you could've just asked[."]," you say with deadly seriousness.
+~rel_sunday +=5
+*"What are you doing??"[] you ask wildly.
+
+-"Shh!" she hushes you, putting a hand over your mouth.
+
+The unearthly noises of the creatures approaching you only grows. In the darkness it's impossible to make out more than their silhouettes. Sunday's reaction to them has you hoping they won't be able to see you.
+You count two vaguely humanoid beings dragging something behind them as they cross in front of you. One stops and seems to look directly at you (it's hard to tell)... and then continues on.
+Something about them feels wrong. You can't put a finger on what it is, but you note their presence has caused a deeply uncomfortable feeling inside you, as if you were experiencing nausea in your brain instead of your stomach.
+It's a solid eight minutes before the noise of them finally fades into nothing, and Sunday deigns it safe to release you. The air notably shimmers again as she does, and she turns the light back on. Her face is wan in the unnatural light, and you imagine she must have experienced the same feeling you did.
+
+*"What the hell were those things?"
+*(u_ok)"Are you okay?"
+~rel_sunday += 5
+*"Why didn't they see us?"
+
+-"I'm fine, thanks for asking," she says{u_ok:.| icily.} "We don't technically know what they're called, but we've termed them 'body snatchers' for now. They couldn't see us because we were cloaked. Rest assured, their eyesight in the dark is incredibly good."
+
+*"Who's 'we?'"
+Sunday pushes forward without an answer, not waiting up for you.
+"Hey, I asked you a question," you say, jogging to catch up to her.
+*"Why do you call them 'body snatchers?'"
+"I'll give you one good guess," Sunday replies.
+"Okay, and why do you know about them, exactly?"
+*"I didn't even know technology like that existed[."]; what are you, some kind of secret agent?"
+
+-"I'm an operative for a special interests corporation, all right? Elysium, the one that owns this station," Sunday explains. "Now will you stop worrying about it and pay attention to where you're walking?"
+No sooner do the words leave her lips than you find your toe catching on a piece of debris. You stumble forward and nearly land on a metal beam resting on top of the live track, but Sunday catches your arm just in time.
+She gives you a meaningful look before the two of you continue on.
+
+->enter_hospital_wsunday
+
+= priority_update
+
+It's been a while since you awoke in your room, and a lot has happened since then.
+
+Have your priorities changed amidst the revelations you've uncovered?
+
+*(priority_tellall) [Yes. The public needs to know about what Elysium is doing, and I'm going to tell them.]
+~compassion_selfserve -= 6
+~communal_independent -= 6
+Your number one priority in the moment is, of course, getting safely off of Cassio wholly or at least mostly intact. But as soon as you are safely established, you know you're going to have to get this information into the right hands. 
+*(priority_stopelysium) [Yes. What Elysium is doing is wrong, and I'm going to stop them.]
+~compassion_selfserve -= 6
+~communal_independent += 6
+Your number one priority in the moment is, of course, getting safely off of Cassio wholly or at least mostly intact. But as soon as you are safely established, you know you're going to have to find out who's responsible at Elysium and stop them.
+*(priority_gototop) [Yes. I have a feeling whatever's going on is a lot bigger than Elysium, and I need to find out more.]
+~compassion_selfserve += 6
+~communal_independent += 6
+Your number one priority in the moment is, of course, getting safely off of Cassio wholly or at least mostly intact. But as soon as you are safely established, you know you're going to have to get to the bottom of this mess--which will probably mean going straight to the top.
+*{intro.get_phat_loots} [No; I'm still mostly concerned with making sure I get out of here with some extra scratch.]
+~compassion_selfserve += 6
+~communal_independent += 6
+Your number one priority in the moment is, of course, getting safely off of Cassio wholly or at least mostly intact. But as soon as you are safely established, you know you're going to have to have a chat with Lin about getting a cut of the sales of their multitudes of likely illicit data.
+*{intro.find_out_wha_happe} [No; I haven't found out what caused the destruction on Cassio yet. Before I do anything else, I need to figure that out.]
+~compassion_selfserve -= 6
+~communal_independent += 6
+Your number one priority in the moment is, of course, getting safely off of Cassio wholly or at least mostly intact. But as soon as you are safely established, you know you'll be searching for information about the body snatchers and the destruction of Cassio.
+*{intro.help_scared_injured} [No; although it seems like there aren't many people left on the station, my priority is still to help as many as I can.]
+~compassion_selfserve -= 6
+~communal_independent -= 6
+Your number one priority in the moment is, of course, getting safely off of Cassio wholly or at least mostly intact. But you want to make sure as many people as possible get to safety as well. Once you are all out of danger, you can start to think about your next move.
+*{intro.get_tf_outta_here} [No; I can't think about anything else until I'm out of here along with Sunday and Lin.]
+~compassion_selfserve += 6
+~communal_independent -= 6
+Your number one priority is still, of course, getting safely off of Cassio wholly or at least mostly intact along with your companions. Once you are all safely established, you might be able to start thinking about your next move.
+*[Fuck priorities. I've had enough intrigue and excitement to last a lifetime; I want to get the hell off of this station and never think about any of this again.]
+~compassion_selfserve += 12
+~communal_independent += 12
+
+-*[Next] -> body_snatcher_fight
+
+
+
+
+
+
+
+
+
+
+

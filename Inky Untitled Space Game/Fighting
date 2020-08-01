@@ -1,0 +1,319 @@
+== body_snatcher_fight ==
+
+= three_fight_begin
+
+The three of you decide to take the maintenance tunnels once more in heading for the shuttle bay being as they are the quickest way about the station--regardless of the apparent habitation of vaguely human, body-snatching shadow monsters.
+
+As you enter a tunnel and consider the likelihood that you'll run into them again, a thought occurs to you.
+
+"Sunday, are the body snatchers related to the disappearances of employees? I mean it makes sense, right? Have they been here the whole time? Are the shipping manifests--?"
+
+"I know you think you're on to something, but you're not," Sunday interrupts you. "The body snatchers are just a spot of bad luck on our part. They're scavenger aliens who prey on derelict stations and damaged ships. Most people in the system don't know about them because by the time they show up everyone's usually dead, and if you're not dead you almost certainly will be if it sees you."
+
+*"Does anyone know what they do with the bodies[?"] they collect?" you ask.
+
+*"Where do they come from?"[] you ask.
+
+*"Why do they make me feel sick[?"], like I want to throw up in my head?" you ask, recalling the sensation of being near one.
+
+-"Most people don't even know they exist," Sunday replies. "The why and where and how of them is a mystery even to those who do know they exist."
+
+The three of you are silent for a while as you make your way through the tunnels.
+
+-> snatch_fight
+
+=two_fight_begin
+
+You decide to take the maintenance tunnels once more in heading for the shuttle bay being as they are the quicket way about the station--regardless of the apparent habitation of vaguely human, body-snatching shadow monsters.
+
+As you enter a tunnel with Lin and consider the likelihood that you'll run into them again, a thought occurs to you.
+
+"Lin, do you know about the body snatchers?" you ask.
+
+They do not reply right away, taking a minute to think, which in their mind must mean hundreds of thousands of calculations are being performed.
+
+"Body snatchers. Yes, it took me a moment to discern what you were referring to. I presume you mean the creatures who have recently taken up residence amongst the very tunnels we traverse?"
+
+You nod.
+
+"They are commonly referred to as bogeymen or ghouls among those who make their lives at the edges of the system, though the name they call themselves is unknown," Lin explains. "They are a species alien to you and, in fact, the system at large. Their primary motivation appears to be the collection of human and Jenusian bodies left behind on derelict ships and stations; however, upon seeing a live target they have been known to become extremely violent."
+
+"Huh. So do they have anything to do with the disappearance of Elysium employees?"
+
+"Unfortunately, no. It is just our luck that they happen to be here," Lin says evenly.
+
+The two of you are silent for a while as you make your way through the tunnels.
+
+-> snatch_fight
+
+= snatch_fight 
+
+<> It's because {three_fight_begin: everyone is|both of you are} silent that after a while you are able to pick up on the faint sound ahead of you of something being dragged along the floor, and the unearthly sighs accompanying it.
+
+{three_fight_begin:
+
+You exchange a worried glance with Sunday.
+
+"We can hope they don't see us," she offers up.
+
+"What about your cloak thing?" you ask.
+
+"I can barely get it to extend over you, I can't fit all three of us in the field."
+
+You look to Lin desperately.
+
+"I possess no such technology," they say unhelpfully.
+
+"Well, shit," you say, at a loss as the dragging noises grow louder.
+
+"Maybe the three of us will be able to take them on," Sunday says, though she doesn't sound entirely convinced.
+
+"The odds of success are roughly one hundred thousand--" Lin begins.
+
+You shoot them an admonitory look.
+
+"--that is to say, they are very, very small; nonetheless, the possibility still exists," they finish sheepishly.
+}
+
+{two_fight_begin:
+You exchange a glance with Lin.
+
+"That sounds like trouble," you say. "We hid from them last time. Sunday had a sort of invisible cloak thing. I don't suppose you've got something similar?"
+
+"I possess no such technology," Lin says unhelpfully.
+
+"I guess we could get out of the way and hope they don't see us," you say, though you don't sound entirely convinced.
+
+"The odds of that are roughly one hundred thousand--" Lin begins.
+
+You shoot them an admonitory look.
+
+"--that is to say, they are very, very small; nonetheless, the possibility still exists," they finish sheepishly.
+}
+
+You look to the darkness of the tunnels ahead grimly, where you can just begin to make out the odd shapes of the body snatchers amongst the inky black. 
+
+They'll be here any minute.
+
+(To be continued...)
+
+-->END
+
+////below is a work in progress battle
+It appears your confrontation with the body snatchers is inevitable.
+
+What will be your strategy?
+
+*(surprise_attack) [I'm going to jump out and attack first to catch them by surprise.]
+{combat_skill >= 70:
+-> snatch_success
+}
+{combat_skill < 70:
+-> snatch_failure
+}
+*(hidden) [I'm going to stay hidden for as long as possible and hope they don't see us.] -> stay_hidden_death
+*(fight_creative) [I think if they come after me I'll just aim for any part that looks like a head with this piece of rebar I found while crouching down here.]
+{logical_creative >= 70:
+-> snatch_success
+}
+{logical_creative < 70:
+-> snatch_failure
+}
+*(fight_logical) [They're living creatures just like me--at least, I think they are--so they must have some sort of weakness. I'll figure out what it is and use it against them.]
+{logical_creative <= 30:
+-> snatch_success
+}
+{logical_creative > 30:
+-> snatch_failure
+}
+
+= snatch_success
+{two_fight_begin and came_from (->surprise_attack):
+
+You do a surprise attack so good! Oh man, it's so good! You do the thing!
+
+Congratulations.
+-> twofer_attack
+}
+{two_fight_begin and came_from (->fight_creative):
+
+You do a creative attack so good! Oh man, it's so good! You do the thing!
+
+Congratulations.
+-> twofer_attack
+}
+{two_fight_begin and came_from (->fight_logical):
+
+You do a creative attack so good! Oh man, it's so good! You do the thing!
+
+Congratulations.
+-> twofer_attack
+}
+
+{three_fight_begin and came_from (->surprise_attack):
+
+You do a surprise attack so good! Oh man, it's so good! You do the thing!
+
+Congratulations.
+-> threefer_attack
+}
+{three_fight_begin and came_from (->fight_creative):
+
+You do a creative attack so good! Oh man, it's so good! You do the thing!
+
+Congratulations.
+-> threefer_attack
+}
+{three_fight_begin and came_from (->fight_logical):
+
+You do a creative attack so good! Oh man, it's so good! You do the thing!
+
+Congratulations.
+-> threefer_attack
+}
+
+
+= snatch_failure
+{two_fight_begin and came_from (->surprise_attack):
+
+You do a surprise attack so bad! Oh man, it's so bad! You failed at the thing!
+
+Congratulations.
+-> twofer_attack
+}
+{two_fight_begin and came_from (->fight_creative):
+
+You do a surprise attack so bad! Oh man, it's so bad! You failed at the thing!
+
+Congratulations.
+-> twofer_attack
+}
+{two_fight_begin and came_from (->fight_logical):
+
+You do a surprise attack so bad! Oh man, it's so bad! You failed at the thing!
+
+Congratulations.
+-> twofer_attack
+}
+{three_fight_begin and came_from (->surprise_attack):
+
+You do a surprise attack so bad! Oh man, it's so bad! You failed at the thing!
+
+Congratulations.
+-> threefer_attack
+}
+{three_fight_begin and came_from (->fight_creative):
+
+You do a surprise attack so bad! Oh man, it's so bad! You failed at the thing!
+
+Congratulations.
+-> threefer_attack
+}
+{three_fight_begin and came_from (->fight_logical):
+
+You do a surprise attack so bad! Oh man, it's so bad! You failed at the thing!
+
+Congratulations.
+
+-> threefer_attack
+}
+
+= twofer_attack
+You and Lin fight the body snatchers! Woah, crazy!
+{came_from (-> snatch_failure):
+-> regroup
+}
+{came_from (-> snatch_success):
+-> doubledown
+}
+
+= threefer_attack
+The three of you fight the body snatchers. Woah, crazy!
+{came_from (-> snatch_failure):
+-> regroup
+}
+{came_from (-> snatch_success):
+-> doubledown
+}
+
+= regroup
+Time to back up and regroup because you sucked the first time! Whatchya gonna do?!
+
+* (combat_opt2) Choose the combat option.
+{combat_skill >= 70:
+-> snatch_win_barely
+}
+{combat_skill < 70:
+-> snatch_lose2
+}
+* (creative_opt2) Choose the creative option.
+{logical_creative >= 70:
+-> snatch_win_barely
+}
+{logical_creative < 70:
+-> snatch_lose2
+}
+* (logical_opt2) Choose the logical option.
+{logical_creative <= 30:
+-> snatch_win_barely
+}
+{logical_creative > 30:
+-> snatch_lose2
+}
+
+
+
+= doubledown
+Time to doubledown on your strategy!
+
+{surprise_attack:
+
+So you do! You hit them more and they're like "Ow!"
+
+}
+
+{fight_creative:
+So you do! You hit them more and they're like "Agh!"
+
+}
+
+{fight_logical:
+So you do! You hit them more and they're like "Eeek!"
+}
+
+--> snatch_win_succinct
+
+
+= snatch_win_barely
+You barely win! But hey, you still won.
+
+To be continued...
+
+-->END
+
+= snatch_lose2
+
+Wow you really suck at this huh!
+
+-> snatch_you_dead_son
+
+= snatch_win_succinct
+
+You win against the snatchers! Hooray!
+
+To be continued...
+
+-->END
+
+= snatch_you_dead_son
+
+You die! Shouldn't have picked that one, huh?
+
+--> END
+
+
+= stay_hidden_death
+
+You die! Shouldn't have picked that one, huh?
+
+--> END

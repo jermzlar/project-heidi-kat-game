@@ -1,0 +1,223 @@
+== hospital_ward ==
+
+-> enter_hospital_wsunday
+
+== enter_hospital_wsunday ==
+
+It's some time before you're back in the dim red emergency lighting of the station, having exited the tunnel and come out to the station nearest the medical and science wings.
+
+You haven't seen any more of the creatures you came across inside the tunnels which you are quite thankful for, considering the way they made you feel.
+
+The two of you climb onto the platform and take the right exit from the station towards the medical wing.
+
+The entry doors to the hospital are automatic and should be closed, and yet they are wide open. One of them appears to be stuck as it attempts to slide back and forth over the track.
+
+"Don't think there's anyone here," Sunday remarks as you pass through into the lobby.
+
+{intro.doctor or intro.combat_medic or intro.unconventional_medic or intro.medicine:
+"It's fine, I'll be able to clean and bandage my head myself," you say.
+
+-else:
+"It's fine, we'll figure something out," you say.
+}
+
+You continue past the lobby into the emergency room, where you set about finding some spare cloth to wash the blood off. You do this at one of the sinks, and Sunday posts up on one of the emergency room beds as she waits.
+Once you've cleaned yourself off you look in the mirror to inspect the wound.
+-> doctor_patchup
+
+= doctor_patchup
+<> It'll need a few stitches, but it's not as bad as it appears.
+
+Having worked here for the last three months, it takes no time at all for you to locate the necessary supplies, which you set up on a tray near the mirror before getting to work.
+
+"I guess this is where you worked?" Sunday asks after a while.
+
+"It is," you say through clenched teeth as you pull the needle through your skin.
+
+"What did you do before coming here?"
+
+{intro.combat_medic:
+
+"I was a combat medic," you reply. 
+
+"In the Jenusian-Terran War?"
+
+*(peregrine) "No, I wasn't quite old enough for that[."]. I served with the skirmishers during the Peregrine Rebellion," you explain as you finish the last stitch on your head and knot it off.
+~logical_creative += 10
+~ingenuity_skill += 5
+"Wow. Peregrine huh? You must have some interesting stories, then," Sunday says.
+You nod. -> history_doctor
+*(jenusian_terran) "Yes, I served under Commander Haelen Sturn[."] in the Systems Coalition from '83 to '87," you explain as you finish the last stitch on your head and knot it off.
+~logical_creative -= 10
+~technology_skill += 5
+"Wow. Sturn, huh? He was a tactical genius," Sunday says.-> history_doctor
+You nod.
+
+-else:
+
+* (charity_doctor) "I worked with Physician's Accord to help provide medical care access to outposts on third-worlds[."]," you explain as you finish the last stitch on your head and knot it off. <>
+~logical_creative += 10
+~ingenuity_skill += 5
+"You have to get pretty creative when you're in some backwater frontier town with a quarter of the supplies available to Coreworld doctors and twice the patients."
+-> history_doctor
+*(homeworld_doctor) "I worked as one of the top surgeons of the Coreworld[."]," you explain as you finish the last stitch on your head and knot it off. <>
+~logical_creative -= 10
+~technology_skill += 5
+"It was safe and it paid well."
+-> history_doctor
+}
+
+= history_doctor
+"And what brought you here?" Sunday asks as you pick up the gauze and begin wrapping your head carefully.
+
+{charity_doctor or homeworld_doctor:
+
+*"I was disgraced by a fellow doctor[."]," you say.
+->wrapup
+*"I wanted a change of pace[."]," you say.'
+->wrapup
+*"I needed something more {charity_doctor: stable|adventurous}[."]," you say.
+->wrapup
+
+}
+
+{peregrine or jenusian_terran:
+
+*"There weren't a lot of prospects after the war for those who served[."]," you say.
+->wrapup
+*"Honestly, not a lot of people would have me {peregrine: after the rebellion|after the war}[."]," you say.
+->wrapup
+*"I just needed to get away from the fighting[."]," you say. 
+->wrapup
+
+}
+
+= wrapup
+
+{intro.doctor or intro.combat_medic or intro.unconventional_medic or intro.medicine:
+You finish up and turn away from the mirror, holding your arms out wide to Sunday.
+
+-else:
+"Which makes me wonder what, exactly, you are doing here," Sunday wonders aloud to herself.
+
+Sunday finishes up and sets the gauze down, surveying her work.
+}
+
+"Better?" you ask.
+
+"Well, you look at little less gruesome now, but I'm afraid there's just nothing to be done about your face," Sunday says with a sigh.
+
+*"Har har, very funny[."]," you reply, your tone indicating it is decidedly less so.
+~rel_sunday -= 5
+*"I guess you'll have to be the pretty one for both of us[."]," you reply, waggling your eyebrows at Sunday comically.
+~rel_sunday += 5
+She rolls her eyes and laughs.
+*"Pot calling the kettle black[."], don't you think?" you quip.
+She gives a look of mock-offense.
+
+-Sunday jumps up from the hospital bed and dusts herself off.
+
+"Off to the lab, then?" she says.
+
+You nod and follow her out.
+
+-> MNC_lin
+
+= nondoctor_patchup
+<> Looks like you might need stitches. In theory you know what needs to happen; you're just not entirely sure how to go about it, or where the supplies are. You spend fifteen minutes digging around in various drawers until you finally come up with a needle, some thread, and a roll of gauze.
+
+"Do you even know what you're doing?" Sunday asks as she watches you from the bed.
+
+"Not really," you admit, setting the supplies on a tray near the sink.
+
+You thread the needle and lift it up to your forehead, hovering there for a moment. 
+
+"It's just like sewing, right? Except it's skin, not fabric," you say outloud, more to yourself than to present company.
+
+"You're hopeless. Come here," Sunday says, ushering you over to the bed until you take a seat there.
+
+She plucks the needle from you hands and surveys your wound carefully.
+
+"This isn't going to feel great," she warns you.
+
+You wince as she sticks you with the needle and begins stitching the gash closed.
+
+"What did you do here? I mean, before all this," Sunday asks after a moment, probably trying to distract you.
+
+{intro.xenolinguist:
+"I was a translator at the docks," you respond through gritted teeth.
+"You must meet a lot of terribly interesting aliens there, then."
+}
+
+{intro.scientist:
+"I was a scientist in the laboratory," you respond through gritted teeth.
+"Ah, so you might be actually be useful once we get to the laboratory."
+You glare slightly, though you know she probably isn't serious.
+}
+
+{intro.security:
+"I was a security officer on the station," you respond through gritted teeth.
+"Ah, that makes sense. I was wondering why you knew so much about things there."
+}
+
+{intro.technician:
+"I was a technician in operations," you respond through gritted teeth.
+"Ah, so you might actually be useful once we need to authorize departure."
+You glare slightly, though you know she probably isn't serious.
+}
+
+Sunday closes off and knots the final stitch, then reaches for the gauze.
+
+
+"And what did you do before this?" she asks as she begins to wrap your head gingerly.
+
+
+{intro.xenolinguist:
+
+*"I was a xenolinguist. I studied and translated ancient Jenusian manuscripts for a Coreworld museum[."]," you say. "Their literature is breathtaking and visionary."
+~logical_creative += 10
+->wrapup
+*"I was a linguist. I studied and translated ancient Dead Earth manuscripts for a Coreworld museum[."]," you say. "The old world was a fascinating, if terrifying, place."
+~logical_creative -=10
+->wrapup
+}
+
+{intro.scientist:
+
+*"I was a lab technician for a small startup[."]," you say. "You have to get pretty creative with your research when you lack the necessary funding."
+~logical_creative += 10
+->wrapup
+*"I was a scientist in the Systems Coalition[."], you say. "It was a safe job that paid well."
+~logical_creative -=10
+->wrapup
+}
+
+{intro.security:
+
+*"I was a mercenary-for-hire[."]," you say. "Operated mostly out of the space station Avarice."
+~logical_creative += 10
+->wrapup
+*"I served in the Jenusian-Terran war[."]," you say. "Joining the Systems Coalition seemed like the safest bet for me."
+~logical_creative -=10
+->wrapup
+}
+
+{intro.technician:
+
+*"I was an ethical hacker for a white hat collective[."]," you say. "We took down one of the largest criminal networks in the system."
+~logical_creative += 10
+->wrapup
+*"I was a technician for a company that built droid companions[."]," you say. "I programmed their intelligence and faculties."
+~logical_creative -=10
+->wrapup
+}
+
+
+
+
+
+
+
+
+
+
