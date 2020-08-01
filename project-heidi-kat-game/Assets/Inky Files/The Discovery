@@ -4,11 +4,14 @@ You and Sunday enter the room adjacent to the laboratory. The lights here, like 
 
 "What did Lin mean when they said we'd both find what we're looking for in here?" you ask Sunday.
 
+~whos_talking = "sunday"
 "Haven't the faintest idea," Sunday says; although, you're fairly certain she is lying.
 
 *"I'm really tired of being kept in the dark[."] here," you huff.
+~whos_talking = "sunday"
 "Get used to it," she says with all the empathy of a sea cucumber.
 *"Even if you don't tell me, I'm going to find out[."] when you find it here," you point out.
+~whos_talking = "sunday"
 "Not if I can help it," she replies{rel_sunday >65:, then adds, "I'm looking out for you, you know."|.}
 
 -The two of you fall silent as Sunday sets about searching the room. She, for her part, seems to know exactly where she's going as she heads towards a desk at the far corner with a computer. She sits and almost immediately begins typing and clicking furiously.
@@ -18,7 +21,9 @@ You likewise seat yourself at one of the desks and begin to enter your station l
 {intro.security or intro.technician or intro.scientist: With your credentials, you should have no trouble authorizing shuttle departure from here.}
 {intro.doctor or intro.xenolinguist:
 With your credentials, you're not entirely sure you'll be able to authorize shuttle departure from here.
-As though she read your mind, Sunday calls for your attention and tells you hers, adding, "You'll need that to authorize departure."
+As though she read your mind, Sunday calls for your attention and tells you hers, adding, <>
+~whos_talking = "sunday"
+"You'll need that to authorize departure."
 } <>
 Upon signing on to the station hub, it takes you a moment to find the command controls you're looking for. 
 
@@ -52,18 +57,23 @@ You open the folder and a long list of files appears, each with a syntax that in
 You scroll through the profile. It's a collection of physical descriptions, personality markers, mental health evaluations, and other personal points of data about {benjoe: Benjoe}{hallee: Hallee}{sones: Sones}.
 Towards the bottom of the document are several shipping manifests indicating cargo exported from Cassio to another planet in the system, Valbaara II. But Valbaara II is a dead planet. You recall it was slated for terraforming, but after the war it was put on hold indefinitely. And the shipping manifests don't indicate the nature of the cargo, unless...
 You're struggling to keep up with the speed of your realization as you scroll through additional profiles. You don't see any other way around it: Elysium, for whatever reason, is covering up the fact that they're disappearing their own low-level employees to some backwater planet in the system--though for what purpose remains to be seen. Sunday works for Elysium, does she know about this? you wonder.
-It's a moment before you realize she has come up behind you as you hear her murmur, "Shit."
+It's a moment before you realize she has come up behind you as you hear her murmur, <>
+~whos_talking = "sunday"
+"Shit."
 
 *[Confront Sunday--physically, if necessary.] ->physical_confront
 *[Confront Sunday peacefully.] -> peaceful_confront
 
 = physical_confront
 You only have a few moments to react. In one swift move you jump to your feet and turn to face Sunday, holding your fists up in preparation for a fight. Sunday draws her weapon and immediately trains it on you, something you hadn't really considered. It appears you've brought your fists to a light-gun fight.
+~whos_talking = "sunday"
 "What the hell is this?" Sunday asks, motioning to you with the pistol.
 
 *"I know what Elysium is doing[."], and I'm not going to let you take me," you say, accusation strong in your voice.
+~whos_talking = "sunday"
 "Take you? {MNC_sunday.sour: Darling|Sweetheart}, I'm the very last of your worries now that you know about this," Sunday almost laughs.
 *"You work for Elysium; did you know about this?"[] you ask, accusation strong in your voice. 
+~whos_talking = "sunday"
 "I did," Sunday replies solemnly.
 
 She drops her pistol to her side. You maintain the pretense of a fighting stance for a moment longer, but it becomes apparent that she has no intention of doing you any harm--at least for the moment.
@@ -74,8 +84,10 @@ She drops her pistol to her side. You maintain the pretense of a fighting stance
 You stand from the desk and turn to face Sunday. You motion to the computer, where you still have the shipping manifests pulled up.
 
 *"I know what Elysium is doing[."]," you say, trying to hold the accusation from seeping into your voice.
+~whos_talking = "sunday"
 "{MNC_sunday.sour:Darling|Sweetheart}, you don't even know half of it."
 *"You work for Elysium; did you know about this?"[] you ask, trying to hold the accusation from seeping into your voice. {rel_sunday > 65: You want to believe she didn't know. You hope she didn't know.}
+~whos_talking = "sunday"
 "I did," Sunday replies solemnly.
 
 --> confront_wrapup
@@ -86,10 +98,12 @@ You stand from the desk and turn to face Sunday. You motion to the computer, whe
 
 The slightest hint of regret crosses her face.
 
+~whos_talking = "sunday"
 "I wasn't entirely honest with you when I told you I work for Elysium," she explains.
 
 "What do you mean? You don't work for them?" you ask.
 
+~whos_talking = "sunday"
 "No, I do technically work for them, but..."
 
 Sunday seems to hesitate.
@@ -104,10 +118,13 @@ Sunday seems to hesitate.
 {rel_sunday >= 80 or charm_skill >= 65 and rel_sunday >= 65:
 "Sunday, come on, you can trust me," you say. "We've been through enough together, haven't we?"
 She bites her lip, still uncertain, but she finally nods.
+~whos_talking = "sunday"
 "I was just trying to keep you out of trouble, but it looks like you've got yourself into it anyway," Sunday sighs. "All right, very well, {player_name}. I suppose I can tell you. My position at Elysium is undercover, you see. In reality I work for an organization known as the Moth Syndicate."
 "Never heard of them," you say, not quite convinced.
+~whos_talking = "sunday"
 "Well you wouldn't have, {intro.female: smart aleck}{intro.male or intro.nonbinary: wise ass}," Sunday says, a bit short with you. "We're a shadow organization operating on the edges of society. We don't exactly advertise our existence."
 "And that's... somehow better than working for a shady corporation that disappears its employees?" you ask.
+~whos_talking = "sunday"
 "The Moth Syndicate wants justice for those people. We may operate outside the normal boundaries of the law, but that doesn't put us on the same level as a mega-corp with no regard for the sanctity of human life." 
 
 *[I believe Sunday. I trust her even if she works for a shadow organization.] 
@@ -129,10 +146,13 @@ She bites her lip, still uncertain, but she finally nods.
 "Sunday, come on, you can trust me," you say. "We've been through enough together, haven't we?"
 She bites her lip, still uncertain, but she finally nods slightly.
 {rel_sunday >=65:
+~whos_talking = "sunday"
 "I was just trying to keep you out of trouble, but it looks like you've got yourself into it anyway," Sunday sighs. <>
 }
+~whos_talking = "sunday"
 "Very well, {player_name}. I suppose I can tell you a little bit about what's going on. My position at Elysium is undercover, you see. Truthfully I work for a... secret organization, let's call them."
 "Who?" you prompt.
+~whos_talking = "sunday"
 "I can't tell you that. Not yet. Believe me, I wish I could, but it's complicated. But please trust me when I tell you we want justice for the people who have gone missing because of Elysium."
 
 *[I believe Sunday. It's clear she's a kind and just person who's trying to do right, even if she works for a shady organization.] 
@@ -152,8 +172,10 @@ She bites her lip, still uncertain, but she finally nods slightly.
 {charm_skill < 65 and rel_sunday < 65:
 "Sunday, come on, you can trust me," you say, but it's clear you don't really mean it. 
 Sunday shakes her head and sighs.
+~whos_talking = "sunday"
 "Sorry, {player_name}, but I can't trust you. Not yet. There are too many players in the game, and I'm just not sure who you're representing at this point."
 You open your mouth to protest, but she holds up a hand to silence you.
+~whos_talking = "sunday"
 "I can tell you this. I'm not here to hurt you or anyone else, and I want off this station as much as you do. I'm still willing to work together if you are."
 
 *[I believe Sunday. It's clear she's a kind and just person who's trying to do right.]
@@ -176,10 +198,13 @@ You open your mouth to protest, but she holds up a hand to silence you.
 {rel_sunday >= 80 or logical_creative <= 35 and rel_sunday >= 65:
 "Sunday, I already know more than I should. You can tell me," you say.
 She bites her lip, still uncertain, but she finally nods.
+~whos_talking = "sunday"
 "I was just trying to keep you out of trouble, but it looks like you've got yourself into it anyway," Sunday sighs. "All right, very well, {player_name}. I suppose I can tell you. My position at Elysium is undercover, you see. In reality I work for an organization known as the Moth Syndicate."
 "Never heard of them," you say, not quite convinced.
+~whos_talking = "sunday"
 "Well you wouldn't have, {intro.female: smart aleck}{intro.male or intro.nonbinary: wise ass}," Sunday says, a bit short with you. "We're a shadow organization operating on the edges of society. We don't exactly advertise our existence."
-"And that's... somehow better than working for a shady corporation that disappears its employees?" you ask.
+"And that's... somehow better than working for a shady corporation that disappears its employees?" you ask
+~whos_talking = "sunday".
 "The Moth Syndicate wants justice for those people. We may operate outside the normal boundaries of the law, but that doesn't put us on the same level as a mega-corp with no regard for the sanctity of human life." 
 
 * [I believe Sunday. I trust her even if she works for a shadow organization.] 
@@ -201,10 +226,13 @@ She bites her lip, still uncertain, but she finally nods.
 "Sunday, I already know more than I should. You can tell me," you say.
 She bites her lip, still uncertain, but she finally nods slightly.
 {rel_sunday >=65:
+~whos_talking = "sunday"
 "I was just trying to keep you out of trouble, but it looks like you've got yourself into it anyway," Sunday sighs. <>
 }
+~whos_talking = "sunday"
 "Very well, {player_name}. I suppose I can tell you a little bit about what's going on. My position at Elysium is undercover, you see. Truthfully I work for a... secret organization, let's call them."
 "Who?" you prompt.
+~whos_talking = "sunday"
 "I can't tell you that. Not yet. Believe me, I wish I could, but it's complicated. But please trust me when I tell you we want justice for the people who have gone missing because of Elysium."
 
 * [I believe Sunday. It's clear she's a kind and just person who's trying to do right, even if she works for a shady organization.]
@@ -224,8 +252,10 @@ She bites her lip, still uncertain, but she finally nods slightly.
 {logical_creative > 35 and rel_sunday < 65:
 "Sunday, I already know more than I should. You can tell me," you say.
 Sunday shakes her head and sighs.
+~whos_talking = "sunday"
 "Sorry, {player_name}, but I can't trust you. Not yet. There are too many players in the game, and I'm just not sure who you're representing at this point."
 You open your mouth to protest, but she holds up a hand to silence you.
+~whos_talking = "sunday"
 "I can tell you this. I'm not here to hurt you or anyone else, and I want off this station as much as you do. I'm still willing to work together if you are."
 
 * [I believe Sunday. It's clear she's a kind and just person who's trying to do right.]
@@ -248,10 +278,13 @@ You open your mouth to protest, but she holds up a hand to silence you.
 {rel_sunday >= 80 and not intro.get_phat_loots or compassion_selfserve <= 35 and rel_sunday >= 65 and not intro.get_phat_loots:
 "Sunday, I want to help. If you tell me everything, I'll be better equipped to do that," you say.
 She bites her lip, still uncertain, but she finally nods.
+~whos_talking = "sunday"
 "I was just trying to keep you out of trouble, but it looks like you've got yourself into it anyway," Sunday sighs. "All right, very well, {player_name}. I suppose I can tell you. My position at Elysium is undercover, you see. In reality I work for an organization known as the Moth Syndicate."
 "Never heard of them," you say, not quite convinced.
+~whos_talking = "sunday"
 "Well you wouldn't have, {intro.female: smart aleck}{intro.male or intro.nonbinary: wise ass}," Sunday says, a bit short with you. "We're a shadow organization operating on the edges of society. We don't exactly advertise our existence."
 "And that's... somehow better than working for a shady corporation that disappears its employees?" you ask.
+~whos_talking = "sunday"
 "The Moth Syndicate wants justice for those people. We may operate outside the normal boundaries of the law, but that doesn't put us on the same level as a mega-corp with no regard for the sanctity of human life." 
 
 * [I believe Sunday. I trust her even if she works for a shadow organization.] 
@@ -273,10 +306,13 @@ She bites her lip, still uncertain, but she finally nods.
 "Sunday, I want to help. If you tell me everything, I'll be better equipped to do that," you say.
 She bites her lip, still uncertain, but she finally nods slightly.
 {rel_sunday >=65:
+~whos_talking = "sunday"
 "I was just trying to keep you out of trouble, but it looks like you've got yourself into it anyway," Sunday sighs. <>
 }
+~whos_talking = "sunday"
 "Very well, {player_name}. I suppose I can tell you a little bit about what's going on. My position at Elysium is undercover, you see. Truthfully I work for a... secret organization, let's call them."
 "Who?" you prompt.
+~whos_talking = "sunday"
 "I can't tell you that. Not yet. Believe me, I wish I could, but it's complicated. But please trust me when I tell you we want justice for the people who have gone missing because of Elysium."
 
 * [I believe Sunday. It's clear she's a kind and just person who's trying to do right, even if she works for a shady organization.] 
@@ -296,6 +332,7 @@ She bites her lip, still uncertain, but she finally nods slightly.
 {compassion_selfserve > 35 and rel_sunday < 65 or intro.get_phat_loots:
 "Sunday, I want to help. If you tell me everything, I'll be better equipped to do that," you say, but it's clear you don't really mean it.
 Sunday shakes her head and sighs.
+~whos_talking = "sunday"
 "Sorry, {player_name}, but I can't trust you. Not yet. There are too many players in the game, and I'm just not sure who you're representing at this point."
 You open your mouth to protest, but she holds up a hand to silence you.
 "I can tell you this. I'm not here to hurt you or anyone else, and I want off this station as much as you do. I'm still willing to work together if you are."
@@ -320,6 +357,7 @@ You meet her eyes for a moment, then look away with a shake of your head.
 
 "I'm sorry, Sunday, but I can't accept that. You're lying."
 
+~whos_talking = "sunday"
 "That's it, then?" she says. "I guess we go our separate ways now."
 
 "I guess so," you reply.
@@ -333,6 +371,7 @@ You meet her eyes for a moment, then nod.
 
 "All right, Sunday, I believe you."
 
+~whos_talking = "sunday"
 "That's it, then?" she says. "I guess we should get out of here."
 
 "I guess so," you reply.
@@ -360,6 +399,7 @@ Lin walks up beside you.
 }
 
 {came_from (->believe):
+~whos_talking = "sunday"
 "We did. Thank you for your assistance," Sunday says kindly.
 
 Lin considers this.

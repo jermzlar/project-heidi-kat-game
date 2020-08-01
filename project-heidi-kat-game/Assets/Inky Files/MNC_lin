@@ -16,39 +16,48 @@ As you exit the hospital and head for the nearby laboratory, you start to hear g
 
 Sunday suddenly hangs back.
 
+~whos_talking = "sunday"
 "Don't we have enough trouble as it is?" she asks.
 
 You stop and turn to look at her.
 
 "I thought you said what we need is in there."
 
+~whos_talking = "sunday"
 "I said what you need is in there. You know what else is in there? Probably some kind of alien thing the corporate scientists were experimenting on that's pissed as hell and now wreaking havoc on anything that crosses its path."
 
     *"Don't worry; I can handle it[."], whatever it is," you assure her.
         {combat_skill >= 70:
+        ~whos_talking = "sunday"
         "Yeah, you're right, I probably don't have anything to worry about with you around," she replies, eyeing you up and down.
         }
     
         {charm_skill > 70 and combat_skill < 70:
+        ~whos_talking = "sunday"
         "What are you gonna do, talk it to death?" she asks skeptically.
         }
     
         {combat_skill < 70 and charm_skill < 70:
+        ~whos_talking = "sunday"
          "No offense, but you don't exactly inspire confidence," she replies skeptically.
          }
     
     
     *"What if somebody needs our help?"[] you ask her.
     {compassion_selfserve >= 70:
+    ~whos_talking = "sunday"
     "You really are a bleeding heart, aren't you?" Sunday says.
     }
     {compassion_selfserve <= 50:
+    ~whos_talking = "sunday"
     "That certainly hasn't been a significant concern to you so far," Sunday says.
     }
     {compassion_selfserve > 50 and compassion_selfserve < 70:
+    ~whos_talking = "sunday"
     "If somebody really did need help, don't you think you'd hear them screaming?" Sunday asks.
     }
     *{intro.scientist} "Come to think of it, we did have a voltet in stasis last I checked..."[] you mutter to yourself.
+    ~whos_talking = "sunday"
     "You mean the twelve foot long, insanely territorial reptile creatures with five-inch claws, hundreds of teeth, and acid blood?"
     You shrug.
     
@@ -224,19 +233,23 @@ When you open your eyes you see nothing but the voltet towering over you, snarli
 
 <> They tower barefoot above you much like the voltet for a moment before they reach down to help pull you up. You feel woozy on your feet, having lost a fair bit more blood than you'd initially intended to.
 
+~whos_talking = "lin"
 "That was a bad way to die," they say solemnly.
 
 "Yeah, thanks, I appreciate it," you reply gratefully.
 
+~whos_talking = "lin"
 "I meant for her," the stranger says, motioning to the voltet's body on the floor.
 
 You pause in brushing yourself off, somehow feeling a touch of momentary guilt before you remember that you weren't the one to kill it, and it had definitely been moments away from ripping you in half.
 
+~whos_talking = "sunday"
 "Yeah, poor voltet, what a tragedy," Sunday says sarcastically.
 
+~whos_talking = "lin"
 "Though I agree with your words, I do not agree with your sentiment," the mysterious stranger replies. "She was brooding, you see. Her eggs are here. She was only trying to protect them."
 
-*"Boo hoo; it tried to kill me[."]," you point out. "If you cared about it so much you shouldn't have killed it."
+*"It tried to kill me[."]," you point out. "If you cared about it so much you shouldn't have killed it."
 ~rel_lin -= 10
 -> lin_convo
 *"Then why did you kill it?" you ask pointedly.
@@ -247,13 +260,16 @@ You pause in brushing yourself off, somehow feeling a touch of momentary guilt b
 {came_from (->sunday_attack2):
 <> They stand with casual confidence in the doorway, barefoot, arms crossed, and a sort of sadness in their eyes.
 
+~whos_talking = "lin"
 "That was a bad way to die," they say solemnly.
 
+~whos_talking = "sunday"
 "Yeah, poor voltet, what a tragedy," Sunday says sarcastically.
 
+~whos_talking = "lin"
 "Though I agree with your words, I do not agree with your sentiment," the mysterious stranger replies. "She was brooding, you see. Her eggs are here. She was only trying to protect them."
 
-*"Boo hoo; it tried to kill me[."]," you point out. "If you cared about it so much then why did you let us kill it?"
+*"It tried to kill me[."]," you point out. "If you cared about it so much then why did you let us kill it?"
 ~rel_lin -= 10
 -> lin_convo
 *"Then why didn't you try to stop us?"[] you ask pointedly.
@@ -263,40 +279,47 @@ You pause in brushing yourself off, somehow feeling a touch of momentary guilt b
 = lin_convo
 -The stranger looks you over, as though considering you.
 
+~whos_talking = "lin"
 "My programming determined it to be the most optimal outcome of the situation."
 
 "Are you--" you stop short, as if unsure.
 
+~whos_talking = "sunday"
 "Are you saying you're an android?" Sunday finishes for you.
 
 The stranger nods once in the affirmative. Sunday does a poor job of not looking surprised.
 
-{came_from (-> near_death):
+{near_death:
 
 "You seem, uh, very..." you trail off, feeling a big light-headed.
 
+~whos_talking = "sunday"
 "Very human," Sunday finishes again{rel_sunday > 65:, giving you a concerned look.|.}
 }
 
-{came_from (-> sunday_attack2):
+{sunday_attack2:
 
 "You seem very... well, human," you say.
 }
 
 The stranger considers this.
 
+~whos_talking = "lin"
 "I was not made strictly within the legal bounds of system law," they say by way of explanation.
 
 You exchange a furtive look with Sunday.
 
 "What's your name?" you ask.
 
+~whos_talking = "lin"
 "I apologize for not having introduced myself sooner; my designation is L-1N; but, colloquially, I am known as 'Lin.'"
 
 "My name is {player_name}, and this is Sunday.{communal_independent < 40: It's nice to meet you.}"
 
+~whos_talking = "lin"
 "I wish the circumstances of our meeting were not so dire," Lin says, motioning to state of the laboratory. "I was under the impression all residents had been taken. May I inquire as to the purpose of your presence here?"
 
+~whos_talking = "sunday"
 "No, you may not," Sunday says.
 
 *[Side with Sunday; you don't trust this android.]
@@ -320,30 +343,37 @@ You exchange a furtive look with Sunday.
 
 "It's not really any of your business what we're doing here," you say.
 
+~whos_talking = "lin"
 "I was asking to be polite," Lin says. "In truth, I can likely intuit what you are doing here by calculating the most probable scenarios by the time I finish this sentence. {player_name}, you are seeking {intro.help_scared_injured: medical supplies to help the survivors}{intro.get_tf_outta_here: the quickest and safest egress from this space station}{intro.find_out_wha_happe: to find out who is responsible for the disaster here}{intro.get_phat_loots: to gather a large summation of valuables and depart with them}, correct?"
 
 Sunday looks as if Lin just slapped her.
 
+~whos_talking = "lin"
 "And Sunday, you are--"
 
+~whos_talking = "sunday"
 "I THINK THAT'S QUITE ENOUGH OF THAT," she says loudly over whatever it was Lin was about to say. "Very nosy robot, aren't you?"
 
+~whos_talking = "lin"
 "Android," Lin gently corrects her. <> -> wrap_up
 
 = tell_lin
 
 "Well, I can't speak for Sunday or her, er, whatever she's doing," at this Sunday gives you a look, but you continue, "But I was hoping to {intro.help_scared_injured: be able to authorize shuttle departures from the computers here}{intro.get_tf_outta_here: get off this tin can, fast. Which means I need to authorize shuttle departures.}{intro.find_out_wha_happe: find out who was responsible for the explosion that took out the station and authorize shuttle departures}{intro.get_phat_loots: find something worth stealing here before we head out, if I'm being perfectly honest}."
 
+~whos_talking = "lin"
 "I see. How very {intro.help_scared_injured: noble}{intro.get_tf_outta_here: prudent}{intro.find_out_wha_happe: righteous}{intro.get_phat_loots: ignoble} of you," Lin replies. You have a hard time discerning what they think about you, but you get the feeling {rel_lin >= 60: it's probably good}{rel_lin <= 45: it's not good}{rel_lin > 45 and rel_lin < 60: they're fairly neutral for now}.
 
 -> wrap_up
 
 = wrap_up
 
+~whos_talking = "lin"
 "You'll find what you're looking for in that room there."
 
 Lin motions to a room next door to the laboratory.
 
+~whos_talking = "lin"
 "Both of you," they add, though their expression remains neutral.
 
 -> the_discovery
