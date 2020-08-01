@@ -42,6 +42,8 @@ A space station in a distant galaxy.
 -> intro
 === function came_from(-> x) 
 	~ return TURNS_SINCE(x) == 0
+=== function change_name()
+    ~whos_talking = "mc"
 	
 == intro ==
 ~background = "bedroom"

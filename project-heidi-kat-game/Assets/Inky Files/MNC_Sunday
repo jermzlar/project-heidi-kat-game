@@ -49,12 +49,11 @@ You open the door and have a few moments to take stock of the situation. There i
 ~character_a = "Sunday"
 The woman stops abruptly and turns to look up at you, freezing. She appears to be waiting to see how you'll react.
 
-~whos_talking = "mc"
-* "I don't think you're supposed to be doing that[."]," you say blithely.
+* "I don't think you're supposed to be doing that[."]{change_name()}," you say blithely.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "Well, I don't think you're supposed to be back here either, sweetheart, so let's just promise not to tell on one another and call it even, okay?" the woman replies coolly.
-*"Are you allowed to be in here?"
+*"Are you allowed to be in here?" {change_name()}
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "I think the rules concerning who is allowed where went out the window with the initial explosion, don't you?" the woman replies coolly.
@@ -62,7 +61,7 @@ The woman stops abruptly and turns to look up at you, freezing. She appears to b
 ~whos_talking = "nobody"
 -She returns her attention to the desk, pulling out one of the drawers and dumping its contents on the floor. She knocks on the bottom of the drawer rapidly, and you are about to address her again until she lets out a triumphant, "Aha!" She appears to remove a false bottom, reaching underneath and pulling out a small device.
 
-~whos_talking = "mc"
+
 *"Find what you were looking for?" [] you ask.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
@@ -72,7 +71,7 @@ The woman stops abruptly and turns to look up at you, freezing. She appears to b
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "That's classified information," she replies.
-~whos_talking = "mc"
+
 *"I'm pretty sure that's classified information[."]," you remark to her.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
