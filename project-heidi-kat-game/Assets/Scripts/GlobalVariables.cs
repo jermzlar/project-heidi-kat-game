@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GlobalVariables : MonoBehaviour
-{/*
+{
 
 	private string player_name = "Butts";
 	private string pronoun_she = "she";
@@ -238,6 +238,31 @@ public class GlobalVariables : MonoBehaviour
     {
     	return (int)im.story.variablesState["optimist_pessimist"];
     }
+
+    public void refreshAll()
+    {
+    	getPlayerName();
+		getPronounShe();
+		getPronounHers();
+		getPronounHer();
+		getGenderPerson();
+		getGenderFemales();
+		getCombatSkill();
+		getMedicineSkill();
+		getTechnologySkill();
+		getIngenuitySkill();
+		getCharmSkill();
+		getRelSunday();
+		getRelLin();
+		getCompassionSelfserve();
+		getCommunalIndependent();
+		getLogicalCreative();
+		getOptimistPessimist();
+    }
+
+
+
+
 /*
     public int convertToInt(string value)
     {
