@@ -20,8 +20,6 @@ public class InkManager : MonoBehaviour
 	private Text textPrefab = null;
 	[SerializeField]
 	private Button buttonPrefab = null;
-	CharacterManager cm;
-	GameManager gm;
 
 	[SerializeField]
 	private DialogueChoices dialogueChoices = null;
@@ -32,8 +30,6 @@ public class InkManager : MonoBehaviour
 	public static event Action<Story> OnCreateStory;
     void Start () {
     	//RemoveChildren();
-//TODO		cm = GetComponent<ChararacterManager>();
-		gm = GetComponent<GameManager>();
 		StartStory();
 	}
 
