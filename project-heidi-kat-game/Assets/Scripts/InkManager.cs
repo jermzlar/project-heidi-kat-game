@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using Ink.Runtime;
+using System.Linq;
 
 public class InkManager : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class InkManager : MonoBehaviour
 	[SerializeField]
 	private Text conversation = null;
 
+	private bool clickToContinue = false;
+	private bool clearText = false;
 	public static event Action<Story> OnCreateStory;
     void Start () {
 		StartStory();
@@ -29,6 +32,7 @@ public class InkManager : MonoBehaviour
 	// Creates a new Story object with the compiled story which we can then play!
 	public void StartStory () {
 		story = new Story (inkJSONAsset.text);
+		ClearText();
 		/*Binding external functions example
 		story.BindExternalFunction("place_actors",(string leftName, string rightName)=>
 		{
@@ -46,45 +50,67 @@ public class InkManager : MonoBehaviour
 	// Destroys all the old content and choices.
 	// Continues over all the lines of text, then displays all the choices. If there are no choices, the story is finished!
 	void RefreshView () {
+
 		// Remove all the UI on screen
 		dialogueChoices.RemoveAllButtons();
 
-
+		string dialogueText = conversation.text;
 		// Read all the content until we can't continue any more
-		while (story.canContinue) {
+		if (story.canContinue) {
 			// Continue gets the next line of the story
 			string text = story.Continue ();
 			// This removes any white space from the text.
 			text = text.Trim();
 			// Display the text on screen!
-			CreateContentView(text);
+			if (conversation.text == "")
+				dialogueText = text;
+			else
+			dialogueText = dialogueText + "\n" + text;
+
+
+			CreateContentView(dialogueText);
+
 		}
 
 		// Display all the choices, if there are any!
-		if(story.currentChoices.Count > 0) {
-			for (int i = 0; i < story.currentChoices.Count; i++) {
-				Choice choice = story.currentChoices [i];
+		if (story.currentChoices.Count > 0)
+		{
+			if (!dialogueChoices.panelAlpha)
+				dialogueChoices.ToggleDialogueChoice();
+			for (int i = 0; i < story.currentChoices.Count; i++)
+			{
+				Choice choice = story.currentChoices[i];
 
-				Button newButton =dialogueChoices.AddButton(choice);
-				newButton.onClick.AddListener(delegate {
+				Button newButton = dialogueChoices.AddButton(choice);
+				newButton.onClick.AddListener(delegate
+				{
 					OnClickChoiceButton(choice);
 				});
-				
+
 			}
 			dialogueChoices.Resize();
 		}
 		// If we've read all the content and there's no choices, the story is finished!
-		else {
-
+		else
+		{
+			if (!story.canContinue)
+			{ 
 			dialogueChoices.RestartButton("End of story.\nRestart?");
 			dialogueChoices.Resize();
-
+			}
+			else
+            {
+				clickToContinue = true;
+				if (dialogueChoices.panelAlpha)
+					dialogueChoices.ToggleDialogueChoice();
+            }
 		}
 	}
 
 	// When we click the choice button, tell the story to choose that choice!
 	void OnClickChoiceButton (Choice choice) {
 		story.ChooseChoiceIndex (choice.index);
+		ClearText();
 		RefreshView();
 	}
 
@@ -92,6 +118,22 @@ public class InkManager : MonoBehaviour
 	void CreateContentView (string text) {
 		conversation.text = text;
 	}
-	
+
+	private void ClearText()
+    {
+		conversation.text = "";
+    }
+
+    private void Update()
+    {
+        if (clickToContinue)
+			if(Input.GetMouseButtonDown(0))
+            {
+				clickToContinue = false;
+				RefreshView();
+				
+            }
+    }
+
 
 }

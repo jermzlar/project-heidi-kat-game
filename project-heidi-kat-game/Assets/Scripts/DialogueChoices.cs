@@ -16,17 +16,38 @@ public class DialogueChoices : MonoBehaviour
     [SerializeField]
     private int boxSize = 0;
 
+    public bool panelAlpha = true;
+
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    public void Resize()
+    public void ToggleDialogueChoice()
     {
-        int childCount = ink_manager.story.currentChoices.Count;
-        Debug.Log("number of children " + childCount);
-        boxSize = (childCount * 50) + 20;
+        float alpha = dialogueBox.GetComponent<CanvasGroup>().alpha;
+        if (alpha != 0)
+        {
+            dialogueBox.GetComponent<CanvasGroup>().alpha = 0;
+            panelAlpha = false;
+        }
+        else
+        {
+            dialogueBox.GetComponent<CanvasGroup>().alpha = 1;
+            panelAlpha = true;
+        }
+    }
+
+    public void Resize(int size = 0)
+    {
+        if (size == 0)
+        {
+            int childCount = ink_manager.story.currentChoices.Count;
+            boxSize = (childCount * 50) + 20;
+        }
+        else
+            boxSize = (size * 50) + 20;
         RectTransform rt = dialogueBox.GetComponent<RectTransform>();
         rt.sizeDelta = new Vector2(620, boxSize);
     }
