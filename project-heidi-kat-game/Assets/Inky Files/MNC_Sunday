@@ -49,11 +49,13 @@ You open the door and have a few moments to take stock of the situation. There i
 ~character_a = "Sunday"
 The woman stops abruptly and turns to look up at you, freezing. She appears to be waiting to see how you'll react.
 
-* "I don't think you're supposed to be doing that[."]{change_name()}," you say blithely.
+~whos_talking_button = "mc"
+* ["I don't think you're supposed to be doing that."]
+"I don't think you're supposed to be doing that," you say blithely.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "Well, I don't think you're supposed to be back here either, sweetheart, so let's just promise not to tell on one another and call it even, okay?" the woman replies coolly.
-*"Are you allowed to be in here?" {change_name()}
+*"Are you allowed to be in here?" 
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "I think the rules concerning who is allowed where went out the window with the initial explosion, don't you?" the woman replies coolly.
@@ -62,7 +64,7 @@ The woman stops abruptly and turns to look up at you, freezing. She appears to b
 -She returns her attention to the desk, pulling out one of the drawers and dumping its contents on the floor. She knocks on the bottom of the drawer rapidly, and you are about to address her again until she lets out a triumphant, "Aha!" She appears to remove a false bottom, reaching underneath and pulling out a small device.
 
 #after
-*"Find what you were looking for?" []{change_name()} you ask.
+*"Find what you were looking for?" [] you ask.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "I did, not that I think you're terribly invested in what I'm doing here," the woman responds.
@@ -72,7 +74,7 @@ The woman stops abruptly and turns to look up at you, freezing. She appears to b
 ~character_a = "Sunday"
 "That's classified information," she replies.
 
-*"I'm pretty sure that's classified information[."]{change_name()}," you remark to her.
+*"I'm pretty sure that's classified information[."]," you remark to her.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "It is, not that I think you're terribly invested in what's going on here," the woman responds.
@@ -89,8 +91,8 @@ The woman stops abruptly and turns to look up at you, freezing. She appears to b
 ~character_a = "Sunday"
 "What's you name, sweetheart?" she asks.
 
-    *"{player_name}."{change_name()}
-    *(sour) "Definitely not sweetheart.["] {change_name()}Call me {player_name} or nothing at all."
+    *"{player_name}."
+    *(sour) "Definitely not sweetheart.["] Call me {player_name} or nothing at all."
 ~rel_sunday -=5
 
 -{sour:
@@ -104,10 +106,10 @@ The woman stops abruptly and turns to look up at you, freezing. She appears to b
 "Very well, {player_name}. My name is Sunday. Sunday Lien. I'm not sure what your plan is exactly, but would you be interested in joining forces?"
 }
 
-*"Fine, but I don't trust you[."]{change_name()}," you say suspiciously.
+*"Fine, but I don't trust you[."]," you say suspiciously.
 ~rel_sunday -= 10
 ~communal_independent += 10
-*"That sounds like a good idea[."]{change_name()}," you say. "Maybe together we can {intro.help_scared_injured: help out those who need it}{intro.get_tf_outta_here: find a safe way off this mess}{intro.find_out_wha_happe: figure out who's responsible for this}{intro.get_phat_loots: take a bigger haul}."
+*"That sounds like a good idea[."]," you say. "Maybe together we can {intro.help_scared_injured: help out those who need it}{intro.get_tf_outta_here: find a safe way off this mess}{intro.find_out_wha_happe: figure out who's responsible for this}{intro.get_phat_loots: take a bigger haul}."
 ~rel_sunday += 10
 ~communal_independent -= 10
 
