@@ -15,30 +15,10 @@ public class ButtonBehavior : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 
     [SerializeField]
     private AudioSource buttonClickSound = null;
-    public void buttonPressDown()
+    public void PlaySound()
     {
-    	isButtonPressed = true;
-    	buttonClickSound.GetComponent<AudioSource>().Play();
+        buttonClickSound.Play();
     }
-
-    public void buttonPressUp()
-    {
-    	isButtonPressed = false;
-    }
-    /*
-        public void buttonCheck()
-        {
-            if(isButtonPressed == true)
-            {
-                //
-                buttonPressUp();
-            } else if(isButtonPressed == false)
-            {
-                //
-                buttonPressDown();
-            }
-        }
-    */
     //change Text Color on click
     public void OnPointerDown(PointerEventData pointerEventData)
     {
@@ -55,6 +35,7 @@ public class ButtonBehavior : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     {
         buttonText = transform.GetComponentInChildren<Text>();
         button = transform.GetComponent<Button>();
+        buttonClickSound = transform.GetComponent<AudioSource>();
     }
 
     void Start()
