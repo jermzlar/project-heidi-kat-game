@@ -19,22 +19,26 @@ When you arrive at the nearest station, the state of it answers any questions yo
 ~whos_talking = "sunday"
 "That head wound must be worse than I thought; are you insane?" Sunday asks seriously.
 
-    *"What? It's perfectly fine[."]," you say innocently. "Relatively safe."
+    *"What? It's perfectly fine[."]{change_name()} #after
+    <>," you say innocently. "Relatively safe."
     ~whos_talking = "sunday"
     ~character_a = "Sunday"
     "Oh yes, relatively safe, except for the live track that snakes its way through the entire course that could electrocute us with 300,000 volts should we touch it," Sunday replies, her tone much peppier than it should be for a sentence that grim.
-    *"Look, the trains obviously aren't using them[."]," you point out, motioning to the two passenger carts which have crashed, sandwiching a third.
+    *"Look, the trains obviously aren't using them[."]{change_name()} #after
+    <>," you point out, motioning to the two passenger carts which have crashed, sandwiching a third.
     ~whos_talking = "sunday"
     ~character_a = "Sunday"
     "The trains aren't, but... it's not..." she trails off vaguely.
+    ~whos_talking = "mc"
     "What?"
     ~whos_talking = "sunday"
     ~character_a = "Sunday"
     "Nothing," Sunday says, though you are unconvinced.
-    *"Do you have any better ideas?"
+    *"Do you have any better ideas?"{change_name()}
     ~whos_talking = "sunday"
     ~character_a = "Sunday"
     "I do have one," Sunday says.
+    ~whos_talking = "mc"
     "Yeah?" you say when she isn't forthcoming.
     ~whos_talking = "sunday"
     ~character_a = "Sunday"
@@ -49,12 +53,12 @@ When you arrive at the nearest station, the state of it answers any questions yo
 ~whos_talking = "nobody"
 She crosses her arms obstinately.
 
-    *"I could really use your help[."]; I don't know what I'm going to run into," you say.
+    *"I could really use your help[."]{change_name()}; I don't know what I'm going to run into," you say.
     ~ rel_sunday += 10
     ~whos_talking = "sunday"
     ~character_a = "Sunday"
     "Oh, alright," Sunday sighs as she marches over.
-    *"Honestly, I don't care if you come or if you stay here to die[."]," you say. "No skin off my nose."
+    *"Honestly, I don't care if you come or if you stay here to die[."]{change_name()}," you say. "No skin off my nose."
     ~ rel_sunday -= 15
     ~whos_talking = "sunday"
     ~character_a = "Sunday"
@@ -75,9 +79,9 @@ Ahead you can just make out a series of large, scorched holes in the sides of th
 ~whos_talking = "nobody"
 You nod, and the two of you begin to make your way through the tunnel as quickly and as carefully as possible.
 
-    *"So, what do you know about what happened?"[] you ask Sunday after a few minutes of silence. -> sundays_response
-    *"What is it you do, exactly, Sunday?"[] you ask after a few minutes of silence. ->sundays_response
-    *"Tell me why you were rifling around in a security officer's desk[."]," you say to Sunday after a few minutes of silence. ->sundays_response
+    *"So, what do you know about what happened?"[]{change_name()} you ask Sunday after a few minutes of silence. -> sundays_response
+    *"What is it you do, exactly, Sunday?"[]{change_name()} you ask after a few minutes of silence. ->sundays_response
+    *"Tell me why you were rifling around in a security officer's desk[."]{change_name()}," you say to Sunday after a few minutes of silence. ->sundays_response
 
 = sundays_response
 {intro.get_phat_loots:
@@ -85,19 +89,19 @@ You nod, and the two of you begin to make your way through the tunnel as quickly
 ~character_a = "Sunday"
 "Why do you care? You made it clear you're only concerned with material gain in this situation," Sunday says coolly.
 
-*"That's not entirely true[."]," you say, mock-hurt. "I also care about escaping this tin can with said material gain."
+*"That's not entirely true[."]{change_name()}," you say, mock-hurt. "I also care about escaping this tin can with said material gain."
 ~rel_sunday -= 5
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "Well in that case, the less you know about what's going on, the more likely you are to get out of this with the majority of your limbs and as many stolen valuables as your remaining ones can carry," Sunday says pointedly.
 "That sure sounds like you've got something to hide."
 -> suddenly_body_snatchers
-*"Fair enough[."]," you say. "I was just curious is all."
+*"Fair enough[."]{change_name()}," you say. "I was just curious is all."
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "Look," she says, stopping for a moment. <>
 -> suddenly_body_snatchers
-*"Are you hiding something?"[] you ask suspiciously.
+*"Are you hiding something?"[]{change_name()} you ask suspiciously.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "Look," she says, stopping for a moment.<>
@@ -107,12 +111,12 @@ You nod, and the two of you begin to make your way through the tunnel as quickly
 ~character_a = "Sunday"
 "{player_name}, I will be quite honest with you. I'm certain you have a great deal of questions, and I know you want to help, but the less you know about what's going on the better off you'll be," Sunday replies matter-of-factly. "If you want to be alive at the end of this, that is."
 
-*"Fine, I'll shut up[."]," you grumble.
+*"Fine, I'll shut up[."]{change_name()}," you grumble.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "Look," she says, stopping for a moment.<>
 -> suddenly_body_snatchers
-*"I don't care, if I can help I want to help[."]," you insist.
+*"I don't care, if I can help I want to help[."]{change_name()}," you insist.
 ~rel_sunday +=5
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
@@ -136,21 +140,24 @@ Before you can answer, there comes a rattling sound from down the tunnel somewhe
     ~logical_creative -= 10
     
     {fight:
+    ~whos_talking = "nobody"
     As you widen your stance and raise your fists,
     }
     {creative:
+    ~whos_talking = "nobody"
     You scan the ground for something like a weapon and see a long, slightly bent piece of metal pipe, but before you can pick it up
     }
     {logical:
+    ~whos_talking = "nobody"
     You scan the area for a good hiding place, but before you can locate one 
     }
 
 ~whos_talking = "nobody"
 -Sunday shuts the light off of her device quickly. She then grabs hold of you with surprising strength and pulls you close, hugging the wall. You notice a faint shimmer in the air around you, just barely visible in the darkness.
 
-*"If you wanted to be closer to me, you could've just asked[."]," you say with deadly seriousness.
+*"If you wanted to be closer to me, you could've just asked[."]{change_name()}," you say with deadly seriousness.
 ~rel_sunday +=5
-*"What are you doing??"[] you ask wildly.
+*"What are you doing??"[]{change_name()} you ask wildly.
 
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
@@ -162,24 +169,26 @@ You count two vaguely humanoid beings dragging something behind them as they cro
 Something about them feels wrong. You can't put a finger on what it is, but you note their presence has caused a deeply uncomfortable feeling inside you, as if you were experiencing nausea in your brain instead of your stomach.
 It's a solid eight minutes before the noise of them finally fades into nothing, and Sunday deigns it safe to release you. The air notably shimmers again as she does, and she turns the light back on. Her face is wan in the unnatural light, and you imagine she must have experienced the same feeling you did.
 
-*"What the hell were those things?"
-*(u_ok)"Are you okay?"
+*"What the hell were those things?"{change_name()}
+*(u_ok)"Are you okay?"{change_name()}
 ~rel_sunday += 5
-*"Why didn't they see us?"
+*"Why didn't they see us?"{change_name()}
 
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
--"I'm fine, thanks for asking," she says{u_ok:.| icily.} "We don't technically know what they're called, but we've termed them 'body snatchers' for now. They couldn't see us because we were cloaked. Rest assured, their eyesight in the dark is incredibly good."
+-{u_ok: "I'm fine, thanks for asking," she says.|} "We don't technically know what they're called, but we've termed them 'body snatchers' for now. They couldn't see us because we were cloaked. Rest assured, their eyesight in the dark is incredibly good."
 
-*"Who's 'we?'"
+*"Who's 'we?'"{change_name()}
 Sunday pushes forward without an answer, not waiting up for you.
+~whos_talking = "mc"
 "Hey, I asked you a question," you say, jogging to catch up to her.
-*"Why do you call them 'body snatchers?'"
+*"Why do you call them 'body snatchers?'"{change_name()}
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
 "I'll give you one good guess," Sunday replies.
+~whos_talking = "mc"
 "Okay, and why do you know about them, exactly?"
-*"I didn't even know technology like that existed[."]; what are you, some kind of secret agent?"
+*"I didn't even know technology like that existed[."]{change_name()}; what are you, some kind of secret agent?"
 
 ~whos_talking = "sunday"
 ~character_a = "Sunday"

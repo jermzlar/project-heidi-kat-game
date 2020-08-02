@@ -38,6 +38,7 @@ VAR character_b = "none"
 VAR background = "background"
 
 ~background = "space station"
+~whos_talking = "nobody"
 A space station in a distant galaxy.
 -> intro
 === function came_from(-> x) 
@@ -180,10 +181,7 @@ NAME DESIGNATION?
 
 = review
 
-NAME DESIGN: {player_name}
-GENDER DESIGNATION: {gender_person} ({pronoun_she}/{pronoun_her}/{pronoun_hers})
-
-Is this correct?
+NAME DESIGN: {player_name} -  GENDER DESIGNATION: {gender_person} ({pronoun_she}/{pronoun_her}/{pronoun_hers}) - Is this correct?
 
 +[Yes.] ->priorities_and_skills
 +[No, I need to change something.] -> enter_pdd_info
