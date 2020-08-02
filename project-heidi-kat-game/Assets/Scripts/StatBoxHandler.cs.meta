@@ -3,7 +3,20 @@ guid: d536848aca8d5704e828b8e252900793
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - statBoxNoGlow: {fileID: 21300000, guid: 33671799d7dd03842a1aacda8f854f6a, type: 3}
+  - statBoxGlow: {fileID: 21300000, guid: df0f5e8bbe74ff9448ec1a9be1c58020, type: 3}
+  - combat_skill: {instanceID: 0}
+  - ingenuity_skill: {instanceID: 0}
+  - medicine_skill: {instanceID: 0}
+  - charm_skill: {instanceID: 0}
+  - technology_skill: {instanceID: 0}
+  - sunday_rel: {instanceID: 0}
+  - lin_rel: {instanceID: 0}
+  - slider_Optimistic_Pessimistic: {instanceID: 0}
+  - slider_Logcial_Creative: {instanceID: 0}
+  - slider_Independent_Communal: {instanceID: 0}
+  - slider_Logcial_Compassionate_SelfServing: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

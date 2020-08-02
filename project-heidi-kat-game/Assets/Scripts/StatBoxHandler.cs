@@ -55,7 +55,7 @@ public class StatBoxHandler : MonoBehaviour
     void Start()
     {
     	closedPosition = transform.position;
-    	openedPosition = closedPosition - new Vector3(0.0f, 94.0f, 0.0f);
+    	openedPosition = closedPosition - new Vector3(0.0f, 100.0f, 0.0f);
         transform.GetComponent<Image>().sprite = statBoxNoGlow;
     }
 
