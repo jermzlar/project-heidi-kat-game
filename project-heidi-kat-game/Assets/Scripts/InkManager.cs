@@ -39,18 +39,25 @@ public class InkManager : MonoBehaviour
 	[SerializeField]
 	private string nameOfTalker = null;
 
+	private bool switchNameOnClick = false;
+
 	private bool clickToContinue = false;
 	private bool clearText = false;
 	public static event Action<Story> OnCreateStory;
     void Start () {
 		StartStory();
-		//story.ObserveVariable("whos_talking", (string varName, object newValue) =>
-		//{ SetDisplayName((string)newValue); });
+		story.ObserveVariable("whos_talking", (string varName, object newValue) =>
+		{ SetDisplayName((string)newValue); });
 	}
 
 	private void SetDisplayName(string name)
     {
-		characterManager.DisplayName(name);
+		if (story.currentTags.Count > 0)
+		{ 
+			switchNameOnClick = true;
+		}
+		else
+			characterManager.DisplayName(name);
     }
 
 	// Creates a new Story object with the compiled story which we can then play!
@@ -85,22 +92,20 @@ public class InkManager : MonoBehaviour
 			// Continue gets the next line of the story
 			string text = story.Continue();
 			globalVariables.refreshAll();
-			//string name = globalVariables.getWhosTalking();
-			//characterManager.DisplayName(name);
+
 			// This removes any white space from the text.
 			text = text.Trim();
-			// Display the text on screen!
-			if (conversation.text == "")
-			{ 
-				dialogueText = text;
-				logOfDialogue = text;
+			// Display the text on screen! If Log was empty
+			if (text == "" && !story.canContinue)
+			{
+				RefreshView();
+				return;
 			}
-			else
+			else 
 			{
 				dialogueText = text;
 				logOfDialogue = logOfDialogue + "\n" + text;
 			}
-				//dialogueText = dialogueText + "\n" + text;
 
 
 			CreateContentView(dialogueText);
@@ -123,6 +128,7 @@ public class InkManager : MonoBehaviour
 				});
 
 			}
+			
 			dialogueChoices.Resize();
 		}
 		// If we've read all the content and there's no choices, the story is finished!
@@ -139,7 +145,7 @@ public class InkManager : MonoBehaviour
 					RefreshView();
 				else
 				{
-					SetDisplayName((string)story.variablesState["whos_talking"]);
+					//SetDisplayName((string)story.variablesState["whos_talking"]);
 					clickToContinue = true;
 					if (dialogueChoices.panelAlpha)
 						dialogueChoices.ToggleDialogueChoice();
@@ -151,7 +157,12 @@ public class InkManager : MonoBehaviour
 	// When we click the choice button, tell the story to choose that choice!
 	void OnClickChoiceButton (Choice choice) {
 		story.ChooseChoiceIndex (choice.index);
-		SetDisplayName((string)story.variablesState["whos_talking"]);
+		if (switchNameOnClick)
+		{
+			characterManager.DisplayName((string)story.variablesState["whos_talking"]);
+			switchNameOnClick = false;
+			story.currentTags.Clear();
+		}
 		nameOfTalker = ((string)story.variablesState["whos_talking"]);
 		ClearText();
 		RefreshView();
