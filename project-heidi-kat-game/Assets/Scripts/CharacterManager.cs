@@ -53,6 +53,24 @@ public class CharacterManager : MonoBehaviour
             nameText.text = globalVariables.getPlayerName();
 
         }
+        else if (string.Equals(name, "stranger"))
+        {
+            ToggleNamePlate(true);
+            nameText.text = "Stranger";
+
+        }
+        else if (string.Equals(name, "sunday"))
+        {
+            ToggleNamePlate(true);
+            nameText.text = "Sunday";
+
+        }
+        else if (string.Equals(name, "lin"))
+        {
+            ToggleNamePlate(true);
+            nameText.text = "L-1N";
+
+        }
         else
         {
             ToggleNamePlate(true);
@@ -60,6 +78,58 @@ public class CharacterManager : MonoBehaviour
         }
 
     }
+
+    public void DetermineCharacterA(string value)
+    {
+        switch (value)
+        {
+            case "none":
+                ToggleCharacterA(false);    
+                break;
+            case "sunday":
+                ToggleCharacterA(true);
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void DetermineCharacterB(string value)
+    {
+        switch (value)
+        {
+            case "none":
+                ToggleCharacterB(false);
+                break;
+            case "lin":
+                ToggleCharacterB(true);
+                break;
+            default:
+                break;
+        }
+    }
+
+
+
+    public void ToggleCharacterA(bool toggle)
+    {
+        if (toggle)
+            characterA.GetComponent<CanvasGroup>().alpha = 1;
+        else
+            characterA.GetComponent<CanvasGroup>().alpha = 0;
+    }
+    
+    public void ToggleCharacterB(bool toggle)
+    {
+
+        if (toggle)
+            characterB.GetComponent<CanvasGroup>().alpha = 1;
+        else
+            characterB.GetComponent<CanvasGroup>().alpha = 0;
+
+    }
+
+
 
     public void Resize(float size)
     {
