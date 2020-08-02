@@ -1,6 +1,8 @@
 == MNC_lin ==
 
-~background = "generic_station"
+~background = "hallway"
+~music_cue = "ambient spaceship 1"
+
 {came_from (-> transitions.security_to_lab_or_hosp):
 
 ~whos_talking = "nobody"
@@ -13,13 +15,17 @@ You haven't seen any more of the creatures you came across inside the tunnels, w
 The two of you climb onto the platform and take the left exit from the station towards the science wing.
 
 ~whos_talking = "nobody"
-As you approach the hallway that leads to the laboratory you start to hear some growing unsettling noises--animalistic shrieks and a great deal of banging and clattering. You briefly wonder if you're about to run into more body-snatchers, but they weren't nearly this noisy before.
+~sound_cue = "clatter and bang"
+~sound_cue = "voltet screech 2"
+As you approach the hallway that leads to the laboratory you start to hear some unsettling noises--shrieks and a great deal of banging and clattering. You briefly wonder if you're about to run into more body-snatchers, but they weren't nearly this noisy before.
 
 }
 
 {came_from (-> hospital_ward):
 
 ~whos_talking = "nobody"
+~sound_cue = "clatter and bang"
+~sound_cue = "voltet screech 2"
 As you exit the hospital and head for the nearby laboratory, you start to hear growing unsettling noises--animalistic shrieks and a great deal of banging and clattering coming from where you're headed. You briefly wonder if you're about to run into more body-snatchers, but they weren't nearly this noisy before.
 }
 
@@ -97,7 +103,8 @@ You stop and turn to look at her.
 "We need to authorize departures for short-range shuttles regardless, so unless you suddenly know of a better place we can do that than what you originally suggested--"
 
 ~whos_talking = "nobody"
-There isn't a chance to discuss it any further as something crashes loudly in the laboratory.
+~sound_cue = "crash"
+There isn't a chance to discuss it further as something crashes loudly in the laboratory.
 
 ~background = "laboratory"
 
@@ -115,6 +122,7 @@ You don't wait up for Sunday as you take off at a run and burst through the doub
 }
 
 ~whos_talking = "nobody"
+~music_cue = "combat 1"
 The voltet swings its head in your direction and its eyes, deep orange and glowing like embers, fall on you. You have just a few moments to react.
 
     *(attack) [Attack it head-on with my bare hands.]
@@ -163,7 +171,11 @@ The voltet quickly glides across the room, eyes fixed on you, but you duck out o
 {came_from (->utilize):
 
 ~whos_talking = "nobody"
-The voltet quickly glides across the room, eyes fixed on you, but your attention is elsewhere. You've spotted what you're {not intro.scientist: fairly} certain is a chemical catalyst that reacts very violently with acidic compounds{intro.scientist:.|; at least, you're pretty sure that's what it is.} You lunge for it just in time as the voltet lands where you stood moments before. In your attempt to dodge its grazing attack you drop the catalyst and the flask crashes to the floor, scattering glass everywhere as the contents of it sizzle uselessly on the floor.
+The voltet quickly glides across the room, eyes fixed on you, but your attention is elsewhere. You've spotted what you're {not intro.scientist: fairly} certain is a chemical catalyst that reacts very violently with acidic compounds{intro.scientist:.|; at least, you're pretty sure that's what it is.}
+
+~whos_talking = "nobody"
+~sound_cue = "glass break"
+You lunge for it just in time as the voltet lands where you stood moments before. In your attempt to dodge its grazing attack you drop the catalyst and the flask crashes to the floor, scattering glass everywhere as the contents of it sizzle uselessly on the floor.
 -> sunday_attack
 }
 
@@ -186,7 +198,11 @@ The voltet quickly glides across the room, eyes fixed on you, and you attempt to
 {came_from (->utilize):
 
 ~whos_talking = "nobody"
-The voltet glides across the room with ease, eyes fixed on you, but your attention is elsewhere. You've spotted what you're {not intro.scientist: fairly} certain is a chemical catalyst that reacts very violently with acidic compounds{intro.scientist:.|; at least, you're pretty sure that's what it is.} You lunge for it as the voltet swoops in to land, swiping at you once and grazing you across your back as you growl with pain. You drop the catalyst in the attack and the flask crashes to the floor, scattering glass everywhere as the contents of it sizzle uselessly on the floor.
+The voltet glides across the room with ease, eyes fixed on you, but your attention is elsewhere. You've spotted what you're {not intro.scientist: fairly} certain is a chemical catalyst that reacts very violently with acidic compounds{intro.scientist:.|; at least, you're pretty sure that's what it is.}
+
+~whos_talking = "nobody"
+~sound_cue = "glass break"
+You lunge for it as the voltet swoops in to land, swiping at you once and grazing you across your back as you growl with pain. You drop the catalyst in the attack and the flask crashes to the floor, scattering glass everywhere as the contents of it sizzle uselessly on the floor.
 -> sunday_attack
 }
 
@@ -196,6 +212,7 @@ The voltet glides across the room with ease, eyes fixed on you, but your attenti
 Just then Sunday comes running in behind you. She has some kind of weapon drawn on the lizard creature the likes of which you've never seen before; what you presume to be the business end of the thing looks more like a whisk than a weapon.
 
 ~whos_talking = "nobody"
+~sound_cue = "pewpew 1"
 She wastes no time in shooting the voltet with incredible accuracy, which is good considering you are still in fairly close proximity to it. With it distracted temporarily by her firing, you manage to get away so you can regroup.
 
 
@@ -263,7 +280,7 @@ Trepidation fills you as you take off at a run in the direction of the voltet; y
 {logical_creative <= 40:
 
 ~whos_talking = "nobody"
-You decide your best bet is to uncover a weakness (which is much more your style anyway). The voltet is still preoccupied by Sunday, so you take the chance to circle around and see if you can spot any weaknesses. A moment's careful observation reveals to you what appears to be a soft spot underneath its spikey jaw. Perfect. Now you just need to get close enough.
+You decide your best bet is to uncover a weakness{voltet_failure: (which is much more your style anyway)|}. The voltet is still preoccupied by Sunday, so you take the chance to circle around and see if you can spot any weaknesses. A moment's careful observation reveals to you what appears to be a soft spot underneath its spikey jaw. Perfect. Now you just need to get close enough.
 
 ~whos_talking = "nobody"
 You grab a dissecting scalpel off the nearest counter; it's small, but it'll have to do.
@@ -290,7 +307,7 @@ You dive out of its way a moment too late as it rakes its claws deep into your a
 {logical_creative >=60:
 
 ~whos_talking = "nobody"
-You decide your best best is to get creative (which is much more your style anyway). The voltet is still preoccupied by Sunday, so you take the chance to look around for anything that might help. You notice {intro.scientist: a bottle of Xythocin, extremely flammable|a bottle of some chemical with a yellow warning label} on a nearby counter. That'll probably work; now you just need something to light it with.
+You decide your best best is to get creative{voltet_failure: (which is much more your style anyway)|}. The voltet is still preoccupied by Sunday, so you take the chance to look around for anything that might help. You notice {intro.scientist: a bottle of Xythocin, extremely flammable|a bottle of some chemical with a yellow warning label} on a nearby counter. That'll probably work; now you just need something to light it with.
 
 ~whos_talking = "nobody"
 Grabbing the bottle, you search desparately for a source of ignition, and don't have to look for very long before you find a bunson burner.
@@ -325,6 +342,7 @@ Sunday seizes the moment and aims point blank at the creature's head. {came_from
 You take hold of Sunday and drag her away as you toss the the lit bunson burner in the direction of the voltet. The {intro.scientist: Xythocin|chemical}-soaked reptile goes up in flames almost instantly, as does the area surrounding it which was also doused in the chemical. It screeches and thrashes for several minutes until it is finally overcome by the fire.
 
 ~whos_talking = "nobody"
+~sound_cue = "slow clap"
 As you turn to look at Sunday, the sound of a slow clap travels across the laboratory, and you both look around for its source. You find it in one of the doorways to another area of the lab.
 
 -> introducing_lin
@@ -333,9 +351,11 @@ As you turn to look at Sunday, the sound of a slow clap travels across the labor
 {came_from (-> avoid_instead):
 
 ~whos_talking = "nobody"
+~sound_cue = "voltet screech 3"
 This is your chance. You lunge towards the voltet with lightning accuracy, jamming the small blade up through the soft part of its jaw. Its shriek is cut short as the blade pierces its brain and it drops to the floor, still gurgling.
 
 ~whos_talking = "nobody"
+~sound_cue = "slow clap"
 As you turn to look at Sunday, the sound of a slow clap travels across the laboratory, and you both look around for its source. You find it in one of the doorways to another area of the lab.
 
 -> introducing_lin
@@ -347,9 +367,11 @@ As you turn to look at Sunday, the sound of a slow clap travels across the labor
 "Watch it!" you yell upon feeling the near-graze of the bullet.
 
 ~whos_talking = "nobody"
+~sound_cue = "headshot no delay"
 The voltet throws you from its back as it wails, clawing at its damaged eyes. Between you and Sunday you've blinded it. Without its sight it isn't nearly as formidable; you manage to get hold of the creature and pin it to the floor as Sunday takes aim one last time and fires directly into the back of its skull. It thrashes once, twice... and then finally, it goes still.
 
 ~whos_talking = "nobody"
+~sound_cue = "slow clap"
 As you turn to look at Sunday, the sound of a slow clap travels across the laboratory, and you both look around for its source. You find it in one of the doorways to another area of the lab.
 
 -> introducing_lin
@@ -361,11 +383,15 @@ As you turn to look at Sunday, the sound of a slow clap travels across the labor
 When you open your eyes you see nothing but the voltet towering over you, snarling and with saliva dripping from its open maw. Sunday shoots at it but it's useless; the thing's attention is fixed on you, and you realize as your heart fills with terror that you are about die...
 
 ~whos_talking = "nobody"
+~sound_cue = "chestburst"
 ... and then you don't. Faster than you can follow, a silver-white blur out of the corner of your eye runs up behind the voltet and much to its surprise there is suddenly what appears to be a human arm sticking through its chest, bloody fist tightened around some kind of alien internal organ. The voltet slumps and then falls to the ground as the person behind it recovers their arm from inside of it.
 
 -> introducing_lin
 
 = introducing_lin
+
+~music_cue = "stop combat 1"
+~music_cue = "ambient spaceship 1"
 
 ~whos_talking = "nobody"
  Before you stands what is apparently a human, although you've never seen a human as aethereal and genderless as this one.
@@ -466,6 +492,7 @@ The stranger nods once in the affirmative. Sunday does a poor job of not looking
 {near_death:
 
 ~whos_talking = "mc"
+~sound_cue = "woozy"
 "You seem, uh, very..." you trail off, feeling a big light-headed.
 
 ~whos_talking = "sunday"
@@ -534,7 +561,7 @@ You exchange a furtive look with Sunday.
 
 ~whos_talking = "lin"
 ~character_b = "lin"
-"I was asking to be polite," Lin says. "In truth, I can likely intuit what you are doing here by calculating the most probable scenarios by the time I finish this sentence. {player_name}, you are seeking {intro.help_scared_injured: to help the remaining survivors}{intro.get_tf_outta_here: the quickest and safest egress from this space station}{intro.find_out_wha_happe: to find out who is responsible for the disaster here}{intro.get_phat_loots: to gather a large summation of valuables and depart with them}, correct?"
+"I was asking to be polite," Lin says. "In truth, I can likely intuit what you are doing here by calculating the most probable scenarios by the time I finish this sentence. {player_name}, you are seeking to {intro.help_scared_injured: to help the remaining survivors}{intro.get_tf_outta_here: the quickest and safest egress from this space station}{intro.find_out_wha_happe: to find out who is responsible for the disaster here}{intro.get_phat_loots: to gather a large summation of valuables and depart with them}, correct?"
 
 ~whos_talking = "nobody"
 Sunday looks as if Lin just slapped her.

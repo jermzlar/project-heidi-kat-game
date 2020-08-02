@@ -4,7 +4,9 @@
 
 == enter_hospital_wsunday ==
 
-~background = "generic_station"
+~background = "hallway"
+~music_cue = "ambient spaceship 1"
+
 ~whos_talking = "nobody"
 It's some time before you're back in the dim red emergency lighting of the station, having exited the tunnel and come out to the station nearest the medical and science wings.
 

@@ -1,6 +1,7 @@
 == the_discovery ==
 
-~background = "laboratory_zoomin"
+~background = "laboratory zoomin"
+~music_cue = "ambient spaceship 1"
 
 ~whos_talking = "nobody"
 You and Sunday enter the room adjacent to the laboratory. The lights here, like everywhere else on the station, are the dim green emergency lights that flicker periodically. There are about five computers still working here, each looking very similarly perched on top of identical desks. Of the other three inoperable computers, one has a cracked screen, one has collided with the floor, and one appears to be smoking faintly. {intro.scientist: You are slightly pained at the sight of the data room, having been previously regaled by fellow scientists about how many years it took each of them to convince Elysium to grant funding for various equipment replacements and upgrades.}
@@ -31,6 +32,7 @@ You and Sunday enter the room adjacent to the laboratory. The lights here, like 
 The two of you fall silent as Sunday sets about searching the room. She, for her part, seems to know exactly where she's going as she heads towards a desk at the far corner with a computer. She sits and almost immediately begins typing and clicking furiously.
 
 ~whos_talking = "nobody"
+~sound_cue = "boopbeepboop 1"
 You likewise seat yourself at one of the desks and begin to enter your station log-in information. <>
 
 {intro.security or intro.technician or intro.scientist:

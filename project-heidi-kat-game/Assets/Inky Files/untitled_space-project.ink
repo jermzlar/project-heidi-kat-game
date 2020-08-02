@@ -38,8 +38,12 @@ VAR character_b = "none"
 VAR background = "background"
 VAR whos_talking_button = "nobody"
 
+VAR music_cue = "none"
+VAR sound_cue = "none"
+
 ~background = "space station"
 ~whos_talking = "nobody"
+
 -> intro
 === function came_from(-> x) 
 	~ return TURNS_SINCE(x) == 0
@@ -47,9 +51,12 @@ VAR whos_talking_button = "nobody"
 == intro ==
 
 ~background = "bedroom"
+~music_cue = "opener"
 
 ~whos_talking = "nobody"
 You don't remember how it happened, nor do you know what caused it. All you know is that there was a powerful explosion, and now here you are, laying on the floor of your bedroom in your uniform with what feels like blood seeping out of your head.
+
+~whos_talking = "nobody"
 You try to think back to the last thing you can remember...
 
 ~whos_talking = "nobody"
@@ -151,6 +158,8 @@ You search the floor of your room for it, and discover it beneath some rubble. I
 
 = enter_pdd_info
 
+~sound_cue = "boopbeepboop 1"
+
 A dialog flashes on the screen of your PDD.
 
 ...
@@ -209,7 +218,7 @@ NAME DESIGNATION?
         ~pronoun_hers = "theirs"
         ~pronoun_her = "them"
         ~gender_person = "person"
-        ~gender_females = "non-binary"
+        ~gender_females = "individual"
 
 -[Review information.]
 -> review
