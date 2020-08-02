@@ -13,18 +13,25 @@ As you enter a tunnel and consider the likelihood that you'll run into them agai
 "Sunday, are the body snatchers related to the disappearances of employees? I mean it makes sense, right? Have they been here the whole time? Are the shipping manifests--?"
 
 ~whos_talking = "sunday"
-~character_a = "Sunday"
+~character_a = "sunday"
 "I know you think you're on to something, but you're not," Sunday interrupts you. "The body snatchers are just a spot of bad luck on our part. They're scavenger aliens who prey on derelict stations and damaged ships. Most people in the system don't know about them because by the time they show up everyone's usually dead, and if you're not dead you almost certainly will be if it sees you."
 
-*"Does anyone know what they do with the bodies[?"] they collect?" you ask.
+    ~whos_talking_button = "mc"
+    *["Does anyone know what they do with the bodies?"]
+        "Does anyone know what they do with the bodies they collect?" you ask.
 
-*"Where do they come from?"[] you ask.
+    ~whos_talking_button = "mc"
+    *["Where do they come from?"]
+    "Where do they come from?" you ask.
 
-*"Why do they make me feel sick[?"], like I want to throw up in my head?" you ask, recalling the sensation of being near one.
+    ~whos_talking_button = "mc"
+    *["Why do they make me feel sick?"]
+    "Why do they make me feel sick, like I want to throw up in my head?" you ask, recalling the sensation of being near one.
 
+-
 ~whos_talking = "sunday"
-~character_a = "Sunday"
--"Most people don't even know they exist," Sunday replies. "The why and where and how of them is a mystery even to those who do know they exist."
+~character_a = "sunday"
+"Most people don't even know they exist," Sunday replies. "The why and where and how of them is a mystery even to those who do know they exist."
 
 ~whos_talking = "nobody"
 The three of you are silent for a while as you make your way through the tunnels.
@@ -34,9 +41,11 @@ The three of you are silent for a while as you make your way through the tunnels
 =two_fight_begin
 
 ~background = "tunnels"
+
 ~whos_talking = "nobody"
 You decide to take the maintenance tunnels once more in heading for the shuttle bay being as they are the quicket way about the station--regardless of the apparent habitation of vaguely human, body-snatching shadow monsters.
 
+~whos_talking = "nobody"
 As you enter a tunnel with Lin and consider the likelihood that you'll run into them again, a thought occurs to you.
 
 ~whos_talking = "mc"
@@ -47,7 +56,7 @@ They do not reply right away, taking a minute to think, which in their mind must
 
 ~whos_talking = "lin"
 ~character_b = "lin"
-"Body snatchers. Yes, it took me a moment to discern what you were referring to. I presume you mean the creatures who have recently taken up residence amongst the very tunnels we traverse?"
+"Body snatchers. Yes, it took me a moment to discern what you were referring to. I presume you mean the creatures who have recently taken up residence amongst the tunnels we traverse?"
 
 ~whos_talking = "nobody"
 You nod.
@@ -74,18 +83,19 @@ The two of you are silent for a while as you make your way through the tunnels.
 <> It's because {three_fight_begin: everyone is|both of you are} silent that after a while you are able to pick up on the faint sound ahead of you of something being dragged along the floor, and the unearthly sighs accompanying it.
 
 {three_fight_begin:
+
 ~whos_talking = "nobody"
 You exchange a worried glance with Sunday.
 
 ~whos_talking = "sunday"
-~character_a = "Sunday"
+~character_a = "sunday"
 "We can hope they don't see us," she offers up.
 
 ~whos_talking = "mc"
-"What about your cloak thing?" you ask.
+"What about your cloaking device?" you ask.
 
 ~whos_talking = "sunday"
-~character_a = "Sunday"
+~character_a = "sunday"
 "I can barely get it to extend over you, I can't fit all three of us in the field."
 
 ~whos_talking = "nobody"
@@ -99,7 +109,7 @@ You look to Lin desperately.
 "Well, shit," you say, at a loss as the dragging noises grow louder.
 
 ~whos_talking = "sunday"
-~character_a = "Sunday"
+~character_a = "sunday"
 "Maybe the three of us will be able to take them on," Sunday says, though she doesn't sound entirely convinced.
 
 ~whos_talking = "lin"
@@ -111,10 +121,11 @@ You shoot them an admonitory look.
 
 ~whos_talking = "lin"
 ~character_b = "lin"
-"--that is to say, they are very, very small; nonetheless, the possibility still exists," they finish sheepishly.
+"--that is to say, they are very, very small; nonetheless, the possibility still exists," they finish evenly.
 }
 
 {two_fight_begin:
+
 ~whos_talking = "nobody"
 You exchange a glance with Lin.
 
@@ -137,7 +148,7 @@ You shoot them an admonitory look.
 
 ~whos_talking = "lin"
 ~character_b = "lin"
-"--that is to say, they are very, very small; nonetheless, the possibility still exists," they finish sheepishly.
+"--that is to say, they are very, very small; nonetheless, the possibility still exists," they finish evenly.
 }
 
 ~whos_talking = "nobody"

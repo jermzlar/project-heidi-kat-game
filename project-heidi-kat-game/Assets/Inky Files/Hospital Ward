@@ -3,6 +3,7 @@
 -> enter_hospital_wsunday
 
 == enter_hospital_wsunday ==
+
 ~background = "generic_station"
 ~whos_talking = "nobody"
 It's some time before you're back in the dim red emergency lighting of the station, having exited the tunnel and come out to the station nearest the medical and science wings.
@@ -19,7 +20,7 @@ The two of you climb onto the platform and take the right exit from the station 
 The entry doors to the hospital are automatic and should be closed, and yet they are wide open. One of them appears to be stuck as it attempts to slide back and forth over the track.
 
 ~whos_talking = "sunday"
-~character_a = "Sunday"
+~character_a = "sunday"
 "Don't think there's anyone here," Sunday remarks as you pass through into the lobby.
 
 {intro.doctor or intro.combat_medic or intro.unconventional_medic or intro.medicine:
@@ -34,17 +35,21 @@ The entry doors to the hospital are automatic and should be closed, and yet they
 ~whos_talking = "nobody"
 You continue past the lobby into the emergency room, where you set about finding some spare cloth to wash the blood off. You do this at one of the sinks, and Sunday posts up on one of the emergency room beds as she waits.
 Once you've cleaned yourself off you look in the mirror to inspect the wound.
+
 {intro.doctor:
 ->doctor_patchup
 }
+
 {intro.combat_medic or intro.unconventional_medic or intro.medicine:
 -> medicine_patchup
 }
-{not intro.doctor or intro.combat_medic or intro.unconventional_medic or intro.medicine:
+
+{not intro.doctor and not intro.combat_medic and not intro.unconventional_medic and not intro.medicine:
 -> nondoctor_patchup
 }
 
 = medicine_patchup
+
 ~whos_talking = "nobody"
 <> It'll need a few stitches, but it's not as bad as it appears.
 
@@ -52,14 +57,14 @@ Once you've cleaned yourself off you look in the mirror to inspect the wound.
 It doesn't take you very long to locate the necessary supplies, which you set up on a tray near the mirror before getting to work.
 
 ~whos_talking = "sunday"
-~character_a = "Sunday"
+~character_a = "sunday"
 "I guess you've done this before?" Sunday asks after a while.
 
 ~whos_talking = "mc"
 "Yes," you say through clenched teeth as you pull the needle through your skin.
 
 ~whos_talking = "sunday"
-~character_a = "Sunday"
+~character_a = "sunday"
 "What did you do before coming here?"
 
 {intro.combat_medic:
@@ -68,94 +73,129 @@ It doesn't take you very long to locate the necessary supplies, which you set up
 "I was a combat medic," you reply. 
 
 ~whos_talking = "sunday"
-~character_a = "Sunday"
+~character_a = "sunday"
 "In the Jenusian-Terran War?"
 
-*(peregrine) "No, I wasn't quite old enough for that[."]. I served with the skirmishers during the Peregrine Rebellion," you explain as you finish the last stitch on your head and knot it off.
-~logical_creative += 10
-~ingenuity_skill += 5
-~whos_talking = "sunday"
-~character_a = "Sunday"
-"Wow. Peregrine huh? You must have some interesting stories, then," Sunday says.
+    ~whos_talking_button = "mc"
+    *(peregrine) ["No, I wasn't quite old enough for that."]
+        "No, I wasn't quite old enough for that. I served with the skirmishers during the Peregrine Rebellion," you explain as you finish the last stitch on your head and knot it off.
+        ~logical_creative += 10
+        ~ingenuity_skill += 5
 
-~whos_talking = "nobody"
-You nod. -> history_doctor
-*(jenusian_terran) "Yes, I served under Commander Haelen Sturn[."] in the Systems Coalition from '83 to '87," you explain as you finish the last stitch on your head and knot it off.
-~logical_creative -= 10
-~technology_skill += 5
-~whos_talking = "sunday"
-~character_a = "Sunday"
-"Wow. Sturn, huh? He was a tactical genius," Sunday says.-> history_doctor
-~whos_talking = "nobody"
-You nod.
+        ~whos_talking = "sunday"
+        ~character_a = "sunday"
+        "Wow. Peregrine huh? You must have some interesting stories, then," Sunday says.
+
+        ~whos_talking = "nobody"
+        You nod.
+    -> history_doctor
+    
+    ~whos_talking_button = "mc"
+    *(jenusian_terran) ["Yes, I served under Commander Haelen Sturn."]
+        "Yes, I served under Commander Haelen Sturn in the Systems Coalition from '83 to '87," you explain as you finish the last stitch on your head and knot it off.
+        ~logical_creative -= 10
+        ~technology_skill += 5
+        
+        ~whos_talking = "sunday"
+        ~character_a = "sunday"
+        "Wow. Sturn, huh? He was a tactical genius," Sunday says.
+        
+        ~whos_talking = "nobody"
+        You nod.
+    -> history_doctor
 
 -else:
 
-* (charity_doctor) "I worked with Physician's Accord to help provide medical care access to outposts on third-worlds[."]," you explain as you finish the last stitch on your head and knot it off. <>
-~logical_creative += 10
-~ingenuity_skill += 5
-"You have to get pretty creative when you're in some backwater frontier town with a quarter of the supplies available to Coreworld doctors and twice the patients."
--> history_doctor
-*(homeworld_doctor) "I worked as one of the top surgeons of the Coreworld[."]," you explain as you finish the last stitch on your head and knot it off. <>
-~logical_creative -= 10
-~technology_skill += 5
-"It was safe and it paid well."
-->history_doctor
+    ~whos_talking_button = "mc"
+    * (charity_doctor) ["I worked with Physician's Accord to help provide medical care access to outposts on third-worlds."]
+        "I worked with Physician's Accord to help provide medical care access to outposts on third-worlds," you explain as you finish the last stitch on your head and knot it off. "You have to get pretty creative when you're in some backwater frontier town with a quarter of the supplies available to Coreworld doctors and twice the patients."
+        ~logical_creative += 10
+        ~ingenuity_skill += 5
+       -> history_doctor
+        
+    ~whos_talking_button = "mc"
+    *(homeworld_doctor) ["I worked as one of the top surgeons of the Coreworld."]
+        "I worked as one of the top surgeons of the Coreworld," you explain as you finish the last stitch on your head and knot it off. "It was safe and it paid well."
+        ~logical_creative -= 10
+        ~technology_skill += 5
+    ->history_doctor
 }
 
 = doctor_patchup
+
 ~whos_talking = "nobody"
 <> It'll need a few stitches, but it's not as bad as it appears.
 
+~whos_talking = "nobody"
 Having worked here for the last three months, it takes no time at all for you to locate the necessary supplies, which you set up on a tray near the mirror before getting to work.
 
 ~whos_talking = "sunday"
-~character_a = "Sunday"
+~character_a = "sunday"
 "I guess this is where you worked?" Sunday asks after a while.
 
 ~whos_talking = "mc"
 "It is," you say through clenched teeth as you pull the needle through your skin.
 
 ~whos_talking = "sunday"
-~character_a = "Sunday"
+~character_a = "sunday"
 "What did you do before coming here?"
 
-* (charity_doctor) "I worked with Physician's Accord to help provide medical care access to outposts on third-worlds[."]," you explain as you finish the last stitch on your head and knot it off. <>
-~logical_creative += 10
-~ingenuity_skill += 5
-"You have to get pretty creative when you're in some backwater frontier town with a quarter of the supplies available to Coreworld doctors and twice the patients."
--> history_doctor
-*(homeworld_doctor) "I worked as one of the top surgeons of the Coreworld[."]," you explain as you finish the last stitch on your head and knot it off. <>
-~logical_creative -= 10
-~technology_skill += 5
-"It was safe and it paid well."
+    ~whos_talking_button = "mc"
+    * (charity_doctor) ["I worked with Physician's Accord to help provide medical care access to outposts on third-worlds."]
+        "I worked with Physician's Accord to help provide medical care access to outposts on third-worlds," you explain as you finish the last stitch on your head and knot it off. "You have to get pretty creative when you're in some backwater frontier town with a quarter of the supplies available to Coreworld doctors and twice the patients."
+        ~logical_creative += 10
+        ~ingenuity_skill += 5
+    -> history_doctor
+    
+    ~whos_talking_button = "mc"
+    *(homeworld_doctor) ["I worked as one of the top surgeons of the Coreworld."]
+        "I worked as one of the top surgeons of the Coreworld," you explain as you finish the last stitch on your head and knot it off. "It was safe and it paid well."
+        ~logical_creative -= 10
+        ~technology_skill += 5
 -> history_doctor
 
 
 = history_doctor
+
 ~whos_talking = "sunday"
-~character_a = "Sunday"
+~character_a = "sunday"
 "And why did you leave?" Sunday asks as you pick up the gauze and begin wrapping your head carefully.
 
 {charity_doctor or homeworld_doctor:
 
-*"I was disgraced by a fellow doctor[."]," you say.
-->wrapup
-*"I wanted a change of pace[."]," you say.'
-->wrapup
-*"I needed something more {charity_doctor: stable|adventurous}[."]," you say.
-->wrapup
+    ~whos_talking_button = "mc"
+    *["I was disgraced by one of my peers."]
+        "I was disgraced by one of my peers," you say.
+    ->wrapup
+    
+    ~whos_talking_button = "mc"    
+    *["I wanted a change of pace."]," you say.
+        "I wanted a change of pace."
+    ->wrapup
+    
+    ~whos_talking_button = "mc"
+    *["I needed something more {charity_doctor: stable|adventurous}."]
+        "I needed something more {charity_doctor: stable|adventurous}," you say.
+    ->wrapup
 
 }
 
 {peregrine or jenusian_terran:
 
-*"There weren't a lot of prospects after the war for those who served[."]," you say.
-->wrapup
-*"Honestly, not a lot of people would have me {peregrine: after the rebellion|after the war}[."]," you say.
-->wrapup
-*"I just needed to get away from the fighting[."]," you say. 
-->wrapup
+    ~whos_talking_button = "mc"
+    *["There weren't a lot of prospects after the war for those who served."]
+        "There weren't a lot of prospects after the war for those who served," you say.
+    ->wrapup
+    
+    ~whos_talking_button = "mc"
+    *["Honestly, not a lot of people would have me {peregrine: after the rebellion|after the war}."]
+        "Honestly, not a lot of people would have me {peregrine: after the rebellion|after the war}," you say.
+    ->wrapup
+    
+    ~whos_talking_button = "mc"
+    *["I just needed to get away from the fighting."]
+        "I just needed to get away from the fighting," you say. 
+    ->wrapup
 
 }
 
@@ -167,9 +207,10 @@ You finish up and turn away from the mirror, holding your arms out wide to Sunda
 
 -else:
 ~whos_talking = "sunday"
-~character_a = "Sunday"
+~character_a = "sunday"
 "Which makes me wonder what, exactly, you are doing here," Sunday wonders aloud to herself.
 
+~whos_talking = "nobody"
 Sunday finishes up and sets the gauze down, surveying her work.
 }
 
@@ -177,23 +218,33 @@ Sunday finishes up and sets the gauze down, surveying her work.
 "Better?" you ask.
 
 ~whos_talking = "sunday"
-~character_a = "Sunday"
+~character_a = "sunday"
 "Well, you look at little less gruesome now, but I'm afraid there's just nothing to be done about your face," Sunday says with a sigh.
 
-*"Har har, very funny[."]," you reply, your tone indicating it is decidedly less so.
-~rel_sunday -= 5
-*"I guess you'll have to be the pretty one for both of us[."]," you reply, waggling your eyebrows at Sunday comically.
-~rel_sunday += 5
-She rolls her eyes and laughs.
-*"Pot calling the kettle black[."], don't you think?" you quip.
-~whos_talking = "nobody"
-She gives a look of mock-offense.
+    ~whos_talking_button = "mc"
+    *["Har har, very funny."]
+        "Har har, very funny," you reply, your tone indicating it is decidedly less so.
+        ~rel_sunday -= 5
+    
+    ~whos_talking_button = "mc"
+    *["I guess you'll have to be the pretty one for both of us."]
+        "I guess you'll have to be the pretty one for both of us," you reply, waggling your eyebrows at Sunday comically.
+        ~rel_sunday += 5
+        She rolls her eyes and laughs.
+        
+    ~whos_talking_button = "mc"
+    *["Pot calling the kettle black."]
+    "Pot calling the kettle black, don't you think?" you quip.
+        ~whos_talking = "nobody"
+        She gives a look of mock-offense.
 
+
+-
 ~whos_talking = "nobody"
--Sunday jumps up from the hospital bed and dusts herself off.
+Sunday jumps up from the hospital bed and dusts herself off.
 
 ~whos_talking = "sunday"
-~character_a = "Sunday"
+~character_a = "sunday"
 "Off to the lab, then?" she says.
 
 ~whos_talking = "nobody"
@@ -205,7 +256,7 @@ You nod and follow her out.
 <> Looks like you might need stitches. In theory you know what needs to happen; you're just not entirely sure how to go about it, or where the supplies are. You spend fifteen minutes digging around in various drawers until you finally come up with a needle, some thread, and a roll of gauze.
 
 ~whos_talking = "sunday"
-~character_a = "Sunday"
+~character_a = "sunday"
 "Do you even know what you're doing?" Sunday asks as she watches you from the bed.
 
 ~whos_talking = "mc"
@@ -218,37 +269,38 @@ You thread the needle and lift it up to your forehead, hovering there for a mome
 "It's just like sewing, right? Except it's skin, not fabric," you say outloud, more to yourself than to present company.
 
 ~whos_talking = "sunday"
-~character_a = "Sunday"
+~character_a = "sunday"
 "You're hopeless. Come here," Sunday says, ushering you over to the bed until you take a seat there.
 
 ~whos_talking = "nobody"
 She plucks the needle from you hands and surveys your wound carefully.
 
 ~whos_talking = "sunday"
-~character_a = "Sunday"
+~character_a = "sunday"
 "This isn't going to feel great," she warns you.
 
 ~whos_talking = "nobody"
 You wince as she sticks you with the needle and begins stitching the gash closed.
 
 ~whos_talking = "sunday"
-~character_a = "Sunday"
+~character_a = "sunday"
 "What did you do here? I mean, before all this," Sunday asks after a moment, probably trying to distract you.
 
 {intro.xenolinguist:
 ~whos_talking = "mc"
 "I was a translator at the docks," you respond through gritted teeth.
 ~whos_talking = "sunday"
-~character_a = "Sunday"
-"You must meet a lot of terribly interesting aliens there, then."
+~character_a = "sunday"
+"You must meet a lot of terribly interesting characters there, then."
 }
 
 {intro.scientist:
 ~whos_talking = "mc"
 "I was a scientist in the laboratory," you respond through gritted teeth.
 ~whos_talking = "sunday"
-~character_a = "Sunday"
+~character_a = "sunday"
 "Ah, so you might be actually be useful once we get to the laboratory."
+~whos_talking = "nobody"
 You glare slightly, though you know she probably isn't serious.
 }
 
@@ -256,7 +308,7 @@ You glare slightly, though you know she probably isn't serious.
 ~whos_talking = "mc"
 "I was a security officer on the station," you respond through gritted teeth.
 ~whos_talking = "sunday"
-~character_a = "Sunday"
+~character_a = "sunday"
 "Ah, that makes sense. I was wondering why you knew so much about things there."
 }
 
@@ -264,8 +316,9 @@ You glare slightly, though you know she probably isn't serious.
 ~whos_talking = "mc"
 "I was a technician in operations," you respond through gritted teeth.
 ~whos_talking = "sunday"
-~character_a = "Sunday"
+~character_a = "sunday"
 "Ah, so you might actually be useful once we need to authorize departure."
+~whos_talking = "nobody"
 You glare slightly, though you know she probably isn't serious.
 }
 
@@ -273,48 +326,68 @@ You glare slightly, though you know she probably isn't serious.
 Sunday closes off and knots the final stitch, then reaches for the gauze.
 
 ~whos_talking = "sunday"
-~character_a = "Sunday"
+~character_a = "sunday"
 "And what did you do before this?" she asks as she begins to wrap your head gingerly.
 
 
 {intro.xenolinguist:
 
-*"I was a xenolinguist. I studied and translated ancient Jenusian manuscripts for a Coreworld museum[."]," you say. "Their literature is breathtaking and visionary."
-~logical_creative += 10
-->wrapup
-*"I was a linguist. I studied and translated ancient Dead Earth manuscripts for a Coreworld museum[."]," you say. "The old world was a fascinating, if terrifying, place."
-~logical_creative -=10
-->wrapup
+    ~whos_talking_button = "mc"
+    *["I was a xenolinguist. I studied and translated ancient Jenusian manuscripts for a Coreworld museum."]
+        "I was a xenolinguist. I studied and translated ancient Jenusian manuscripts for a Coreworld museum," you say. "Their literature is breathtaking and visionary."
+        ~logical_creative += 10
+    ->wrapup
+
+    ~whos_talking_button = "mc"
+    *["I was a linguist. I studied and translated ancient Dead Earth manuscripts for a Coreworld museum."]
+        "I was a linguist. I studied and translated ancient Dead Earth manuscripts for a Coreworld museum," you say. "The old world was a fascinating, if terrifying, place."
+        ~logical_creative -=10
+    ->wrapup
 }
 
 {intro.scientist:
 
-*"I was a lab technician for a small startup[."]," you say. "You have to get pretty creative with your research when you lack the necessary funding."
-~logical_creative += 10
-->wrapup
-*"I was a scientist in the Systems Coalition[."], you say. "It was a safe job that paid well."
-~logical_creative -=10
-->wrapup
+    ~whos_talking_button = "mc"
+    *["I was a lab technician for a small startup."]
+        "I was a lab technician for a small startup," you say. "You have to get pretty creative with your research when you lack the necessary funding."
+        ~logical_creative += 10
+    ->wrapup
+    
+    ~whos_talking_button = "mc"   
+    *["I was a scientist in the Systems Coalition."]
+        "I was a scientist in the Systems Coalition," you say. "It was a safe job that paid well."
+        ~logical_creative -=10
+    ->wrapup
 }
 
 {intro.security:
 
-*"I was a mercenary-for-hire[."]," you say. "Operated mostly out of the space station Avarice."
-~logical_creative += 10
-->wrapup
-*"I served in the Jenusian-Terran war[."]," you say. "Joining the Systems Coalition seemed like the safest bet for me."
-~logical_creative -=10
-->wrapup
+    ~whos_talking_button = "mc"
+    *["I was a mercenary-for-hire."]
+        "I was a mercenary-for-hire," you say. "Operated mostly out of the space station Avarice."
+        ~logical_creative += 10
+    ->wrapup
+    
+    ~whos_talking_button = "mc"
+    *["I served in the Jenusian-Terran war."]
+        "I served in the Jenusian-Terran war," you say. "Joining the Systems Coalition seemed like the safest bet for me."
+        ~logical_creative -=10
+    ->wrapup
 }
 
 {intro.technician:
 
-*"I was an ethical hacker for a white hat collective[."]," you say. "We took down one of the largest criminal networks in the system."
-~logical_creative += 10
-->wrapup
-*"I was a technician for a company that built droid companions[."]," you say. "I programmed their intelligence and faculties."
-~logical_creative -=10
-->wrapup
+    ~whos_talking_button = "mc"
+    *["I was an ethical hacker for a white hat collective."]
+        "I was an ethical hacker for a white hat collective," you say. "We took down one of the largest criminal networks in the system."
+        ~logical_creative += 10
+    ->wrapup
+    
+    ~whos_talking_button = "mc"
+    *["I was a technician for a company that built droid companions."]
+        "I was a technician for a company that built droid companions," you say. "I programmed their intelligence and faculties."
+        ~logical_creative -=10
+    ->wrapup
 }
 
 
