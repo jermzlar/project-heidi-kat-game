@@ -45,19 +45,23 @@ public class InkManager : MonoBehaviour
 	private bool clearText = false;
 	public static event Action<Story> OnCreateStory;
     void Start () {
+		characterManager.DisplayName("nobody");
 		StartStory();
 		story.ObserveVariable("whos_talking", (string varName, object newValue) =>
 		{ SetDisplayName((string)newValue); });
+		story.ObserveVariable("whos_talking_button", (string varName, object newValue) =>
+		{ SetDisplayNameOnButton((string)newValue); });
 	}
 
 	private void SetDisplayName(string name)
     {
-		if (story.currentTags.Count > 0)
-		{ 
-			switchNameOnClick = true;
-		}
-		else
 			characterManager.DisplayName(name);
+    }
+
+	private void SetDisplayNameOnButton(string name)
+    {
+		switchNameOnClick = true;
+		nameOfTalker = name;
     }
 
 	// Creates a new Story object with the compiled story which we can then play!
@@ -159,9 +163,8 @@ public class InkManager : MonoBehaviour
 		story.ChooseChoiceIndex (choice.index);
 		if (switchNameOnClick)
 		{
-			characterManager.DisplayName((string)story.variablesState["whos_talking"]);
+			characterManager.DisplayName(nameOfTalker);
 			switchNameOnClick = false;
-			story.currentTags.Clear();
 		}
 		nameOfTalker = ((string)story.variablesState["whos_talking"]);
 		ClearText();
