@@ -26,6 +26,9 @@ public class InkManager : MonoBehaviour
 	private CharacterManager characterManager = null;
 
 	[SerializeField]
+	private BackgroundHandler backgroundHandler= null;
+
+	[SerializeField]
 	private Text conversation = null;
 
 	[SerializeField]
@@ -57,6 +60,9 @@ public class InkManager : MonoBehaviour
 		{ characterManager.DetermineCharacterA((string)newValue); });
 		story.ObserveVariable("character_b", (string varName, object newValue) =>
 		{ characterManager.DetermineCharacterA((string)newValue); });
+
+		story.ObserveVariable("background", (string varName, object newValue) =>
+		{ backgroundHandler.ChangeBackground((string)newValue); });
 	}
 
 	private void SetDisplayName(string name)
