@@ -13,7 +13,7 @@ public class ButtonBehavior : MonoBehaviour
     public void buttonPressDown()
     {
     	isButtonPressed = true;
-    	buttonClickSound.Play();
+    	buttonClickSound.GetComponent<AudioSource>().Play();
     }
 
     public void buttonPressUp()
