@@ -60,10 +60,10 @@ The woman stops abruptly and turns to look up at you, freezing. She appears to b
 ~character_a = "Sunday"
 "I think the rules concerning who is allowed where went out the window with the initial explosion, don't you?" the woman replies coolly.
 
+-
 ~whos_talking = "nobody"
--She returns her attention to the desk, pulling out one of the drawers and dumping its contents on the floor. She knocks on the bottom of the drawer rapidly, and you are about to address her again until she lets out a triumphant, "Aha!" She appears to remove a false bottom, reaching underneath and pulling out a small device.
+She returns her attention to the desk, pulling out one of the drawers and dumping its contents on the floor. She knocks on the bottom of the drawer rapidly, and you are about to address her again until she lets out a triumphant, "Aha!" She appears to remove a false bottom, reaching underneath and pulling out a small device.
 
-#after
 *"Find what you were looking for?" [] you ask.
 ~whos_talking = "sunday"
 ~character_a = "Sunday"
