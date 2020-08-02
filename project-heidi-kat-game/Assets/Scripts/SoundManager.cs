@@ -10,6 +10,8 @@ public class SoundManager : MonoBehaviour
 
     [SerializeField]
     public AudioClip mouseClickSound = null;
+
+    [SerializeField]
     static AudioSource audioSrc;
     void Start()
     {
