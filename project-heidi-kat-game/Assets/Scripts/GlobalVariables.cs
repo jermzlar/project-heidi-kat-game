@@ -29,6 +29,9 @@ public class GlobalVariables : MonoBehaviour
 	[SerializeField]
 	private InkManager im = null;
 
+    [SerializeField]
+    private StatBoxHandler statBoxHandler = null;
+
     void Start()
     {
         
@@ -205,6 +208,12 @@ public class GlobalVariables : MonoBehaviour
         setCommunalIndependent((int)im.story.variablesState["communal_independent"]);
         setLogicalCreative((int)im.story.variablesState["logical_creative"]);
         setOptimistPessimist((int)im.story.variablesState["optimist_pessimist"]);
+
+        statBoxHandler.SetCombatStat(getCombatSkill().ToString());
+        statBoxHandler.SetIngenuityStat(getIngenuitySkill().ToString());
+        statBoxHandler.SetMedicineStat(getMedicineSkill().ToString());
+        statBoxHandler.SetCharmStat(getCharmSkill().ToString());
+        statBoxHandler.SetTechnologyStat(getTechnologySkill().ToString());
 
     }
 
