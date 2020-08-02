@@ -1,51 +1,63 @@
 == transitions == 
+
 =security_to_lab_or_hosp
+
 ~background = "tunnels"
+
 ~whos_talking = "nobody"
 You make your way to what's commonly referred to as the Chute: the shoddy, claustrophobic electric train transportation that is most often used by the maintenance workers on this space station. You hope it's still working, otherwise it will be a long walk to the hospital ward, and you don't know how much longer you can keep going.
 
+~whos_talking = "nobody"
 You hope, but you also know that on the best of days the Chute isn't exactly top of the line technology. It is commonly colloquially referred to as the "Shite."
 
+~whos_talking = "nobody"
 When you arrive at the nearest station, the state of it answers any questions you might have had as to whether it was a viable travel option, which is to say that is isn't.
 
-~character_a = "Sunday"
+~character_a = "sunday"
 ~whos_talking = "sunday"
 "I guess we're walking," Sunday says.
 
 ~whos_talking = "mc"
 "Or," you say suddenly, an idea sparking in your head, "Or... we could walk through the Chute tunnels."
 
-~character_a = "Sunday"
+~character_a = "sunday"
 ~whos_talking = "sunday"
-"That head wound must be worse than I thought; are you insane?" Sunday asks seriously.
+"Your head must be worse than I thought; are you insane?" Sunday asks seriously.
 
-    *"What? It's perfectly fine[."]{change_name()} #after
-    <>," you say innocently. "Relatively safe."
-    ~whos_talking = "sunday"
-    ~character_a = "Sunday"
-    "Oh yes, relatively safe, except for the live track that snakes its way through the entire course that could electrocute us with 300,000 volts should we touch it," Sunday replies, her tone much peppier than it should be for a sentence that grim.
-    *"Look, the trains obviously aren't using them[."]{change_name()} #after
-    <>," you point out, motioning to the two passenger carts which have crashed, sandwiching a third.
-    ~whos_talking = "sunday"
-    ~character_a = "Sunday"
-    "The trains aren't, but... it's not..." she trails off vaguely.
-    ~whos_talking = "mc"
-    "What?"
-    ~whos_talking = "sunday"
-    ~character_a = "Sunday"
-    "Nothing," Sunday says, though you are unconvinced.
-    *"Do you have any better ideas?"{change_name()}
-    ~whos_talking = "sunday"
-    ~character_a = "Sunday"
-    "I do have one," Sunday says.
-    ~whos_talking = "mc"
-    "Yeah?" you say when she isn't forthcoming.
-    ~whos_talking = "sunday"
-    ~character_a = "Sunday"
-    "How about we don't go through the dark, creepy, wrecked-by-disaster tunnels with a live track that can electrocute us with 300,000 volts of electricity should we touch it?"
+    ~whos_talking_button = "mc"
+    *["What? It's perfectly fine."]
+        "What? It's perfectly fine," you say innocently. "Relatively safe."
+        ~whos_talking = "sunday"
+        ~character_a = "sunday"
+        "Oh yes, relatively safe, except for the live track that snakes its way through the entire course that could electrocute us with 300,000 volts should we touch it," Sunday replies, her tone much peppier than it should be for a sentence that grim.
     
-~whos_talking = "nobody"    
--You sigh and walk over to the left tunnel, stopping just before you squeeze in between the wall and the crashed passenger cart.
+      ~whos_talking_button = "mc"  
+    *["Look, the trains obviously aren't using them."]
+        "Look, the trains obviously aren't using them," you point out, motioning to the two passenger carts which have crashed, sandwiching a third.
+        ~whos_talking = "sunday"
+        ~character_a = "sunday"
+        "The trains aren't, but... it's not..." she trails off vaguely.
+        ~whos_talking = "mc"
+        "What?"
+        ~whos_talking = "sunday"
+        ~character_a = "sunday"
+        "Nothing," Sunday says, though you are unconvinced.
+    
+      ~whos_talking_button = "mc"  
+    *["Do you have any better ideas?"]
+        "Do you have any better ideas?"
+        ~whos_talking = "sunday"
+        ~character_a = "sunday"
+        "I do have one," Sunday says.
+        ~whos_talking = "mc"
+        "Yeah?" you say when she isn't forthcoming.
+        ~whos_talking = "sunday"
+        ~character_a = "sunday"
+        "How about we don't go through the dark, creepy, wrecked-by-disaster tunnels with a live track that can electrocute us with 300,000 volts of electricity should we touch it?"
+    
+  
+~whos_talking = "nobody"  
+You sigh and walk over to the left tunnel, stopping just before you squeeze in between the wall and the crashed passenger cart.
 
 ~whos_talking = "mc"
 "Are you coming, Sunday?" you ask.
@@ -53,19 +65,26 @@ When you arrive at the nearest station, the state of it answers any questions yo
 ~whos_talking = "nobody"
 She crosses her arms obstinately.
 
-    *"I could really use your help[."]{change_name()}; I don't know what I'm going to run into," you say.
-    ~ rel_sunday += 10
-    ~whos_talking = "sunday"
-    ~character_a = "Sunday"
-    "Oh, alright," Sunday sighs as she marches over.
-    *"Honestly, I don't care if you come or if you stay here to die[."]{change_name()}," you say. "No skin off my nose."
-    ~ rel_sunday -= 15
-    ~whos_talking = "sunday"
-    ~character_a = "Sunday"
-    "Oh, well, in that case I'll be coming purely out of spite," Sunday remarks as she marches over.
+    ~whos_talking_button = "mc"  
+    *["I could really use your help."]
+        "I could really use your help; I don't know what I'm going to run into," you say.
+        ~ rel_sunday += 10
+        ~whos_talking = "sunday"
+        ~character_a = "sunday"
+        "Oh, alright," Sunday sighs as she marches over.
     
+      ~whos_talking_button = "mc"  
+    *["Honestly, I don't care if you come or if you stay here to die."]
+        "Honestly, I don't care if you come or if you stay here to die," you say. "No skin off my nose."
+        ~ rel_sunday -= 15
+        ~whos_talking = "sunday"
+        ~character_a = "sunday"
+        "Oh, well, in that case I'll be coming purely out of spite," Sunday remarks as she marches over.
+    
+
+-
 ~whos_talking = "nobody"
--The two of you slip into the dark space of the tunnel, shimmying and squeezing your way past the crashed passenger cart until you're free from its constriction. Beyond that it is quite dark, as the usual lights have gone out and it doesn't appear anyone had the forethought to put emergency lights inside the tunnels.
+The two of you slip into the dark space of the tunnel, shimmying and squeezing your way past the crashed passenger cart until you're free from its constriction. Beyond that it is quite dark, as the usual lights have gone out and it doesn't appear anyone had the forethought to put emergency lights inside the tunnels.
 
 ~whos_talking = "nobody"
 Sunday pulls out something that looks similar to a PDD, taps it a few times, and bring up a flashlight of sorts on it. As the area around you lights up, you notice a lot of debris on the floor, and note you'll have to be especially careful about not coming into contact with any metal debris that is touching the live track.
@@ -74,59 +93,91 @@ Sunday pulls out something that looks similar to a PDD, taps it a few times, and
 Ahead you can just make out a series of large, scorched holes in the sides of the tunnel, intermitently spaced out and continuing past the light.
 
 ~whos_talking = "sunday"
+~character_a = "sunday"
 "If I recall correctly, they store the power generators for the Chute behind those walls. It looks like they've been damaged in the explosion. We probably don't want to be here when the next one goes," Sunday says.
 
 ~whos_talking = "nobody"
 You nod, and the two of you begin to make your way through the tunnel as quickly and as carefully as possible.
 
-    *"So, what do you know about what happened?"[]{change_name()} you ask Sunday after a few minutes of silence. -> sundays_response
-    *"What is it you do, exactly, Sunday?"[]{change_name()} you ask after a few minutes of silence. ->sundays_response
-    *"Tell me why you were rifling around in a security officer's desk[."]{change_name()}," you say to Sunday after a few minutes of silence. ->sundays_response
+      ~whos_talking_button = "mc"  
+    *["So, what do you know about what happened?"]
+        "So, what do you know about what happened?" you ask Sunday after a few minutes of silence.
+        -> sundays_response
+    
+    ~whos_talking_button = "mc"  
+    *["What is it you do, exactly, Sunday?"]
+        "What is it you do, exactly, Sunday?" you ask after a few minutes of silence.
+        ->sundays_response
+    
+    ~whos_talking_button = "mc"  
+    *["Tell me why you were rifling around in a security officer's desk."]
+        "Tell me why you were rifling around in a security officer's desk," you say to Sunday after a few minutes of silence.
+        ->sundays_response
 
 = sundays_response
+
 {intro.get_phat_loots:
+
 ~whos_talking = "sunday"
-~character_a = "Sunday"
+~character_a = "sunday"
 "Why do you care? You made it clear you're only concerned with material gain in this situation," Sunday says coolly.
 
-*"That's not entirely true[."]{change_name()}," you say, mock-hurt. "I also care about escaping this tin can with said material gain."
-~rel_sunday -= 5
-~whos_talking = "sunday"
-~character_a = "Sunday"
-"Well in that case, the less you know about what's going on, the more likely you are to get out of this with the majority of your limbs and as many stolen valuables as your remaining ones can carry," Sunday says pointedly.
-"That sure sounds like you've got something to hide."
+     ~whos_talking_button = "mc"  
+    *["That's not entirely true."]
+        "That's not entirely true," you say, mock-hurt. "I also care about escaping this tin can with said material gain."
+        ~rel_sunday -= 5
+    
+        ~whos_talking = "sunday"
+        ~character_a = "sunday"
+        "Well in that case, the less you know about what's going on, the more likely you are to get out of this with the majority of your limbs and as many stolen valuables as your remaining ones can carry," Sunday says pointedly.
+        ~whos_talking = "mc" 
+        "That sure sounds like you've got something to hide."
 -> suddenly_body_snatchers
-*"Fair enough[."]{change_name()}," you say. "I was just curious is all."
-~whos_talking = "sunday"
-~character_a = "Sunday"
-"Look," she says, stopping for a moment. <>
+
+    ~whos_talking_button = "mc"  
+    *["Fair enough."]
+        "Fair enough," you say. "I was just curious is all."
+        ~whos_talking = "sunday"
+        ~character_a = "sunday"
+        "Look," she says, stopping for a moment. <>
 -> suddenly_body_snatchers
-*"Are you hiding something?"[]{change_name()} you ask suspiciously.
-~whos_talking = "sunday"
-~character_a = "Sunday"
-"Look," she says, stopping for a moment.<>
+
+    ~whos_talking_button = "mc"  
+    *"Are you hiding something?"[] you ask suspiciously.
+        ~whos_talking = "sunday"
+        ~character_a = "sunday"
+        "Look," she says, stopping for a moment.<>
 ->suddenly_body_snatchers
+
 -else:
+
 ~whos_talking = "sunday"
-~character_a = "Sunday"
+~character_a = "sunday"
+
 "{player_name}, I will be quite honest with you. I'm certain you have a great deal of questions, and I know you want to help, but the less you know about what's going on the better off you'll be," Sunday replies matter-of-factly. "If you want to be alive at the end of this, that is."
 
-*"Fine, I'll shut up[."]{change_name()}," you grumble.
-~whos_talking = "sunday"
-~character_a = "Sunday"
-"Look," she says, stopping for a moment.<>
+    ~whos_talking_button = "mc"  
+    *["Fine, I'll shut up."]
+        "Fine, I'll shut up," you grumble.
+        ~whos_talking = "sunday"
+        ~character_a = "sunday"
+        "Look," she says, stopping for a moment.<>
 -> suddenly_body_snatchers
-*"I don't care, if I can help I want to help[."]{change_name()}," you insist.
-~rel_sunday +=5
-~whos_talking = "sunday"
-~character_a = "Sunday"
-"Look," she says, stopping for a moment.<>
+
+    *["I don't care, if I can help I want to help."]
+        "I don't care, if I can help I want to help," you insist.
+        ~rel_sunday +=5
+        ~whos_talking = "sunday"
+        ~character_a = "sunday"
+        "Look," she says, stopping for a moment. <>
 -> suddenly_body_snatchers
+
 }
 
 = suddenly_body_snatchers
+
 ~whos_talking = "sunday"
-~character_a = "Sunday"
+~character_a = "sunday"
 "Everyone has something to hide. I'm just more up front about it. And this isn't just about me, this is the big leagues. I'm talking about knowing things that will affect the whole system. You really think you're ready for that?"
 
 ~whos_talking = "nobody"
@@ -153,46 +204,81 @@ Before you can answer, there comes a rattling sound from down the tunnel somewhe
     }
 
 
--Sunday shuts the light off of her device quickly. She then grabs hold of you with surprising strength and pulls you close, hugging the wall. You notice a faint shimmer in the air around you, just barely visible in the darkness.
+-
+~whos_talking = "nobody" 
+Sunday shuts the light off of her device quickly. She then grabs hold of you with surprising strength and pulls you close, hugging the wall. You notice a faint shimmer in the air around you, just barely visible in the darkness.
 
-*"If you wanted to be closer to me, you could've just asked[."]{change_name()}," you say with deadly seriousness.
-~rel_sunday +=5
-*"What are you doing??"[]{change_name()} you ask wildly.
+    ~whos_talking_button = "mc"  
+    *["If you wanted to be closer to me, you could've just asked."]
+        "If you wanted to be closer to me, you could've just asked," you say with deadly seriousness.
+        ~rel_sunday +=5
+    
+    ~whos_talking_button = "mc"  
+    *["What are you doing??"] 
+        "What are you doing??" you ask wildly.
 
+-
 ~whos_talking = "sunday"
-~character_a = "Sunday"
--"Shh!" she hushes you, putting a hand over your mouth.
+~character_a = "sunday"
+"Shh!" she hushes you, putting a hand over your mouth.
 
 ~whos_talking = "nobody"
 The unearthly noises of the creatures approaching you only grows. In the darkness it's impossible to make out more than their silhouettes. Sunday's reaction to them has you hoping they won't be able to see you.
+
+~whos_talking = "nobody"
 You count two vaguely humanoid beings dragging something behind them as they cross in front of you. One stops and seems to look directly at you (it's hard to tell)... and then continues on.
+
+~whos_talking = "nobody"
 Something about them feels wrong. You can't put a finger on what it is, but you note their presence has caused a deeply uncomfortable feeling inside you, as if you were experiencing nausea in your brain instead of your stomach.
+
+~whos_talking = "nobody"
 It's a solid eight minutes before the noise of them finally fades into nothing, and Sunday deigns it safe to release you. The air notably shimmers again as she does, and she turns the light back on. Her face is wan in the unnatural light, and you imagine she must have experienced the same feeling you did.
 
-*"What the hell were those things?"{change_name()}
-*(u_ok)"Are you okay?"{change_name()}
-~rel_sunday += 5
-*"Why didn't they see us?"{change_name()}
+    ~whos_talking_button = "mc"
+    *["What the hell were those things?"]
+        "What the hell were those things?"
+    
+    ~whos_talking_button = "mc"
+    *(u_ok)["Are you okay?"]
+        "Are you okay?"
+        ~rel_sunday += 5
+    
+    ~whos_talking_button = "mc"
+    *["Why didn't they see us?"]
+        "Why didn't they see us?"
 
-~whos_talking = "sunday"
-~character_a = "Sunday"
--{u_ok: "I'm fine, thanks for asking," she says.|} "We don't technically know what they're called, but we've termed them 'body snatchers' for now. They couldn't see us because we were cloaked. Rest assured, their eyesight in the dark is incredibly good."
 
-*"Who's 'we?'"{change_name()}
-Sunday pushes forward without an answer, not waiting up for you.
-~whos_talking = "mc"
-"Hey, I asked you a question," you say, jogging to catch up to her.
-*"Why do you call them 'body snatchers?'"{change_name()}
+-
 ~whos_talking = "sunday"
-~character_a = "Sunday"
-"I'll give you one good guess," Sunday replies.
-~whos_talking = "mc"
-"Okay, and why do you know about them, exactly?"
-*"I didn't even know technology like that existed[."]{change_name()}; what are you, some kind of secret agent?"
+~character_a = "sunday"
 
+{u_ok: "I'm fine, thanks for asking," she says.|} "We don't technically know what they're called, but we've termed them 'body snatchers' for now. They couldn't see us because we were cloaked. Rest assured, their eyesight in the dark is incredibly good."
+
+     ~whos_talking_button = "mc"
+    *["Who's 'we?'"]
+        "Who's 'we?'"
+        ~whos_talking = "nobody"
+        Sunday pushes forward without an answer, not waiting up for you.
+        ~whos_talking_button = "mc"
+        "Hey, I asked you a question," you say, struggling to keep up.
+    
+     ~whos_talking_button = "mc"
+    *["Why do you call them 'body snatchers?'"]
+        "Why do you call them 'body snatchers?'"
+        ~whos_talking = "sunday"
+        ~character_a = "sunday"
+        "I'll give you one good guess," Sunday replies.
+        ~whos_talking_button = "mc"
+        "Okay, and why do you know about them, exactly?"
+    
+     ~whos_talking_button = "mc"
+    *["I didn't even know technology like that existed."]
+        "I didn't even know technology like that existed; what are you, some kind of secret agent?"
+
+-
 ~whos_talking = "sunday"
-~character_a = "Sunday"
--"I'm an operative for a special interests corporation, all right? Elysium, the one that owns this station," Sunday explains. "Now will you stop worrying about it and pay attention to where you're walking?"
+~character_a = "sunday"
+"I'm an operative for a special interests corporation, all right? Elysium, the one that owns this station," Sunday explains. "Now will you stop worrying about it and pay attention to where you're walking?"
 
 ~whos_talking = "nobody"
 No sooner do the words leave her lips than you find your toe catching on a piece of debris. You stumble forward and nearly land on a metal beam resting on top of the live track, but Sunday catches your arm just in time.
@@ -201,46 +287,65 @@ She gives you a meaningful look before the two of you continue on.
 ->enter_hospital_wsunday
 
 = priority_update
-~whos_talking = "nobody"
+
 ~background = "generic_station"
 
+~whos_talking = "nobody"
 It's been a while since you awoke in your room, and a lot has happened since then.
 
+~whos_talking = "nobody"
 Have your priorities changed amidst the revelations you've uncovered?
 
-*(priority_tellall) [Yes. The public needs to know about what Elysium is doing, and I'm going to tell them.]
-~compassion_selfserve -= 6
-~communal_independent -= 6
-Your number one priority in the moment is, of course, getting safely off of Cassio wholly or at least mostly intact. But as soon as you are safely established, you know you're going to have to get this information into the right hands. 
-*(priority_stopelysium) [Yes. What Elysium is doing is wrong, and I'm going to stop them.]
-~compassion_selfserve -= 6
-~communal_independent += 6
-Your number one priority in the moment is, of course, getting safely off of Cassio wholly or at least mostly intact. But as soon as you are safely established, you know you're going to have to find out who's responsible at Elysium and stop them.
-*(priority_gototop) [Yes. I have a feeling whatever's going on is a lot bigger than Elysium, and I need to find out more.]
-~compassion_selfserve += 6
-~communal_independent += 6
-Your number one priority in the moment is, of course, getting safely off of Cassio wholly or at least mostly intact. But as soon as you are safely established, you know you're going to have to get to the bottom of this mess--which will probably mean going straight to the top.
-*{intro.get_phat_loots} [No; I'm still mostly concerned with making sure I get out of here with some extra scratch.]
-~compassion_selfserve += 6
-~communal_independent += 6
-Your number one priority in the moment is, of course, getting safely off of Cassio wholly or at least mostly intact. But as soon as you are safely established, you know you're going to have to have a chat with Lin about getting a cut of the sales of their multitudes of likely illicit data.
-*{intro.find_out_wha_happe} [No; I haven't found out what caused the destruction on Cassio yet. Before I do anything else, I need to figure that out.]
-~compassion_selfserve -= 6
-~communal_independent += 6
-Your number one priority in the moment is, of course, getting safely off of Cassio wholly or at least mostly intact. But as soon as you are safely established, you know you'll be searching for information about the body snatchers and the destruction of Cassio.
-*{intro.help_scared_injured} [No; although it seems like there aren't many people left on the station, my priority is still to help as many as I can.]
-~compassion_selfserve -= 6
-~communal_independent -= 6
-Your number one priority in the moment is, of course, getting safely off of Cassio wholly or at least mostly intact. But you want to make sure as many people as possible get to safety as well. Once you are all out of danger, you can start to think about your next move.
-*{intro.get_tf_outta_here} [No; I can't think about anything else until I'm out of here along with Sunday and Lin.]
-~compassion_selfserve += 6
-~communal_independent -= 6
-Your number one priority is still, of course, getting safely off of Cassio wholly or at least mostly intact along with your companions. Once you are all safely established, you might be able to start thinking about your next move.
-*[Fuck priorities. I've had enough intrigue and excitement to last a lifetime; I want to get the hell off of this station and never think about any of this again.]
-~compassion_selfserve += 12
-~communal_independent += 12
+    ~whos_talking_button = "nobody"
+    *(priority_tellall) [Yes. The public needs to know about what Elysium is doing, and I'm going to tell them.]
+        ~compassion_selfserve -= 6
+        ~communal_independent -= 6
+        Your number one priority in the moment is, of course, getting safely off of Cassio wholly or at least mostly intact. But as soon as you are safely established, you know you're going to have to get this information into the right hands.
 
--*[Next] -> body_snatcher_fight
+    ~whos_talking_button = "nobody"
+    *(priority_stopelysium) [Yes. What Elysium is doing is wrong, and I'm going to stop them.]
+        ~compassion_selfserve -= 6
+        ~communal_independent += 6
+        Your number one priority in the moment is, of course, getting safely off of Cassio wholly or at least mostly intact. But as soon as you are safely established, you know you're going to have to find out who's responsible at Elysium and stop them.
+
+    ~whos_talking_button = "nobody"
+    *(priority_gototop) [Yes. I have a feeling whatever's going on is a lot bigger than Elysium, and I need to find out more.]
+        ~compassion_selfserve += 6
+        ~communal_independent += 6
+        Your number one priority in the moment is, of course, getting safely off of Cassio wholly or at least mostly intact. But as soon as you are safely established, you know you're going to have to get to the bottom of this mess--which will probably mean going straight to the top.
+
+    ~whos_talking_button = "nobody"
+    *{intro.get_phat_loots} [No; I'm still mostly concerned with making sure I get out of here with some extra scratch.]
+        ~compassion_selfserve += 6
+        ~communal_independent += 6
+        Your number one priority in the moment is, of course, getting safely off of Cassio wholly or at least mostly intact. But as soon as you are safely established, you know you're going to have to have a chat with Lin about getting a cut of the sales of their multitudes of likely illicit data.
+        
+    ~whos_talking_button = "nobody"
+    *{intro.find_out_wha_happe} [No; I haven't found out what caused the destruction on Cassio yet. Before I do anything else, I need to figure that out.]
+        ~compassion_selfserve -= 6
+        ~communal_independent += 6
+        Your number one priority in the moment is, of course, getting safely off of Cassio wholly or at least mostly intact. But as soon as you are safely established, you know you'll be searching for information about the body snatchers and the destruction of Cassio.
+    
+    ~whos_talking_button = "nobody"
+    *{intro.help_scared_injured} [No; although it seems like there aren't many people left on the station, my priority is still to help as many as I can.]
+        ~compassion_selfserve -= 6
+        ~communal_independent -= 6
+        Your number one priority in the moment is, of course, getting safely off of Cassio wholly or at least mostly intact. But you want to make sure as many people as possible get to safety as well. Once you are all out of danger, you can start to think about your next move.
+        
+    ~whos_talking_button = "nobody"
+    *{intro.get_tf_outta_here} [No; I can't think about anything else until I'm out of here along with Sunday and Lin.]
+        ~compassion_selfserve += 6
+        ~communal_independent -= 6
+        Your number one priority is still, of course, getting safely off of Cassio wholly or at least mostly intact along with your companions. Once you are all safely established, you might be able to start thinking about your next move.
+        
+    ~whos_talking_button = "nobody"
+    *[Fuck priorities. I've had enough intrigue and excitement to last a lifetime; I want to get the hell off of this station and never think about any of this again.]
+        ~compassion_selfserve += 12
+        ~communal_independent += 12
+        Your number one priority is, of course, getting the hell off of Cassio. Once you are safely off, you won't have to think about anything that's happened today ever again.
+
+-
+*[Next] -> body_snatcher_fight
 
 
 

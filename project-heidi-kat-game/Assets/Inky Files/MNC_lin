@@ -1,18 +1,24 @@
 == MNC_lin ==
 
 ~background = "generic_station"
-~whos_talking = "nobody"
 {came_from (-> transitions.security_to_lab_or_hosp):
+
+~whos_talking = "nobody"
 It's some time before you're back in the dim emergency lighting of the station, having exited the tunnel and come out to the station nearest the medical and science wings.
 
+~whos_talking = "nobody"
 You haven't seen any more of the creatures you came across inside the tunnels, which you are quite thankful for considering the way they made you feel.
 
+~whos_talking = "nobody"
 The two of you climb onto the platform and take the left exit from the station towards the science wing.
 
+~whos_talking = "nobody"
 As you approach the hallway that leads to the laboratory you start to hear some growing unsettling noises--animalistic shrieks and a great deal of banging and clattering. You briefly wonder if you're about to run into more body-snatchers, but they weren't nearly this noisy before.
 
 }
+
 {came_from (-> hospital_ward):
+
 ~whos_talking = "nobody"
 As you exit the hospital and head for the nearby laboratory, you start to hear growing unsettling noises--animalistic shrieks and a great deal of banging and clattering coming from where you're headed. You briefly wonder if you're about to run into more body-snatchers, but they weren't nearly this noisy before.
 }
@@ -21,7 +27,7 @@ As you exit the hospital and head for the nearby laboratory, you start to hear g
 Sunday suddenly hangs back.
 
 ~whos_talking = "sunday"
-~character_a = "Sunday"
+~character_a = "sunday"
 "Don't we have enough trouble as it is?" she asks.
 
 ~whos_talking = "nobody"
@@ -31,112 +37,131 @@ You stop and turn to look at her.
 "I thought you said what we need is in there."
 
 ~whos_talking = "sunday"
-~character_a = "Sunday"
+~character_a = "sunday"
 "I said what you need is in there. You know what else is in there? Probably some kind of alien thing the corporate scientists were experimenting on that's pissed as hell and now wreaking havoc on anything that crosses its path."
 
-    *"Don't worry; I can handle it[."], whatever it is," you assure her.
+    ~whos_talking_button = "mc"
+    *["Don't worry; I can handle it."]
+        "Don't worry, I can handle it--whatever it is," you assure her.
         {combat_skill >= 70:
+        ~whos_talking = "nobody"
+        Sunday eyes you up and down.
         ~whos_talking = "sunday"
-        ~character_a = "Sunday"
-        "Yeah, you're right, I probably don't have anything to worry about with you around," she replies, eyeing you up and down.
+        ~character_a = "sunday"
+        "Yeah, I suppose don't have anything to worry about with you around," she replies.
         }
     
         {charm_skill > 70 and combat_skill < 70:
         ~whos_talking = "sunday"
-        ~character_a = "Sunday"
-        "What are you gonna do, talk it to death?" she asks skeptically.
+        ~character_a = "sunday"
+        "What are you gonna do, talk it to death?" Sunday asks skeptically.
         }
     
         {combat_skill < 70 and charm_skill < 70:
         ~whos_talking = "sunday"
-        ~character_a = "Sunday"
-         "No offense, but you don't exactly inspire confidence," she replies skeptically.
+        ~character_a = "sunday"
+         "No offense, but you don't exactly inspire confidence," Sunday replies skeptically.
          }
     
+    ~whos_talking_button = "mc"
+    *["What if somebody needs our help?"]
+        "What if somebody needs our help?" you ask her.
+            {compassion_selfserve >= 70:
+            ~whos_talking = "sunday"
+            ~character_a = "sunday"
+            "You really are a bleeding heart, aren't you?" Sunday says.
+            }
+            
+            {compassion_selfserve <= 50:
+            ~whos_talking = "sunday"
+            ~character_a = "sunday"
+            "That certainly hasn't been a significant concern to you so far," Sunday says.
+            }
+            {compassion_selfserve > 50 and compassion_selfserve < 70:
+            ~whos_talking = "sunday"
+            ~character_a = "sunday"
+            "If somebody really did need help, don't you think you'd hear them screaming?" Sunday asks.
+            }
+            
+    ~whos_talking_button = "mc"
+    *{intro.scientist} ["Come to think of it, we did have a voltet in stasis last I checked..."]
+        "Come to think of it, we did have a voltet in stasis last I checked..." you mutter to yourself.
+        ~whos_talking = "sunday"
+        ~character_a = "sunday"
+        "You mean the twelve foot long, insanely territorial reptile creatures with five-inch claws, hundreds of teeth, and acid blood?"
+        ~whos_talking = "nobody"
+        You shrug.
     
-    *"What if somebody needs our help?"[] you ask her.
-    {compassion_selfserve >= 70:
-    ~whos_talking = "sunday"
-    ~character_a = "Sunday"
-    "You really are a bleeding heart, aren't you?" Sunday says.
-    }
-    {compassion_selfserve <= 50:
-    ~whos_talking = "sunday"
-    ~character_a = "Sunday"
-    "That certainly hasn't been a significant concern to you so far," Sunday says.
-    }
-    {compassion_selfserve > 50 and compassion_selfserve < 70:
-    ~whos_talking = "sunday"
-    ~character_a = "Sunday"
-    "If somebody really did need help, don't you think you'd hear them screaming?" Sunday asks.
-    }
-    *{intro.scientist} "Come to think of it, we did have a voltet in stasis last I checked..."[] you mutter to yourself.
-    ~whos_talking = "sunday"
-    ~character_a = "Sunday"
-    "You mean the twelve foot long, insanely territorial reptile creatures with five-inch claws, hundreds of teeth, and acid blood?"
-    You shrug.
-    
+-
 ~whos_talking = "mc"
--"We need to authorize departures for short-range shuttles regardless, so unless you suddenly know of a better place we can do that than what you originally suggested--"
+"We need to authorize departures for short-range shuttles regardless, so unless you suddenly know of a better place we can do that than what you originally suggested--"
 
 ~whos_talking = "nobody"
-There isn't a chance to discuss it any further as there is a loud BANG! and the wall to your left reverberates with the force of a large object hitting it at great speeds.
+There isn't a chance to discuss it any further as something crashes loudly in the laboratory.
+
 ~background = "laboratory"
+
 ~whos_talking = "nobody"
 You don't wait up for Sunday as you take off at a run and burst through the double doors of the lab, scanning the room to take in the scene. The lab is huge, and far to the right of it you can see the source of all the noise: <>
-{intro.scientist:
+
+    {intro.scientist:
+    ~whos_talking = "nobody"
+    as you suspected, the power failure in the station has released the voltet from stasis. Its appearance is that of a strange, lizard-like creature with long, winged limbs, and the skin of its face is stretched grostequely across its spiked skull.
+
+    -else:
+    ~whos_talking = "nobody"
+    a strange, lizard-like creature about twelve feet in length hanging from the ceiling. Its limbs are winged, long, and thin, and the skin of its face is stretched grostequely across its spiked skull.
+    You think you've seen a picture of it before, although you've never seen one in person. It's most likely a voltet: a tempermental reptilian animal whose blood, if reports are to be believed, is comprised largely of acidic compounds.
+}
+
 ~whos_talking = "nobody"
-as you had suspected, the power failure in the station has released the voltet from stasis. Its appearance is that of a strange, lizard-like creature with long, winged limbs. The skin of its face is stretched grostequely across its spiked skull.
+The voltet swings its head in your direction and its eyes, deep orange and glowing like embers, fall on you. You have just a few moments to react.
 
--else:
-~whos_talking = "nobody"
-a strange, lizard-like creature about twelve feet in length hanging from the ceiling. Its limbs are winged, long, and thin, and the skin of its face is stretched grostequely across its spiked skull.
-You think you've seen a picture of it before, although you've never seen one in person. It's most likely a voltet: a tempermental reptilian animal whose blood, if reports are to be believed, is comprised largely of acidic compounds.
-}
-~whos_talking = "nobody"
-The voltet swings its head in your direction and its eyes, deep orange and glowing like embers, fall on you.
-You have just a few moments to react.
+    *(attack) [Attack it head-on with my bare hands.]
+    {combat_skill >= 70:
+    -> voltet_success
+    }
+    {combat_skill < 70:
+    -> voltet_failure
+    }
 
-*(attack) [Attack it head-on with my bare hands.]
-{combat_skill >= 70:
--> voltet_success
-}
-{combat_skill < 70:
--> voltet_failure
-}
+    *(avoid) [Avoid it until I can uncover a weakness.]
+    {logical_creative <=40:
+    ->voltet_success
+    }
+    {logical_creative > 40:
+    ->voltet_failure
+    }
 
-*(avoid) [Avoid it until I can uncover a weakness.]
-{logical_creative <=40:
-->voltet_success
-}
-{logical_creative > 40:
-->voltet_failure
-}
-
-*(utilize) [Utilize my environment to attack it.]
-{logical_creative > 60:
--> voltet_success
-}
-{logical_creative <= 60:
--> voltet_failure
-}
+    *(utilize) [Utilize my environment to attack it.]
+    {logical_creative > 60:
+    -> voltet_success
+    }
+    {logical_creative <= 60:
+    -> voltet_failure
+    }
 
 = voltet_success
+
 {came_from (-> attack):
+
 ~whos_talking = "nobody"
 You are a simple person with a simple, two-pronged approach: your left fist and your right fist.
 
+~whos_talking = "nobody"
 The voltet glides across the room with ease to meet you head on. It lands on the floor as you skid to a halt in front of it and throw several punches in a row directly to its head. Dazed, it swipes twice at you, missing the first time but connecting the second with your midsection. Its sharp claws shred your clothing and graze your skin as you growl with pain.
 -> sunday_attack
 }
 
 {came_from (->avoid):
+
 ~whos_talking = "nobody"
 The voltet quickly glides across the room, eyes fixed on you, but you duck out of its line of sight before it can reach you. If I can just last long enough to figure out a weakness, you think to yourself as you crouch behind a counter, I might actually be able to take this thing down. You look up just in time to see the voltet climbing over and reaching for you with long, scaly claws.
 -> sunday_attack
 }
 
 {came_from (->utilize):
+
 ~whos_talking = "nobody"
 The voltet quickly glides across the room, eyes fixed on you, but your attention is elsewhere. You've spotted what you're {not intro.scientist: fairly} certain is a chemical catalyst that reacts very violently with acidic compounds{intro.scientist:.|; at least, you're pretty sure that's what it is.} You lunge for it just in time as the voltet lands where you stood moments before. In your attempt to dodge its grazing attack you drop the catalyst and the flask crashes to the floor, scattering glass everywhere as the contents of it sizzle uselessly on the floor.
 -> sunday_attack
@@ -145,18 +170,21 @@ The voltet quickly glides across the room, eyes fixed on you, but your attention
 = voltet_failure
 
 {came_from (->attack):
+
 ~whos_talking = "nobody"
 The voltet glides across the room with ease to meet you head on. It lands on the floor as you skid to a halt in front of it and attempt to throw several punches in a row directly at its head, but it's too quick and you barely land one. It swipes twice at you, connecting both times; sharp claws shred your clothing and sink into your skin as you howl with pain.
 -> sunday_attack
 }
 
 {came_from (->avoid):
+
 ~whos_talking = "nobody"
 The voltet quickly glides across the room, eyes fixed on you, and you attempt to duck out of its line of sight before it can reach you. If I can just-- you start to think as you crouch behind a counter, but your idea is cut short as the voltet's claws rake across your back, shredding your clothes and sinking into your skin as you howl with pain.
 -> sunday_attack
 }
 
 {came_from (->utilize):
+
 ~whos_talking = "nobody"
 The voltet glides across the room with ease, eyes fixed on you, but your attention is elsewhere. You've spotted what you're {not intro.scientist: fairly} certain is a chemical catalyst that reacts very violently with acidic compounds{intro.scientist:.|; at least, you're pretty sure that's what it is.} You lunge for it as the voltet swoops in to land, swiping at you once and grazing you across your back as you growl with pain. You drop the catalyst in the attack and the flask crashes to the floor, scattering glass everywhere as the contents of it sizzle uselessly on the floor.
 -> sunday_attack
@@ -172,104 +200,174 @@ She wastes no time in shooting the voltet with incredible accuracy, which is goo
 
 
 {came_from (->voltet_failure):
+
 ~whos_talking = "nobody"
 You should probably rethink your strategy; that first round wasn't exactly successful.
 
-*{not attack} [I'll attack it head-on.] -> attack_instead
-*{not avoid} [I need to figure out its weakness.] -> avoid_instead
-*{not utilize} [There must be something around here I can use.] -> utilize_instead
+    *{not attack} [I'll attack it head-on.]
+    -> attack_instead
+    
+    *{not avoid} [I need to figure out its weakness.]
+    -> avoid_instead
+    
+    *{not utilize} [There must be something around here I can use.]
+    -> utilize_instead
 }
 
 {came_from (-> voltet_success):
+
+~whos_talking = "nobody"
 You've got it where you want it; now it's time to decide your next move.
-*{attack} [I'll keep attacking it head on.] -> attack_instead
-*{not attack} [I'll attack it head on this time.] -> attack_instead
-*{avoid} [I bet I can find a weakness.] -> avoid_instead
-*{not avoid} [I'm going to keep looking for a weakness.] -> avoid_instead
-*{utilize} [I know there's something else around here that I can use.] -> utilize_instead
-*{not utilize} [Maybe I'll be better off looking for something around here to use.] -> utilize_instead
+
+    *{attack} [I'll keep attacking it head on.]
+    -> attack_instead
+    *{not attack} [I'll attack it head on this time.]
+    -> attack_instead
+    *{avoid} [I bet I can find a weakness.]
+    -> avoid_instead
+    *{not avoid} [I'm going to keep looking for a weakness.]
+    -> avoid_instead
+    *{utilize} [I know there's something else around here that I can use.]
+    -> utilize_instead
+    *{not utilize} [Maybe I'll be better off looking for something around here to use.]
+    -> utilize_instead
 }
 
 
 = attack_instead
+
 {combat_skill >= 70:
+
 ~whos_talking = "nobody"
-You decide to go on the offensive (which is much more your style anyway). The voltet is still preoccupied by Sunday, so you take the chance to grab {intro.scientist: a dissecting scalpel|a sharp scientific implement you don't know the name of}; it's small, but it'll have to do.
+You decide to go on the offensive{voltet_failure: (which is much more your style anyway)|}. The voltet is still preoccupied by Sunday, so you take the chance to grab a dissecting scalpel; it's small, but it'll have to do.
+
+~whos_talking = "nobody"
 You don't hesitate as you run and leap onto the back of the voltet, grabbing hold of it around the neck. Using the blade you stab it directly in the eyes and it lets out an afflicted wail.
+
 -> sunday_attack2
 }
+
 {combat_skill < 70:
+
 ~whos_talking = "nobody"
-You decide to go on the offensive; although, it isn't necessarily your go-to style. The voltet is still preoccupied by Sunday, so you take the chance to grab {intro.scientist: a dissecting scalpel|a sharp scientific instrument you don't know the name of}; it's small, but it'll have to do.
+You decide to go on the offensive; although, it isn't necessarily your go-to style. The voltet is still preoccupied by Sunday, so you take the chance to grab a dissecting scalpel; it's small, but it'll have to do.
+
+~whos_talking = "nobody"
 Trepidation fills you as you take off at a run in the direction of the voltet; you leap onto its back and try to grab hold of it around the neck. It flails; you hesistate to stab it with the blade, and that moment is all it needs to throw you off forcefully. You sail through the air and crash into an adjacent wall, dropping the knife in the process.
+
 -> near_death
 }
 
 = avoid_instead
+
 {logical_creative <= 40:
+
 ~whos_talking = "nobody"
 You decide your best bet is to uncover a weakness (which is much more your style anyway). The voltet is still preoccupied by Sunday, so you take the chance to circle around and see if you can spot any weaknesses. A moment's careful observation reveals to you what appears to be a soft spot underneath its spikey jaw. Perfect. Now you just need to get close enough.
-You grab {intro.scientist: a dissecting scalpel|a sharp scientific instrument you don't know the name of} off the nearest counter; it's small, but it'll have to do.
+
+~whos_talking = "nobody"
+You grab a dissecting scalpel off the nearest counter; it's small, but it'll have to do.
+
+~whos_talking = "mc"
 "Sunday, I need to get close!" you shout across the room. She nods.
+
 -> sunday_attack2
 }
 
 {logical_creative > 40:
+
 ~whos_talking = "nobody"
 You decide your best bet is to uncover a weakness; although, being so calculating isn't typically your style. The voltet is still preoccupied by Sunday, so you take the chance to circle around and see if you can spot any weaknesses. Your moment of careful observation is interrupted, however, when the creature suddenly rounds in your direction.
+
+~whos_talking = "nobody"
 You dive out of its way a moment too late as it rakes its claws deep into your arm. You cry out in pain, rolling to the side in an effort to get away from it. 
+
 -> near_death
 }
 
 =utilize_instead
+
 {logical_creative >=60:
+
 ~whos_talking = "nobody"
-You decide your best best is to get creative (which is much more your style anyway). The voltet is still preoccupied by Sunday, so you take the chance to look around for anything that might help. You notice {intro.scientist: a bottle of Xythocin, extremely flammable|a bottle of some chemical with a big yellow warning label depicting flames} on a nearby counter. That'll probably work; now you just need something to light it with.
+You decide your best best is to get creative (which is much more your style anyway). The voltet is still preoccupied by Sunday, so you take the chance to look around for anything that might help. You notice {intro.scientist: a bottle of Xythocin, extremely flammable|a bottle of some chemical with a yellow warning label} on a nearby counter. That'll probably work; now you just need something to light it with.
+
+~whos_talking = "nobody"
 Grabbing the bottle, you search desparately for a source of ignition, and don't have to look for very long before you find a bunson burner.
+
+~whos_talking = "nobody"
 You run across the lab to where Sunday and the voltet are facing off, coming up behind the creature as you unscrew the lid of the bottle. You waste no time in dousing the thing in {intro.scientist: Xythocin|flammable chemicals} and light the bunson burner as it turns around to deal with you.
+
 -> sunday_attack2
 }
+
 {logical_creative < 60:
+
 ~whos_talking = "nobody"
-You decide your best bet is to get creative; although, that isn't typically your style. The voltet is still preoccupied by Sunday, so you take the chance to look around for anything that might help. You notice {intro.scientist: a bottle of Xythocin, extremely flammable|a bottle of some chemical with a big yellow warning label depicting flames} on a nearby counter. That'll probably work; now you just need something to light it with.
+You decide your best bet is to get creative; although, that isn't typically your style. The voltet is still preoccupied by Sunday, so you take the chance to look around for anything that might help. You notice {intro.scientist: a bottle of Xythocin, extremely flammable,|a bottle of some chemical with a yellow warning label} on a nearby counter. That'll probably work; now you just need something to light it with.
+
+~whos_talking = "nobody"
 Grabbing the bottle, you search desparately for a source of ignition, and don't have to look for very long before you find a bunson burner.
+
+~whos_talking = "nobody"
 You run across the lab to where Sunday and the voltet are facing off, coming up behind the creature as you unscrew the lid of the bottle. Just as you go to dump the {intro.scientist: Xythocin|flammable chemicals} on the thing, it wips around with its arms in a wide arc, knocking the bottle from your hands and directly onto you.
+
 -> near_death
 }
 
 = sunday_attack2
+
 ~whos_talking = "nobody"
 Sunday seizes the moment and aims point blank at the creature's head. {came_from (->attack_instead): You duck just in time.} The projectile that fires from her gun finds its mark in short order, and the voltet reels backwards with a violent shriek.
 
 {came_from (-> utilize_instead):
 ~whos_talking = "nobody"
 You take hold of Sunday and drag her away as you toss the the lit bunson burner in the direction of the voltet. The {intro.scientist: Xythocin|chemical}-soaked reptile goes up in flames almost instantly, as does the area surrounding it which was also doused in the chemical. It screeches and thrashes for several minutes until it is finally overcome by the fire.
-As you turn to look at Sunday, the sound of a slow clap travels across the laboratory, and you both look around for its source. You find it in one of the doorways to another area of the lab. -> introducing_lin
+
+~whos_talking = "nobody"
+As you turn to look at Sunday, the sound of a slow clap travels across the laboratory, and you both look around for its source. You find it in one of the doorways to another area of the lab.
+
+-> introducing_lin
 }
+
 {came_from (-> avoid_instead):
+
 ~whos_talking = "nobody"
 This is your chance. You lunge towards the voltet with lightning accuracy, jamming the small blade up through the soft part of its jaw. Its shriek is cut short as the blade pierces its brain and it drops to the floor, still gurgling.
-As you turn to look at Sunday, the sound of a slow clap travels across the laboratory, and you both look around for its source. You find it in one of the doorways to another area of the lab. -> introducing_lin
-}
-{came_from (-> attack_instead):
+
 ~whos_talking = "nobody"
+As you turn to look at Sunday, the sound of a slow clap travels across the laboratory, and you both look around for its source. You find it in one of the doorways to another area of the lab.
+
+-> introducing_lin
+}
+
+{came_from (-> attack_instead):
+
+~whos_talking = "mc"
 "Watch it!" you yell upon feeling the near-graze of the bullet.
 
+~whos_talking = "nobody"
 The voltet throws you from its back as it wails, clawing at its damaged eyes. Between you and Sunday you've blinded it. Without its sight it isn't nearly as formidable; you manage to get hold of the creature and pin it to the floor as Sunday takes aim one last time and fires directly into the back of its skull. It thrashes once, twice... and then finally, it goes still.
-As you turn to look at Sunday, the sound of a slow clap travels across the laboratory, and you both look around for its source. You find it in one of the doorways to another area of the lab. -> introducing_lin
+
+~whos_talking = "nobody"
+As you turn to look at Sunday, the sound of a slow clap travels across the laboratory, and you both look around for its source. You find it in one of the doorways to another area of the lab.
+
+-> introducing_lin
 }
 
 = near_death
+
 ~whos_talking = "nobody"
 When you open your eyes you see nothing but the voltet towering over you, snarling and with saliva dripping from its open maw. Sunday shoots at it but it's useless; the thing's attention is fixed on you, and you realize as your heart fills with terror that you are about die...
 
+~whos_talking = "nobody"
 ... and then you don't. Faster than you can follow, a silver-white blur out of the corner of your eye runs up behind the voltet and much to its surprise there is suddenly what appears to be a human arm sticking through its chest, bloody fist tightened around some kind of alien internal organ. The voltet slumps and then falls to the ground as the person behind it recovers their arm from inside of it.
+
 -> introducing_lin
 
 = introducing_lin
 
 ~whos_talking = "nobody"
-
  Before you stands what is apparently a human, although you've never seen a human as aethereal and genderless as this one.
 
 {came_from (->near_death):
@@ -277,14 +375,14 @@ When you open your eyes you see nothing but the voltet towering over you, snarli
 ~whos_talking = "nobody"
 <> They tower barefoot above you much like the voltet for a moment before they reach down to help pull you up. You feel woozy on your feet, having lost a fair bit more blood than you'd initially intended to.
 
-~whos_talking = "lin"
+~whos_talking = "stranger"
 ~character_b = "lin"
 "That was a bad way to die," they say solemnly.
 
-~whos_talking = "nobody"
+~whos_talking = "mc"
 "Yeah, thanks, I appreciate it," you reply gratefully.
 
-~whos_talking = "lin"
+~whos_talking = "stranger"
 ~character_b = "lin"
 "I meant for her," the stranger says, motioning to the voltet's body on the floor.
 
@@ -292,49 +390,66 @@ When you open your eyes you see nothing but the voltet towering over you, snarli
 You pause in brushing yourself off, somehow feeling a touch of momentary guilt before you remember that you weren't the one to kill it, and it had definitely been moments away from ripping you in half.
 
 ~whos_talking = "sunday"
-~character_a = "Sunday"
+~character_a = "sunday"
 "Yeah, poor voltet, what a tragedy," Sunday says sarcastically.
 
-~whos_talking = "lin"
+~whos_talking = "stranger"
 ~character_b = "lin"
 "Though I agree with your words, I do not agree with your sentiment," the mysterious stranger replies. "She was brooding, you see. Her eggs are here. She was only trying to protect them."
 
-*"It tried to kill me[."]," you point out. "If you cared about it so much you shouldn't have killed it."
-~rel_lin -= 10
--> lin_convo
-*"Then why did you kill it?" you ask pointedly.
--> lin_convo
-*"Why save me, then?" [] you ask. 
--> lin_convo
-}
-{came_from (->sunday_attack2):
-~whos_talking = "nobody"
-<> They stand with casual confidence in the doorway, barefoot, arms crossed, and a sort of sadness in their eyes.
 
-~whos_talking = "lin"
+    ~whos_talking_button = "mc"
+    *["It tried to kill me."]
+        "It tried to kill me," you point out. "If you cared about it so much you shouldn't have killed it."
+        ~rel_lin -= 10
+    -> lin_convo
+    
+    ~whos_talking_button = "mc"
+    *["Then why did you kill it?"]
+        "Then why did you kill it?" you ask pointedly.
+    -> lin_convo
+    
+    ~whos_talking_button = "mc"
+    *["Why save me, then?"]
+        "Why save me, then?" you ask. 
+    -> lin_convo
+}
+
+{came_from (->sunday_attack2):
+
+~whos_talking = "nobody"
+<> They stand with casual confidence in the doorway, arms crossed, barefoot, and with a sort of sadness in their eyes.
+
+~whos_talking = "stranger"
 ~character_b = "lin"
 "That was a bad way to die," they say solemnly.
 
 ~whos_talking = "sunday"
-~character_a = "Sunday"
+~character_a = "sunday"
 "Yeah, poor voltet, what a tragedy," Sunday says sarcastically.
 
-~whos_talking = "lin"
+~whos_talking = "stranger"
 ~character_b = "lin"
 "Though I agree with your words, I do not agree with your sentiment," the mysterious stranger replies. "She was brooding, you see. Her eggs are here. She was only trying to protect them."
 
-*"It tried to kill me[."]," you point out. "If you cared about it so much then why did you let us kill it?"
-~rel_lin -= 10
--> lin_convo
-*"Then why didn't you try to stop us?"[] you ask pointedly.
--> lin_convo
+    ~whos_talking_button = "mc"
+    *["It tried to kill me."]
+        "It tried to kill me," you point out. "If you cared about it so much then why did you let us kill it?"
+        ~rel_lin -= 10
+    -> lin_convo
+    
+    ~whos_talking_button = "mc"
+    *["Then why didn't you try to stop us?"]
+        "Then why didn't you try to stop us?" you ask pointedly.
+    -> lin_convo
 }
 
 = lin_convo
+
 ~whos_talking = "nobody"
 -The stranger looks you over, as though considering you.
 
-~whos_talking = "lin"
+~whos_talking = "stranger"
 ~character_b = "lin"
 "My programming determined it to be the most optimal outcome of the situation."
 
@@ -342,7 +457,7 @@ You pause in brushing yourself off, somehow feeling a touch of momentary guilt b
 "Are you--" you stop short, as if unsure.
 
 ~whos_talking = "sunday"
-~character_a = "Sunday"
+~character_a = "sunday"
 "Are you saying you're an android?" Sunday finishes for you.
 
 ~whos_talking = "nobody"
@@ -354,7 +469,7 @@ The stranger nods once in the affirmative. Sunday does a poor job of not looking
 "You seem, uh, very..." you trail off, feeling a big light-headed.
 
 ~whos_talking = "sunday"
-~character_a = "Sunday"
+~character_a = "sunday"
 "Very human," Sunday finishes again{rel_sunday > 65:, giving you a concerned look.|.}
 }
 
@@ -367,7 +482,7 @@ The stranger nods once in the affirmative. Sunday does a poor job of not looking
 ~whos_talking = "nobody"
 The stranger considers this.
 
-~whos_talking = "lin"
+~whos_talking = "stranger"
 ~character_b = "lin"
 "I was not made strictly within the legal bounds of system law," they say by way of explanation.
 
@@ -389,25 +504,28 @@ You exchange a furtive look with Sunday.
 "I wish the circumstances of our meeting were not so dire," Lin says, motioning to state of the laboratory. "I was under the impression all residents had been taken. May I inquire as to the purpose of your presence here?"
 
 ~whos_talking = "sunday"
-~character_a = "Sunday"
+~character_a = "sunday"
 "No, you may not," Sunday says.
 
-*[Side with Sunday; you don't trust this android.]
-~rel_lin -= 5
-~rel_sunday += 10
--> side_w_sunday
-*{intro.get_phat_loots}[Side with Sunday; you get the feeling Lin wouldn't appreciate why you're here.] 
-~rel_lin -= 5
-~rel_sunday += 10
--> side_w_sunday
-*[Tell Lin what you're doing here; they're nice enough, and maybe they can help.]
-~rel_lin += 10
-~rel_sunday -= 5
--> tell_lin
-*{near_death}[Tell Lin what you're doing here; they saved your life, it's the least you can do.]
-~rel_lin += 10
-~rel_sunday -= 5
--> tell_lin
+    *[Side with Sunday; you don't trust this android.]
+        ~rel_lin -= 5
+        ~rel_sunday += 10
+    -> side_w_sunday
+    
+    *{intro.get_phat_loots}[Side with Sunday; you get the feeling Lin wouldn't appreciate why you're here.] 
+        ~rel_lin -= 5
+        ~rel_sunday += 10
+    -> side_w_sunday
+    
+    *[Tell Lin what you're doing here; they're nice enough, and maybe they can help.]
+        ~rel_lin += 10
+        ~rel_sunday -= 5
+    -> tell_lin
+    
+    *{near_death}[Tell Lin what you're doing here; they saved your life, it's the least you can do.]
+        ~rel_lin += 10
+        ~rel_sunday -= 5
+    -> tell_lin
 
 = side_w_sunday
 
@@ -416,7 +534,7 @@ You exchange a furtive look with Sunday.
 
 ~whos_talking = "lin"
 ~character_b = "lin"
-"I was asking to be polite," Lin says. "In truth, I can likely intuit what you are doing here by calculating the most probable scenarios by the time I finish this sentence. {player_name}, you are seeking {intro.help_scared_injured: medical supplies to help the survivors}{intro.get_tf_outta_here: the quickest and safest egress from this space station}{intro.find_out_wha_happe: to find out who is responsible for the disaster here}{intro.get_phat_loots: to gather a large summation of valuables and depart with them}, correct?"
+"I was asking to be polite," Lin says. "In truth, I can likely intuit what you are doing here by calculating the most probable scenarios by the time I finish this sentence. {player_name}, you are seeking {intro.help_scared_injured: to help the remaining survivors}{intro.get_tf_outta_here: the quickest and safest egress from this space station}{intro.find_out_wha_happe: to find out who is responsible for the disaster here}{intro.get_phat_loots: to gather a large summation of valuables and depart with them}, correct?"
 
 ~whos_talking = "nobody"
 Sunday looks as if Lin just slapped her.
@@ -426,12 +544,19 @@ Sunday looks as if Lin just slapped her.
 "And Sunday, you are--"
 
 ~whos_talking = "sunday"
-~character_a = "Sunday"
-"I THINK THAT'S QUITE ENOUGH OF THAT," she says loudly over whatever it was Lin was about to say. "Very nosy robot, aren't you?"
+~character_a = "sunday"
+"I think that's quite enough of that!" she says loudly over whatever it was Lin was about to say. "Very nosy robot, aren't you?"
 
 ~whos_talking = "lin"
 ~character_b = "lin"
-"Android," Lin gently corrects her. <> -> wrap_up
+"Android," Lin gently corrects her.
+
+You take a mental note to continue pestering Sunday about her presence here but turn your attention to the android for now.
+
+~whos_talking = "mc"
+"Lin, I was hoping to {intro.help_scared_injured: be able to authorize shuttle departures from the computers here}{intro.get_tf_outta_here: get off this tin can, fast. Which means I need to authorize shuttle departures.}{intro.find_out_wha_happe: find out who was responsible for the explosion that took out the station and authorize shuttle departures}{intro.get_phat_loots: find something worth stealing here before we head out, if I'm being perfectly honest}.
+
+-> wrap_up
 
 = tell_lin
 
@@ -455,6 +580,6 @@ Lin motions to a room next door to the laboratory.
 
 ~whos_talking = "lin"
 ~character_b = "lin"
-"Both of you," they add, though their expression remains neutral.
+"Both of you," they add, their expression remaining neutral.
 
 -> the_discovery
