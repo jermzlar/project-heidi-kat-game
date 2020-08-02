@@ -36,6 +36,7 @@ VAR whos_talking = "nobody"
 VAR character_a = "none"
 VAR character_b = "none"
 VAR background = "background"
+VAR whos_talking_button = "nobody"
 
 ~background = "space station"
 ~whos_talking = "nobody"
@@ -49,10 +50,10 @@ A space station in a distant galaxy.
 == intro ==
 ~background = "bedroom"
 ~whos_talking = "nobody"
-You don't remember how it happened, nor do you know what caused it. All you know is that there was an explosion of great force, and now you are here, laying on the floor of your bedroom in your uniform with what feels like blood seeping out of your head.
+You don't remember how it happened, nor do you know what caused it. All you know is that there was a powerful explosion, and now you are here, laying on the floor of your bedroom in your uniform with what feels like blood seeping out of your head.
 You try to think back to the last thing you can remember...
 Three months ago you were hired by Elysium, the system-wide corporation responsible for manufacturing everything from the coffee maker in your bedroom to the bio-weapons used in the Jenusian-Terran war of '83.
-Upon your hiring you were assigned to one of the company's own space stations: 9068 Cassiopeiae II, or Cassio as it was more often referred to. Elysium owns and operates the station, or at least they do in theory. So far, from what you have seen, their oversight leaves much to be desired.
+Upon your recruitment you were assigned to one of the company's space stations: 9068 Cassiopeiae II, or Cassio as it was commonly referred to. Elysium owns and operates this station, or at least they do in theory. From what you have seen so far, their oversight leaves much to be desired.
 What is it you do here? 
 
 * (scientist) [I'm a scientist.]
@@ -61,38 +62,38 @@ What is it you do here?
 ~technology_skill += 5
 
 You work as a scientist and spend your time in the Laboratory of the space station, where you conduct experiments pertaining to the atmosphere and make-up of the gas giant the station orbits.
-You're glad you weren't in the lab when disaster struck, or else you'd probably have suffered more severe injury.
+You're glad you weren't in the lab when the disaster struck, otherwise you would have been more severely injured.
 
 * (security) [I'm in security.]
 
 ~combat_skill += 15
 
-You've always been larger and stronger than average, and it seemed like a natural fit for you to employ yourself first as a mercenary and later as a more respectable security officer.
-You're glad you hadn't been in the armory of Station Security when the explosion occurred, otherwise you'd probably be pulp and nothing more.
+You've always been larger and stronger than average, so it was a natural fit to find employment as a security officer.
+You're glad you weren't in the armory of Station Security when the explosion occurred, otherwise you'd probably be pulp right about now.
 
 * (doctor) [I'm a doctor.]
 
 ~medicine_skill += 15
 
-You work in the emergency room of the Hospital Ward of the space station, tending to those with traumatic injuries or severe illness.
-It occurs to you that you are very likely needed there at this moment; although, you weren't scheduled to be.
+You work in the emergency room of the hospital ward tending to those with traumatic injuries or severe illness.
+It occurs to you that you are likely needed there at the moment (although, you weren't scheduled to be).
 
 * ( technician) [I work with technology.] <>
 
 ~ technology_skill +=  15
 
-Though you technically work in Operations, the reality is you might be found in any number of places on the station on any given day. Troubleshooting and technical support are your specialty.
-You count yourself lucky that you weren't in one of the crawl spaces at the moment of the explosion, as it's very likely you would have been crushed to death.
+Though you technically work in Operations, the reality is you could be found in a number of areas on the station on any given day. Troubleshooting and technical support are your specialty.
+You count yourself lucky that you weren't in one of the crawl spaces at the moment of the explosion, as it's likely you would have been crushed to death.
 
 *(xenolinguist) [I work as a translator.]<>
 
 ~ charm_skill += 15
 
-Though you are technically employed by Elysium, you are contracted out by one of the shipping companies at the shuttle docks. They do business with a number of Jenusians, and you happen to speak both the formal and informal dialects of two of their languages (not to mention six Dead Earth languages).
-You thank your lucky stars that you weren't in the docking bay when the explosion hit, considering the large amounts of hyper-reactive shuttle fuel stored there.
+Though technically employed by Elysium, you're currently contracted out by one of the shipping companies at the shuttle docks. They do business with a number of Jenusians, and you happen to speak both the formal and informal dialects of two of their languages (not to mention six Dead Earth languages).
+You thank your lucky stars that you weren't in the docking bay when the explosion hit considering the large amounts of hyper-reactive shuttle fuel stored there.
 
--Instead, it had been your recreation period. You'd been in your bunk playing a cheap but addictive clicker game on your PDD. Could probably still be able to hear it if it weren't for the ringing in your ears. Technically you aren't supposed to have games installed, but your co-workers have seen you fiddling with it previously and have yet to report it to your superiors.
-It occurs to you as you sit up and open your eyes that forbidden games on your Personal Data Device are probably the least of your worries at this point in time. You should probably take stock of the situation.
+-Luckily, it had occured during your recreation period. You'd been in your bunk playing a cheap but addictive clicker game on your PDD. Could probably still be able to hear it if it weren't for the ringing in your ears. Technically, you aren't supposed to have games installed, but your co-workers have seen you fiddling with it previously and have yet to report it to your superiors.
+It occurs to you as you struggle to sit up and open your eyes that forbidden games on your Personal Data Device is the least of your worries. You should probably take stock of the situation.
 * [Check to see if those around me are OK.] -> roommate
 ~compassion_selfserve -=10
 * [Check my injuries in the mirror.] -> check_injuries
@@ -101,11 +102,10 @@ It occurs to you as you sit up and open your eyes that forbidden games on your P
 = roommate
 ~whos_talking = "nobody"
 You pull yourself to your feet and a wave of dizziness rushes over you. That head injury will probably need some attention at some point, but your first priority is checking on those around you, starting with your roommate.
-Quarters are small on the space station by necessity, and so it takes nothing more than a cursory glance around to locate your roommate. They're on the ground, not moving, with a sizeable piece of plasteel piping going through their mid-section.
+Quarters are small on the space station by necessity, and so it takes nothing more than a cursory glance to locate your roommate. They're on the ground, not moving, with a sizeable piece of plasteel piping skewered through their mid-section.
 + [See if there's anything I can do to help.]
 ~optimist_pessimist -= 15
 You kneel down beside your roommate and check their pulse, but feel nothing.
-Well, it was worth trying.
 Before you do anything else, you should probably check your PDD. <>
 -> check_pdd
 * [It's useless, they're not even breathing.]
@@ -117,25 +117,27 @@ TODO: add him/her/them switching for roommate
 
 = check_injuries
 ~whos_talking = "nobody"
-Fortunately, the mirror in the bathroom seems to have survived the explosion mostly intact except for three sharp cracks running through it diagonally.
-Surveying your reflection, you note your complexion is slightly ill, and the wound in your head {doctor: looks like a severe gash. You'll need to tend to this fairly soon or else you might lose consciousness.} {not doctor: is bleeding significantly, as head wounds usually do, so it's hard to tell if it's serious or not.}
+Fortunately, the mirror in the bathroom seems to have survived the explosion minus three sharp cracks running through it diagonally.
+You survey yourself in the mirror, noting your complexion is slightly ill. {doctor: The wound in your head looks worse than it is, but still needs tending to at some point} {not doctor: It's hard to tell if the wound in your head is serious or not.}
 Before you do anything else, you should probably check your PDD.
 -> check_pdd
 
 = check_pdd
-You search the floor of your room for it and discover it beneath some rubble. It appears to have performed a hard reset in the wake of the concussive blast of the explosion. You'll have to re-enter some information.
+You search the floor of your room for it, and discover it beneath some rubble. It appears to have compeltely reset in the wake of the concussive blast. You'll have to re-enter your information.
 
 * [Enter information.] -> enter_pdd_info
 
 = enter_pdd_info
 
-A diaglog flashes on the screen of your PDD.
+A dialog flashes on the screen of your PDD.
 
 ...
 
 ...
 
 NAME DESIGNATION?
+
+...
 
 +[Maral]
 ~player_name = "Maral"
@@ -157,6 +159,8 @@ NAME DESIGNATION?
 ...
 
 -GENDER DESIGNATION?
+
+...
 
 +(female) [Female]
 ~pronoun_she = "she"
@@ -181,7 +185,7 @@ NAME DESIGNATION?
 
 = review
 
-NAME DESIGN: {player_name} -  GENDER DESIGNATION: {gender_person} ({pronoun_she}/{pronoun_her}/{pronoun_hers}) - Is this correct?
+[NAME DESIGNATION:] {player_name} \\\ [GENDER DESIGNATION:] {gender_person} ({pronoun_she}/{pronoun_her}/{pronoun_hers}) \\\ Is this correct?
 
 +[Yes.] ->priorities_and_skills
 +[No, I need to change something.] -> enter_pdd_info
@@ -192,7 +196,7 @@ NAME DESIGN: {player_name} -  GENDER DESIGNATION: {gender_person} ({pronoun_she}
 
 ~whos_talking = "nobody"
 
-With that settled you tuck your PDD away and consider your next move.
+With that settled you tuck your PDD away in your pocket and consider your next move.
 
 You'll have to decide what your first priority will be.
 
@@ -220,7 +224,7 @@ This is a golden opportunity that you don't want to miss. You won't be taking ad
 You're good with tech. You'll make this station talk and tell you {help_scared_injured: how you can help best}{get_tf_outta_here: the best way to get out of this mess}{find_out_wha_happe: exactly what happened}{get_phat_loots: where you can find the most valuable loot}.
 * (combat) [I'm extremely strong and have plenty of combat experience.]
 ~combat_skill += 15
-You're good in a fight. You'll take advantage of that so you can {help_scared_injured: protect people and get them to safety} {get_tf_outta_here: stop anyone who gets in the way of you leaving}{find_out_wha_happe: figure out what caused this and stop it from getting worse}{get_phat_loots: introduce anyone who gets in the way of my plan to my two fists}.
+You're good in a fight. You'll take advantage of that so you can {help_scared_injured: protect people and get them to safety} {get_tf_outta_here: stop anyone who gets in the way of you leaving}{find_out_wha_happe: figure out what caused this and stop it from getting worse}{get_phat_loots: introduce anyone who gets in the way of your plan to your fists}.
 * (medicine) [I'm very skilled in medicine.]
 ~medicine_skill += 15
 You've been formally trained in medicine, and you'll be able to {help_scared_injured: tend to those who have been injured at ground zero}{get_tf_outta_here: heal anyone you come across before you get out of here, and maybe they can offer help}{find_out_wha_happe: determine the cause of the explosion by examining the injuries of those at ground zero}{get_phat_loots: heal myself so I'll be better able to grab the expensive stuff and get out of here}.
@@ -259,7 +263,7 @@ There's not much left to do in your room, so you cross the tiny space in three s
 You look around, trying to figure out where to go first.
 
 You decide you should head to station security. {security: It's likely they're expecting every officer to report in as soon as possible|They should have answers as to what's going on.}
-->MNC_sunday
+-> MNC_sunday
 
 
 
