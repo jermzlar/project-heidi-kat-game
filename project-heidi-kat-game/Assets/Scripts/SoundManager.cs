@@ -5,14 +5,16 @@ using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
-    public static AudioClip snatcherSound, mouseClickSound;
+    [SerializeField]
+    public AudioClip snatcherSound = null;
+
+    [SerializeField]
+    public AudioClip mouseClickSound = null;
     static AudioSource audioSrc;
     void Start()
     {
-        snatcherSound = Resources.Load<AudioClip>("body_snatcher_sound");
-        mouseClickSound = Resources.Load<AudioClip>("mouse_click_sound");
 
-        audioSrc = GetComponent<AudioSource> ();
+        audioSrc = transform.GetComponent<AudioSource> ();
      	
     }
 
@@ -22,18 +24,22 @@ public class SoundManager : MonoBehaviour
         
     }
 
-    public static void PlaySound(string clip)
+    public void PlaySound(string clip)
     {
+
     	switch (clip)
     	{
     		case "body_snatcher_sound":
-	    		audioSrc.PlayOneShot (snatcherSound);
+                audioSrc.clip = snatcherSound;
 	    		break;
 	    	case "mouse_click":
-	    		audioSrc.PlayOneShot (mouseClickSound);
+	    		audioSrc.clip = mouseClickSound;
 	    		break;
-
+            
 
     	}
+
+        audioSrc.Play();
+
     }
 }
