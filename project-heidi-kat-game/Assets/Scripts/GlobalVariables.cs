@@ -215,6 +215,13 @@ public class GlobalVariables : MonoBehaviour
         statBoxHandler.SetCharmStat(getCharmSkill().ToString());
         statBoxHandler.SetTechnologyStat(getTechnologySkill().ToString());
 
+        statBoxHandler.SetSundayRel((float)getRelSunday()/100);
+        statBoxHandler.SetLinRel((float)getRelLin()/100);
+
+        statBoxHandler.SetSliderOptimisticPessimistic((float)getOptimistPessimist());
+        statBoxHandler.SetSliderLogcialCreative((float)getLogicalCreative());
+        statBoxHandler.SetSliderIndependentCommunal((float)getCommunalIndependent());
+        statBoxHandler.SetSliderCompassionateSelfServing((float)getCompassionSelfserve());
     }
 
 	    void Update()

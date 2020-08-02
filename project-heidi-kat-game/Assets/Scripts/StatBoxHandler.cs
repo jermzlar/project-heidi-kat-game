@@ -149,7 +149,7 @@ public class StatBoxHandler : MonoBehaviour
     	slider_Independent_Communal.value = value;
     }
 
-    public void SetSliderLogcialCompassionateSelfServing(float value)
+    public void SetSliderCompassionateSelfServing(float value)
     {
     	slider_Logcial_Compassionate_SelfServing.value = value;
     }
