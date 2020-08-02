@@ -44,7 +44,7 @@ public class ButtonBehavior : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     {
         buttonText.color = Color.white;
     }
-    //revert Text Color upon release
+
     public void OnPointerUp(PointerEventData pointerEventData)
     {
         buttonText.color = Color.black;
