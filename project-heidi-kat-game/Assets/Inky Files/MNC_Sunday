@@ -1,6 +1,7 @@
 == MNC_sunday ==
 
 ~background = "security_station"
+~music_cue = "ambient spaceship 1"
 
 ~whos_talking = "nobody"
 You head in {not intro.security: what you believe to be} the direction of the security station. <>
@@ -14,6 +15,7 @@ You aren't entirely sure, as you've had little cause to visit it over the last t
 The halls of Cassio are dimly lit by dim red emergency lighting. Scorch marks line some of the walls, and in places there are pieces of plasteel wall and ceiling sections precariously hanging. As you walk, you note that you see very few people. There is a body or two here and there, but not nearly as many as you would expect from a disaster like this. Did most people already get off the station? you wonder to yourself. How long was I out?
 
 ~whos_talking = "nobody"
+~sound_cue = "metal footsteps"
 You take a set of stairs down in almost total darkness, and at the bottom you come to the lobby of the security station. The lights here are flickering and the front desks are on their sides, their contents unceremoniously spilled out onto the floor.
 
 ~whos_talking = "nobody"
@@ -27,12 +29,13 @@ You glance at the overturned desk beside you. This was Lulah's desk. You wonder 
 -else:
 
 ~whos_talking = "nobody"
-You glance at the overturned desk beside you, and your eyes travel to the lifeless body in the corner beside it. A woman, covered in blood and missing part of her leg.
+You glance at the overturned desk beside you, and your eyes travel to the lifeless body in the corner beside it: a woman, covered in blood and missing part of her leg.
 }
 
 {not hospital_ward:
 
 ~whos_talking = "nobody"
+~sound_cue = "woozy"
 A wave of dizziness rushes over you, and you place a hand on the adjacent wall to steady yourself. This head wound of yours likely needs some attention soon. You'd better be careful.
 }
 
@@ -74,6 +77,7 @@ The woman stops abruptly and turns to look up at you, freezing. She appears to b
 
 -
 ~whos_talking = "nobody"
+~sound_cue = "rummage"
 She returns her attention to the desk, pulling out one of the drawers and dumping its contents on the floor. She knocks on the bottom of the drawer rapidly, and you are about to address her again until she lets out a triumphant, "Aha!" She appears to remove a false bottom, reaching underneath and pulling out a small device.
 
     ~whos_talking_button = "mc"
@@ -275,6 +279,7 @@ Sunday fixes you with a pitying look.
 }
 
 ~whos_talking = "nobody"
+~sound_cue = "woozy"
 Your vision blurs for a moment and you feel yourself almost stumble forward as Sunday catches you by the arm.
 
 ~whos_talking = "sunday"

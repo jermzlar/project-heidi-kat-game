@@ -3,6 +3,7 @@
 = three_fight_begin
 
 ~background = "tunnels"
+~music_cue = "ambient tunnels"
 
 ~whos_talking = "nobody"
 The three of you decide to take the maintenance tunnels once more in heading for the shuttle bay being as they are the quickest way about the station--regardless of the apparent habitation of vaguely human, body-snatching shadow monsters.
@@ -78,6 +79,9 @@ The two of you are silent for a while as you make your way through the tunnels.
 -> snatch_fight
 
 = snatch_fight 
+
+~sound_cue = "dragging"
+~sound_cue = "body snatchert theme 2"
 
 ~whos_talking = "nobody"
 <> It's because {three_fight_begin: everyone is|both of you are} silent that after a while you are able to pick up on the faint sound ahead of you of something being dragged along the floor, and the unearthly sighs accompanying it.
