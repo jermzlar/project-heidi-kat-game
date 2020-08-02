@@ -106,13 +106,16 @@ Quarters are small on the space station by necessity, and so it takes nothing mo
 + [See if there's anything I can do to help.]
 ~optimist_pessimist -= 15
 You kneel down beside your roommate and check their pulse, but feel nothing.
-Before you do anything else, you should probably check your PDD. <>
+Before you do anything else, you should probably check your PDD.
 -> check_pdd
+
 * [It's useless, they're not even breathing.]
 ~optimist_pessimist += 15
 You ignore your roommate's lifeless body on the floor, and instead turn your attention to recovering your PDD.
+
+
+
 -> check_pdd
-TODO: add him/her/them switching for roommate
 
 
 = check_injuries
@@ -203,7 +206,7 @@ You'll have to decide what your first priority will be.
 * (help_scared_injured) [I'll help those who are scared or injured.]
 ~communal_independent -= 15
 ~compassion_selfserve -= 15
-People are going to need help out there, and you'll be one of the first people on the scene to provide it.
+People are going to need help getting out of here safely, and you'll be there to provide it.
 * (get_tf_outta_here) [I want to get away from here as quickly as possible, and maybe take a few people with me.]
 ~communal_independent -= 15
 ~compassion_selfserve += 15
@@ -211,26 +214,26 @@ Something serious happened to cause this much damage, and you don't want to stic
 * (find_out_wha_happe) [I need to find out what happened.]
 ~communal_independent += 15
 ~compassion_selfserve -= 15
-Something serious happened to cause this damage, and you need to know exactly what it was. The people of this station deserve as much.
-* (get_phat_loots) [I'm going to grab every valuable I can carry and take a shuttle to the nearest outpost.]  //++self-serving +independent
+Something serious happened to cause this damage, and you need to know exactly what it was before you get out of here.
+* (get_phat_loots) [I'm going to grab every valuable I can carry and take a shuttle to the nearest outpost.] 
 ~communal_independent += 15
 ~compassion_selfserve += 15
-This is a golden opportunity that you don't want to miss. You won't be taking advantage of people in their hour of need; no, you're going to steal directly from the source: Cassio's corporate overlord, Elysium.
+This is a golden opportunity. You won't be taking advantage of people in their hour of need--you're going to steal directly from Cassio's corporate overlord, Elysium, before you get out of here.
 
--And what skills will you employ to achieve this goal?
+-And what skills can you employ?
 
 * (tech) [I have a knack for technology.]
 ~technology_skill += 15
-You're good with tech. You'll make this station talk and tell you {help_scared_injured: how you can help best}{get_tf_outta_here: the best way to get out of this mess}{find_out_wha_happe: exactly what happened}{get_phat_loots: where you can find the most valuable loot}.
+You're good with tech. You'll utilize the station's assets to achieve your goals quickly.
 * (combat) [I'm extremely strong and have plenty of combat experience.]
 ~combat_skill += 15
-You're good in a fight. You'll take advantage of that so you can {help_scared_injured: protect people and get them to safety} {get_tf_outta_here: stop anyone who gets in the way of you leaving}{find_out_wha_happe: figure out what caused this and stop it from getting worse}{get_phat_loots: introduce anyone who gets in the way of your plan to your fists}.
+You're good in a fight. You'll take advantage of that to achieve your goals quickly.
 * (medicine) [I'm very skilled in medicine.]
 ~medicine_skill += 15
-You've been formally trained in medicine, and you'll be able to {help_scared_injured: tend to those who have been injured at ground zero}{get_tf_outta_here: heal anyone you come across before you get out of here, and maybe they can offer help}{find_out_wha_happe: determine the cause of the explosion by examining the injuries of those at ground zero}{get_phat_loots: heal myself so I'll be better able to grab the expensive stuff and get out of here}.
+You've been formally trained in medicine, and you'll be able to use that to your advantage.
 * (charm) [I've been known to be quite a charming person.]
 ~charm_skill += 15
-With your social aptitude you can {help_scared_injured: calm anyone who's experiencing emotional distress}{get_tf_outta_here: probably weasel your way onto a departing shuttle, if there are any left}{find_out_wha_happe or get_phat_loots: talk to the survivors and find out if anyone {find_out_wha_happe: knows anything about what happened}{get_phat_loots: has any valuable personal belongings I can convince them to part with}}.
+
 * (ingenuity) [I've been frequently described as a genius.]
 ~ingenuity_skill +=15
 Your intelligence will lead you to {help_scared_injured: solve any logistical issues with tending to those affected}{get_tf_outta_here: find the best way off of this station}{find_out_wha_happe: figure out what went wrong here, and maybe even how it can be prevented in the future}{get_phat_loots: profits beyond your wildest dreams, if you play your cards right.}

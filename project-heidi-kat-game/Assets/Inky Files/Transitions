@@ -152,7 +152,7 @@ Before you can answer, there comes a rattling sound from down the tunnel somewhe
     You scan the area for a good hiding place, but before you can locate one 
     }
 
-~whos_talking = "nobody"
+
 -Sunday shuts the light off of her device quickly. She then grabs hold of you with surprising strength and pulls you close, hugging the wall. You notice a faint shimmer in the air around you, just barely visible in the darkness.
 
 *"If you wanted to be closer to me, you could've just asked[."]{change_name()}," you say with deadly seriousness.
