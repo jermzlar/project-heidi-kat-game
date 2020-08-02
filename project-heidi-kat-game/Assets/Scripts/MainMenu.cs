@@ -48,6 +48,12 @@ public class MainMenu : MonoBehaviour
         }
     }
 
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
+
     private void Awake()
     {
         menuPanel = transform.GetComponent<CanvasGroup>();
