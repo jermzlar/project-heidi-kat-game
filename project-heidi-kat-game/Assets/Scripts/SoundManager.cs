@@ -112,6 +112,11 @@ public class SoundManager : MonoBehaviour
             case "dragging":
                 audioSrc.clip = dragging;
                 break;
+            case "none":
+                audioSrc.clip = null;
+                break;
+            default:
+                break;
         }
 
         audioSrc.Play();

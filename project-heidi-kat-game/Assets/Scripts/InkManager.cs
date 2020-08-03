@@ -29,6 +29,9 @@ public class InkManager : MonoBehaviour
 	private BackgroundHandler backgroundHandler= null;
 
 	[SerializeField]
+	private SoundManager soundManager = null;
+
+	[SerializeField]
 	private Text conversation = null;
 
 	[SerializeField]
@@ -63,6 +66,10 @@ public class InkManager : MonoBehaviour
 
 		story.ObserveVariable("background", (string varName, object newValue) =>
 		{ backgroundHandler.ChangeBackground((string)newValue); });
+
+		story.ObserveVariable("sound_cue", (string varName, object newValue) =>
+		{ soundManager.PlaySound((string)newValue); });
+
 	}
 
 	private void SetDisplayName(string name)
