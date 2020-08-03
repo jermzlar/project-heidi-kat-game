@@ -2,6 +2,8 @@
 
 ~background = "hallway"
 ~music_cue = "ambient spaceship 1"
+~character_a = "nobody"
+~character_b = "nobody"
 
 {came_from (-> transitions.security_to_lab_or_hosp):
 
@@ -106,6 +108,7 @@ You stop and turn to look at her.
 ~sound_cue = "crash"
 There isn't a chance to discuss it further as something crashes loudly in the laboratory.
 
+~character_a = "nobody"
 ~background = "laboratory"
 
 ~whos_talking = "nobody"
@@ -113,17 +116,18 @@ You don't wait up for Sunday as you take off at a run and burst through the doub
 
     {intro.scientist:
     ~whos_talking = "nobody"
-    as you suspected, the power failure in the station has released the voltet from stasis. Its appearance is that of a strange, lizard-like creature with long, winged limbs, and the skin of its face is stretched grostequely across its spiked skull.
+    as you suspected, the power failure in the station has released the voltet from stasis. Its appearance is that of a strange, lizard-like creature with long, winged limbs, and the skin of its face is stretched grotesquely across its spiked skull.
 
     -else:
     ~whos_talking = "nobody"
-    a strange, lizard-like creature about twelve feet in length hanging from the ceiling. Its limbs are winged, long, and thin, and the skin of its face is stretched grostequely across its spiked skull.
+    a strange, lizard-like creature about twelve feet in length hanging from the ceiling. Its limbs are winged, long, and thin, and the skin of its face is stretched grotesquely across its spiked skull.
     You think you've seen a picture of it before, although you've never seen one in person. It's most likely a voltet: a tempermental reptilian animal whose blood, if reports are to be believed, is comprised largely of acidic compounds.
 }
 
 ~whos_talking = "nobody"
+~music_cue = "music fade"
 ~music_cue = "combat 1"
-The voltet swings its head in your direction and its eyes, deep orange and glowing like embers, fall on you. You have just a few moments to react.
+The voltet swings its head in your direction and its eyes, deep orange and glowing like embers, fall on you. You only have a moment to react.
 
     *(attack) [Attack it head-on with my bare hands.]
     {combat_skill >= 70:
@@ -157,7 +161,7 @@ The voltet swings its head in your direction and its eyes, deep orange and glowi
 You are a simple person with a simple, two-pronged approach: your left fist and your right fist.
 
 ~whos_talking = "nobody"
-The voltet glides across the room with ease to meet you head on. It lands on the floor as you skid to a halt in front of it and throw several punches in a row directly to its head. Dazed, it swipes twice at you, missing the first time but connecting the second with your midsection. Its sharp claws shred your clothing and graze your skin as you growl with pain.
+The voltet glides across the room with ease to meet you head on. It lands on the floor as you skid to a halt in front of it and throw several punches to its head. Dazed, it swipes twice at you, missing the first time but connecting the second with your midsection. Its sharp claws shred your clothing and graze your skin as you growl with pain.
 -> sunday_attack
 }
 
@@ -184,7 +188,7 @@ You lunge for it just in time as the voltet lands where you stood moments before
 {came_from (->attack):
 
 ~whos_talking = "nobody"
-The voltet glides across the room with ease to meet you head on. It lands on the floor as you skid to a halt in front of it and attempt to throw several punches in a row directly at its head, but it's too quick and you barely land one. It swipes twice at you, connecting both times; sharp claws shred your clothing and sink into your skin as you howl with pain.
+The voltet glides across the room with ease to meet you head on. It lands on the floor as you skid to a halt in front of it and attempt to throw several punches at its head, but it's too quick and you barely land one. It swipes twice at you, connecting both times; sharp claws shred your clothing and sink into your skin as you howl with pain.
 -> sunday_attack
 }
 
@@ -209,11 +213,12 @@ You lunge for it as the voltet swoops in to land, swiping at you once and grazin
 =sunday_attack
 
 ~whos_talking = "nobody"
+~character_a = "sunday"
 Just then Sunday comes running in behind you. She has some kind of weapon drawn on the lizard creature the likes of which you've never seen before; what you presume to be the business end of the thing looks more like a whisk than a weapon.
 
 ~whos_talking = "nobody"
 ~sound_cue = "pewpew 1"
-She wastes no time in shooting the voltet with incredible accuracy, which is good considering you are still in fairly close proximity to it. With it distracted temporarily by her firing, you manage to get away so you can regroup.
+She wastes no time in shooting the voltet with incredible accuracy, which is good considering you are in fairly close proximity to it. With it distracted temporarily, you manage to get away and collect yourself.
 
 
 {came_from (->voltet_failure):
@@ -294,7 +299,8 @@ You grab a dissecting scalpel off the nearest counter; it's small, but it'll hav
 {logical_creative > 40:
 
 ~whos_talking = "nobody"
-You decide your best bet is to uncover a weakness; although, being so calculating isn't typically your style. The voltet is still preoccupied by Sunday, so you take the chance to circle around and see if you can spot any weaknesses. Your moment of careful observation is interrupted, however, when the creature suddenly rounds in your direction.
+~sound_cue = "voltet screech"
+You decide your best bet is to uncover a weakness; although, being so calculating isn't typically your style. The voltet is still preoccupied by Sunday; you take the chance to circle around and see if you can spot any weaknesses. Your moment of careful observation is interrupted when the creature suddenly rounds in your direction.
 
 ~whos_talking = "nobody"
 You dive out of its way a moment too late as it rakes its claws deep into your arm. You cry out in pain, rolling to the side in an effort to get away from it. 
@@ -335,10 +341,12 @@ You run across the lab to where Sunday and the voltet are facing off, coming up 
 = sunday_attack2
 
 ~whos_talking = "nobody"
+~sound_cue = "voltet screech"
 Sunday seizes the moment and aims point blank at the creature's head. {came_from (->attack_instead): You duck just in time.} The projectile that fires from her gun finds its mark in short order, and the voltet reels backwards with a violent shriek.
 
 {came_from (-> utilize_instead):
 ~whos_talking = "nobody"
+~sound_cue = "voltet screech 3"
 You take hold of Sunday and drag her away as you toss the the lit bunson burner in the direction of the voltet. The {intro.scientist: Xythocin|chemical}-soaked reptile goes up in flames almost instantly, as does the area surrounding it which was also doused in the chemical. It screeches and thrashes for several minutes until it is finally overcome by the fire.
 
 ~whos_talking = "nobody"
@@ -390,11 +398,12 @@ When you open your eyes you see nothing but the voltet towering over you, snarli
 
 = introducing_lin
 
-~music_cue = "stop combat 1"
+~music_cue = "music fade"
 ~music_cue = "ambient spaceship 1"
+~character_b = "lin"
 
 ~whos_talking = "nobody"
- Before you stands what is apparently a human, although you've never seen a human as aethereal and genderless as this one.
+ Before you stands what is apparently a human, although you've never seen a human as ethereal and genderless as this one.
 
 {came_from (->near_death):
 
@@ -608,5 +617,7 @@ Lin motions to a room next door to the laboratory.
 ~whos_talking = "lin"
 ~character_b = "lin"
 "Both of you," they add, their expression remaining neutral.
+
+~character_a = "nobody"
 
 -> the_discovery
