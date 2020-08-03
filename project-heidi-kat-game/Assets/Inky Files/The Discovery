@@ -3,8 +3,11 @@
 ~background = "laboratory zoomin"
 ~music_cue = "ambient spaceship 1"
 
+~character_a = "nobody"
+~character_b = "nobody"
+
 ~whos_talking = "nobody"
-You and Sunday enter the room adjacent to the laboratory. The lights here, like everywhere else on the station, are the dim green emergency lights that flicker periodically. There are about five computers still working here, each looking very similarly perched on top of identical desks. Of the other three inoperable computers, one has a cracked screen, one has collided with the floor, and one appears to be smoking faintly. {intro.scientist: You are slightly pained at the sight of the data room, having been previously regaled by fellow scientists about how many years it took each of them to convince Elysium to grant funding for various equipment replacements and upgrades.}
+You and Sunday enter the room adjacent to the laboratory. The red emergency lights here flicker periodically. There are about five computers still working here, each looking very similarly perched on top of identical desks. Of the other three inoperable computers, one has a cracked screen, one has collided with the floor, and one appears to be smoking faintly. {intro.scientist: You are slightly pained at the sight of the data room, having been previously regaled by fellow scientists about how many years it took each of them to convince Elysium to grant funding for various equipment upgrades.}
 
 ~whos_talking = "mc"
 "What did Lin mean when they said we'd both find what we're looking for in here?" you ask Sunday.
@@ -29,10 +32,14 @@ You and Sunday enter the room adjacent to the laboratory. The lights here, like 
 
 -
 ~whos_talking = "nobody"
-The two of you fall silent as Sunday sets about searching the room. She, for her part, seems to know exactly where she's going as she heads towards a desk at the far corner with a computer. She sits and almost immediately begins typing and clicking furiously.
+The two of you fall silent as Sunday sets about searching the room. She, for her part, seems to know exactly where she's going as she heads towards a desk at the far corner with a computer. She sits and almost immediately begins typing and clicking furiously. 
+
+~character_a = "nobody"
 
 ~whos_talking = "nobody"
+
 ~sound_cue = "boopbeepboop 1"
+
 You likewise seat yourself at one of the desks and begin to enter your station log-in information. <>
 
 {intro.security or intro.technician or intro.scientist:
@@ -64,7 +71,7 @@ Upon signing on to the station hub, it takes you a moment to find the command co
 = departure_authorization
 
 ~whos_talking = "nobody"
-You are required to enter {intro.doctor or intro.xenolinguist: Sunday's|your} crendetials several more times as you navigate authorizing departures, but the relatively straightfoward process is finished in a few minutes.
+You are required to enter {intro.doctor or intro.xenolinguist: Sunday's|your} crendetials several more times as you navigate authorizing departures, but the relatively straightforward process is finished in a few minutes.
 
 ~whos_talking = "mc"
 "Okay, I think we're good to go," you say triumphantly to Sunday.
@@ -88,7 +95,7 @@ You open the folder and a long list of files appears, each with a syntax that in
 
 -
 ~whos_talking = "nobody"
-You click on the file to open it, and up comes a document that looks something like a profile of a person--a person you recognize, in fact. You remember {benjoe: Benjoe}{hallee: Hallee}{sones: Sones}; he lived in a room not more than three doors down from you. On your first day on the station he offered you a drink at one of the watering holes; you got to talking, and eventually you became good friends until about a month ago. One day you woke up and he was just... gone. When you asked around after him, you were told he was simply reassigned. It had been a bit of a blow that he hadn't bothered to tell you.
+You click on the file to open it, and up comes a document that looks something like a profile of a person--a person you recognize, in fact. You remember {benjoe: Benjoe}{hallee: Hallee}{sones: Sones}; he lived in a room not more than three doors down from you. On your first day on the station he offered you a drink at one of the watering holes; you got to talking, and eventually you became good friends--until about a month ago. You were supposed to meet for a game of Hidive one day, and he didn't show. When you asked around after him, you were told he was simply reassigned. It had been rather upsetting that he didn't bother to tell you.
 
 ~whos_talking = "nobody"
 You scroll through the profile. It's a collection of physical descriptions, personality markers, mental health evaluations, and other personal points of data about {benjoe: Benjoe}{hallee: Hallee}{sones: Sones}.
@@ -97,7 +104,9 @@ You scroll through the profile. It's a collection of physical descriptions, pers
 Towards the bottom of the document are several shipping manifests indicating cargo exported from Cassio to another planet in the system, Valbaara II. But Valbaara II is a dead planet. You recall it was slated for terraforming, but after the war it was put on hold indefinitely. And the shipping manifests don't indicate the nature of the cargo, unless...
 
 ~whos_talking = "nobody"
-You're struggling to keep up with the speed of your realization as you scroll through additional profiles. You don't see any other way around it: Elysium, for whatever reason, is covering up the fact that they're disappearing their own low-level employees to some backwater planet in the system--though for what purpose remains to be seen. Sunday works for Elysium, does she know about this? you wonder.
+As you continue to scroll through profiles, you start to feel sick as your mind rapidly connects the dots. You don't see any other way around it: Elysium, for whatever reason, is covering up the fact that they're freighting their own low-level employees to some backwater planet in the system--though for what purpose remains to be seen.
+
+You connect your PDD with the computer and begin downloading as much information as possible. It occurs to you that Sunday works for Elysium, and you wonder if she knows about this.
 
 ~whos_talking = "nobody"
 It's a moment before you realize she has come up behind you.
@@ -118,7 +127,7 @@ You only have a few moments to react. In one swift move you jump to your feet an
 
 ~whos_talking = "sunday"
 ~character_a = "sunday"
-"What the hell is this?" Sunday asks, motioning to you with the pistol.
+"What the hell are you doing?" Sunday asks, motioning to you with the pistol.
 
     ~whos_talking_button = "mc"
     *["I know what Elysium is doing."]
@@ -575,6 +584,7 @@ You meet her eyes for a moment, then look away with a shake of your head.
 "I guess so," you reply.
 
 ~background = "laboratory"
+
 ~whos_talking = "nobody"
 The two of you exit the data room back into the laboratory. Sunday doesn't seem interested in sticking around; she exits almost immediately and without a goodbye to you or the android.
 
@@ -605,6 +615,7 @@ The two of you exit the data room back into the laboratory. Though Sunday carrie
 = talking_to_lin
 
 ~whos_talking = "nobody"
+~character_b = "lin"
 Lin walks up beside you.
 
 ~whos_talking = "lin"
@@ -659,4 +670,9 @@ Lin nods.
 After a moment you note that you are likely running out of time before the station's inevitable demise, and so {came_from (->believe): the three of you|the two of you} exit the laboratory without further discussion.
 
 * [Next]
+
+~character_a = "nobody"
+~character_b = "nobody"
+~music_cue = "music fade"
+
 -> transitions.priority_update
