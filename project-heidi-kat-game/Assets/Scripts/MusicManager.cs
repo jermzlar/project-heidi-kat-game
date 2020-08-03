@@ -43,7 +43,7 @@ public class MusicManager : MonoBehaviour
             case "ambient tunnels 1":
                 audioSrc.clip = ambienttunnels;
                 break;
-            case "creepy":
+            case "creppy":
                 audioSrc.clip = creepy;
                 break;
             case "combat1":
