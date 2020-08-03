@@ -8,11 +8,11 @@ You head in {not intro.security: what you believe to be} the direction of the se
 
 {not intro.security:
 ~whos_talking = "nobody"
-You aren't entirely sure, as you've had little cause to visit it over the last three months of being stationed here. Periodically you check the station schematics in your PDD to be sure you're still on the right path.
+You aren't entirely sure, as you've had little cause to visit it over the last three months. Periodically you check the station schematics in your PDD to be sure you're still on the right path.
 }
 
 ~whos_talking = "nobody"
-The halls of Cassio are dimly lit by dim red emergency lighting. Scorch marks line some of the walls, and in places there are pieces of plasteel wall and ceiling sections precariously hanging. As you walk, you note that you see very few people. There is a body or two here and there, but not nearly as many as you would expect from a disaster like this. Did most people already get off the station? you wonder to yourself. How long was I out?
+The halls of Cassio are dimly lit by dim red emergency lighting. Scorch marks line some of the walls, and in places there are pieces of plasteel wall and ceiling sections hanging precariously. As you walk, you note that you see very few bodies. There is one or two here and there, but not nearly as many as you would expect from a disaster like this. Did most people already get off the station? you wonder to yourself. How long was I out?
 
 ~whos_talking = "nobody"
 ~sound_cue = "metal footsteps"
@@ -29,7 +29,7 @@ You glance at the overturned desk beside you. This was Lulah's desk. You wonder 
 -else:
 
 ~whos_talking = "nobody"
-You glance at the overturned desk beside you, and your eyes travel to the lifeless body in the corner beside it: a woman, covered in blood and missing part of her leg.
+You glance at the overturned desk beside you, and your eyes travel to a lifeless body in the corner beside it: a woman, covered in blood and missing part of her leg.
 }
 
 {not hospital_ward:
@@ -44,7 +44,7 @@ A sudden noise from behind the door drags your attention to the offices beyond. 
 
 ~whos_talking_button = "nobody"
     * [Investigate.]
-        You open the door and have a few moments to take stock of the situation. There is a young woman standing in the far corner, apparently rifling through a security officer's desk.
+        You open the door and have a few moments to take stock of the situation. There is a young woman stooped over in the far corner, apparently rifling through a security officer's desk.
     -> enter_office
     
     * [Try to take a peak through a crack in the door.]
@@ -53,7 +53,7 @@ A sudden noise from behind the door drags your attention to the offices beyond. 
 = peakin
 
 ~whos_talking = "nobody"
-You crack the door open just a touch, looking through the tiny opening to take stock of the situation. There is a young woman standing in the far corner. She appears to be rifling through a security officer's desk. 
+You crack the door open just a touch, looking through the tiny opening to take stock of the situation. There is a young woman stoop over in the far corner. She appears to be rifling through a security officer's desk. 
 
 -> enter_office
 
@@ -67,7 +67,7 @@ The woman stops abruptly and turns to look up at you, freezing. She appears to b
         "I don't think you're supposed to be doing that," you say blithely.
         ~whos_talking = "stranger"
         ~character_a = "sunday"
-        "Well, I don't think you're supposed to be back here either, sweetheart, so let's just promise not to tell on one another and call it even, okay?" the woman replies coolly.
+        "Well, I don't think you're supposed to be back here either, sweetheart, so let's just promise not to tell on one another and call it even, okay?" the woman replies coyly.
     
     ~whos_talking_button = "mc"
     *"Are you allowed to be in here?" 
@@ -78,7 +78,7 @@ The woman stops abruptly and turns to look up at you, freezing. She appears to b
 -
 ~whos_talking = "nobody"
 ~sound_cue = "rummage"
-She returns her attention to the desk, pulling out one of the drawers and dumping its contents on the floor. She knocks on the bottom of the drawer rapidly, and you are about to address her again until she lets out a triumphant, "Aha!" She appears to remove a false bottom, reaching underneath and pulling out a small device.
+She returns her attention to the desk, pulling out one of the drawers and dumping its contents on the floor. She knocks on the bottom of the drawer rapidly. You are about to address her again when she suddenly lets out a triumphant, "Aha!" She proceeds to remove a false bottom, reaches underneath, and pulls out a small device.
 
     ~whos_talking_button = "mc"
     *["Find what you were looking for?"]
@@ -106,7 +106,7 @@ She returns her attention to the desk, pulling out one of the drawers and dumpin
 
 -
 ~whos_talking = "nobody"
-The womans slips the small device she's recovered into one of the pockets on her jumpsuit, and then she surveys you seriously.
+The woman slips the small device she's recovered into one of the pockets on her jumpsuit, and then surveys you seriously.
 
 ~whos_talking = "stranger"
 ~character_a = "sunday"
@@ -182,11 +182,6 @@ The womans slips the small device she's recovered into one of the pockets on her
 
 ~whos_talking = "nobody"
 You shrug.
-
--else:
-
-~whos_talking = "nobody"
-Sunday nods.
 }
 
 ~whos_talking = "sunday"
@@ -197,7 +192,7 @@ Sunday nods.
 
 ~whos_talking = "sunday"
 ~character_a = "sunday"
-get off this space junk, we'll need to hit the laboratory. That's the only place that still has working computers with station-wide access, and we'll need that access to authorize departure for the short-range shuttles."
+get off this space junk, we'll need to hit the laboratory. That's the only place that still has working computers with station-wide access, and we'll need that access to authorize departure for the short-range shuttles," Sunday explains.
 
 ~whos_talking = "mc"
 "Wait, why do we need to authorize departure for shuttles? The station is in a state of emergency, their departure should be top priority," you say suspiciously.
@@ -242,7 +237,7 @@ figure out where the expensive stuff is, we should hit the laboratory. It's one 
 
 ~whos_talking = "sunday"
 ~character_a = "sunday"
-help whoever's left, we need to swing by the laboratory. That's the only place that still has working computers with station-wide access, and we'll need that access to authorize departure for the short-range shuttles."
+help whoever's left, we need to swing by the laboratory. That's the only place that still has working computers with station-wide access, and we'll need that access to authorize departure for the short-range shuttles," Sunday explains.
 
 ~whos_talking = "mc"
 "Wait, why do we need to authorize departure for shuttles? The station is in a state of emergency, their departure should be top priority," you say suspiciously.
@@ -262,7 +257,7 @@ Sunday fixes you with a pitying look.
 
 ~whos_talking = "sunday"
 ~character_a = "sunday"
-figure out what happened, we need to hit the laboratory. That's the only place that still has working computers with station-wide access, and we'll need that access to gather any pertinent information. We'll also need it to authorize departure for the short-range shuttles."
+figure out what happened, we need to hit the laboratory. That's the only place that still has working computers with station-wide access, and we'll need that access to gather any pertinent information. We'll also need it to authorize departure for the short-range shuttles," Sunday explains.
 
 ~whos_talking = "mc"
 "Wait, why do we need to authorize departure for shuttles? The station is in a state of emergency, their departure should be top priority," you say suspiciously.
@@ -284,14 +279,18 @@ Your vision blurs for a moment and you feel yourself almost stumble forward as S
 
 ~whos_talking = "sunday"
 ~character_a = "sunday"
-"First things first, though, I think we need to get you to the hospital ward and have your head looked at," she says.
+"First things first, though, I think we need to get you to the hospital ward and take care of that wound on your head," she says.
 
 ~whos_talking = "mc"
-"You're probably right. We'll head for the ward. {intro.doctor or intro.combat_medic or intro.unconventional_medic or intro.medicine: I'll be able to use the supplies there to patch myself up|Hopefully there will be someone there who can help}."
+"You're probably right. {intro.doctor or intro.combat_medic or intro.unconventional_medic or intro.medicine: I'll be able to use the supplies there to patch myself up|Hopefully there will be someone there who can help}."
 
 ~whos_talking = "sunday"
 ~character_a = "sunday"
-"Let's hope so, because my skillset leans more towards the opposite of medicine and healing," Sunday quips as the two of you exit the offices.
+"Let's hope so, because my skillset leans more towards the opposite of medicine," Sunday quips as the two of you exit the offices.
+
+~character_a = "nobody"
+
+~music_cue = "music fade"
 
 -> transitions.security_to_lab_or_hosp
 
@@ -301,4 +300,4 @@ Your vision blurs for a moment and you feel yourself almost stumble forward as S
 
 
 
--> END
+
