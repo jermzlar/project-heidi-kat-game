@@ -33,8 +33,8 @@ VAR logical_creative = 50
 VAR optimist_pessimist = 50
 
 VAR whos_talking = "nobody"
-VAR character_a = "none"
-VAR character_b = "none"
+VAR character_a = "nobody"
+VAR character_b = "nobody"
 VAR background = "background"
 VAR whos_talking_button = "nobody"
 
@@ -306,7 +306,7 @@ Is there something else you're pretty good at?
     ~whos_talking_button = "nobody"
     *{not combat} [I'm pretty formidable in a fight.]
         ~combat_skill += 10
-        You trained in a less-than-standard setting and so your technique is, well, unique; regardless, you can still kick the asses of most people you meet.
+        You're good in a fight, though you trained in a less-than-standard setting, and so your technique is--well, unique. Regardless, you can still be formidable in combat.
     
     ~whos_talking_button = "nobody"
     *(unconventional_medic) {not medicine and tech or charm or ingenuity} [I've got some skill in medicine.]
@@ -336,8 +336,9 @@ That will certainly be useful, too, you think to yourself.
 There's not much left to do in your room, so you cross the tiny space in three strides and open the door. Outside, the hallway is dimly lit, and it's apparent that the main power has been shut down and emergency lighting has been activated.
 
 ~whos_talking = "nobody"
-You look around, trying to figure out where to go first, and decide you should head to station security. {security: It's likely they're expecting every officer to report in as soon as possible|They should have answers as to what's going on.}
+You look around, and try to figure out where to go first. You decide to head to station security. {security: It's likely they're expecting every officer to report in as soon as possible|They should have answers as to what's going on.}
 
+~music_cue = "music fade"
 -> MNC_sunday
 
 
