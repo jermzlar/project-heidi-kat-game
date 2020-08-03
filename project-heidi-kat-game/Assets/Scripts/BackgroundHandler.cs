@@ -50,6 +50,7 @@ public class BackgroundHandler : MonoBehaviour
     			ChangeBackground(backgroundLaboratory);
     			break;
     		default:
+                Debug.Log("Unknown Background" + background);
     			break;
     	}
 

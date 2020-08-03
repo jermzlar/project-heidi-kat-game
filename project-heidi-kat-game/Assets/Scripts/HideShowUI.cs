@@ -20,6 +20,8 @@ public class HideShowUI : MonoBehaviour
     [SerializeField]
     public Sprite hideUI = null;
 
+    [SerializeField]
+    public InkManager inkManager = null;
     private Image buttonImage;
 
     public void Toggle()
@@ -28,11 +30,15 @@ public class HideShowUI : MonoBehaviour
         {
             ToggleCanvasGroups(false);
             ToggleButtonImage(false);
+            inkManager.stopClick = true;
+
         }
         else
         {
             ToggleCanvasGroups(true);
             ToggleButtonImage(true);
+            inkManager.stopClick = false;
+
         }
 
 

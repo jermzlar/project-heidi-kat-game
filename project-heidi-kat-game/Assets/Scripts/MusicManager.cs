@@ -30,6 +30,8 @@ public class MusicManager : MonoBehaviour
 
     public void HandleMusic(string music)
     {
+        bool noPlay = false;
+        Debug.Log("MusicPlay Called");
         switch(music)
         {
             case "opener":
@@ -41,7 +43,7 @@ public class MusicManager : MonoBehaviour
             case "ambient tunnels 1":
                 audioSrc.clip = ambienttunnels;
                 break;
-            case "creepy":
+            case "creppy":
                 audioSrc.clip = creepy;
                 break;
             case "combat1":
@@ -51,10 +53,14 @@ public class MusicManager : MonoBehaviour
                 audioSrc.Stop();
                 break;
             default:
+                noPlay = true;
                 Debug.Log("Unknown Music Command: " + music);
                 break;
 
         }
+        if (!noPlay)
+            audioSrc.Play();
+        noPlay = false;
     }
 
 
