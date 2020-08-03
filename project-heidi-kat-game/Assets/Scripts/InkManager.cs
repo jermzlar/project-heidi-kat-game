@@ -65,7 +65,7 @@ public class InkManager : MonoBehaviour
 		story.ObserveVariable("character_a", (string varName, object newValue) =>
 		{ characterManager.DetermineCharacterA((string)newValue); });
 		story.ObserveVariable("character_b", (string varName, object newValue) =>
-		{ characterManager.DetermineCharacterA((string)newValue); });
+		{ characterManager.DetermineCharacterB((string)newValue); });
 
 		story.ObserveVariable("background", (string varName, object newValue) =>
 		{ backgroundHandler.ChangeBackground((string)newValue); });
