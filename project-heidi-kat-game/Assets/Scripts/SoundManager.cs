@@ -21,6 +21,9 @@ public class SoundManager : MonoBehaviour
     public AudioClip clatterandbang = null;
 
     [SerializeField]
+    public AudioClip voltetscreech = null;
+
+    [SerializeField]
     public AudioClip voltetscreech2 = null;
 
     [SerializeField]
@@ -84,6 +87,9 @@ public class SoundManager : MonoBehaviour
                 break;
             case "clatter and bang":
                 audioSrc.clip = clatterandbang;
+                break;
+            case "voltet screech":
+                audioSrc.clip = voltetscreech;
                 break;
             case "voltet screech 2":
                 audioSrc.clip = voltetscreech2;
