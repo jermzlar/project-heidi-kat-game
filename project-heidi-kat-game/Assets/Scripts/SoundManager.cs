@@ -67,7 +67,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySound(string clip)
     {
-
+        bool noPlay = false;
     	switch (clip)
     	{
     		case "body snatcher sound":
@@ -113,13 +113,15 @@ public class SoundManager : MonoBehaviour
                 audioSrc.clip = dragging;
                 break;
             case "none":
-                audioSrc.clip = null;
+                noPlay = true;
                 break;
             default:
+                Debug.Log("Unknown Sound File " + clip);
+                noPlay = true;
                 break;
         }
-
-        audioSrc.Play();
-
+        if (!noPlay)
+            audioSrc.Play();
+        noPlay = false;
     }
 }
