@@ -8,7 +8,9 @@
 ~music_cue = "ambient spaceship 1"
 
 ~whos_talking = "nobody"
-It's some time before you're back in the dim red emergency lighting of the station, having exited the tunnel and come out to the station nearest the medical and science wings.
+~character_a = "nobody"
+~character_b = "nobody"
+It's some time before you're back in the dim red emergency lighting of the station. You exit the tunnel and come out to the station nearest the medical and science wings.
 
 ~whos_talking = "nobody"
 You haven't seen any more of the creatures you came across inside the tunnels which you are quite thankful for, considering the way they made you feel.
@@ -35,7 +37,7 @@ The entry doors to the hospital are automatic and should be closed, and yet they
 }
 
 ~whos_talking = "nobody"
-You continue past the lobby into the emergency room, where you set about finding some spare cloth to wash the blood off. You do this at one of the sinks, and Sunday posts up on one of the emergency room beds as she waits.
+You continue past the lobby into the emergency room, where you set about finding some spare cloth to wash the blood off. As you do this at one of the sinks, and Sunday makes herself comfortable on one of the beds.
 Once you've cleaned yourself off you look in the mirror to inspect the wound.
 
 {intro.doctor:
@@ -201,60 +203,8 @@ Having worked here for the last three months, it takes no time at all for you to
 
 }
 
-= wrapup
-
-{intro.doctor or intro.combat_medic or intro.unconventional_medic or intro.medicine:
-~whos_talking = "nobody"
-You finish up and turn away from the mirror, holding your arms out wide to Sunday.
-
--else:
-~whos_talking = "sunday"
-~character_a = "sunday"
-"Which makes me wonder what, exactly, you are doing here," Sunday wonders aloud to herself.
-
-~whos_talking = "nobody"
-Sunday finishes up and sets the gauze down, surveying her work.
-}
-
-~whos_talking = "mc"
-"Better?" you ask.
-
-~whos_talking = "sunday"
-~character_a = "sunday"
-"Well, you look at little less gruesome now, but I'm afraid there's just nothing to be done about your face," Sunday says with a sigh.
-
-    ~whos_talking_button = "mc"
-    *["Har har, very funny."]
-        "Har har, very funny," you reply, your tone indicating it is decidedly less so.
-        ~rel_sunday -= 5
-    
-    ~whos_talking_button = "mc"
-    *["I guess you'll have to be the pretty one for both of us."]
-        "I guess you'll have to be the pretty one for both of us," you reply, waggling your eyebrows at Sunday comically.
-        ~rel_sunday += 5
-        She rolls her eyes and laughs.
-        
-    ~whos_talking_button = "mc"
-    *["Pot calling the kettle black."]
-    "Pot calling the kettle black, don't you think?" you quip.
-        ~whos_talking = "nobody"
-        She gives a look of mock-offense.
-
-
--
-~whos_talking = "nobody"
-Sunday jumps up from the hospital bed and dusts herself off.
-
-~whos_talking = "sunday"
-~character_a = "sunday"
-"Off to the lab, then?" she says.
-
-~whos_talking = "nobody"
-You nod and follow her out.
-
--> MNC_lin
-
 = nondoctor_patchup
+
 <> Looks like you might need stitches. In theory you know what needs to happen; you're just not entirely sure how to go about it, or where the supplies are. You spend fifteen minutes digging around in various drawers until you finally come up with a needle, some thread, and a roll of gauze.
 
 ~whos_talking = "sunday"
@@ -392,6 +342,59 @@ Sunday closes off and knots the final stitch, then reaches for the gauze.
     ->wrapup
 }
 
+= wrapup
+
+{came_from (->doctor_patchup) or came_from (->medicine_patchup):
+~whos_talking = "nobody"
+You finish up and turn away from the mirror, holding your arms out wide to Sunday.
+
+-else:
+~whos_talking = "sunday"
+~character_a = "sunday"
+"Which makes me wonder what, exactly, you are doing here," Sunday wonders aloud to herself.
+
+~whos_talking = "nobody"
+Sunday finishes up and sets the gauze down, surveying her work.
+}
+
+~whos_talking = "mc"
+"Better?" you ask.
+
+~whos_talking = "sunday"
+~character_a = "sunday"
+"Well, you look at little less gruesome now, but I'm afraid there's just nothing to be done about your face," Sunday says with a sigh.
+
+    ~whos_talking_button = "mc"
+    *["Har har, very funny."]
+        "Har har, very funny," you reply, your tone indicating it is decidedly less so.
+        ~rel_sunday -= 5
+    
+    ~whos_talking_button = "mc"
+    *["I guess you'll have to be the pretty one for both of us."]
+        "I guess you'll have to be the pretty one for both of us," you reply, waggling your eyebrows at Sunday comically.
+        ~rel_sunday += 5
+        She rolls her eyes and laughs.
+        
+    ~whos_talking_button = "mc"
+    *["Pot calling the kettle black."]
+    "Pot calling the kettle black, don't you think?" you quip.
+        ~whos_talking = "nobody"
+        She gives a look of mock-offense.
+
+
+-
+~whos_talking = "nobody"
+Sunday jumps up from the hospital bed and dusts herself off.
+
+~whos_talking = "sunday"
+~character_a = "sunday"
+"Off to the lab, then?" she says.
+
+~whos_talking = "nobody"
+You nod and follow her out.
+
+
+-> MNC_lin
 
 
 
