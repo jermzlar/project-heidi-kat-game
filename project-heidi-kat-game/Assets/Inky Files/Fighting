@@ -6,7 +6,7 @@
 ~music_cue = "ambient tunnels"
 
 ~whos_talking = "nobody"
-The three of you decide to take the maintenance tunnels once more in heading for the shuttle bay being as they are the quickest way about the station--regardless of the apparent habitation of vaguely human, body-snatching shadow monsters.
+The three of you decide to take the Chute tunnels once more. Regardless of the apparent habitation of vaguely human, body-snatching shadow monsters, the tunnels are the quickest way about the station.
 
 As you enter a tunnel and consider the likelihood that you'll run into them again, a thought occurs to you.
 
@@ -42,6 +42,8 @@ The three of you are silent for a while as you make your way through the tunnels
 =two_fight_begin
 
 ~background = "tunnels"
+~character_a = "nobody"
+~character_b = "nobody"
 
 ~whos_talking = "nobody"
 You decide to take the maintenance tunnels once more in heading for the shuttle bay being as they are the quicket way about the station--regardless of the apparent habitation of vaguely human, body-snatching shadow monsters.
@@ -81,10 +83,13 @@ The two of you are silent for a while as you make your way through the tunnels.
 = snatch_fight 
 
 ~sound_cue = "dragging"
-~sound_cue = "body snatchert theme 2"
+~sound_cue = "body snatcher theme 2"
+
+~character_a = "nobody"
+~character_b = "nobody"
 
 ~whos_talking = "nobody"
-<> It's because {three_fight_begin: everyone is|both of you are} silent that after a while you are able to pick up on the faint sound ahead of you of something being dragged along the floor, and the unearthly sighs accompanying it.
+<> Throught the silence you are able to pick up on the faint sound ahead of you of something being dragged along the floor, and the unearthly sighs accompanying it.
 
 {three_fight_begin:
 
@@ -100,7 +105,7 @@ You exchange a worried glance with Sunday.
 
 ~whos_talking = "sunday"
 ~character_a = "sunday"
-"I can barely get it to extend over you, I can't fit all three of us in the field."
+"I barely got the field to extend over you the last time. It definitely can't fit all three of us in the field."
 
 ~whos_talking = "nobody"
 You look to Lin desperately.
@@ -130,6 +135,9 @@ You shoot them an admonitory look.
 
 {two_fight_begin:
 
+~character_a = "nobody"
+~character_b = "lin"
+
 ~whos_talking = "nobody"
 You exchange a glance with Lin.
 
@@ -156,11 +164,16 @@ You shoot them an admonitory look.
 }
 
 ~whos_talking = "nobody"
-You look to the darkness of the tunnels ahead grimly, where you can just begin to make out the odd shapes of the body snatchers amongst the inky black. 
+You look to the darkness of the tunnels ahead grimly, where you can just begin to make out the odd shapes of the body snatchers amongst the inky black.
+
+~character_a = "nobody"
+~character_b = "nobody"
 
 They'll be here any minute.
 
-(To be continued...)
+[To be continued...]
+
+~music_cue = "music fade"
 
 -->END
 
