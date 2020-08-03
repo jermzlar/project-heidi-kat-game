@@ -51,12 +51,21 @@ public class StatBoxHandler : MonoBehaviour
 	[SerializeField]
 	private Slider slider_Logcial_Compassionate_SelfServing;
 
+    //Used for animation
+    private float progress = 0f;
+    private float moveSpd = 3.0f;
+    private bool IsRunning = false;
+    public Vector3 startPosition = new Vector3(0.0f, 0.0f, 0.0f);
+    public Vector3 endPosition = new Vector3(0.0f, 0.0f, 0.0f);
+
 
     void Start()
     {
     	closedPosition = transform.position;
     	openedPosition = closedPosition - new Vector3(0.0f, 100.0f, 0.0f);
         transform.GetComponent<Image>().sprite = statBoxNoGlow;
+        startPosition = transform.GetComponent<RectTransform>().position;
+        endPosition = openedPosition;
     }
 
     public void toggleStatBox()
@@ -64,13 +73,13 @@ public class StatBoxHandler : MonoBehaviour
     	if (isStatBoxClosed)
     	{
     		changeSpriteToClosed(false);
-    		changePositionToClosed(false);
+            MoveStatBoxToOpened();
     		isStatBoxClosed = false;
     	}
     	else
     	{
     		changeSpriteToClosed(true);
-    		changePositionToClosed(true);
+            MoveStatBoxToClosed();
     		isStatBoxClosed = true;
     	}
     }
@@ -87,16 +96,54 @@ public class StatBoxHandler : MonoBehaviour
     	}
     }
 
-    public void changePositionToClosed (bool isStatBoxClosed)
+    public void MoveStatBoxToOpened()
     {
-    	if (isStatBoxClosed)
-    	{
-    		transform.position = closedPosition;
-    	} 
-    	else 
-    	{
-    		transform.position = openedPosition;
-    	}
+        if (IsRunning == false)
+        {
+            StartCoroutine(AnimateMovingDown());
+        }
+    }
+
+    public void MoveStatBoxToClosed()
+    {
+        if (IsRunning == false)
+        {
+            StartCoroutine(AnimateMovingUp());
+        }
+    }
+
+    IEnumerator AnimateMovingDown()
+    {
+        IsRunning = true;
+        progress = 0;
+        transform.GetComponent<CanvasGroup>().interactable = false;
+        while (progress != 1f)
+        { 
+            progress = progress + moveSpd * Time.deltaTime;
+            progress = Mathf.Clamp(progress, 0f, 1f);
+            transform.position = Vector3.Lerp(startPosition, endPosition, progress);
+            yield return null;
+        }
+        transform.GetComponent<CanvasGroup>().interactable = true;
+        IsRunning = false;
+        yield return null;
+    }
+
+    IEnumerator AnimateMovingUp()
+    {
+        IsRunning = true;
+        progress = 1;
+        transform.GetComponent<CanvasGroup>().interactable = false;
+        while (progress != 0f)
+        { 
+            progress = progress - moveSpd * Time.deltaTime;
+            progress = Mathf.Clamp(progress, 0f, 1f);
+            transform.GetComponent<RectTransform>().position = Vector3.Lerp(startPosition, endPosition, progress);
+            yield return null;
+        }
+        transform.GetComponent<CanvasGroup>().interactable = true;
+        IsRunning = false;
+        yield return null;
     }
 
     public void SetCombatStat(string value)
