@@ -76,6 +76,12 @@ public class InkManager : MonoBehaviour
 		story.ObserveVariable("music_cue", (string varName, object newValue) =>
 		{ soundManager.PlaySound((string)newValue); });
 
+		//Starting cues
+		backgroundHandler.ChangeBackground((string)story.variablesState["background"]);
+		musicManager.HandleMusic((string)story.variablesState["music_cue"]);
+
+
+
 	}
 
 	private void SetDisplayName(string name)
