@@ -12,7 +12,7 @@ You make your way to what's commonly referred to as the Chute: the shoddy, claus
 You hope, but you also know that on the best of days the Chute isn't exactly top of the line technology. It is commonly colloquially referred to as the "Shite."
 
 ~whos_talking = "nobody"
-When you arrive at the nearest station, the state of it answers any questions you might have had as to whether it was a viable travel option, which is to say that is isn't.
+When you arrive at the nearest station, the state of it answers any questions you might have had as to whether it was a viable option, which is to say that is isn't.
 
 ~character_a = "sunday"
 ~whos_talking = "sunday"
@@ -68,7 +68,7 @@ She crosses her arms obstinately.
 
     ~whos_talking_button = "mc"  
     *["I could really use your help."]
-        "I could really use your help; I don't know what I'm going to run into," you say.
+        "I could really use your help; I'm not sure I can get there by myself," you say.
         ~ rel_sunday += 10
         ~whos_talking = "sunday"
         ~character_a = "sunday"
@@ -85,17 +85,18 @@ She crosses her arms obstinately.
 
 -
 ~whos_talking = "nobody"
-The two of you slip into the dark space of the tunnel, shimmying and squeezing your way past the crashed passenger cart until you're free from its constriction. Beyond that it is quite dark, as the usual lights have gone out and it doesn't appear anyone had the forethought to put emergency lights inside the tunnels.
+~character_a = "nobody"
+The two of you slip into the dark space of the tunnel, squeezing your way past the crashed passenger cart until you're free. Beyond that it is quite dark; it appears the power to the emergency lights here have been damaged in the blast.
 
 ~whos_talking = "nobody"
 Sunday pulls out something that looks similar to a PDD, taps it a few times, and bring up a flashlight of sorts on it. As the area around you lights up, you notice a lot of debris on the floor, and note you'll have to be especially careful about not coming into contact with any metal debris that is touching the live track.
 
 ~whos_talking = "nobody"
-Ahead you can just make out a series of large, scorched holes in the sides of the tunnel, intermitently spaced out and continuing past the light.
+Ahead you can just make out a series of large, scorched holes in the sides of the tunnel, intermittently spaced out and continuing past the light.
 
 ~whos_talking = "sunday"
 ~character_a = "sunday"
-"If I recall correctly, they store the power generators for the Chute behind those walls. It looks like they've been damaged in the explosion. We probably don't want to be here when the next one goes," Sunday says.
+"If I recall correctly, they store the power generators for the Chute behind those walls. It looks like they've been damaged in the explosion as well. We probably don't want to be here when the next one goes," Sunday says.
 
 ~whos_talking = "nobody"
 You nod, and the two of you begin to make your way through the tunnel as quickly and as carefully as possible.
@@ -147,7 +148,7 @@ You nod, and the two of you begin to make your way through the tunnel as quickly
     *"Are you hiding something?"[] you ask suspiciously.
         ~whos_talking = "sunday"
         ~character_a = "sunday"
-        "Look," she says, stopping for a moment.<>
+        "Look, <>
 ->suddenly_body_snatchers
 
 -else:
@@ -155,22 +156,9 @@ You nod, and the two of you begin to make your way through the tunnel as quickly
 ~whos_talking = "sunday"
 ~character_a = "sunday"
 
-"{player_name}, I will be quite honest with you. I'm certain you have a great deal of questions, and I know you want to help, but the less you know about what's going on the better off you'll be," Sunday replies matter-of-factly. "If you want to be alive at the end of this, that is."
+"{player_name}, I will be quite honest with you. I'm certain you have a great deal of questions, and I know you want to help, but the less you know about what's going on the better off you'll be. If you want to be alive at the end of this, that is," Sunday replies soberly.
 
-    ~whos_talking_button = "mc"  
-    *["Fine, I'll shut up."]
-        "Fine, I'll shut up," you grumble.
-        ~whos_talking = "sunday"
-        ~character_a = "sunday"
-        "Look," she says, stopping for a moment.<>
--> suddenly_body_snatchers
-
-    *["I don't care, if I can help I want to help."]
-        "I don't care, if I can help I want to help," you insist.
-        ~rel_sunday +=5
-        ~whos_talking = "sunday"
-        ~character_a = "sunday"
-        "Look," she says, stopping for a moment. <>
+        "Look, <>
 -> suddenly_body_snatchers
 
 }
@@ -179,11 +167,12 @@ You nod, and the two of you begin to make your way through the tunnel as quickly
 
 ~whos_talking = "sunday"
 ~character_a = "sunday"
-"Everyone has something to hide. I'm just more up front about it. And this isn't just about me, this is the big leagues. I'm talking about knowing things that will affect the whole system. You really think you're ready for that?"
+everyone has something to hide. I'm just more up front about it. And this isn't just about me, this is the big leagues. I'm talking about knowing things--" she stops and sighs. "You know what? Let's just focus on getting you to the hospital ward for now."
 
+~music_cue = "music fade"
 ~whos_talking = "nobody"
 ~music_cue = "creppy"
-Before you can answer, there comes a rattling sound from down the tunnel somewhere past the light. And then comes a loud hissing, a susurrous of several creatures breathing heavily at once. Finally, their voices travel down the tunnel as they speak in an alien language{intro.xenolinguist: that you don't recognize at all}. They sound like they're getting closer.
+There comes an unfamiliar sound from further down the tunnel past the light. And then comes a loud hissing, a susurrous of several creatures breathing heavily at once. Finally, their voices travel down the tunnel as they speak in an alien language{intro.xenolinguist: that you don't recognize at all|}. They sound like they are getting closer.
 
     *(fight) {combat_skill > 65} [Step into a fighting stance; whatever's coming probably isn't friendly, but I'm ready to fight if I need to.]
     ~combat_skill += 5
@@ -207,8 +196,10 @@ Before you can answer, there comes a rattling sound from down the tunnel somewhe
 
 
 -
-~whos_talking = "nobody" 
-Sunday shuts the light off of her device quickly. She then grabs hold of you with surprising strength and pulls you close, hugging the wall. You notice a faint shimmer in the air around you, just barely visible in the darkness.
+~whos_talking = "nobody"
+~background = "black"
+~character_a = "nobody"
+Sunday quickly shuts the light off of her device. She then grabs hold of you with surprising strength and pulls you close, hugging the wall. You notice a faint shimmer in the air around you, just barely visible in the darkness.
 
     ~whos_talking_button = "mc"  
     *["If you wanted to be closer to me, you could've just asked."]
@@ -221,7 +212,6 @@ Sunday shuts the light off of her device quickly. She then grabs hold of you wit
 
 -
 ~whos_talking = "sunday"
-~character_a = "sunday"
 "Shh!" she hushes you, putting a hand over your mouth.
 
 ~whos_talking = "nobody"
@@ -230,14 +220,19 @@ The unearthly noises of the creatures approaching you only grows. In the darknes
 
 ~whos_talking = "nobody"
 ~sound_cue = "body snatcher sound"
+~character_a = "body snatchers"
 You count two vaguely humanoid beings dragging something behind them as they cross in front of you. One stops and seems to look directly at you (it's hard to tell)... and then continues on.
 
 ~whos_talking = "nobody"
 Something about them feels wrong. You can't put a finger on what it is, but you note their presence has caused a deeply uncomfortable feeling inside you, as if you were experiencing nausea in your brain instead of your stomach.
 
-~whos_talking = "nobody"
-~music_cue = "stop creppy"
+~character_a = "nobody"
+
+~music_cue = "music fade"
 ~music_cue = "ambient tunnels 1"
+~background = "tunnels"
+
+~whos_talking = "nobody"
 It's a solid eight minutes before the noise of them finally fades into nothing, and Sunday deigns it safe to release you. The air notably shimmers again as she does, and she turns the light back on. Her face is wan in the unnatural light, and you imagine she must have experienced the same feeling you did.
 
     ~whos_talking_button = "mc"
@@ -257,7 +252,6 @@ It's a solid eight minutes before the noise of them finally fades into nothing, 
 -
 ~whos_talking = "sunday"
 ~character_a = "sunday"
-
 {u_ok: "I'm fine, thanks for asking," she says. |}"We don't technically know what they're called, but we've termed them 'body snatchers' for now. They couldn't see us because we were cloaked. Rest assured, their eyesight in the dark is incredibly good."
 
      ~whos_talking_button = "mc"
@@ -284,23 +278,30 @@ It's a solid eight minutes before the noise of them finally fades into nothing, 
 -
 ~whos_talking = "sunday"
 ~character_a = "sunday"
-"I'm an operative for a special interests corporation, all right? Elysium, the one that owns this station," Sunday explains. "Now will you stop worrying about it and pay attention to where you're walking?"
+"I'm an operative for a special interests corporation, all right? Elysium, in fact," Sunday explains. "Now will you stop worrying about it and pay attention to where you're walking?"
 
 ~whos_talking = "nobody"
-No sooner do the words leave her lips than you find your toe catching on a piece of debris. You stumble forward and nearly land on a metal beam resting on top of the live track, but Sunday catches your arm just in time.
+No sooner do the words leave her lips you find your toe catching on a piece of debris. You stumble forward and nearly land on a metal beam resting on top of the live track, but Sunday catches your arm once again just in time.
 She gives you a meaningful look before the two of you continue on.
+
+~music_cue = "music fade"
+~character_a = "nobody"
 
 ->enter_hospital_wsunday
 
 = priority_update
 
 ~background = "hallway"
+~character_a = "nobody"
+~character_b = "nobody"
+
+~music_cue = "ambient spaceship 1"
 
 ~whos_talking = "nobody"
 It's been a while since you awoke in your room, and a lot has happened since then.
 
 ~whos_talking = "nobody"
-Have your priorities changed amidst the revelations you've uncovered?
+Have your priorities changed amid the revelations you've uncovered?
 
     ~whos_talking_button = "nobody"
     *(priority_tellall) [Yes. The public needs to know about what Elysium is doing, and I'm going to tell them.]
@@ -349,6 +350,7 @@ Have your priorities changed amidst the revelations you've uncovered?
         ~compassion_selfserve += 12
         ~communal_independent += 12
         Your number one priority is, of course, getting the hell off of Cassio. Once you are safely off, you won't have to think about anything that's happened today ever again.
+
 
 -
 *[Next] -> body_snatcher_fight
