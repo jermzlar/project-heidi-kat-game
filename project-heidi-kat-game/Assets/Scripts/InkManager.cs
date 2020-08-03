@@ -32,6 +32,9 @@ public class InkManager : MonoBehaviour
 	private SoundManager soundManager = null;
 
 	[SerializeField]
+	private MusicManager musicManager = null;
+
+	[SerializeField]
 	private Text conversation = null;
 
 	[SerializeField]
@@ -68,6 +71,9 @@ public class InkManager : MonoBehaviour
 		{ backgroundHandler.ChangeBackground((string)newValue); });
 
 		story.ObserveVariable("sound_cue", (string varName, object newValue) =>
+		{ soundManager.PlaySound((string)newValue); });
+
+		story.ObserveVariable("music_cue", (string varName, object newValue) =>
 		{ soundManager.PlaySound((string)newValue); });
 
 	}
