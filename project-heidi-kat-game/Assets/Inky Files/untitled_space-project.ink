@@ -54,7 +54,7 @@ VAR sound_cue = "none"
 ~music_cue = "opener"
 
 ~whos_talking = "nobody"
-You don't remember how it happened, nor do you know what caused it. All you know is that there was a powerful explosion, and now here you are, laying on the floor of your bedroom in your uniform with what feels like blood seeping out of your head.
+You don't remember how it happened, nor do you know what caused it. All you know is that there was a catastrophic explosion, and now here you are, laying on the floor of your bedroom in your uniform with what feels like blood seeping out of your head.
 
 ~whos_talking = "nobody"
 You try to think back to the last thing you can remember...

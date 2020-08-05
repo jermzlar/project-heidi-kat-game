@@ -110,14 +110,14 @@ The woman slips the small device she's recovered into one of the pockets on her 
 
 ~whos_talking = "stranger"
 ~character_a = "sunday"
-"What's you name, sweetheart?" she asks.
+"What's you name, love?" she asks.
 
     ~whos_talking = "nobody"
     *"{player_name}."
     
     ~whos_talking = "nobody"
-    *(sour) ["Definitely not sweetheart."]
-        "Definitely not 'sweetheart.' Call me {player_name} or nothing at all."
+    *(sour) ["Definitely not 'love.'"]
+        "Definitely not 'love.' Call me {player_name} or nothing at all."
         ~rel_sunday -=5
 
 -
@@ -125,7 +125,7 @@ The woman slips the small device she's recovered into one of the pockets on her 
 
 ~whos_talking = "sunday"
 ~character_a = "sunday"
-"Feeling disagreeable, are we? Well, regardless, you can call me Sunday. I don't know what your plan is exactly, but I don't suppose you'd want to join forces?"
+"Feeling disagreeable, are we? Well, regardless, you can call me Sunday.
 }
 
 {not sour:
@@ -133,24 +133,168 @@ The woman slips the small device she's recovered into one of the pockets on her 
 ~whos_talking = "sunday"
 ~character_a = "sunday"
 
-"A pleasure to meet you, {player_name}. My name is Sunday. I'm not sure what your plan is exactly, but would you be interested in joining forces?"
+"A pleasure to meet you, {player_name}. My name is Sunday.
 }
 
+- <> I suppose you work on this station?" she asks.
+
+You nod.
+
+"And you awoke recently I take it. I thought everyone was dead or gone, yet here you are. You must have some questions."
+
+"Yeah," you start, wondering what to ask first.
+
+-> questions
+
+= questions
+
+~character_a = "sunday"
+
+    ~whos_talking_button = "mc"
+    *["What happened?"]
+        "What happened, exactly?" you ask.
+        ~whos_talking = "sunday"
+        "You mean the explosion? Nearly every power decoupler on the station blew," Sunday says as if it's the most obvious thing in the world.
+            {intro.technician:
+                "How?" you say incredulously. "That would take a simultaneous equipment failure of impossible magnitude; there's failsafes for that in the event of a station-wide malfunction."
+                ~whos_talking = "sunday"
+                "Best not to think too long on that one, {sour: darling|love}," Sunday says, a touch of sadness at the edge of her cheerful disposition.
+                
+                -else:
+                "That seems an unlikely string of events," you say suspiciously.
+                ~whos_talking = "sunday"
+                "Best not to think too long on that one, {sour: darling|love}," Sunday says cryptically.
+                }
+
+    ~whos_talking_button = "mc"
+    *["What are you doing here?"]
+        "Just what are you doing here?"
+        ~whos_talking = "sunday"
+        "I told you, I can't tell you that," Sunday replies.
+        
+            ~whos_talking_button = "mc"
+            *{not intro.security} ["Can't or won't?"]
+                "Can't or won't?" you ask.
+                ~whos_talking = "nobody"
+                Sundays shrugs.
+                ~whos_talking = "sunday"
+                "Does it matter? Either way, you're not getting anything out of me."
+                
+            ~whos_talking_button = "mc"
+            *["Whatever it is, I can tell it's illegal."]
+                "Whatever it is, I can tell it's illegal," you say accusingly.
+                ~whos_talking = "sunday"
+                "And what are you going to do about that, hm? Call station security?" Sunday asks, clearly not threatened in the slightest.
+                    {intro.security:
+                    ~whos_talking = "mc"
+                    "I'm part of station security," you say.
+                    ~whos_talking = "nobody"
+                    Sunday looks you over appraisingly.
+                    ~whos_talking = "sunday"
+                    "You are station security from the look of it, {sour: darling|love}," she says seriously.
+                    }
+            
+            ~whos_talking_button = "mc"
+            *(sunday_elysium) {intro.security}["Give me one good reason I shouldn't arrest you."]
+                "Give me one good reason I shouldn't arrest you right here," you threaten her.
+                ~whos_talking = "sunday"
+                "Let's see, does the fact that Cassio has been completely abandoned by those who granted you that authority about cover it?" Sunday says as she taps her chin, and then she pretends to appear to have a sudden idea. "Or, no, how about the fact that I {not sunday_who: also work for Elysium and} completely outrank you in every sense of the word?"
+                ~whos_talking = "mc"
+                "If you work for Elysium, then why are you--?" you start, but she interrupts you.
+                ~whos_talking = "sunday"
+                "What did I tell you about classified information, {sour: darling|love}?"
+                
+            -~whos_talking = "nobody"
+            You sigh. Apparently you aren't going to win this one.
+
+    ~whos_talking_button = "mc"
+    *[Where is everyone?"]
+        "Where did everyone go? There should be more people here," you say.
+        ~whos_talking = "sunday"
+        "Gone, mostly. They either died in the initial explosion or they've been taken since then," Sunday explains.~whos_talking = "mc"
+        "What do you mean, 'taken since then?' It just happened."
+        ~whos_talking = "nobody"
+        Sunday fixes you with a sympathetic gaze.
+        ~whos_talking = "sunday"
+        "We should probably get your head look at. The initial explosion was days ago," she explains.
+        ~whos_talking = "mc"
+        "But it just..." you trail off.
+        ~whos_talking = "nobody"
+        Sunday is starting to look a bit concerned. Best to leave it alone for now.
+
+    ~whos_talking_button = "mc"
+    *(sunday_who)["Who are you, again?"]
+        "And who are you, again?" you ask.
+        ~whos_talking = "sunday"
+        "Sunday Lien, at your service," Sunday says with a little bow. "Not literally, of course. If anything, you're at my service."
+        ~whos_talking = "nobody"
+        You snort.
+        ~whos_talking = "mc"
+        "And how's that, now?"
+        ~whos_talking = "sunday"
+        "What, you don't recognize a fellow employee when you see one?" Sunday says, affecting a hurt tone. "I suppose it makes sense, my position is at the top and very confidential within the company, and they do employ hundreds of thousands of people across the system, but still."
+            
+            ~whos_talking_button = "mc"
+            *"What do you do for Elysium?"
+                "What is it you do for Elysium, then?" you ask.
+                ~whos_talking = "sunday"
+                "What have I told you about classified information, {sour: darling|love}?" Sunday says, slightly chastising.
+            
+            ~whos_talking_button = "mc"
+            *["I don't believe you."]
+                "I'm not sure I believe you," you say, suspicion leaking into your voice.
+                ~whos_talking = "sunday"
+                "No one's asking you to, {sour: darling|love}, but it doesn't change what's facts," Sunday replies nonchalantly.
+            
+            
+            -
+            ~whos_talking = "nobody"
+            You roll your eyes. She's obviously not intent on giving up more than that.
+        
+    
+    *(done)[That's all for now.]
+    
+-
+{not done:
+~whos_talking = "nobody"
+Would you like to ask anything else?
+
+-> questions
+
+-else:
+
+~whos_talking = "nobody"
+You sigh, quite tired of being run around in circles. That's probably the most you're going to get out of her, at least for now.
+
+->sunday_join
+}
+
+= sunday_join
+
+~whos_talking = "sunday"
+~character_a = "sunday"
+"Now, it's my turn," Sunday says, clapping her hands together. "I can't pretend to know exactly what your plan is, but I'll tell you this: if it's to get off of this station intact, our best bet is to partner up."
+
+
+    ~whos_talking_button = "mc"
     *["Fine, but I don't trust you."]
-        "Fine, but I don't trust you," you say suspiciously.
+        "Fine, but I don't trust you," you say flatly.
         ~rel_sunday -= 10
         ~communal_independent += 10
-        
+        ~whos_talking = "sunday"
+        ~character_a = "sunday"
+        "{sour:Darling|Love}, I'd keep in mind if I were you that you need me much more than I need you at this moment in time," Sunday says, and though you won't admit it outloud, you're hard-pressed to refute her claim.
+    
+    ~whos_talking_button = "mc"
     *["That sounds like a good idea."]
-    "That sounds like a good idea," you say. "Maybe together we can {intro.help_scared_injured: help out those who need it}{intro.get_tf_outta_here: find a safe way off this mess}{intro.find_out_wha_happe: figure out who's responsible for this}{intro.get_phat_loots: take a bigger haul}."
+    "That sounds like a good idea," you say. "Maybe together we can find a safe way off this mess."
+    ~whos_talking = "sunday"
+    ~character_a = "sunday"
+    "Splendid. Glad to have you on board," Sunday replies, and you can't quite tell if she's being sincere or not. You have a feeling that will be happening often with her.
         ~rel_sunday += 10
         ~communal_independent -= 10
 
 -
-~whos_talking = "sunday"
-~character_a = "sunday"
-"Splendid. Glad to have you on board," Sunday replies, and you can't tell if she's being sincere or not. You have a feeling that will be happening often with her.
-
 ~whos_talking = "sunday"
 ~character_a = "sunday"
 "There is one more thing you should know," she adds. "We have a fairly limited amount of time before the damage to Cassio compounds and causes what will be a decidedly volatile reaction," she says, crossing the room to you and coming to a halt at your side. "Well, moreso than the first one. So, I suggest we get moving."
@@ -158,6 +302,9 @@ The woman slips the small device she's recovered into one of the pockets on her 
 {intro.help_scared_injured:
  ~whos_talking = "mc"
 "That means it's doubly important that we get as many people off this station with us as possible," you say emphatically.
+Sunday laughs hollowly.
+"There's no one left."
+"Cassio is huge; there's got to be some people left," you argue.
 }
 
 {intro.get_tf_outta_here:
@@ -173,9 +320,6 @@ The woman slips the small device she's recovered into one of the pockets on her 
 {intro.get_phat_loots:
  ~whos_talking = "mc"
 "I guess that means we'll have to be quick about finding the valuables, then," you say spiritedly.
-}
-
-{intro.get_phat_loots:
 
 ~whos_talking = "sunday"
 "So glad you have your priorities set right," Sunday mutters.
