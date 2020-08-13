@@ -1,9 +1,29 @@
 INCLUDE Transitions
 INCLUDE Hospital Ward
-INCLUDE MNC_lin
-INCLUDE MNC_Sunday
 INCLUDE The Discovery
 INCLUDE Fighting
+INCLUDE MNC_lin
+INCLUDE MNC_Sunday
+INCLUDE MNC_tliari
+INCLUDE MNC_kavert
+INCLUDE MNC_fox
+INCLUDE MNC_minaloushe
+INCLUDE LOC_atrium
+INCLUDE LOC_security
+INCLUDE LOC_dockingbay
+INCLUDE LOC_operations
+INCLUDE Escape Pod Bay
+INCLUDE Escape Pod
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -54,16 +74,16 @@ VAR sound_cue = "none"
 ~music_cue = "opener"
 
 ~whos_talking = "nobody"
-You don't remember how it happened, nor do you know what caused it. All you know is that there was a catastrophic explosion, and now here you are, laying on the floor of your bedroom in your uniform with what feels like blood seeping out of your head.
+You don't remember the moment itself. All you know is there was a sound like a shuttle taking off next to your head--a catastrophic explosion, and now here you are, laying on the floor of your bedroom in your uniform with what feels like blood seeping out of your head.
 
 ~whos_talking = "nobody"
 You try to think back to the last thing you can remember...
 
 ~whos_talking = "nobody"
-Three months ago you were hired by Elysium, the system-wide corporation responsible for manufacturing everything from the coffee maker in your bedroom to the bio-weapons used in the Jenusian-Terran war of '83.
+Three months ago you were hired by the Pandit-Warbeck Corporation, the system-wide industrial monolith responsible for everything from the coffee maker in your bedroom to the biochemical weapons that concluded the Jenusian-Terran war of '83.
 
 ~whos_talking = "nobody"
-Upon your recruitment you were assigned to one of the company's space stations: 9068 Cassiopeiae II, or Cassio as it was commonly referred to. Elysium owns and operates this station, or at least they do in theory. From what you have seen so far, their oversight leaves much to be desired.
+Upon your recruitment you were assigned to one of the company's space stations: 9068 Cassiopeiae II, or Cassio as it was commonly referred to. Pandit-Warbeck nominally owns and operates the station, but from what you have seen, their oversight leaves much to be desired.
 
 ~whos_talking = "nobody"
 What is it you do here? 
@@ -72,35 +92,37 @@ What is it you do here?
     * (scientist) [I'm a scientist.]
         ~ingenuity_skill += 10
         ~technology_skill += 5
-        You work as a scientist and spend your time in the Laboratory of the space station, where you conduct experiments pertaining to the atmosphere and make-up of the gas giant the station orbits.
-        You're glad you weren't in the lab when the disaster struck, otherwise you would have been more severely injured.
+        You work as an astrochemist and spend your time in one or other of the space station's laboratories, where you conduct experiments analyzing the atmosphere and body of the gas giant the station orbits for precious elements and how to extract them. 
         
     ~whos_talking_button = "nobody"
     * (security) [I'm in security.]
         ~combat_skill += 15
-        You've always been larger and stronger than average, so it was a natural fit to find employment as a security officer.
-        You're glad you weren't in the armory of Station Security when the explosion occurred, otherwise you'd probably be pulp right about now.
+        You've always been stronger and quicker with your hands than most, so it seemed like a natural fit to pursue physical work. Punching people as needed punching, restraining them as needed restraining, and being intimidating enough that you can stop a lot of fights before they start. Work as a security officer is a little more stable and respectable than some of your previous jobs.
 
     ~whos_talking_button = "nobody"
     * (doctor) [I'm a doctor.]
         ~medicine_skill += 15
-        You work in the emergency room of the hospital ward tending to those with traumatic injuries or severe illness.
-        It occurs to you that you are likely needed there at the moment (although, you weren't scheduled to be).
+        You work in the Trauma Ward of your section's medical bay, tending mostly to the results of drunken, rowdy spacefarer antics, or the mangled limbs and chemical burns that plague gas miners.
 
     ~whos_talking_button = "nobody"
-    * ( technician) [I work with technology.] <>
+    * (technician) [I work with technology.] <>
         ~ technology_skill +=  15
-        Though you technically work in Operations, the reality is you could be found in a number of areas on the station on any given day. Troubleshooting and technical support are your specialty.
-        You count yourself lucky that you weren't in one of the crawl spaces at the moment of the explosion, as it's likely you would have been crushed to death.
+        You work in Section Operations, and as such you might be found in any number of places on the section on any given day. Troubleshooting and technical support are your specialty; having long since given up on the idea of preventing glitches and malfunctions in a place as decrepit as this, you are resigned to reacting to issues as they come up.
 
     ~whos_talking_button = "nobody"
     *(xenolinguist) [I work as a translator.]<>
         ~ charm_skill += 15
-        Though technically employed by Elysium, you're currently contracted out by one of the shipping companies at the shuttle docks. They do business with a number of Jenusians, and you happen to speak both the formal and informal dialects of two of their languages (not to mention six Dead Earth languages).
-        You thank your lucky stars that you weren't in the docking bay when the explosion hit considering the large amounts of hyper-reactive shuttle fuel stored there.
+        Though you are technically employed by Pandit-Warbeck, you are contracted out to a Astralogistics, a moderate-sized shipping company headquartered at the shuttle docks. They do business with a number of Jenusians, and you speak both the formal and informal dialects of two of their languages (not to mention six Dead Earth languages).
 
 -
 ~whos_talking = "nobody"
+You register a few things as your senses return one by one: your world, turned black from the impact, now glows red under emergency lightning. Your mouth tastes like smokey, metallic blood. Echoes of thunder still ring in your ears. Finally, each limb shoots sharp, chaotic aches in all directions as you laboriously unfold from the unnatural position you lie in, several feet from the bed you were on a distant moment ago. Dust is everywhere; it's settled upon the personal effects that now litter the floor.
+{scientist: You're glad you weren't in the lab when disaster struck, or else flying chemicals and equipment could have been the end of you.}
+{security: You're glad you hadn't been in the Section armory, otherwise you'd probably have been pulped by flying riot equipment or on intimate terms with a concussion grenade chain reaction.}
+{doctor: It occurs to you that you are very likely needed desperately in the medical bay. You weren't scheduled to be there now, but a medic's life is never a predictable one.}
+{technician: You count yourself lucky that you weren't in one of the crawl spaces, as it's very likely you would have been crushed to death, or worse, trapped.}
+{xenolinguist: You thank your lucky stars (which you consider to be the Pleiades cluster) that you weren't in the Astralogistics docking area. Considering how much hyper-reactive shuttle fuel is stored there, it might even have been the source of the blast.}
+
 Luckily, it had occured during your recreation period. You'd been in your bunk playing a cheap but addictive clicker game on your PDD. Could probably still be able to hear it if it weren't for the ringing in your ears. Technically, you aren't supposed to have games installed, but your co-workers have seen you fiddling with it previously and have yet to report it to your superiors.
 
 ~whos_talking = "nobody"
@@ -336,7 +358,28 @@ That will certainly be useful, too, you think to yourself.
 There's not much left to do in your room, so you cross the tiny space in three strides and open the door. Outside, the hallway is dimly lit, and it's apparent that the main power has been shut down and emergency lighting has been activated.
 
 ~whos_talking = "nobody"
-You look around, and try to figure out where to go first. You decide to head to station security. {security: It's likely they're expecting every officer to report in as soon as possible|They should have answers as to what's going on.}
+You look around, and try to figure out where to go first.
+
+    ~whos_talking_button = "nobody"
+    *[I should go to Station Security first.]
+        You decide to head to station security. {security: It's likely they're expecting every officer to report in as soon as possible|They should have answers as to what's going on}.
+        -> MNC_sunday
+    
+    ~whos_talking_button = "nobody"
+    *[I should go to Operations first.]
+        You decide to head to operations. {technician: You have a feeling more than one station system is down after the expolosion, and they'll probably need you|You're sure they'll have answers as to what's going on}.
+        -> MNC_kavert
+    
+    *{scientist} [I need to check the atrium first.]
+        Most people wouldn't understand, but your primary concern in spite of everything right now is the state of the lab and adjoining atrium.
+        -> MNC_tliari
+        
+    *{get_phat_loots} [I want to see the docking bay first.]
+        
+        
+
+
+
 
 ~music_cue = "music fade"
 -> MNC_sunday

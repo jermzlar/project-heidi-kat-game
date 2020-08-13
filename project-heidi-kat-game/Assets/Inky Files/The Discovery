@@ -675,4 +675,70 @@ After a moment you note that you are likely running out of time before the stati
 ~character_b = "nobody"
 ~music_cue = "music fade"
 
--> transitions.priority_update
+-> priority_update
+
+= priority_update
+
+~background = "hallway"
+~character_a = "nobody"
+~character_b = "nobody"
+
+~music_cue = "ambient spaceship 1"
+
+~whos_talking = "nobody"
+It's been a while since you awoke in your room, and a lot has happened since then.
+
+~whos_talking = "nobody"
+Have your priorities changed amid the revelations you've uncovered?
+
+    ~whos_talking_button = "nobody"
+    *(priority_tellall) [Yes. The public needs to know about what Elysium is doing, and I'm going to tell them.]
+        ~compassion_selfserve -= 6
+        ~communal_independent -= 6
+        Your number one priority in the moment is, of course, getting safely off of Cassio wholly or at least mostly intact. But as soon as you are safely established, you know you're going to have to get this information into the right hands.
+
+    ~whos_talking_button = "nobody"
+    *(priority_stopelysium) [Yes. What Elysium is doing is wrong, and I'm going to stop them.]
+        ~compassion_selfserve -= 6
+        ~communal_independent += 6
+        Your number one priority in the moment is, of course, getting safely off of Cassio wholly or at least mostly intact. But as soon as you are safely established, you know you're going to have to find out who's responsible at Elysium and stop them.
+
+    ~whos_talking_button = "nobody"
+    *(priority_gototop) [Yes. I have a feeling whatever's going on is a lot bigger than Elysium, and I need to find out more.]
+        ~compassion_selfserve += 6
+        ~communal_independent += 6
+        Your number one priority in the moment is, of course, getting safely off of Cassio wholly or at least mostly intact. But as soon as you are safely established, you know you're going to have to get to the bottom of this mess--which will probably mean going straight to the top.
+
+    ~whos_talking_button = "nobody"
+    *{intro.get_phat_loots} [No; I'm still mostly concerned with making sure I get out of here with some extra scratch.]
+        ~compassion_selfserve += 6
+        ~communal_independent += 6
+        Your number one priority in the moment is, of course, getting safely off of Cassio wholly or at least mostly intact. But as soon as you are safely established, you know you're going to have to have a chat with Lin about getting a cut of the sales of their multitudes of likely illicit data.
+        
+    ~whos_talking_button = "nobody"
+    *{intro.find_out_wha_happe} [No; I haven't found out what caused the destruction on Cassio yet. Before I do anything else, I need to figure that out.]
+        ~compassion_selfserve -= 6
+        ~communal_independent += 6
+        Your number one priority in the moment is, of course, getting safely off of Cassio wholly or at least mostly intact. But as soon as you are safely established, you know you'll be searching for information about the body snatchers and the destruction of Cassio.
+    
+    ~whos_talking_button = "nobody"
+    *{intro.help_scared_injured} [No; although it seems like there aren't many people left on the station, my priority is still to help as many as I can.]
+        ~compassion_selfserve -= 6
+        ~communal_independent -= 6
+        Your number one priority in the moment is, of course, getting safely off of Cassio wholly or at least mostly intact. But you want to make sure as many people as possible get to safety as well. Once you are all out of danger, you can start to think about your next move.
+        
+    ~whos_talking_button = "nobody"
+    *{intro.get_tf_outta_here} [No; I can't think about anything else until I'm out of here along with Sunday and Lin.]
+        ~compassion_selfserve += 6
+        ~communal_independent -= 6
+        Your number one priority is still, of course, getting safely off of Cassio wholly or at least mostly intact along with your companions. Once you are all safely established, you might be able to start thinking about your next move.
+        
+    ~whos_talking_button = "nobody"
+    *[Fuck priorities. I've had enough intrigue and excitement to last a lifetime; I want to get the hell off of this station and never think about any of this again.]
+        ~compassion_selfserve += 12
+        ~communal_independent += 12
+        Your number one priority is, of course, getting the hell off of Cassio. Once you are safely off, you won't have to think about anything that's happened today ever again.
+
+
+-
+*[Next] -> body_snatcher_fight

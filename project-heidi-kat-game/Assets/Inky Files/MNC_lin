@@ -5,7 +5,7 @@
 ~character_a = "nobody"
 ~character_b = "nobody"
 
-{came_from (-> transitions.security_to_lab_or_hosp):
+{came_from (-> tunnels.w_sunday):
 
 ~whos_talking = "nobody"
 It's some time before you're back in the dim emergency lighting of the station, having exited the tunnel and come out to the station nearest the medical and science wings.
