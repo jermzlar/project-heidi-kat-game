@@ -55,8 +55,8 @@ public class InkManager : MonoBehaviour
 	public static event Action<Story> OnCreateStory;
     void Start () {
 		characterManager.DisplayName("nobody");
-		characterManager.DetermineCharacterA("none");
-		characterManager.DetermineCharacterB("none");
+		characterManager.DetermineCharacterA("nobody");
+		characterManager.DetermineCharacterB("nobody");
 		StartStory();
 		story.ObserveVariable("whos_talking", (string varName, object newValue) =>
 		{ SetDisplayName((string)newValue); });

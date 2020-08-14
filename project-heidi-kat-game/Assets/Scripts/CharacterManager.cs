@@ -83,7 +83,7 @@ public class CharacterManager : MonoBehaviour
     {
         switch (value)
         {
-            case "none":
+            case "nobody":
                 ToggleCharacterA(false);    
                 break;
             case "sunday":
@@ -98,7 +98,7 @@ public class CharacterManager : MonoBehaviour
     {
         switch (value)
         {
-            case "none":
+            case "nobody":
                 ToggleCharacterB(false);
                 break;
             case "lin":
