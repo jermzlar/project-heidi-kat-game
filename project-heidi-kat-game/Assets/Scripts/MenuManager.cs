@@ -6,11 +6,6 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
 
-	//Fadein the logo
-	//Wait for 2 seconds
-	//fade out logo
-	//wait .5 Seconds
-	//fade in Menu group
 	[SerializeField]
     private CanvasGroup logo_hexennacht = null;
 
@@ -118,6 +113,7 @@ public class MenuManager : MonoBehaviour
     	{
     		menuFadedIn = false;
     		//Start Enable Menu Interaction
+    		menu_main.interactable = true;
     		print("Rock and Roll!");
     	}
 
@@ -131,6 +127,7 @@ public class MenuManager : MonoBehaviour
 
     public void StartNewGame()
     {
+    	//TODO: May need a load screen for these scene transitions
     	SceneManager.LoadScene (sceneName:"Assets/Scenes/MainScene.unity");
     }
 
@@ -139,6 +136,7 @@ public class MenuManager : MonoBehaviour
     {
     	logo_hexennacht.alpha = 0;
     	menu_main.alpha = 0;
+    	menu_main.interactable = false;
     	FadeIn(logo_hexennacht, 3.0f, "logo faded in");
     	//StartCoroutine(WaitTimer(3.0f,"logo faded in"));
         
