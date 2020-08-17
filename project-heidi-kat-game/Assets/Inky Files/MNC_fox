@@ -1,5 +1,69 @@
 == MNC_fox ==
 
+With that decided, you begin to head in the direction of the shuttle port and adjoining docking bays.
 
+Much to your surprise, the station corridors are largely empty. You would've thought people would be running around in panic and chaos after such a disaster, and yet you appear to be the only one traversing these lonely halls. Occasionally you see bodies--the mangled corpses of those unfortunate enough to have perished in the blast or shortly after. You could count yourself lucky not to be one of them; although, considering you appear to have been left behind, you're not certain luck factors into it.
+
+As you make your way through Cassio, a thought begins to creep into the back of your mind. It would have taken time to evacuate everyone from the station. How long were you unconscious, then? It must have been more than hours for the station to be this empty. And why weren't you evacuated? Did nobody bother with the courtesy of checking your pulse before declaring you a lost cause?
+
+The questions pile up in your mind until you can't think anymore and a rush of dizziness sweeps over you. You stop just outside the entrance to the shuttle port and grip the wall, waiting as your vision hazes for it to pass. After a moment, it does, and you continue inside, noting that you should probably {intro.doctor or intro.unconventional_medic or intro.combat_medic or intro.medicine: take care of your head injury|get your head looked at} soon.
+
+Seven of the ten docking bays are completely locked down and inaccessible to you without proper authorization, but there are three you can still access.
+
+->baychoices
+
+=baychoices
+
+{Which one do you want to check first?|Which one do you want to check next?}
+
+    *[Docking Bay 1E]
+        ->bay1E
+    *[Docking Bay 6D]
+        ->bay6D
+    *[Docking Bay 9X]
+        ->bay9X
+
+= bay1E
+
+this is where you meet fox.
+
+->END
+
+= bay6D
+
+You head inside Docking Bay 6D. It is immediately apparent that it's empty both of people as well as ships. Odd, you think, as the entirety of the shuttle port operates on a round-the-clock basis. You expected to see some corpses at the very least, but even these are absent. A few cases of cargo line the shuttlestrip, mostly toppled over and spilling their various contents from freeze-dried survival meals to compact machine parts. If it weren't for that, you would hardly be able to tell anything had gone wrong on Cassio at all from the look of this bay.
+
+Picking through the cargo cases, you don't find anything of interest. Most of it is bulk goods produced by Pandit-Warbeck employees on this station; none of it is easily transportable or worth anything on the grey market.
+
+Is there anything else you want to check while you're here?
+
+    *[Yes, I'll check shuttle control.]
+        ->bay6Dshuttlecontrol
+    
+    *[No, I want to take a look at the other docking bays.]
+        ->baychoices
+        
+        TODO: fix syntax and figure out how to do the how many times has this stitch been visited thing
+        
+=bay6Dshuttlecontrol
+
+The red bloom of emergency lights fills the interior of shuttle control, reflecting softly off of the enormous glasticine windows overlooking the bay. Chaos reigns with chairs toppled over and computer screens cracked--but again, there are no bodies to speak of. Perhaps everyone got out safely, you think to yourself.
+
+What do you want to look for here?
+
+    *(weapon) [Look to see if there are any weapons.]
+        Though there's nobody around now, you can't help but feel that having a weapon handy wouldn't go amiss. You set to searching around for one, hunting through desks drawers and cabinets.
+        It's not long before you come across a standard issue pistol for security officers; small, lightweight, but it would get the job done--if you come across a situation where the job needs doing, that is.
+    
+    *(check_logs) [Check the computer logs for information.]
+        Fortunately, there's still one computer functioning and logged in to a shuttle control operator's account. You seat yourself at the desk and begin reviewing the most recent logs.
+        Strangely, there is no mention of an emergency anywhere. No warnings from shuttle control to inbound ships, no hails from incoming ships to shuttle control. In fact, it appears there weren't any ships scheduled to be in this docking bay for the entirety of the third shift.
+        It's not completely unheard of for docking bays to close for maintenance or training every so often, but the timing of it seems... well, incredibly lucky, particularly for Pandit-Warbeck.
+
+-With that done and not much else to explore, you exit shuttle control and leave Docking Bay 6D.
+
+->baychoices
+
+=bay9X
 
 ->END

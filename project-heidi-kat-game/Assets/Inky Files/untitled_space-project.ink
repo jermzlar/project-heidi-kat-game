@@ -285,7 +285,7 @@ You'll have to decide what your first priority will be.
     * (get_phat_loots) [I'm going to grab every valuable I can carry and take a shuttle to the nearest outpost.] 
         ~communal_independent += 15
         ~compassion_selfserve += 15
-        This is a golden opportunity. You won't be taking advantage of people in their hour of need--you're going to steal directly from Cassio's corporate overlord, Elysium, before you get out of here.
+        This is a golden opportunity. You won't be taking advantage of people in their hour of need--you're going to steal directly from Cassio's corporate overlord, Pandit-Warbeck, before you get out of here.
 
 -
 ~whos_talking = "nobody"
@@ -358,7 +358,7 @@ That will certainly be useful, too, you think to yourself.
 There's not much left to do in your room, so you cross the tiny space in three strides and open the door. Outside, the hallway is dimly lit, and it's apparent that the main power has been shut down and emergency lighting has been activated.
 
 ~whos_talking = "nobody"
-You look around, and try to figure out where to go first.
+You look around and try to figure out where to go first.
 
     ~whos_talking_button = "nobody"
     *[I should go to Station Security first.]
@@ -367,14 +367,23 @@ You look around, and try to figure out where to go first.
     
     ~whos_talking_button = "nobody"
     *[I should go to Operations first.]
-        You decide to head to operations. {technician: You have a feeling more than one station system is down after the expolosion, and they'll probably need you|You're sure they'll have answers as to what's going on}.
+        You decide to head to operations. {technician: With emergency power on, you know there's more than one station system down after the expolosion, and they'll probably need you|You're sure they'll have answers as to what's going on}.
         -> MNC_kavert
     
-    *{scientist} [I need to check the atrium first.]
-        Most people wouldn't understand, but your primary concern in spite of everything right now is the state of the lab and adjoining atrium.
+    ~whos_talking_button = "nobody"
+    *[I should go to the hospital ward first.]
+        You're certain this head wound is going to need some tending, so you decide to head to the hospital ward first. {doctor or combat_medic or unconventional_medic or medicine: There you'll be able to see what the damage is and take care of it. They'll likely be needing your help there, too|There should hopefully be someone there who can help you. If not, well, you'll figure something out}.
+        ->MNC_minaloushe
+    
+    ~whos_talking_button = "nobody"
+    *{scientist} [It's my job to check the labs and atrium first.]
+        Most people wouldn't understand, but your primary concern in spite of everything right now is the state of the lab and adjoining atrium. There are ongoing experiments there worth hundreds of thousands of credits, and you feel it is your duty to look after them in a disaster, or at the very least recover the research that's been done.
         -> MNC_tliari
-        
-    *{get_phat_loots} [I want to see the docking bay first.]
+    
+    ~whos_talking_button = "nobody"
+    *{get_phat_loots} [I want to see the docking bay first; there could be something worth stealing.]
+        With your top priority at the moment being the acquisition of anything valuable left behind, you decide you want to see one of the docking bays first. There's bound to be some unguarded cargo there worth stealing. Everything else can come later.
+        -> MNC_fox
         
         
 
