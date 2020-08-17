@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
@@ -121,6 +122,16 @@ public class MenuManager : MonoBehaviour
     	}
 
 
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
+    public void StartNewGame()
+    {
+    	SceneManager.LoadScene (sceneName:"Assets/Scenes/MainScene.unity");
     }
 
     // Start is called before the first frame update
