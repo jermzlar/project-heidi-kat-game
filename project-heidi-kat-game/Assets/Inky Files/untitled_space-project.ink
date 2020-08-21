@@ -112,7 +112,7 @@ What is it you do here?
     ~whos_talking_button = "nobody"
     *(xenolinguist) [I work as a translator.]<>
         ~ charm_skill += 15
-        Though you are technically employed by Pandit-Warbeck, you are contracted out to a Astralogistics, a moderate-sized shipping company headquartered at the shuttle docks. They do business with a number of Jenusians, and you speak both the formal and informal dialects of two of their languages (not to mention six Dead Earth languages).
+        Though you are technically employed by Pandit-Warbeck, you are contracted out to Astralogistics, a moderate-sized shipping company headquartered at the shuttle docks. They do business with a number of Jenusians, and you speak both the formal and informal dialects of two of their languages (not to mention six Dead Earth languages).
 
 -
 ~whos_talking = "nobody"

@@ -14,7 +14,7 @@ Seven of the ten docking bays are completely locked down and inaccessible to you
 
 =baychoices
 
-{Which one do you want to check first?|Which one do you want to check next?}
+{Which bay do you want to check first?|Which bay do you want to check next?}
 
     *[Docking Bay 1E]
         ->bay1E
@@ -31,7 +31,7 @@ this is where you meet fox.
 
 = bay6D
 
-You head inside Docking Bay 6D. It is immediately apparent that it's empty both of people as well as ships. Odd, you think, as the entirety of the shuttle port operates on a round-the-clock basis. You expected to see some corpses at the very least, but even these are absent. A few cases of cargo line the shuttlestrip, mostly toppled over and spilling their various contents from freeze-dried survival meals to compact machine parts. If it weren't for that, you would hardly be able to tell anything had gone wrong on Cassio at all from the look of this bay.
+You head inside Docking Bay 6D. It is immediately apparent that it's empty both of people as well as ships. Odd, you think, as the entirety of the shuttle port operates on a round-the-clock basis. You expected to see some corpses at the very least, but even these are absent. A few cases of cargo line the shuttlestrip, mostly toppled over and spilling their various contents from freeze-dried survival meals to compact machine parts. If it weren't for that, you would hardly be able to tell anything had gone wrong on Cassio from the look of this bay.
 
 Picking through the cargo cases, you don't find anything of interest. Most of it is bulk goods produced by Pandit-Warbeck employees on this station; none of it is easily transportable or worth anything on the grey market.
 
@@ -52,18 +52,292 @@ The red bloom of emergency lights fills the interior of shuttle control, reflect
 What do you want to look for here?
 
     *(weapon) [Look to see if there are any weapons.]
-        Though there's nobody around now, you can't help but feel that having a weapon handy wouldn't go amiss. You set to searching around for one, hunting through desks drawers and cabinets.
+        Though there's nobody around now, you can't help but feel that having a weapon handy wouldn't go amiss. You set about searching for one, hunting through desks drawers and cabinets.
         It's not long before you come across a standard issue pistol for security officers; small, lightweight, but it would get the job done--if you come across a situation where the job needs doing, that is.
     
     *(check_logs) [Check the computer logs for information.]
         Fortunately, there's still one computer functioning and logged in to a shuttle control operator's account. You seat yourself at the desk and begin reviewing the most recent logs.
         Strangely, there is no mention of an emergency anywhere. No warnings from shuttle control to inbound ships, no hails from incoming ships to shuttle control. In fact, it appears there weren't any ships scheduled to be in this docking bay for the entirety of the third shift.
         It's not completely unheard of for docking bays to close for maintenance or training every so often, but the timing of it seems... well, incredibly lucky, particularly for Pandit-Warbeck.
+        Something about this doesn't feel right, though you can't quite put a finger on it yet. You decide to download the logs to your PDD in case you get off the station and the information becomes pertinent.
 
 -With that done and not much else to explore, you exit shuttle control and leave Docking Bay 6D.
 
 ->baychoices
 
 =bay9X
+
+You head inside Docking Bay 9X. {intro.xenolinguist: This is the same one you worked out of as a translator; the entire bay is rented out to the company that contracts you, Astralogistics|A cursory glance doesn't tell you much about what this bay was used for, but the logo for the Astralogistics shipping company is in several conspicuous places, so you suspect it must be rented out by them}. It was a practice started by Pandit-Warbeck about fifteen years ago when Cassio Station lost some of its relevance due to the discovery that its gas giant was rapidly cooling, causing the planet to shrink and making the mining of it that much harder.
+
+Your footsteps echo hollowly as you walk into the small bay; it's empty except for one lone ship at the end. You briefly consider using it to leave the station but nix the idea after considering the fact that you don't know the first thing about flying commercial shuttles. Your best bet is certainly to leave using the escape shuttles, which have been made with the layman in mind.
+
+A sudden and guttural noise behind some empty plasteel shipping crates snaps your attention back to the present. It sounded like someone coughing or choking.
+
+    *[It's not worth the risk. I'll just leave.]
+    
+    ->END
+
+    *[Investigate the noise; someone could be alive still.]
+        Cautiously, you make your way over to the crates and peek behind them.
+        
+        Laying there on the floor is a young man not older than twenty. He grasps helplessly at his side, where a small, profusely bleeding hole has found a home in his abdomen. At your arrival he jerks his head in your direction and his eyes light up with hope.
+        
+        "Please--help me," he gasps.
+            
+            **{not intro.doctor and not intro.unconventional_medic and not intro.combat_medic and not intro.medicine}[See if there's anything I can do.]
+            
+                You kneel beside him, and he flinches as you peel back the bloody bits of uniform still clinging to his wound.
+                
+                It looks very serious, and you're not a doctor.
+                
+                {not intro.xenolinguist:
+                
+                "Is there a first-aid kit anywhere in here?" you ask hopefully.
+                
+                The man groans and points toward an office at the entrance to the bay. You retrieve it as quickly as your own injury will allow, and kneel beside him again.
+                
+                }
+                
+                {intro.xenolinguist:
+                
+                "Hold on, I have to grab the first-aid kit," you say.
+                
+                You retrieve it from the front office as quickly as your own injury will allow, and kneel beside him again.
+                
+                }
+                
+                Limited experience tells you to treat the wound with a cautery using the field burner in the kit. Although you've never done this before, field burners are made for the average person to operate, so you imagine it can't be too hard.
+                
+                You pick it up and turn it on. The wide blade at the end begins to heat up, and it steams slightly. You take some antiseptic gauze and sanitize his injury, wiping away the excess blood as he cries out.
+                
+                    ***[Warn the man this may hurt.]
+                    
+                        "I'm going to cauterize it. This is going to feel a lot worse," you warn him.
+                        
+                        "Just--do it," he grunts.
+                        
+                        You nod and bring the burner to the wound, pressing down. The man yells out loud; you think for a moment he might push you away, but he either lacks the strength to do it or has control enough of his reflexes not to.
+                        
+                        You pull the burner away after a few seconds and survey your work. It somehow looks worse, but at least the bleeding has stopped on the exterior. The interior might be a different matter.
+                        
+                        "Thank you," he breaths as tears begin to flow freely down his face.
+                        
+                        "I did what I could," you reply. "But I'm not a doctor. It's a temporary fix at best."
+                    
+                    ***[Just get it over with.]
+                    
+                        Without a warning to him you bring the burner to the wound, pressing down. The man yells out loud; you think for a moment he might push you away, but he either lacks the strength to do it or has control enough of his reflexes not to.
+                        
+                        You pull the burner away after a few seconds and survey your work. It somehow looks worse, but at least the bleeding has stopped on the exterior. The interior might be a different matter.
+                        
+                         
+                        "Thank you," he breaths as tears begin to flow freely down his face.
+                        
+                        "I did what I could," you reply. "But I'm not a doctor. It's a temporary fix at best."
+                        
+                    ---He nods a little, but his eyes are starting to look glazed.
+                    
+                    "What's your name?" you ask, trying to keep him focused.
+                    
+                    "Athen," he murmurs.
+                    
+                    "My name's {player_name}. Can you tell me what happened to you?" you continue.
+                    
+                    "He... he shot me," Athen says, a hint of incredulity in his pained tone.
+                    
+                    You frown; that much was obvious.
+                    
+                    "Who shot you? And why?" you press him.
+                    
+                    "The fox, he's shot me--and left me... bastard," Athen replies.
+                    
+                    "Is he still here?" you ask, glancing towards the doorway nervously.
+                    
+                    Athen can only manage a nod.
+                    
+                    You pull yourself to your feet then, coming to a decision.
+                    
+                    "I need to make sure it's safe before we figure out what to do next.
+                    
+                    {not weapon:
+                    
+                    <> Do you know where I could find a weapon?" you ask.
+                    
+                    "Office, in the locker... combination is 0-6-1-2-8," Athen says, pointing in the direction of the front office.
+                    
+                    "Thanks. I'll be back," you assure him.
+                    
+                    -else:
+                    
+                    <> I'll be back," you assure him.
+                    
+                    }
+                    
+                    {not weapon:
+                    
+                    You retrieve a pistol from the weapons locker inside the office, checking that the safety is off and the gun is charged.
+                    
+                    -else:
+                    
+                    You pull out the pistol you retrieved earlier, checking that the safety is off and the gun is charged.
+                    
+                    }
+                    
+                    Outside in the main hall, there is not sight nor sound of anyone else around. Then comes the sound of a pistol shot fired from one of the bays at the end; the only one not locked down is Docking Bay 1E.
+                    
+                    ->bay1E
+            
+            **{intro.doctor or intro.unconventional_medic or intro.combat_medic or intro.medicine}[Tend to his wounds.]
+  
+                You kneel beside him, and he flinches as you peel back the bloody bits of uniform still clinging to his wound.
+                
+                The bleeding is severe and there's inflammation of the peritoneum; it appears the projectile pierced his stomach, judging by the bile and a few small bits of half-digested food you can see amongst the blood. He'd need surgery to survive, and he's in no position to get it.
+                    
+                    The grimace on your face tells him everything he needs to know.
+                    
+                    "That bad... huh?" he grunts.
+                    
+                    "I'm sorry, it's just--we'd need--"
+                    
+                    "Don't worry... about it," he says, nodding a little, but his eyes are starting to look glazed.
+                    
+                    "What's your name?" you ask, trying to keep him focused.
+                    
+                    "Athen," he murmurs.
+                    
+                    "My name's {player_name}. I'm sorry to ask," you say tentatively, "but can you tell me what happened to you?"
+                    
+                    "He... he shot me," Athen says, a hint of incredulity in his pained tone.
+                    
+                    You frown; that much was obvious.
+                    
+                    "Who shot you? And why?" you press him.
+                    
+                    "The fox, he's shot me--and left me... bastard," Athen replies.
+                    
+                    "Is he still here?" you ask, glancing towards the bay doors nervously.
+                    
+                    Athen can only manage a nod.
+                    
+                        ***["The least I could do is shoot him back for you."]
+                        
+                            "Well, the least I could do is shoot him back," you say as you stand up and brush yourself off.
+                            
+                            {not weapon and compassion_selfserve < 51:
+                            
+                            <> "Do you know where I could find a pistol or something?"
+                            
+                            "Office, in the locker... combination is 0-6-1-2-8," Athen says, pointing in the direction of the front office.
+                    
+                            You consider him for a moment. No one should have to die alone.
+                            
+                            "Thank you. I'll be back," you assure him.
+                            
+                            He smiles weakly.
+                            
+                            }
+                            
+                            {not weapon and compassion_selfserve > 50:
+                            
+                            <> "Do you know where I could find a pistol or something?"
+                            
+                            "Office, in the locker... combination is 0-6-1-2-8," Athen says, pointing in the direction of the front office.
+                    
+                            You consider him for a moment.
+                            
+                            "Thanks. I would say I owe you, but..." you trail off, and he lets out a short, hollow laugh.
+                            
+                            "Leave me... to die. Just make sure he does... too," he says with some difficulty.
+                            
+                            You nod and turn to leave.
+                            
+                            }
+                            
+                            {weapon and compassion_selfserve < 51:
+                            
+                            <> You consider him for a moment. No one should have to die alone.
+                            
+                            "I'll be back," you assure him.
+                            
+                            He smiles weakly as you turn to leave.
+                            
+                            }
+                            
+                            {weapon and compassion_selfserve > 50:
+                            
+                             <> You consider him for a moment.
+                            
+                            "I guess I better go," you say finally.
+                            
+                            "I'll be... right... here," he says with some difficulty.
+                            
+                            You can't help but chuckle softly as you leave.
+                            
+                            }
+                            
+                            Outside in the main hall, there is not sight nor sound of anyone else around. Then comes the sound of a pistol shot fired from one of the bays at the end; the only one not locked down is Docking Bay 1E.
+                        
+                            ->bay1E
+                        
+                            ***["It's not safe here. I have to leave."]
+                        
+                            "If it's not safe here then I have to go," you say solemnly.
+                        
+                            Athen nods, his expression vacant.
+                        
+                            {not weapon:
+                        
+                            <>"Do you know where I could get a pistol or something?" you try.
+                        
+                            "Office, in the locker... combination is 0-6-1-2-8," Athen says, pointing in the direction of the front office.
+                    
+                            You consider him for a moment.
+                            
+                            "Thanks. I would say I owe you, but..." you trail off, and he lets out a short, hollow laugh.
+                            
+                            "Leave me... to die. Just make sure he does... too," he says with some difficulty.
+                        
+                            You assure him you will see to it and then leave.
+                        
+                            }
+                        
+                    Outside in the main hall, there is not sight nor sound of anyone else around. Then comes the sound of a pistol shot fired from one of the bays at the end; the only one not locked down is Docking Bay 1E.
+                        
+                    ->bay1E
+            
+            **[He's a goner, but maybe I can pump him for information.]
+            
+            TODO: write this
+            
+            **[Tell him I'm sorry, but I can't help.]
+            
+                You shake your head slowly at the young man.
+                
+                "I'm sorry, there's nothing I can do," you {not intro.doctor and not intro.unconventional_medic and not intro.combat_medic and not intro.medicine: say|lie}.
+                
+                You turn around and begin to leave; the young man struggles for breath as he wails for you to wait. You can't see him anymore as you walk out of the docking bay, but the cracks in his fading voice tells you tears have reached his eyes in his desperation. The docking bay door slides shut behind you, and you hear him no more.
+                
+                {intro.doctor or intro.unconventional_medic or intro.combat_medic or intro.medicine:
+                
+                You lied to him when you said you couldn't help him. Why was that?
+                    
+                    ***[It's every {gender_person} for themselves now.]
+                    
+                        You may have sworn an oath to help those you could, but extraordinary circumstances call for extraordinary measures. You can't stop for every dying person left on this station--you'd likely never get off. Part of your work is to make calls like that.
+                        
+                        You just hope it was the right one.
+                    
+                    -> baychoices
+                    
+                    ***[He was beyond help.]
+                    
+                        It was obvious even from a glance that his wound would almost certainly be fatal, as stomach wounds are very serious. Even if you had all of the personnel and equipment you needed, he still might not survive, and without it he's as good as dead. Part of your work is to make calls like that.
+                        
+                        You just hope it was the right one.
+                        
+                    ->baychoices
+                        
+                }
+
 
 ->END
