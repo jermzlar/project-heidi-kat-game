@@ -361,29 +361,52 @@ There's not much left to do in your room, so you cross the tiny space in three s
 You look around and try to figure out where to go first.
 
     ~whos_talking_button = "nobody"
-    *[I should go to Station Security first.]
-        You decide to head to station security. {security: It's likely they're expecting every officer to report in as soon as possible|They should have answers as to what's going on}.
+    *{not security}[I will go to Station Security first; they'll have answers.]
+        You decide to head to station security. They should have answers as to what's going on.
         -> MNC_sunday
     
     ~whos_talking_button = "nobody"
-    *[I should go to Operations first.]
-        You decide to head to operations. {technician: With emergency power on, you know there's more than one station system down after the expolosion, and they'll probably need you|You're sure they'll have answers as to what's going on}.
+    *{not technician}[I should go to Operations first; they'll know what's going on.]
+        You decide to head to operations. You're sure they'll have answers as to what's going on.
         -> MNC_kavert
+        
+     ~whos_talking_button = "nobody"
+     *{get_phat_loots}[I bet there's some unguarded cargo in the docking bay...]
+        With your primary concern in this moment being the acquisition of Pandit-Warbeck's assets for your own personal gain, you're certain there's going to be some unguarded cargo that would fetch a good price on the grey market. You'll just have to find it.
+        With that decided, you begin to head in the direction of the shuttle port and adjoining docking bays.
+        ->MNC_fox
     
     ~whos_talking_button = "nobody"
-    *[I should go to the hospital ward first.]
+    *[I need to go to the hospital ward first and take care of my injury.]
         You're certain this head wound is going to need some tending, so you decide to head to the hospital ward first. {doctor or combat_medic or unconventional_medic or medicine: There you'll be able to see what the damage is and take care of it. They'll likely be needing your help there, too|There should hopefully be someone there who can help you. If not, well, you'll figure something out}.
         ->MNC_minaloushe
-    
+        
     ~whos_talking_button = "nobody"
-    *{scientist} [It's my job to check the labs and atrium first.]
+    *[First things first, I need to report for duty.]
+    
+        {scientist:
         Most people wouldn't understand, but your primary concern in spite of everything right now is the state of the lab and adjoining atrium. There are ongoing experiments there worth hundreds of thousands of credits, and you feel it is your duty to look after them in a disaster, or at the very least recover the research that's been done.
         -> MNC_tliari
-    
-    ~whos_talking_button = "nobody"
-    *{get_phat_loots} [I want to see the docking bay first; there could be something worth stealing.]
-        With your top priority at the moment being the acquisition of anything valuable left behind, you decide you want to see one of the docking bays first. There's bound to be some unguarded cargo there worth stealing. Everything else can come later.
-        -> MNC_fox
+        }
+        
+        {xenolinguist:
+        There's likely a host of Jenusians in the shuttle port right now trying to navigate their way off the station in the middle of an emergency. Your services as a xenolinguist will certainly be needed, so you decide to make for the shuttle port.
+        ->MNC_fox
+        }
+        
+        {security:
+        It's likely they're expecting every officer to report in as soon as possible, so you decide to make for Station Security. They should have answers as to what's going on, too.
+        -> MNC_sunday
+        }
+        {technician:
+        With emergency power on, you know there's more than one station system down after the expolosion, and Stations Ops probably needs your expertise at the moment. You decide to make for Operations, and hope they'll also have answers as to what's going on.
+        ->MNC_kavert
+        }
+        {doctor:
+        With everything going on, youre certain the emergency ward is chaos at the moment. In light of this disaster, they'll need you now more than ever. You decide to make for the hospital and see what you can do to help.
+        ->MNC_minaloushe
+        }
+        
         
         
 
