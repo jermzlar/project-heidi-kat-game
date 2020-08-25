@@ -403,7 +403,7 @@ You look around and try to figure out where to go first.
         ->MNC_kavert
         }
         {doctor:
-        With everything going on, youre certain the emergency ward is chaos at the moment. In light of this disaster, they'll need you now more than ever. You decide to make for the hospital and see what you can do to help.
+        With everything going on, you're certain the emergency ward is chaos at the moment. In light of this disaster, they'll need you now more than ever. You decide to make for the hospital and see what you can do to help.
         ->MNC_minaloushe
         }
         

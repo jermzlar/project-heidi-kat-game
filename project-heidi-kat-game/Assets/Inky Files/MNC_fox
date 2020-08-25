@@ -28,7 +28,142 @@ There's still the other bay you didn't check, but you notice there's one open do
 
 = bay1E
 
-As you enter 
+//met Athen, has weapon
+
+There is not sight nor sound of anyone else around in the main hall. Then comes the echo of a pistol shot fired from one of the bays at the end; the only one not locked down is Docking Bay 1E.
+
+You tighten your grip on the weapon in your hand as you walk towards the end of the hall and think about your plan.
+
+As soon as you open the doors to Bay 1E, your presence will be announced to whoever is inside. How do you wish to approach the situation?
+
+    *[Shoot first, ask questions later.]
+        Given that whoever's in there has already shot at least one person today, you feel it is in your best interest to make sure your first impression contains an abundance of aggression.
+        
+      The doors to the bay slide open at your touch. You waste no time sighting your target, a young man with olive skin who is just turning around as you fire your first warning shots {combat skill > 64: right above his head|near his feet}. He {combat skill > 64: ducks|jumps} and curses loudly.
+      
+      "What--what the hell is that for?" he yells, drawing his own pistol and training it on you.
+      
+            **["That was a warning."]
+                "Consider it a warning of things to come if you want to try anything on me like what you did to that poor man Athen," you say threateningly, moving further into the docking bay.
+
+            **["You can dish it out, but you can't take it."]
+                "Oh, I see, so you can dish it out, but you can't take it," you quip, moving further into the docking bay.
+                
+                "I don't even know you!" the man says incredulously.
+                
+                "I'm not talking about me," you say, frustrated. "I saw what you did to that poor man Athen."
+                
+            --"'Poor Athen?'" he repeats, then adds as an afterthought, "I'm kind of surprised he's still alive, honestly."
+                
+                "He won't be for long, thanks to you."
+                
+                "I suppose, in his retelling of the events that led to me shooting him, he neglected to mention the part where he was going to murder me first?"
+                
+                "Well--" you start, but you've suddenly found yourself on uncertain ground. Finally, you admit, "No, he sort of skipped that part."
+                
+                "How about you put down your pistol and I'll put down my pistol and we'll both talk about this like civilized people?" the man says.
+                
+                "How can I trust you? What if you're lying?"
+                
+                "Listen, of the two of us, I am not the one who has shot at a stranger today with zero pretense or cause," he points out.
+                
+                "I wouldn't say zero cause," you are quick to add.
+                
+                As a gesture of good faith, he lowers his pistol and holsters it, holding out his hands in a show of insouciance. You follow his lead, albeit a bit more slowly.
+                
+                "I'll start. I'm Fox. Who're you?"
+
+                "{player_name}," you reply cautiously. "Explain what you're doing here and why you shot Athen."
+
+    *[Give whoever is inside the benefit of the doubt.]
+    
+        You keep your pistol by your side as the doors open to the touch of your hand. It's only a moment before you spot the olive-skinned man near the only ship in the bay. He trains his pistol on you threateningly, but you only lift a hand in a show of meaning no harm.
+        
+        "What do you want?" he asks, clearly uncertain what he should make of you.
+        
+        "Just to talk. I have some questions," you say, honestly hoping that's all this will be.
+        
+        The man narrows his eyes.
+        
+        "About what?" 
+    
+        "Well, I saw what you did to that poor man, Athen," you say.
+        
+        "'Poor Athen?'" the man says incredulously. "He's clearly lied to you as well, then. I suppose in his retelling of the events that led to me shooting him, he neglected to mention the part where he was going to murder me first?"
+        
+        You chew on this new information for a moment before responding.
+        
+        "Er, no, he sort of skipped that part," you admit finally, and continue, "If it's true, that is. How can I trust you're not lying?"
+        
+        The man flashes an imp-like smile that is, admittedly, exceedingly charming.
+        
+        "As you come to know me you'll learn that I detest lies and deceit," he says. "And, I do hope you will come to know me," he adds, taking a step closer to you.
+        
+            **[Let's see if he can take it as good as he dishes it out.]
+            
+                "I certainly hope I will come," you say slyly, and then with perfect innocence, "To know you, that is."
+                
+                At this, he looks utterly delighted.
+                
+                "We can start with a first-name basis," he says. "I'm Fox. Who're you?"
+                
+                "{player_name}," you reply. "And I'd actually like to start with what you're doing here, and why you shot Athen."
+            
+            **[Big yikes.]
+            
+                "Keep that up and I will find a reason to shoot you," you say with no small amount of warning.
+                
+                "Message received," he replies, tapping his nose knowingly. "Let's just go with a first-name basis, then. I'm Fox. Who're you?"
+                
+                "{player_name}," you reply. "Tell me what you're doing here, and why you shot Athen."
+    
+    *[I'll be cautious, but have my weapon ready.]
+    
+      Taking cover by the frame of the door, you use a moment to breath deeply and try to steady your hands. You're still feeling the effects of an untreated head injury, so your aim will likely be off. Best to be quick about it, then, if it comes to that.
+        
+        The doors slide open at your touch and you peer around the corner of the frame just as someone calls out, "Who's there?"
+        
+        "Are you the person who shot Athen?" you ask.
+        
+        There is a beat before they reply.
+        
+        "... Yes. What do you want?" they call back.
+        
+        "Just to talk. I have some questions," you say, and you honestly hope that's all it will come to.
+        
+        You peak around the corner of the frame and spot the speaker: a young man with olive skin. He's currently holding his pistol up in the general direction of the door. His eyes widen as he spots you and you quickly pull back to safety.
+        
+        "If you just have some questions, why are you hiding?" he asks, accusing.
+        
+        "Honestly, it's because I saw what you did to that poor man Athen," you reply truthfully.
+        
+        He lets out a sharp bark of a laugh.
+        
+        "'Poor Athen?'" he repeats, and then adds in a lower tone to himself, "I'm kind of surprised he's still alive, to be honest."
+        
+        "He won't be for long; you certainly saw to that," you say.
+        
+        "I suppose," the man calls to you, "In his retelling of the events that led to me shooting him, he neglected to mention the part where he was going to murder me first?"
+        
+        You chew on this new information for a moment before responding.
+        
+        "No, he sort of skipped that part," you admit finally. You chance another peak around the corner; the man has lowered his pistol.
+        
+        "You can come out, I'm not going to shoot you, I don't just shoot people," he says, a bit annoyed.
+        
+        "Evidence points to the contrary," you say as you slip from your cover through the doorway to Bay 1E.
+        
+        You maintain your grip on the pistol in your hand but keep it at your side. The man seems to survey you from the shadows of the dimly lit bay.
+        
+        "I'll start. I'm Fox. Who're you?"
+
+        "{player_name}," you reply cautiously. "Explain what you're doing here and why you shot Athen."
+    
+-"I'm a, ah," he clears his throat, "I'm an independent contractor, if you will. I 
+
+TODO: write the rest of this
+    
+    
 
 
 ->END
@@ -60,7 +195,7 @@ What do you want to look for here?
         Though there's nobody around now, you can't help but feel that having a weapon handy wouldn't go amiss. You set about searching for one, hunting through desks drawers and cabinets.
         It's not long before you come across a standard issue pistol for security officers; small, lightweight, but it would get the job done--if you come across a situation where the job needs doing, that is.
     
-    *(check_logs) [Check the computer logs for information.]
+    *(check_logs) [Check the computer logs for information.] //evidence +
         Fortunately, there's still one computer functioning and logged in to a shuttle control operator's account. You seat yourself at the desk and begin reviewing the most recent logs.
         Strangely, there is no mention of an emergency anywhere. No warnings from shuttle control to inbound ships, no hails from incoming ships to shuttle control. In fact, it appears there weren't any ships scheduled to be in this docking bay for the entirety of the third shift.
         It's not completely unheard of for docking bays to close for maintenance or training every so often, but the timing of it seems... well, incredibly lucky, particularly for Pandit-Warbeck.
@@ -188,8 +323,6 @@ A sudden and guttural noise behind some empty plasteel shipping crates snaps you
                     
                     }
                     
-                    Outside in the main hall, there is not sight nor sound of anyone else around. Then comes the sound of a pistol shot fired from one of the bays at the end; the only one not locked down is Docking Bay 1E.
-                    
                     ->bay1E
             
             **{intro.doctor or intro.unconventional_medic or intro.combat_medic or intro.medicine}[Tend to his wounds.]
@@ -282,8 +415,6 @@ A sudden and guttural noise behind some empty plasteel shipping crates snaps you
                             
                             }
                             
-                            Outside in the main hall, there is not sight nor sound of anyone else around. Then comes the sound of a pistol shot fired from one of the bays at the end; the only one not locked down is Docking Bay 1E.
-                        
                             ->bay1E
                         
                             ***["It's not safe here. I have to leave."]
@@ -307,8 +438,6 @@ A sudden and guttural noise behind some empty plasteel shipping crates snaps you
                             You assure him you will see to it and then leave.
                         
                             }
-                        
-                    Outside in the main hall, there is not sight nor sound of anyone else around. Then comes the sound of a pistol shot fired from one of the bays at the end; the only one not locked down is Docking Bay 1E.
                         
                     ->bay1E
             
